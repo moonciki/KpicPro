@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace的作用在于对sql进行分类化管理，理解sql隔离
+这里注意：如果使用Mapper代理开发的话，那么namespace将会有特殊重要的作用
+ -->
+ <!-- 知识点：
+ #{}：表示占位符，预编译，不会引起sql注入
+ ${}：表示拼接符，可能会引起sql注入
+  -->
+<mapper namespace="cn.kpic.juwin.mapper.UserMapper">
+
+	<!--<resultMap type="cn.kpic.juwin.domain.User" id="User">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="password" column="password"/>
+		<result property="age" column="age"/>
+	</resultMap>-->
+	
+	<!-- 这里的id：表示文件中的sql
+	将sql语句封装到mappedStatement对象中，所以讲id称为statement的id
+	 -->
+	<select id="findUserById" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.User">
+		SELECT * FROM tb_user WHERE id=#{id} AND isdel = 0
+	</select>
+
+	<select id="findUserByName" parameterType="java.lang.String" resultType="cn.kpic.juwin.domain.User">
+		SELECT * FROM tb_user WHERE name=#{name} AND isdel = 0
+	</select>
+
+	<select id="getAllUser" resultType="cn.kpic.juwin.domain.User">
+		SELECT * FROM tb_user WHERE isdel = 0
+	</select>
+
+	<insert id="addUser" parameterType="cn.kpic.juwin.domain.User">
+		insert into tb_user (name, password, age)
+		values (#{name}, #{password}, #{age})
+		<selectKey resultType="java.lang.Long" keyProperty="id" >
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<select id="jugeUser" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.User">
+		SELECT * FROM tb_user WHERE name = #{name} AND password = #{password} AND isdel = 0
+	</select>
+
+	<update id="update" parameterType="cn.kpic.juwin.domain.User">
+		update tb_user SET
+		name = #{name},
+		age = #{age},
+		password = #{password},
+		address = #{address},
+		avater = #{avater},
+		tag = #{tag}
+		where id = #{id}
+	</update>
+
+	<select id="getAllSmallManagerByPbarId" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.vo.TopicManager">
+		SELECT
+		tu.id,
+		tu.name,
+		tu.userPic,
+		tu.avater,
+		tul.level,
+		tul.score
+		FROM tb_user_pbar tup
+		JOIN tb_user tu ON tup.userId = tu.id
+		JOIN tb_user_level tul ON tul.userId = tu.id
+		WHERE tup.pbarId = #{id} AND tup.type = 2
+	</select>
+
+	
+</mapper>

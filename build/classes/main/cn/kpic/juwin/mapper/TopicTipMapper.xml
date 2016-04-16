@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.TopicTipMapper">
+
+    <insert id="save" parameterType="cn.kpic.juwin.domain.TopicTip">
+        insert into tb_topic_tip (userId, topicId, title, msg, pbarId, createTime)
+        values (#{userId}, #{topicId}, #{title}, #{msg}, #{pbarId}, #{createTime})
+    </insert>
+
+    <select id="isTip" parameterType="java.util.Map" resultType="java.lang.Long">
+        SELECT id FROM tb_topic_tip WHERE userId = #{userId} AND topicId = #{topicId}
+    </select>
+
+</mapper>

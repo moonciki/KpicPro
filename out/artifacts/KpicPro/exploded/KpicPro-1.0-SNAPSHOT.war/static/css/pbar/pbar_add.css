@@ -1,0 +1,13 @@
+
+body{
+    font-size: 14px;
+    color:#5B5B5B;
+}
+
+.main{
+    padding-top: 50px;
+    margin:0 auto;
+    width: 1100px;
+    height: auto;
+    min-height: 500px;
+}

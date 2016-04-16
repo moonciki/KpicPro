@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace的作用在于对sql进行分类化管理，理解sql隔离
+这里注意：如果使用Mapper代理开发的话，那么namespace将会有特殊重要的作用
+ -->
+<!-- 知识点：
+#{}：表示占位符，预编译，不会引起sql注入
+${}：表示拼接符，可能会引起sql注入
+ -->
+<mapper namespace="cn.kpic.juwin.mapper.TopicImgMapper">
+
+    <insert id="save">
+        insert into tb_topic_img (imagePath, imgKey, topicId)
+        values
+        <foreach item="topicImg" index="index" collection="list" separator=",">
+            (#{topicImg.imagePath}, #{topicImg.imgKey}, #{topicImg.topicId})
+        </foreach>
+    </insert>
+
+    <select id="getByTopicId" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.TopicImg">
+        SELECT imagePath, imgKey FROM tb_topic_img WHERE topicId = #{topicId} limit 0,4
+    </select>
+
+
+</mapper>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.ShortReplyMapper">
+
+    <delete id="clear">
+        delete from tb_short_reply where isdel = 1
+    </delete>
+
+    <insert id="insert" parameterType="cn.kpic.juwin.domain.ShortReply">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into tb_short_reply
+        (id, content, replyId, userId, replyUserName, replyUserId, isdel, createTime)
+        values
+        (#{id,jdbcType=BIGINT},
+
+        #{content,jdbcType=LONGVARCHAR},
+
+        #{replyId,jdbcType=BIGINT},
+
+        #{userId,jdbcType=BIGINT},
+
+        #{replyUserName,jdbcType=VARCHAR},
+
+        #{replyUserId,jdbcType=BIGINT},
+
+        #{isdel,jdbcType=INTEGER},
+
+        #{createTime,jdbcType=TIMESTAMP})
+    </insert>
+
+    <update id="del" parameterType="java.lang.Long">
+        update tb_short_reply
+        set
+        isdel = 1
+        where id = #{id}
+    </update>
+
+    <select id="getShortByReplyId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.ShortReplyVo">
+        SELECT
+        tsr.id AS shortId,
+        tsr.content,
+        tsr.replyUserName,
+        tsr.replyUserId,
+        tsr.userId,
+        tsr.replyId,
+        tu.userPic,
+        tu.avater,
+        tsr.createTime,
+        tu.name AS userName
+        FROM tb_short_reply tsr
+        JOIN tb_user tu ON tsr.userId = tu.id
+        WHERE tsr.replyId = #{replyId} ORDER BY tsr.createTime DESC LIMIT #{page}, 10
+    </select>
+
+    <select id="getShortByUserId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.ShortReplyVo2">
+        SELECT
+        tsr.id,
+        tsr.content,
+        tsr.isdel,
+        trp.shortText,
+        ttp.title,
+        tp.name AS pbarName,
+        tp.color,
+        tsr.createTime,
+        ttp.id AS topicId
+        FROM tb_short_reply tsr
+        LEFT JOIN tb_reply_post trp ON tsr.replyId = trp.id
+        LEFT JOIN tb_topic_post ttp ON trp.topicId = ttp.id
+        LEFT JOIN tb_pbar tp ON ttp.pbarId = tp.id
+        WHERE tsr.userId = #{userId} ORDER BY tsr.createTime DESC LIMIT #{page}, 10
+    </select>
+
+    <select id="getShortByReplyIdOfNews" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.TopicOrReplyInfoVo">
+        SELECT
+        tsr.createTime,
+        tsr.content,
+        tu.name AS userName,
+        tu.id AS userId
+        FROM tb_short_reply tsr
+        JOIN tb_user tu ON tsr.userId = tu.id
+        WHERE tsr.replyId = #{replyId} ORDER BY tsr.createTime DESC LIMIT #{page}, 10
+    </select>
+
+</mapper>

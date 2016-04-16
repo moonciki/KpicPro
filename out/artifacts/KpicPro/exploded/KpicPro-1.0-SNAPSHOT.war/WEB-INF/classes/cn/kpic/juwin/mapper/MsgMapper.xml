@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace的作用在于对sql进行分类化管理，理解sql隔离
+这里注意：如果使用Mapper代理开发的话，那么namespace将会有特殊重要的作用
+ -->
+<!-- 知识点：
+#{}：表示占位符，预编译，不会引起sql注入
+${}：表示拼接符，可能会引起sql注入
+ -->
+<mapper namespace="cn.kpic.juwin.mapper.MsgMapper">
+<!--
+private Long id;
+    private Long userId;
+    private int num;
+    private int type;
+-->
+    <insert id="addMsg" parameterType="cn.kpic.juwin.domain.Msg">
+        insert into tb_msg (userId, num, type)
+        values (#{userId}, #{num}, #{type})
+        <selectKey resultType="java.lang.Long" keyProperty="id" >
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <select id="notRead" parameterType="cn.kpic.juwin.domain.Msg" resultType="java.lang.Integer">
+        SELECT num FROM tb_msg WHERE userId = #{userId} AND type = #{type}
+    </select>
+
+    <update id="update" parameterType="cn.kpic.juwin.domain.Msg">
+        UPDATE tb_msg
+        SET
+        num = #{num}
+        WHERE userId = #{userId} AND type = #{type}
+    </update>
+
+
+</mapper>

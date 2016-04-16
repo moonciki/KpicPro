@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.PbarMapper">
+
+  <select id="getById" resultType="cn.kpic.juwin.domain.Pbar" parameterType="java.lang.Long">
+    select
+    id, name, msg, tags, type, logo,
+    background_logo, isdel, topic_num,
+    focus_num, userId, is_index, color,
+    create_time, update_time
+    from tb_pbar where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="getPbarIndex" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.vo.PbarIndexVo">
+    SELECT
+    tp.id,
+    tp.name,
+    tp.topic_num AS topicNum,
+    tpt.name AS type,
+    tp.msg,
+    tp.focus_num AS focusNum,
+    tp.userId,
+    tp.tags AS tag,
+    tp.background_logo AS backgroundLogo,
+    tp.logo,
+    tp.color
+    FROM tb_pbar tp
+    JOIN tb_pbar_type tpt ON tpt.id = tp.type
+    WHERE tp.id = #{id} AND tp.ispass = 1 AND isdel = 0
+  </select>
+
+  <delete id="deleteById" parameterType="java.lang.Long">
+    delete from tb_pbar where id = #{id,jdbcType=BIGINT}
+  </delete>
+
+  <insert id="insert" parameterType="cn.kpic.juwin.domain.Pbar">
+    <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tb_pbar
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">id,</if>
+      <if test="name != null">name,</if>
+      <if test="msg != null">msg,</if>
+      <if test="tags != null">tags,</if>
+      <if test="type != null">type,</if>
+      <if test="logo != null">logo,</if>
+      <if test="background_logo != null">background_logo,</if>
+      <if test="isdel != null">isdel,</if>
+      <if test="topic_num != null">topic_num,</if>
+      <if test="focus_num != null">focus_num,</if>
+      <if test="userId != null">userId,</if>
+      <if test="is_index != null">is_index,</if>
+      <if test="color != null">color,</if>
+      <if test="create_time != null">create_time,</if>
+      <if test="update_time != null">update_time,</if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">#{id,jdbcType=BIGINT},</if>
+      <if test="name != null">#{name,jdbcType=VARCHAR},</if>
+      <if test="msg != null">#{msg,jdbcType=VARCHAR},</if>
+      <if test="tags != null">#{tags,jdbcType=VARCHAR},</if>
+      <if test="type != null">#{type,jdbcType=INTEGER},</if>
+      <if test="logo != null">#{logo,jdbcType=VARCHAR},</if>
+      <if test="background_logo != null">#{background_logo,jdbcType=VARCHAR},</if>
+      <if test="isdel != null">#{isdel,jdbcType=INTEGER},</if>
+      <if test="topic_num != null">#{topic_num,jdbcType=INTEGER},</if>
+      <if test="focus_num != null">#{focus_num,jdbcType=INTEGER},</if>
+      <if test="userId != null">#{userId,jdbcType=BIGINT},</if>
+      <if test="is_index != null">#{is_index,jdbcType=INTEGER},</if>
+      <if test="color != null">#{color,jdbcType=VARCHAR},</if>
+      <if test="create_time != null">#{create_time,jdbcType=TIMESTAMP},</if>
+      <if test="update_time != null">#{update_time,jdbcType=TIMESTAMP},</if>
+    </trim>
+  </insert>
+
+  <update id="update" parameterType="cn.kpic.juwin.domain.Pbar">
+    update tb_pbar
+    <set>
+      <if test="name != null">#{name,jdbcType=VARCHAR},</if>
+      <if test="msg != null">#{msg,jdbcType=VARCHAR},</if>
+      <if test="tags != null">#{tags,jdbcType=VARCHAR},</if>
+      <if test="type != null">#{type,jdbcType=INTEGER},</if>
+      <if test="logo != null">#{logo,jdbcType=VARCHAR},</if>
+      <if test="background_logo != null">#{background_logo,jdbcType=VARCHAR},</if>
+      <if test="isdel != null">#{isdel,jdbcType=INTEGER},</if>
+      <if test="topic_num != null">#{topic_num,jdbcType=INTEGER},</if>
+      <if test="focus_num != null">#{focus_num,jdbcType=INTEGER},</if>
+      <if test="userId != null">#{userId,jdbcType=BIGINT},</if>
+      <if test="is_index != null">#{is_index,jdbcType=INTEGER},</if>
+      <if test="color != null">#{color,jdbcType=VARCHAR},</if>
+      <if test="create_time != null">#{create_time,jdbcType=TIMESTAMP},</if>
+      <if test="update_time != null">#{update_time,jdbcType=TIMESTAMP},</if>
+    </set>where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="getAllSelfPbar" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.UserPbarVo">
+    SELECT
+    tup.id,
+    tp.id AS pbarId,
+    tpt.name AS type,
+    tp.ispass,
+    tp.name,
+    tp.color,
+    tup.type AS role
+    FROM tb_user_pbar tup
+    JOIN tb_user tu ON tu.id = tup.userId
+    JOIN tb_pbar tp ON tp.id = tup.pbarId
+    JOIN tb_pbar_type tpt ON tp.type = tpt.id
+    WHERE tup.userId = #{userId} AND tp.isdel = 0 ORDER BY tup.createTime DESC LIMIT #{page}, 10
+  </select>
+  
+  <update id="addTopicNum" parameterType="java.lang.Long">
+    update tb_pbar set topic_num = topic_num + 1 where id = #{id}
+  </update>
+
+  <update id="addFocusNum" parameterType="java.lang.Long">
+    update tb_pbar set focus_num = focus_num + 1 where id = #{id}
+  </update>
+
+  <update id="delFocusNum" parameterType="java.lang.Long">
+    update tb_pbar set focus_num = focus_num - 1 where id = #{id}
+  </update>
+
+
+</mapper>

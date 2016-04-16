@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.PbarFocusMapper">
+
+    <insert id="save" parameterType="cn.kpic.juwin.domain.PbarFocus">
+        insert into tb_pbar_focus (userId, pbarId)
+        values (#{userId}, #{pbarId})
+    </insert>
+
+    <delete id="del" parameterType="java.lang.Long">
+        DELETE tb_pbar_focus WHERE id = #{id}
+    </delete>
+
+    <select id="getPbarFocusByPbarIdAndUserId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.PbarFocus">
+        SELECT * FROM tb_pbar_focus WHERE userId = #{userId} AND pbarId = #{pbarId}
+    </select>
+
+    <select id="getAllPbarFocus" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.Pbar">
+        SELECT
+        tp.id,
+        tp.name,
+        tp.logo,
+        tp.color,
+        tp.topic_num
+        FROM tb_pbar_focus tpf
+        JOIN tb_pbar tp ON tpf.pbarId = tp.id
+        WHERE tpf.userId = #{userId} AND tp.isdel = 0 ORDER BY tpf.createTime DESC LIMIT #{page}, 10
+    </select>
+
+</mapper>

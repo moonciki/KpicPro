@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.ShortTipMapper">
+
+    <insert id="save" parameterType="cn.kpic.juwin.domain.ShortTip">
+        insert into tb_short_tip (userId, shortId, title, msg, pbarId, createTime)
+        values (#{userId}, #{shortId}, #{title}, #{msg}, #{pbarId}, #{createTime})
+    </insert>
+
+    <select id="getIdsByStoreIds" parameterType="java.util.Map" resultType="java.lang.Long">
+        SELECT shortId FROM tb_short_tip
+        WHERE userId = #{userId}
+        AND shortId IN
+        <foreach item="storeId" index="index" collection="storeIds" separator="," open="(" close=")">
+            #{storeId}
+        </foreach>
+    </select>
+
+
+</mapper>

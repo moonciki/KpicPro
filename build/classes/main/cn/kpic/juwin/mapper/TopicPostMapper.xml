@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace的作用在于对sql进行分类化管理，理解sql隔离
+这里注意：如果使用Mapper代理开发的话，那么namespace将会有特殊重要的作用
+ -->
+<!-- 知识点：
+#{}：表示占位符，预编译，不会引起sql注入
+${}：表示拼接符，可能会引起sql注入
+ -->
+<mapper namespace="cn.kpic.juwin.mapper.TopicPostMapper">
+
+    <insert id="save" parameterType="cn.kpic.juwin.domain.TopicPost">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into tb_topic_post ( title, content, shortText, pbarId, userId, createTime, updateTime)
+        values (#{title}, #{content}, #{shortText}, #{pbarId}, #{userId}, #{createTime}, #{updateTime})
+    </insert>
+
+    <select id="getByPbarId" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.TopicPost">
+        SELECT * FROM tb_topic_post WHERE topicId = #{pbarId} AND isdel = 0
+    </select>
+
+    <select id="getByPbarIdOfNews" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.vo.TopicOrReplyInfoVo">
+        SELECT
+        ttp.title,
+        ttp.createTime,
+        tu.name AS userName,
+        tu.id AS userId
+        FROM tb_topic_post ttp
+        JOIN tb_user tu ON ttp.userId = tu.id
+        WHERE ttp.id = #{id}
+    </select>
+
+    <select id="getTopicPostByPbarId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PbarHomeTopicPost">
+        SELECT ttp.id AS id, ttp.title AS title, ttp.shortText AS shortText, ttp.replyNum AS replyNum,
+        ttp.isTop AS isTop, ttp.isBoutique AS isBoutique, tu.name AS userName, ttp.createTime AS createTime,
+        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater
+        FROM tb_topic_post ttp
+        JOIN tb_user tu ON ttp.userId = tu.id
+        WHERE ttp.pbarId = #{pbarId} AND ttp.isdel = 0 ORDER BY ttp.updateTime DESC LIMIT #{page}, 10
+    </select>
+
+    <select id="getTopicBlogOrPostByPbarId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PbarHomeTopicPost">
+        SELECT ttp.id AS id, ttp.title AS title, ttp.shortText AS shortText, ttp.replyNum AS replyNum,
+        ttp.isTop AS isTop, ttp.isBoutique AS isBoutique, tu.name AS userName, ttp.createTime AS createTime,
+        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater
+        FROM tb_topic_post ttp
+        JOIN tb_user tu ON ttp.userId = tu.id
+        WHERE ttp.pbarId = #{pbarId} AND ttp.isdel = 0 AND ttp.isBlog = #{isBlog} ORDER BY ttp.updateTime DESC LIMIT #{page}, 10
+    </select>
+
+    <select id="getJpTopicByPbarId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PbarHomeTopicPost">
+        SELECT ttp.id AS id, ttp.title AS title, ttp.shortText AS shortText, ttp.replyNum AS replyNum,
+        ttp.isTop AS isTop, ttp.isBoutique AS isBoutique, tu.name AS userName, ttp.createTime AS createTime,
+        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater
+        FROM tb_topic_post ttp
+        JOIN tb_user tu ON ttp.userId = tu.id
+        WHERE ttp.pbarId = #{pbarId} AND ttp.isdel = 0 AND ttp.isBoutique = #{isBoutique} ORDER BY ttp.updateTime DESC LIMIT #{page}, 10
+    </select>
+
+    <select id="getByUid" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.vo.TopicPostMsg">
+        SELECT ttp.id AS id, ttp.title AS title, ttp.replyNum AS replyNum,
+        ttp.isTop AS isTop, ttp.isBoutique AS isBoutique, tu.name AS userName, ttp.createTime AS createTime,
+        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.content AS content, tu.avater AS avater, ttp.pbarId AS pbarId, tu.id AS userId
+        FROM tb_topic_post ttp
+        JOIN tb_user tu ON ttp.userId = tu.id
+        WHERE ttp.id = #{id} AND ttp.isdel = 0
+    </select>
+
+    <select id="getById" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.TopicPost">
+        SELECT *
+        FROM tb_topic_post
+        WHERE id = #{id} AND isdel = 0
+    </select>
+
+    <update id="update" parameterType="cn.kpic.juwin.domain.TopicPost">
+        UPDATE tb_topic_post SET title = #{title}, content = #{content}, shortText = #{shortText},
+        pbarId = #{pbarId}, userId = #{userId}, createTime = #{createTime}, updateTime = #{updateTime}, replyNum = #{replyNum}
+        WHERE id = #{id}
+    </update>
+
+    <select id="getAllTopicPostByUid" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PbarHomeTopicPost">
+        SELECT ttp.id AS id, ttp.title AS title, ttp.shortText AS shortText, ttp.replyNum AS replyNum,
+        ttp.isTop AS isTop, ttp.isBoutique AS isBoutique, tu.name AS userName, ttp.createTime AS createTime,
+        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater, tp.name AS pbarName, tp.color AS color
+        FROM tb_topic_post ttp
+        JOIN tb_user tu ON ttp.userId = tu.id
+        LEFT JOIN tb_pbar tp ON ttp.pbarId = tp.id
+        WHERE tu.id = #{userId} AND ttp.isdel = 0 AND ttp.isBlog = #{isBlog} ORDER BY ${orderBy} LIMIT #{page}, 10
+    </select>
+
+</mapper>

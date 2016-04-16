@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace的作用在于对sql进行分类化管理，理解sql隔离
+这里注意：如果使用Mapper代理开发的话，那么namespace将会有特殊重要的作用
+ -->
+<!-- 知识点：
+#{}：表示占位符，预编译，不会引起sql注入
+${}：表示拼接符，可能会引起sql注入
+ -->
+<mapper namespace="cn.kpic.juwin.mapper.UserFocusMapper">
+
+    <insert id="save" parameterType="cn.kpic.juwin.domain.UserFocus">
+        insert into tb_user_focus (userId1, userId)
+        values (#{userId1}, #{userId2})
+    </insert>
+
+    <delete id="del" parameterType="java.lang.Long">
+        DELETE * FROM tb_user_focus WHERE id = #{id}
+    </delete>
+
+    <select id="getFansNum" parameterType="java.lang.Long" resultType="java.lang.Integer">
+        SELECT COUNT(id) FROM tb_user_focus WHERE userId1 = #{userId}
+    </select>
+
+    <select id="getAllFans" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.User">
+        SELECT tu.id, tu.name, tu.userPic, tu.avater FROM tb_user_focus tuf
+        JOIN tb_user tu ON tu.id = tuf.userId2
+        WHERE tuf.userId1 = #{userId} LIMIT #{page}, 10
+    </select>
+
+    <select id="getAllFocus" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.User">
+        SELECT tu.id, tu.name, tu.userPic, tu.avater FROM tb_user_focus tuf
+        JOIN tb_user tu ON tu.id = tuf.userId1
+        WHERE tuf.userId2 = #{userId} LIMIT #{page}, 10
+    </select>
+
+
+</mapper>

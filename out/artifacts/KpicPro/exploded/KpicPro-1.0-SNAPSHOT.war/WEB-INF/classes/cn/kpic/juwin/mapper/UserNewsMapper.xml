@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace的作用在于对sql进行分类化管理，理解sql隔离
+这里注意：如果使用Mapper代理开发的话，那么namespace将会有特殊重要的作用
+ -->
+<!-- 知识点：
+#{}：表示占位符，预编译，不会引起sql注入
+${}：表示拼接符，可能会引起sql注入
+ -->
+<mapper namespace="cn.kpic.juwin.mapper.UserNewsMapper">
+    <!--
+    private Long id;
+
+    private String title;
+
+    private String shortContent;
+
+    private int type;
+
+    private Long userId;
+
+    private Long fromUserId;
+
+    private String fromUserName;
+
+    private Long topicId;
+
+    private Long replyId;
+
+    private Date createTime;
+    -->
+    <insert id="save" parameterType="cn.kpic.juwin.domain.UserNews">
+        insert into tb_user_news (title, shortContent, type, userId, fromUserId, fromUserName, topicId, replyId, pbarId, createTime)
+        values (#{title}, #{shortContent}, #{type}, #{userId}, #{fromUserId}, #{fromUserName}, #{topicId}, #{replyId}, #{pbarId}, #{createTime})
+        <selectKey resultType="java.lang.Long" keyProperty="id" >
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+    </insert>
+
+    <select id="getAllUserNews" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.UserNewsVo">
+       SELECT
+       tun.id,
+       tun.title,
+       tun.shortContent,
+       tun.type,
+       tun.fromUserId,
+       tu.name AS fromUserName,
+       tun.topicId,
+       tun.replyId,
+       tp.name AS pbarName,
+       tp.color AS color,
+       tun.createTime
+       FROM tb_user_news tun
+       JOIN tb_pbar tp ON tp.id = tun.pbarId
+       LEFT JOIN tb_topic_post ttp ON tun.topicId = ttp.id
+       JOIN tb_user tu ON tu.id = tun.fromUserId
+       WHERE tun.userId = #{userId} ORDER BY tun.createTime DESC LIMIT #{page}, 10
+    </select>
+
+</mapper>

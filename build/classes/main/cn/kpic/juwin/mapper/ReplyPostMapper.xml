@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.ReplyPostMapper">
+
+  <sql id="Base_Column_List">
+    id, isdel, shortText, replyNum, num1, num2, num, userId, topicId, createTime
+  </sql>
+
+  <sql id="Blob_Column_List">
+    content
+  </sql>
+
+  <select id="getById" resultType="cn.kpic.juwin.domain.ReplyPost" parameterType="java.lang.Long">
+    select
+    <include refid="Base_Column_List"/>,
+    <include refid="Blob_Column_List"/>from tb_reply_post where id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <select id="getByIdOfNews" resultType="cn.kpic.juwin.domain.vo.TopicOrReplyInfoVo" parameterType="java.lang.Long">
+    select
+    trp.createTime,
+    trp.content,
+    trp.topicId,
+    tu.name AS userName,
+    tu.id AS userId
+    from tb_reply_post trp
+    JOIN tb_user tu ON tu.id = trp.userId
+    where trp.id = #{id,jdbcType=BIGINT}
+  </select>
+
+  <delete id="deleteById" parameterType="java.lang.Long">
+    delete from tb_reply_post where id = #{id,jdbcType=BIGINT}
+  </delete>
+
+  <insert id="insert" parameterType="cn.kpic.juwin.domain.ReplyPost">
+    <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into tb_reply_post
+    (isdel, replyNum, num1, num2, num, userId, topicId, createTime, content, shortText)
+    values
+    (#{isdel,jdbcType=INTEGER},
+
+    #{replyNum,jdbcType=INTEGER},
+
+    #{num1,jdbcType=INTEGER},
+
+    #{num2,jdbcType=INTEGER},
+
+    #{num,jdbcType=INTEGER},
+
+    #{userId,jdbcType=BIGINT},
+
+    #{topicId,jdbcType=BIGINT},
+
+    #{createTime,jdbcType=TIMESTAMP},
+
+    #{content,jdbcType=LONGVARCHAR},
+
+    #{shortText,jdbcType=VARCHAR})
+  </insert>
+
+  <update id="update" parameterType="cn.kpic.juwin.domain.ReplyPost">
+    update tb_reply_post
+    set
+    isdel = #{isdel,jdbcType=INTEGER},
+
+    replyNum = #{replyNum,jdbcType=INTEGER},
+
+    num1 = #{num1,jdbcType=INTEGER},
+
+    num2 = #{num2,jdbcType=INTEGER},
+
+    num = #{num,jdbcType=INTEGER},
+
+    userId = #{userId,jdbcType=BIGINT},
+
+    topicId = #{topicId,jdbcType=BIGINT},
+
+    createTime = #{createTime,jdbcType=TIMESTAMP}
+
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="getAllReplyByTopicId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.ReplyPostList">
+    SELECT trp.id, trp.content, trp.replyNum,
+    trp.userId, trp.createTime, tu.name AS userName,
+    tu.userPic AS userPic, tu.avater AS avater
+    FROM tb_reply_post trp
+    JOIN tb_user tu ON trp.userId = tu.id
+    WHERE trp.topicId = #{topicId} AND trp.isdel = 0 ORDER BY trp.createTime DESC LIMIT #{page},10
+  </select>
+
+  <select id="getAllSelfReply" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.SelfReply">
+    SELECT
+    trp.id AS replyId,
+    ttp.id AS topicId,
+    ttp.title,
+    trp.shortText,
+    trp.createTime,
+    trp.replyNum,
+    tp.name AS pbarName,
+    tp.color
+    FROM tb_reply_post trp
+    LEFT JOIN tb_topic_post ttp ON trp.topicId = ttp.id
+    LEFT JOIN tb_pbar tp ON ttp.pbarId = tp.id
+    WHERE trp.userId = #{userId} ORDER BY ${orderBy} LIMIT #{page}, 10
+  </select>
+
+</mapper>

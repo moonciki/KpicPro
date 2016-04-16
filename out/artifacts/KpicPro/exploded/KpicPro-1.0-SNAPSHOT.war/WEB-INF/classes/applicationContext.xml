@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:redis="http://www.springframework.org/schema/redis"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.1.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-3.1.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
+	http://www.springframework.org/schema/task
+	http://www.springframework.org/schema/task/spring-task-3.1.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-3.1.xsd
+	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+
+    http://www.springframework.org/schema/redis http://www.springframework.org/schema/redis/spring-redis.xsd">
+
+    <context:property-placeholder properties-ref="appProperties" />
+    <util:properties id="appProperties" location="classpath:properties/k-pic-prod.properties" />
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <!-- 基本属性 url、user、password -->
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+
+        <!--  <property name="connectionProperties" value="config.decrypt=true" /> -->
+
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="initialSize" value="1" />
+        <property name="minIdle" value="10" />
+        <property name="maxActive" value="200" />
+
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="60000" />
+
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="300000" />
+        <property name="validationQuery" value="SELECT 'x'" />
+        <property name="testWhileIdle" value="true" />
+        <property name="testOnBorrow" value="false" />
+        <property name="testOnReturn" value="false" />
+        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+        <property name="poolPreparedStatements" value="true" />
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+        <!-- 配置监控统计拦截的filters -->
+        <property name="filters" value="config,stat" />
+
+        <property name="removeAbandoned" value="true" /> <!-- 打开removeAbandoned功能 -->
+        <property name="removeAbandonedTimeout" value="1800" /> <!-- 1800秒，也就是30分钟 -->
+        <property name="logAbandoned" value="true" /> <!-- 关闭abanded连接时输出错误日志 -->
+    </bean>
+
+    <!-- sqlSessionFactory -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!-- 数据库连接池 -->
+        <property name="dataSource" ref="dataSource" />
+        <!-- 加载mybatis的全局配置文件 -->
+        <property name="configLocation" value="classpath:applicationContext-mybatis.xml" />
+    </bean>
+    <!-- mapper扫描器 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!-- 扫描包路径，如果需要扫描多个包，中间使用半角逗号隔开 -->
+        <property name="basePackage" value="cn.kpic.juwin.mapper"></property>
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+    </bean>
+
+    <!-- 事务管理器
+	对mybatis操作数据库事务控制，spring使用jdbc的事务控制类
+    -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 数据源
+        dataSource在applicationContext-dao.xml中配置了
+         -->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    <context:component-scan base-package="cn.kpic">
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Component" />
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Service" />
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Repository" />
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+    <!-- 通知 -->
+
+    <!-- aop -->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <aop:aspectj-autoproxy/>
+
+
+
+    <bean id="gson" class="com.google.gson.Gson" />
+
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate" >
+        <constructor-arg name="dataSource" ref="dataSource"></constructor-arg>
+    </bean>
+
+
+    <!--redis服务-->
+
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxActive"  value="200" />
+        <property name="maxIdle" value="100" />
+        <property name="maxWait" value="1000" />
+        <property name="testOnBorrow"  value="true"/>
+    </bean>
+
+    <bean id="jedisPool" class="redis.clients.jedis.JedisPool" destroy-method="destroy">
+        <constructor-arg ref="jedisPoolConfig" />
+        <constructor-arg value="${redis.servers.ip}" />
+        <constructor-arg type="int" value="${redis.servers.port}" />
+    </bean>
+
+
+
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+          p:host-name="${redis.servers.ip}" p:port="${redis.servers.port}"/>
+
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate"
+          p:connection-factory-ref="jedisConnectionFactory" >
+        <property name="keySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+        </property>
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+        </property>
+        <property name="hashKeySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+        </property>
+        <property name="hashValueSerializer">
+            <bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"></bean>
+        </property>
+    </bean>
+
+
+
+    <!--redis End-->
+
+
+    <!--Jms服务-->
+
+    <!-- 配置JMS连接工厂 -->
+    <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="failover:(tcp://115.29.114.214:61616)" />
+    </bean>
+
+    <!-- 定义消息队列（Queue） -->
+    <bean id="queueDestination" class="org.apache.activemq.command.ActiveMQQueue">
+        <!-- 设置消息队列的名字 -->
+        <constructor-arg>
+            <value>queue1</value>
+        </constructor-arg>
+    </bean>
+
+    <!-- 配置JMS模板（Queue），Spring提供的JMS工具类，它发送、接收消息。 -->
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="defaultDestination" ref="queueDestination" /><!--默认队列，当生产者不指定发送队列时默认发送此队列-->
+        <property name="receiveTimeout" value="10000" />
+    </bean>
+
+    <!--主题帖图片信息存储-->
+
+    <bean id="topicPostImgQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="topic-post-img" />
+    </bean>
+
+    <bean id="jmsTopicPostImgContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="topicPostImgQueue" />
+        <property name="messageListener" ref="topicPostImgQueueMessageListener" />
+    </bean>
+
+    <!-- END -->
+
+    <!--回复帖图片信息存储-->
+
+    <bean id="replyPostImgQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="reply-post-img" />
+    </bean>
+
+    <bean id="jmsReplyPostImgContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="replyPostImgQueue" />
+        <property name="messageListener" ref="replyPostImgQueueMessageListener" />
+    </bean>
+
+    <!-- END -->
+
+    <!--发回复帖时需要更新主题帖一些字段-->
+
+    <bean id="topicUpdQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="topic-upd-queue" />
+    </bean>
+
+    <bean id="jmsTopicUpdContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="topicUpdQueue" />
+        <property name="messageListener" ref="topicUpdQueueMessageListener" />
+    </bean>
+
+    <!--END-->
+
+    <!-- 发短评时需要更新回复帖一些字段 -->
+
+    <bean id="replyUpdQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="replyupd-queue" />
+    </bean>
+
+    <bean id="replyUpdContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="replyUpdQueue" />
+        <property name="messageListener" ref="replyUpdQueueMessageListener" />
+    </bean>
+
+    <!-- END -->
+
+    <!-- 升级相关 -->
+
+    <bean id="upGradeQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="upgrade-queue" />
+    </bean>
+
+    <bean id="upGradePostImgContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="upGradeQueue" />
+        <property name="messageListener" ref="upgradeQueueMessageListener" />
+    </bean>
+
+    <!-- END -->
+
+    <!-- 消息盒子相关 -->
+
+    <bean id="userNewsQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="usernews-queue" />
+    </bean>
+
+    <bean id="userNewsContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="userNewsQueue" />
+        <property name="messageListener" ref="userNewsQueueMessageListener" />
+    </bean>
+
+    <!-- END -->
+
+    <!-- 主题修改相关，主要用于累加主题帖子数量和关注数量 -->
+
+    <bean id="pbarUpdQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="pbar-upd-queue" />
+    </bean>
+
+    <bean id="pbarUpdContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="pbarUpdQueue" />
+        <property name="messageListener" ref="pbarUpdQueueMessageListener" />
+    </bean>
+
+    <!-- END -->
+
+
+
+
+</beans>
