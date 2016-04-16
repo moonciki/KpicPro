@@ -16,4 +16,6 @@ public interface UserService {
     void update(User user);
 
     List<TopicManager> getAllSmallManagerByPbarId(Long id);
+    boolean isSmallManager(Long userId, Long pbarId);
+    String getRole(Long userId, Long pbarId);
 }

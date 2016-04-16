@@ -1,9 +1,12 @@
 package cn.kpic.juwin.service.impl;
 
+import cn.kpic.juwin.constant.RedisCacheKey;
 import cn.kpic.juwin.domain.Msg;
+import cn.kpic.juwin.domain.Pbar;
 import cn.kpic.juwin.domain.User;
 import cn.kpic.juwin.domain.vo.TopicManager;
 import cn.kpic.juwin.mapper.MsgMapper;
+import cn.kpic.juwin.mapper.PbarMapper;
 import cn.kpic.juwin.mapper.UserMapper;
 import cn.kpic.juwin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +21,6 @@ import java.util.Map;
 /**
  * Created by bjsunqinwen on 2016/2/23.
  */
-@Service
-@Transactional
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -27,6 +28,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private MsgMapper msgMapper;
+
+    @Autowired
+    private PbarMapper pbarMapper;
 
     @Autowired
     private RedisTemplate redisTemplate;
@@ -43,6 +47,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void addUser(User user) throws Exception {
         /*Msg msg = new Msg();
         msg.setTitle("sqw");
@@ -61,6 +66,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public void update(User user) {
         this.userMapper.update(user);
     }
@@ -71,5 +77,36 @@ public class UserServiceImpl implements UserService {
         return result.size() == 0 ? null : result;
     }
 
+    @Override
+    public boolean isSmallManager(Long userId, Long pbarId) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("userId", userId);
+        params.put("pbarId", pbarId);
+        List<Long> result = this.userMapper.isSmallManager(params);
+        if(result.size() == 0){
+            return false;
+        }else{
+            return true;
+        }
+    }
 
+    @Override
+    public String getRole(Long userId, Long pbarId) {
+        Pbar pbar = this.pbarMapper.getById(pbarId);
+        if(pbar != null && pbar.getIspass() == 1){
+            /** 大管理员的情况*/
+            if(String.valueOf(pbar.getUserId()).equals(String.valueOf(userId))){
+                return "1";
+            }else{
+                /** 小管理员的情况*/
+                if(this.isSmallManager(userId, pbarId)){
+                    return "2";
+                }else{
+                    throw new RuntimeException();
+                }
+            }
+        }else{
+            throw new RuntimeException();
+        }
+    }
 }

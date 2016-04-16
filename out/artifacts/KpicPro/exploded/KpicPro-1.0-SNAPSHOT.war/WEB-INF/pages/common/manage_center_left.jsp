@@ -184,7 +184,7 @@
 </div>
 
 <div class="loading">
-  <div class="loading_jz"><span style="font-size:18px;color:#FF79BC"><b>载入中...</b></span></div>
+  <div class="loading_jz"></div>
 </div>
 </body>
 </html>

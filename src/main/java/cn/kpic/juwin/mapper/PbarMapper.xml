@@ -8,7 +8,7 @@
     id, name, msg, tags, type, logo,
     background_logo, isdel, topic_num,
     focus_num, userId, is_index, color,
-    create_time, update_time
+    create_time, update_time, ispass
     from tb_pbar where id = #{id,jdbcType=BIGINT}
   </select>
 

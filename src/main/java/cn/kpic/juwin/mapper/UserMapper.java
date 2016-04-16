@@ -5,6 +5,7 @@ import cn.kpic.juwin.domain.vo.TopicManager;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /*
  * mapper接口，相当于dao接口
@@ -19,4 +20,5 @@ public interface UserMapper {
 	User findUserByName(String name);
 	void update(User user);
 	List<TopicManager> getAllSmallManagerByPbarId(Long id);
+	List<Long> isSmallManager(Map<String, Object> params);
 }

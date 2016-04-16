@@ -71,5 +71,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		WHERE tup.pbarId = #{id} AND tup.type = 2
 	</select>
 
+	<select id="isSmallManager" parameterType="java.util.Map" resultType="java.lang.Long">
+		SELECT
+		userId
+		FROM tb_user_pbar
+		WHERE pbarId = #{id} AND userId = #{userId} AND type = 2
+	</select>
+
 	
 </mapper>

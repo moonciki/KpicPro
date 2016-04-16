@@ -4,6 +4,7 @@
 <head>
     <title></title>
   <script src="${pageContext.request.contextPath}/static/js/jquery-1.10.2.min.js"></script>
+  <link href="${pageContext.request.contextPath}/static/css/pbar.css" rel="stylesheet">
 </head>
 <body>
 <ol class="breadcrumb" style="padding-top:10px; width: 100%; font-size: 16px; font-family: 微软雅黑; border-bottom: 1px solid #F0F0F0; box-shadow:0px 0px 8px #FFD9EC; height: 50px; background-color: #FFF">
