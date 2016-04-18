@@ -9,4 +9,6 @@ public interface ReplyTipService {
 
     void save(ReplyTip replyTip);
 
+    void delReply(Long id);
+
 }

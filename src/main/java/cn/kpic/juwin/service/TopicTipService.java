@@ -9,4 +9,6 @@ public interface TopicTipService {
 
     void save(TopicTip topicTip);
 
+    void delTopic(Long id);
+
 }

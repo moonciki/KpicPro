@@ -24,6 +24,7 @@
     background-color: #E0E0E0;
     line-height:3.5;
     border-radius: 4px;
+    font-weight: bold;
     border-bottom: solid #E0E0E0 1px;
     color:#7B7B7B;
     float: left;
@@ -88,6 +89,8 @@
     height: 50px;
     font-size: 15px;
     padding-top: 15px;
+    color:gray;
+    font-size: 15px;
     padding-left: 20px;
     border-radius: 8px;
     border-bottom:#E0E0E0 1px solid;
@@ -99,6 +102,7 @@
     width: 848px;
     height: auto;
     margin-left: 20px;
+    color:gray;
     margin-top: 20px;
     margin-bottom: 20px;
     border: 1px solid #E0E0E0;

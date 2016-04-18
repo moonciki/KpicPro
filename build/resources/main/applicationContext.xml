@@ -159,7 +159,7 @@
 
     <!-- 配置JMS连接工厂 -->
     <bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
-        <property name="brokerURL" value="failover:(tcp://115.29.114.214:61616)" />
+        <property name="brokerURL" value="failover:(tcp://${apache.activemq.ip}:${apache.activemq.port})" />
     </bean>
 
     <!-- 定义消息队列（Queue） -->

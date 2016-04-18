@@ -24,4 +24,6 @@ public interface ReplyPostMapper {
 
     public TopicOrReplyInfoVo getByIdOfNews(Long id);
 
+    void del(Long id);
+
 }

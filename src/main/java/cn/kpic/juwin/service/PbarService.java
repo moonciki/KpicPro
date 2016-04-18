@@ -21,4 +21,10 @@ public interface PbarService {
 
     List<Pbar> getAllPbarFocus(Long userId, int page);
 
+    public void update(Pbar pbar);
+
+    public void clearCache(String key);
+
+
+
 }

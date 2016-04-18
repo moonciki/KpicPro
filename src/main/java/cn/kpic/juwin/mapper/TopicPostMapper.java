@@ -14,24 +14,26 @@ import java.util.Map;
  */
 public interface TopicPostMapper {
 
-    public Long save(TopicPost topicPost);
+    Long save(TopicPost topicPost);
 
-    public List<TopicPost> getByPbarId(Long pbarId);
+    List<TopicPost> getByPbarId(Long pbarId);
 
-    public TopicOrReplyInfoVo getByPbarIdOfNews(Long id);
+    TopicOrReplyInfoVo getByPbarIdOfNews(Long id);
 
-    public List<PbarHomeTopicPost> getTopicPostByPbarId(Map<String, Object> params);
+    List<PbarHomeTopicPost> getTopicPostByPbarId(Map<String, Object> params);
 
-    public List<PbarHomeTopicPost> getTopicBlogOrPostByPbarId(Map<String, Object> params);
+    List<PbarHomeTopicPost> getTopicBlogOrPostByPbarId(Map<String, Object> params);
 
-    public List<PbarHomeTopicPost> getJpTopicByPbarId(Map<String, Object> params);
+    List<PbarHomeTopicPost> getJpTopicByPbarId(Map<String, Object> params);
 
-    public TopicPostMsg getByUid(Long id);
+    TopicPostMsg getByUid(Long id);
 
-    public TopicPost getById(Long id);
+    TopicPost getById(Long id);
 
-    public void update(TopicPost topicPost);
+    void update(TopicPost topicPost);
 
-    public List<PbarHomeTopicPost> getAllTopicPostByUid(Map<String, Object> params);
+    List<PbarHomeTopicPost> getAllTopicPostByUid(Map<String, Object> params);
+
+    void del(Long id);
 
 }

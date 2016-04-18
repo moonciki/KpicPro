@@ -16,26 +16,26 @@ public class Pbar {
 
     private String tags;
 
-    private int type;
+    private Integer type;
 
     private String logo;
 
     private String background_logo;
 
-    private int isdel;
+    private Integer isdel;
 
-    private int topic_num;
+    private Integer topic_num;
 
-    private int focus_num;
+    private Integer focus_num;
 
     private Long userId;
 
-    private int is_index;
+    private Integer is_index;
 
     private String color;
 
     /** 0：正在审核中  1：审核通过  2：关闭  3：封禁*/
-    private int ispass;
+    private Integer ispass;
 
     private Date create_time;
 
@@ -57,6 +57,30 @@ public class Pbar {
         this.name = name;
     }
 
+    public String getMsg() {
+        return msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
+
     public String getLogo() {
         return logo;
     }
@@ -73,27 +97,27 @@ public class Pbar {
         this.background_logo = background_logo;
     }
 
-    public int getIsdel() {
+    public Integer getIsdel() {
         return isdel;
     }
 
-    public void setIsdel(int isdel) {
+    public void setIsdel(Integer isdel) {
         this.isdel = isdel;
     }
 
-    public int getTopic_num() {
+    public Integer getTopic_num() {
         return topic_num;
     }
 
-    public void setTopic_num(int topic_num) {
+    public void setTopic_num(Integer topic_num) {
         this.topic_num = topic_num;
     }
 
-    public int getFocus_num() {
+    public Integer getFocus_num() {
         return focus_num;
     }
 
-    public void setFocus_num(int focus_num) {
+    public void setFocus_num(Integer focus_num) {
         this.focus_num = focus_num;
     }
 
@@ -105,12 +129,28 @@ public class Pbar {
         this.userId = userId;
     }
 
-    public int getIs_index() {
+    public Integer getIs_index() {
         return is_index;
     }
 
-    public void setIs_index(int is_index) {
+    public void setIs_index(Integer is_index) {
         this.is_index = is_index;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public Integer getIspass() {
+        return ispass;
+    }
+
+    public void setIspass(Integer ispass) {
+        this.ispass = ispass;
     }
 
     public Date getCreate_time() {
@@ -127,45 +167,5 @@ public class Pbar {
 
     public void setUpdate_time(Date update_time) {
         this.update_time = update_time;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public int getIspass() {
-        return ispass;
-    }
-
-    public void setIspass(int ispass) {
-        this.ispass = ispass;
-    }
-
-    public String getTags() {
-        return tags;
-    }
-
-    public void setTags(String tags) {
-        this.tags = tags;
     }
 }

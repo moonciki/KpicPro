@@ -108,4 +108,8 @@
     WHERE trp.userId = #{userId} ORDER BY ${orderBy} LIMIT #{page}, 10
   </select>
 
+  <update id="del" parameterType="java.lang.Long">
+    update tb_reply_post set isdel = 1 where id = #{id,jdbcType=BIGINT}
+  </update>
+
 </mapper>

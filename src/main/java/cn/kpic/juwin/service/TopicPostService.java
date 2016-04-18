@@ -11,18 +11,20 @@ import java.util.List;
  */
 public interface TopicPostService {
 
-    public List<TopicPost> getTopicByPbarId(Long pbarId);
+    List<TopicPost> getTopicByPbarId(Long pbarId);
 
-    public List<PbarHomeTopicPost> getAllTopicByPbarId(Long pbarId, int page);
+    List<PbarHomeTopicPost> getAllTopicByPbarId(Long pbarId, int page);
 
-    public TopicPost addTopicPost(String title, String content, String shortContent, Long pbarId, Long userId);
+    TopicPost addTopicPost(String title, String content, String shortContent, Long pbarId, Long userId);
 
-    public List<PbarHomeTopicPost> getAllTopicOrBlogByPbarId(Long pbarId, int page, int isBlog);
+    List<PbarHomeTopicPost> getAllTopicOrBlogByPbarId(Long pbarId, int page, int isBlog);
 
-    public List<PbarHomeTopicPost> getAllJpTopicByPbarId(Long pbarId, int page, int isBoutique);
+    List<PbarHomeTopicPost> getAllJpTopicByPbarId(Long pbarId, int page, int isBoutique);
 
-    public TopicPostMsg getByUid(Long uuId);
+    TopicPostMsg getByUid(Long uuId);
 
-    public List<PbarHomeTopicPost> getAllTopicPostByUid(Long userId, int page, int isBlog, String orderBy);
+    List<PbarHomeTopicPost> getAllTopicPostByUid(Long userId, int page, int isBlog, String orderBy);
+
+    void del(Long id);
 
 }

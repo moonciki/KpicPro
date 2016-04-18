@@ -83,6 +83,11 @@ ${}：表示拼接符，可能会引起sql注入
         WHERE id = #{id}
     </update>
 
+    <update id="del" parameterType="java.lang.Long">
+        UPDATE tb_topic_post SET isdel = 1
+        WHERE id = #{id}
+    </update>
+
     <select id="getAllTopicPostByUid" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PbarHomeTopicPost">
         SELECT ttp.id AS id, ttp.title AS title, ttp.shortText AS shortText, ttp.replyNum AS replyNum,
         ttp.isTop AS isTop, ttp.isBoutique AS isBoutique, tu.name AS userName, ttp.createTime AS createTime,

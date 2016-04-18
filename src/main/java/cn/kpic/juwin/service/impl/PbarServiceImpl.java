@@ -93,6 +93,7 @@ public class PbarServiceImpl implements PbarService {
     }
 
     @Transactional
+    @Override
     public void update(Pbar pbar){
         this.pbarMapper.update(pbar);
     }
@@ -105,4 +106,7 @@ public class PbarServiceImpl implements PbarService {
         List<Pbar> result = this.pbarFocusMapper.getAllPbarFocus(params);
         return result.size() == 0 ? null : result;
     }
+
+    @Override
+    public void clearCache(String key) {}
 }

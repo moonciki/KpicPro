@@ -24,21 +24,52 @@
   <div class="main_01_title2">
     <span class="glyphicon glyphicon-cog" style="color:#FF9797"></span>&nbsp;&nbsp;话题基本信息管理
   </div>
-  <div class="main_01_unit_point">
-    <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
-    话题基本信息
-  </div>
-  <div class="main_01_unit">
-    <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
-    编辑基本信息
-  </div>
+  <c:choose>
+    <c:when test="${flag == 1}">
+      <div class="main_01_unit_point">
+        <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
+        话题基本信息
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="main_01_unit" onclick="window.location.href='${pageContext.request.contextPath}/subject/manager/sub4615${pbar.id}'">
+        <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
+        话题基本信息
+      </div>
+    </c:otherwise>
+  </c:choose>
+
+  <c:choose>
+    <c:when test="${flag == 2}">
+      <div class="main_01_unit_point">
+        <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
+        编辑基本信息
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="main_01_unit" onclick="window.location.href='${pageContext.request.contextPath}/subject/manager/upd4615${pbar.id}'">
+        <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
+        编辑基本信息
+      </div>
+    </c:otherwise>
+  </c:choose>
 
 
   <div class="main_01_title2"><span class="glyphicon glyphicon-flag" style="color:#FF9797"></span>&nbsp;&nbsp;举报事务处理</div>
-  <div class="main_01_unit">
-    <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
-    查看举报信息
-  </div>
+  <c:choose>
+    <c:when test="${flag == 3}">
+      <div class="main_01_unit_point">
+        <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
+        查看举报信息
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="main_01_unit" onclick="window.location.href='${pageContext.request.contextPath}/subject/manager/tip4615${pbar.id}'">
+        <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
+        查看举报信息
+      </div>
+    </c:otherwise>
+  </c:choose>
 
   <div class="main_01_title2"><span class="glyphicon glyphicon-edit" style="color:#FF9797"></span>&nbsp;&nbsp;申请事务处理</div>
   <div class="main_01_unit">

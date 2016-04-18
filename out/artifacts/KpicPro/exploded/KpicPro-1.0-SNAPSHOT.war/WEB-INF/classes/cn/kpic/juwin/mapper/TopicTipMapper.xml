@@ -14,4 +14,21 @@
         SELECT id FROM tb_topic_tip WHERE userId = #{userId} AND topicId = #{topicId}
     </select>
 
+    <select id="getAllTopicTips" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.TopicTips">
+        SELECT
+        ttt.id,
+        COUNT(ttt.id) AS count,
+        ttp.id AS topicId,
+        ttp.title,
+        ttt.title AS type
+        FROM tb_topic_tip ttt
+        JOIN tb_topic_post ttp ON ttp.id = ttt.topicId
+        WHERE ttt.pbarId = #{pbarId}
+        GROUP BY ttt.topicId LIMIT #{page}, 10
+    </select>
+
+    <delete id="delAllTips" parameterType="java.lang.Long">
+        DELETE FROM tb_topic_tip WHERE topicId IN #{id}
+    </delete>
+
 </mapper>

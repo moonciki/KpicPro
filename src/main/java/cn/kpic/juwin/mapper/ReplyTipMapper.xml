@@ -19,5 +19,26 @@
         </foreach>
     </select>
 
+    <select id="getAllReplyTips" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.ReplyTips">
+        SELECT
+        trt.id,
+        COUNT(trt.id) AS count,
+        ttp.id AS topicId,
+        ttp.title,
+        trt.title AS type,
+        trp.shortText,
+        trp.id AS replyId
+        FROM tb_reply_tip trt
+        JOIN tb_reply_post trp ON trp.id = trt.replyId
+        JOIN tb_topic_post ttp ON ttp.id = trp.topicId
+        WHERE trt.pbarId = #{pbarId}
+        AND trp.isdel = 0 AND ttp.isdel = 0
+        GROUP BY trt.replyId LIMIT #{page}, 10
+    </select>
+
+    <delete id="delAllReplyTips" parameterType="java.lang.Long">
+        DELETE FROM tb_reply_tip WHERE replyId = #{id}
+    </delete>
+
 
 </mapper>

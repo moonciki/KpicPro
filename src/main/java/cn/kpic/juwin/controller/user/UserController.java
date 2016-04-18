@@ -402,8 +402,7 @@ public class UserController {
         }
         return result;
     }
-
-    @RequiresPermissions({"user"})
+    
     @RequestMapping(value = "/user/pbar/isfocus")
     @ResponseBody
     public boolean isFocus(@RequestParam(value = "pbarId", required = true)Long pbarId){

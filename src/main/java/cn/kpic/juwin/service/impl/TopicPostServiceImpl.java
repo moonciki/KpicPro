@@ -179,4 +179,11 @@ public class TopicPostServiceImpl implements TopicPostService {
 
         return list.size() == 0 ? null : list;
     }
+
+    @Override
+    @Transactional
+    public void del(Long id) {
+        this.topicPostMapper.del(id);
+        this.topicTipMapper.delAllTips(id);
+    }
 }

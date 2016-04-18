@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>${pbar.name}-管理中心</title>
+  <title>${pbar.name}-管理中心</title>
   <link href="${pageContext.request.contextPath}/static/css/pbar/pbar_manager.css" rel="stylesheet">
 </head>
 <body>
@@ -24,35 +24,20 @@
       &nbsp;<b>${pbar.name}话题信息管理</b>
     </div>
     <div class="main_02_content">
+
       <span class="glyphicon glyphicon-tag" style="color:#FF95CA"></span>
       &nbsp;话题基本资料<br/><br/>
       <ul class="list-group" style="color:#9D9D9D">
         <li class="list-group-item">话题名称：
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          ${pbar.name}</li>
+          <input type="text" class="form-control" id="name" name="name" value="${pbar.name}" placeholder="请输入话题名称">
+          </li>
         <li class="list-group-item">话题签名：
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        ${pbar.msg}</li>
-        <li class="list-group-item">所属分类：
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        ${pbar.type}</li>
-        <li class="list-group-item">话题标签：
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <c:forEach items="${pbar.tags}" var="tag">
-            <span class="glyphicon glyphicon-tag" style="color: ${tag.color}"><span style="font-family: 微软雅黑">${tag.name}</span></span>
-            &nbsp;
-          </c:forEach>
-        </li>
-        <li class="list-group-item">总帖子数：
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        ${pbar.topicNum}</li>
-        <li class="list-group-item">总关注数：
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        ${pbar.focusNum}</li>
-        <li class="list-group-item">主题颜色：
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <span class="label" style="background-color: ${pbar.color}">${pbar.color}</span></li>
-      </ul>
+          <input type="text" class="form-control" id="msg" name="msg" value="${pbar.msg}" placeholder="请输入话题签名">
+          </li>
+
+        </ul>
 
       <span class="glyphicon glyphicon-tag" style="color:#FF95CA"></span>
       &nbsp;话题皮肤<br/><br/>
@@ -61,14 +46,22 @@
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <img src="${pbar.logo}?imageView2/1/w/89/h/89/q/95"/>
         </li>
+        <input type="hidden" name="logo" id="logo" value="${pbar.logo}"/>
         <li class="list-group-item">背景图片：
           &nbsp;&nbsp;&nbsp;
           <img src="${pbar.backgroundLogo}?imageView2/1/w/680/q/95"/>
+          <input type="hidden" id="background_logo" name="background_logo" value="${pbar.backgroundLogo}"/>
         </li>
       </ul>
+      <input type="hidden" value="${pbar.id}" id="pbarId"/>
+      <button type="button" id="submit" class="btn btn-info">
+        <span class="glyphicon glyphicon-send"></span>
+        &nbsp;提交
+      </button>
+
     </div>
   </div>
 </div>
-
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/pbar/manager_pbar_update.js"></script>
 </body>
 </html>

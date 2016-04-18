@@ -39,4 +39,11 @@ public class PbarServiceImplCache extends PbarServiceImpl{
 
         return JSON.parseObject((String)redisTemplate.boundValueOps(key).get(), PbarIndexVo.class);
     }
+
+    @Override
+    public void clearCache(String key) {
+        if(this.redisTemplate.hasKey(key)){
+            this.redisTemplate.delete(key);
+        }
+    }
 }
