@@ -22,6 +22,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.subject.Subject;
+import org.jsoup.helper.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -434,7 +435,7 @@ public class UserController {
         String url = "/user/user_index";
         try{
             User curr_user = CurrentUser.getUser();
-            if(curr_user != null && curr_user.getId() == userId){
+            if(curr_user != null && String.valueOf(curr_user.getId()).equals(String.valueOf(userId))){
 
                 return "redirect:/user/info.html";
 

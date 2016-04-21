@@ -24,11 +24,11 @@
         FROM tb_topic_tip ttt
         JOIN tb_topic_post ttp ON ttp.id = ttt.topicId
         WHERE ttt.pbarId = #{pbarId}
-        GROUP BY ttt.topicId LIMIT #{page}, 10
+        GROUP BY ttt.topicId ORDER BY count DESC LIMIT #{page}, 10
     </select>
 
     <delete id="delAllTips" parameterType="java.lang.Long">
-        DELETE FROM tb_topic_tip WHERE topicId IN #{id}
+        DELETE FROM tb_topic_tip WHERE topicId = #{id}
     </delete>
 
 </mapper>

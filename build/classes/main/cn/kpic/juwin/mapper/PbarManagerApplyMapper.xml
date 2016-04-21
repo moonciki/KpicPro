@@ -14,4 +14,24 @@
         SELECT status FROM tb_pbar_manager_apply WHERE userId = #{userId} AND pbarId = #{pbarId}
     </select>
 
+    <select id="getAllApply" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PbarManagerApplyVo">
+        SELECT
+        tpma.id,
+        tu.name AS userName,
+        tpma.msg,
+        tpma.userId,
+        tpma.createTime
+        FROM tb_pbar_manager_apply tpma
+        JOIN tb_user tu ON tpma.userId = tu.id
+        WHERE tpma.pbarId = #{pbarId} AND tpma.status = 0 ORDER BY tpma.createTime DESC LIMIT #{page}, 10
+    </select>
+
+    <delete id="delete" parameterType="java.lang.Long">
+        DELETE FROM tb_pbar_manager_apply WHERE id = #{id}
+    </delete>
+
+    <update id="pass" parameterType="java.lang.Long">
+        UPDATE tb_pbar_manager_apply SET status = 1 WHERE id = #{id}
+    </update>
+
 </mapper>

@@ -4,8 +4,10 @@ import cn.kpic.juwin.domain.ReplyTip;
 import cn.kpic.juwin.domain.ShortTip;
 import cn.kpic.juwin.domain.TopicTip;
 import cn.kpic.juwin.domain.vo.ReplyTips;
+import cn.kpic.juwin.domain.vo.ShortTips;
 import cn.kpic.juwin.domain.vo.TopicTips;
 import cn.kpic.juwin.mapper.ReplyTipMapper;
+import cn.kpic.juwin.mapper.ShortReplyMapper;
 import cn.kpic.juwin.mapper.ShortTipMapper;
 import cn.kpic.juwin.mapper.TopicTipMapper;
 import cn.kpic.juwin.service.ReplyTipService;
@@ -52,6 +54,9 @@ public class TipController {
 
     @Autowired
     private ShortTipMapper shortTipMapper;
+
+    @Autowired
+    private ShortReplyMapper shortReplyMapper;
 
     @RequiresPermissions({"user"})
     @RequestMapping(value = "/topic/tip")
@@ -209,6 +214,58 @@ public class TipController {
         }else{
             try{
                 this.replyTipMapper.delAllReplyTips(replyId);
+                return true;
+            }catch (Exception e){
+                return false;
+            }
+        }
+    }
+
+
+
+
+
+
+    @RequiresPermissions({"user"})
+    @RequestMapping(value = "/short/manager/tip")
+    @ResponseBody
+    public List<ShortTips> getAllShortTips(Long pbarId, @RequestParam(value = "page", defaultValue = "0", required = true)Integer page){
+        if(pbarId == null || page == null){
+            return null;
+        }
+        Map params = new HashMap();
+        params.put("pbarId", pbarId);
+        params.put("page", page * 10);
+        List<ShortTips> result = this.shortTipMapper.getAllShortTips(params);
+        return result.size() == 0 ? null : result;
+    }
+
+
+    @RequiresPermissions({"user"})
+    @RequestMapping(value = "/short/manager/del", method = RequestMethod.POST)
+    @ResponseBody
+    public boolean delShort(Long shortId){
+        if(shortId == null){
+            return false;
+        }else{
+            try{
+                this.shortTipService.delshort(shortId);
+                return true;
+            }catch (Exception e){
+                return false;
+            }
+        }
+    }
+
+    @RequiresPermissions({"user"})
+    @RequestMapping(value = "/short/manager/ign", method = RequestMethod.POST)
+    @ResponseBody
+    public boolean ignShort(Long shortId){
+        if(shortId == null){
+            return false;
+        }else{
+            try{
+                this.shortTipMapper.delAllShortTips(shortId);
                 return true;
             }catch (Exception e){
                 return false;

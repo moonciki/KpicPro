@@ -14,7 +14,7 @@
     <c:when test="${user != null}">
       <li class="active">${user.name}
         &nbsp;&nbsp;
-        <a href="${pageContext.request.contextPath}/user/${user.id}/info.html">个人中心</a>
+        <a href="${pageContext.request.contextPath}/user/info.html" target="_blank">个人中心</a>
         &nbsp;&nbsp;
         <a href="#">消息盒子 <span class="badge" style="background-color: #FF79BC" id="user_news"></span></a>
         <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/common/top.js"></script>

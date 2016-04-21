@@ -1,7 +1,7 @@
 
 jz();
 jz2();
-
+jz3();
 
 function jz(){
     $("#btn_jz1").attr("disabled","true");
@@ -67,13 +67,39 @@ function jz2(){
 }
 
 
-var lock = 0;
+function jz3(){
+    $("#btn_jz3").attr("disabled","true");
+    var page = $("#03_page").val();
+    var pbarId= $("#pbarId").val();
+    $("#jzz3").show();
+    $.post("/short/manager/tip", {'page':page,'pbarId':pbarId}, function(data){
+        if(data == "" || data == null){
+            $("#jzz3").hide();
+            $("#my3").fadeIn(400);
+            setTimeout(function(){$("#my3").fadeOut(1000);},2000);
+        }else{
+            var addhtml = "";
+            for(key in data){
+                addhtml += "<div class=\"panel panel-default\" id=\"shorttips"+data[key].shortId+"\"><div class=\"panel-body\" style=\"line-height: 1.8\">"+
+                    "<span style=\"color:#737300;font-size: 15px;font-weight: bold;font-family: 微软雅黑\"><span class=\"glyphicon glyphicon-star-empty\"></span>"+
+                    "短评内容为：</span><br/>" + data[key].content +
+                    "<br/>被举报了 <span style=\"color:red;font-weight: bold\">"+data[key].count+"</span> 次，举报类型为："+data[key].type+"&nbsp;&nbsp;&nbsp;&nbsp;" +
+                    "<span id='anshortload"+data[key].shortId+"' style='display:none;font-family: 微软雅黑;font-size: 12px'><img src='/static/images/loading.jpg' height='30px'/>&nbsp;处理中..</span><span id='anshort"+data[key].shortId+"' style='font-family: 微软雅黑;font-size: 12px'><a style='cursor:pointer' onclick='delshort("+data[key].shortId+")'><span class='glyphicon glyphicon-remove-circle'></span>&nbsp;删除该帖子</a>" +
+                    "&nbsp;&nbsp;<a style='cursor:pointer' onclick='ignshort("+data[key].shortId+")'><span class='glyphicon glyphicon-eye-close'></span>&nbsp;忽略举报</a></span>"+
+                    "</div></div>";
+            }
+            $("#jzz3").hide();
+            $("#03_page").val(parseInt(page) + 1);
+            $("#con3").append(addhtml);
+            $("#btn_jz3").removeAttr("disabled");
+        }
+    });
+}
+
+
 
 function deltopic(topicId){
-    lock ++;
-    if(lock != 1){
-        return;
-    }else{
+
         $("#an"+topicId).hide();
         $("#anload"+topicId).show();
         $.post("/subject/manager/deltopic", {'topicId':topicId},function(data){
@@ -84,17 +110,13 @@ function deltopic(topicId){
                 $("#anload"+topicId).hide();
                 $("#an"+topicId).show();
             }
-            lock = 0;
         });
-    }
+
 }
 
-var lock2 = 0;
+
 function igntopic(topicId){
-    lock2 ++;
-    if(lock2 != 1){
-        return;
-    }else{
+
         $("#an"+topicId).hide();
         $("#anload"+topicId).show();
         $.post("/subject/manager/igntopic", {'topicId':topicId},function(data){
@@ -105,19 +127,15 @@ function igntopic(topicId){
                 $("#anload"+topicId).hide();
                 $("#an"+topicId).show();
             }
-            lock = 0;
         });
-    }
+
 }
 
 
-var lock3 = 0;
+
 
 function delreply(replyId){
-    lock3 ++;
-    if(lock3 != 1){
-        return;
-    }else{
+
         $("#anreply"+replyId).hide();
         $("#anreplyload"+replyId).show();
         $.post("/reply/manager/del", {'replyId':replyId},function(data){
@@ -128,28 +146,56 @@ function delreply(replyId){
                 $("#anreplyload"+replyId).hide();
                 $("#anreply"+replyId).show();
             }
-            lock = 0;
         });
-    }
+
 }
 
-var lock4 = 0;
+
 function ignreply(replyId){
-    lock4 ++;
-    if(lock4 != 1){
-        return;
-    }else{
-        $("#an"+replyId).hide();
-        $("#anload"+replyId).show();
-        $.post("/reply/manager/ign", {'replyId':replyId},function(data){
+
+    $("#anreply"+replyId).hide();
+    $("#anreplyload"+replyId).show();
+    $.post("/reply/manager/ign", {'replyId':replyId},function(data){
+        if(data){
+            $("#replytips"+replyId).fadeOut(1000);
+        }else{
+            alert("操作出错");
+            $("#anreplyload"+replyId).hide();
+            $("#anreply"+replyId).show();
+        }
+    });
+
+}
+
+
+
+
+function delshort(shortId){
+
+        $("#anshort"+shortId).hide();
+        $("#anshortload"+shortId).show();
+        $.post("/short/manager/del", {'shortId':shortId},function(data){
             if(data){
-                $("#replytips"+replyId).fadeOut(1000);
+                $("#shorttips"+shortId).fadeOut(1000);
             }else{
                 alert("操作出错");
-                $("#anreplyload"+replyId).hide();
-                $("#anreply"+replyId).show();
+                $("#anreplyload"+shortId).hide();
+                $("#anreply"+shortId).show();
             }
-            lock = 0;
         });
-    }
+
+}
+
+function ignshort(shortId){
+        $("#anshort"+shortId).hide();
+        $("#anshortload"+shortId).show();
+        $.post("/short/manager/ign", {'shortId':shortId},function(data){
+            if(data){
+                $("#shorttips"+shortId).fadeOut(1000);
+            }else{
+                alert("操作出错");
+                $("#anshortload"+shortId).hide();
+                $("#anshort"+shortId).show();
+            }
+        });
 }

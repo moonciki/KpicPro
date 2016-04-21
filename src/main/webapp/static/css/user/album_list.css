@@ -1,0 +1,25 @@
+.album_list{
+    margin: 0 auto;
+    padding: 20px;
+    width: 720px;
+    height: auto;
+    min-height: 270px;
+    border-radius: 6px;
+    border: 1px solid #d0d0d0;
+    margin-bottom: 20px;
+    box-shadow:0px 0px 10px #d0d0d0;
+}
+.album_list_01{
+    margin: 0 auto;
+    float: left;
+    width: 200px;
+    height: auto;
+    min-height: 200px;
+}
+.album_list_02{
+    margin: 0 auto;
+    float: left;
+    width: 440px;
+    height: auto;
+    min-height: 100px;
+}

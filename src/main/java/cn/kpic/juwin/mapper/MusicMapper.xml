@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.MusicMapper">
+
+    <insert id="save" parameterType="cn.kpic.juwin.domain.Music">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into tb_music
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="name != null">name,</if>
+            <if test="songer != null">songer,</if>
+            <if test="musicUrl != null">musicUrl,</if>
+            <if test="userId != null">userId,</if>
+            <if test="isdel != null">isdel,</if>
+            <if test="createTime != null">createTime,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id,jdbcType=BIGINT},</if>
+            <if test="name != null">#{name,jdbcType=VARCHAR},</if>
+            <if test="songer != null">#{songer,jdbcType=VARCHAR},</if>
+            <if test="musicUrl != null">#{musicUrl,jdbcType=VARCHAR},</if>
+            <if test="userId != null">#{userId,jdbcType=BIGINT},</if>
+            <if test="isdel != null">#{isdel,jdbcType=INTEGER},</if>
+            <if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},</if>
+        </trim>
+    </insert>
+
+    <select id="gatAllMusic" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.Music">
+        SELECT * FROM tb_music
+        WHERE userId = #{userId} AND isdel = 0 ORDER BY createTime DESC LIMIT #{page}, 10
+    </select>
+
+</mapper>

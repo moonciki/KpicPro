@@ -63,7 +63,7 @@
 
               <span id="con2">
 
-            </span>
+              </span>
 
               <center><button type="button" disabled="true" onclick="jz2()" class="btn btn-info" id="btn_jz2"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
                 <br/><span id="jzz2" style="display: none">加载中..</span><span id="my2" style="display: none">没有更多了</span>
@@ -76,6 +76,14 @@
         <div class="tab-pane fade" id="shortTips">
           <div class="panel panel-default" style="border-top: 1px #FFF solid">
             <div class="panel-body">
+
+              <span id="con3">
+
+              </span>
+
+              <center><button type="button" disabled="true" onclick="jz3()" class="btn btn-info" id="btn_jz3"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
+                <br/><span id="jzz3" style="display: none">加载中..</span><span id="my3" style="display: none">没有更多了</span>
+              </center>
 
             </div>
           </div>

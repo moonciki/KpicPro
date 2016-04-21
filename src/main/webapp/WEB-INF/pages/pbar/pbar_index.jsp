@@ -146,7 +146,6 @@
                                 <span class="glyphicon glyphicon-user" style="color:#00CACA"></span>
                                 昵称：<b>${user.name}</b>
 
-
                             </div>
                             <div class="main02_01_02_02">
                                 <span style="color:#FFC1E0">————————————————</span><br/>
@@ -154,11 +153,26 @@
 
                             <span class="glyphicon glyphicon-check" style="color:#FF8000"></span>
                                 级别：<b><span id="user_level_add"></span> 级</b>
-                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;
                             <span class="glyphicon glyphicon-heart" style="color:#ff7575"></span>
                                 粉丝：<b>200000</b>
                         </span>
                                 <span style="color:#FFC1E0">————————————————</span><br/>
+                                <c:choose>
+                                    <c:when test="${role != null and role == 1}">
+                                        <span class="glyphicon glyphicon-record" style="color:#FF79BC"></span>
+                                        身份：<span class="badge">大管理员</span>
+                                    </c:when>
+                                    <c:when test="${role != null and role == 2}">
+                                        <span class="glyphicon glyphicon-record" style="color:#FF79BC"></span>
+                                        身份：<span class="badge">小管理员</span>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <span class="glyphicon glyphicon-record" style="color:#FF79BC"></span>
+                                        身份：<span class="badge">游客</span>
+                                    </c:otherwise>
+                                </c:choose>
+                                <br/><br/>
                                 <span class="glyphicon glyphicon-signal" style="color:#FF79BC"></span>&nbsp;<b>升级信息</b>
                                 <br/>
 

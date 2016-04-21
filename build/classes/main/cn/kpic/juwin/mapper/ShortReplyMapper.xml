@@ -52,7 +52,7 @@
         tu.name AS userName
         FROM tb_short_reply tsr
         JOIN tb_user tu ON tsr.userId = tu.id
-        WHERE tsr.replyId = #{replyId} ORDER BY tsr.createTime DESC LIMIT #{page}, 10
+        WHERE tsr.replyId = #{replyId} AND tsr.isdel = 0 ORDER BY tsr.createTime DESC LIMIT #{page}, 10
     </select>
 
     <select id="getShortByUserId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.ShortReplyVo2">
@@ -70,7 +70,7 @@
         LEFT JOIN tb_reply_post trp ON tsr.replyId = trp.id
         LEFT JOIN tb_topic_post ttp ON trp.topicId = ttp.id
         LEFT JOIN tb_pbar tp ON ttp.pbarId = tp.id
-        WHERE tsr.userId = #{userId} ORDER BY tsr.createTime DESC LIMIT #{page}, 10
+        WHERE tsr.userId = #{userId} AND tsr.isdel = 0 ORDER BY tsr.createTime DESC LIMIT #{page}, 10
     </select>
 
     <select id="getShortByReplyIdOfNews" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.TopicOrReplyInfoVo">
@@ -81,7 +81,7 @@
         tu.id AS userId
         FROM tb_short_reply tsr
         JOIN tb_user tu ON tsr.userId = tu.id
-        WHERE tsr.replyId = #{replyId} ORDER BY tsr.createTime DESC LIMIT #{page}, 10
+        WHERE tsr.replyId = #{replyId} AND tsr.isdel = 0 ORDER BY tsr.createTime DESC LIMIT #{page}, 10
     </select>
 
 </mapper>

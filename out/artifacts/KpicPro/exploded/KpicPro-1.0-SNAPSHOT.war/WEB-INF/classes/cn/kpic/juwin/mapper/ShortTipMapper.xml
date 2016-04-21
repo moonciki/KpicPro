@@ -19,5 +19,22 @@
         </foreach>
     </select>
 
+    <select id="getAllShortTips" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.ShortTips">
+        SELECT
+        tst.id,
+        COUNT(tst.id) AS count,
+        tst.title AS type,
+        tsr.content,
+        tsr.id AS shortId
+        FROM tb_short_tip tst
+        JOIN tb_short_reply tsr ON tst.shortId = tsr.id
+        WHERE tst.pbarId = #{pbarId}
+        GROUP BY tst.shortId ORDER BY count DESC LIMIT #{page}, 10
+    </select>
+
+    <delete id="delAllShortTips" parameterType="java.lang.Long">
+        DELETE FROM tb_short_tip WHERE shortId = #{id}
+    </delete>
+
 
 </mapper>

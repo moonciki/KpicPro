@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.PicMapper">
+
+    <insert id="save" parameterType="cn.kpic.juwin.domain.Pic">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into tb_pic
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="msg != null">msg,</if>
+            <if test="imgUrl != null">imgUrl,</if>
+            <if test="albumId != null">albumId,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id,jdbcType=BIGINT},</if>
+            <if test="msg != null">#{msg,jdbcType=VARCHAR},</if>
+            <if test="imgUrl != null">#{imgUrl,jdbcType=VARCHAR},</if>
+            <if test="albumId != null">#{albumId,jdbcType=BIGINT},</if>
+        </trim>
+    </insert>
+
+    <insert id="saves">
+        insert into tb_pic (msg, imgUrl, albumId)
+        values
+        <foreach item="pic" index="index" collection="list" separator=",">
+            (#{pic.msg}, #{pic.imgUrl}, #{pic.albumId})
+        </foreach>
+    </insert>
+
+</mapper>

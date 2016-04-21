@@ -75,7 +75,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		SELECT
 		userId
 		FROM tb_user_pbar
-		WHERE pbarId = #{id} AND userId = #{userId} AND type = 2
+		WHERE pbarId = #{pbarId} AND userId = #{userId} AND type = 2
 	</select>
 
 	

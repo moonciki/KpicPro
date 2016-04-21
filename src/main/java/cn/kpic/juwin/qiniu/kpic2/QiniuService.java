@@ -11,4 +11,6 @@ public interface QiniuService {
 
     String generateUUID();
 
+    UploadTokenInfo generateUploadToken2();
+
 }

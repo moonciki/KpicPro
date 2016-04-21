@@ -19,6 +19,9 @@ public class QiniuServiceImpl implements QiniuService{
     @Value("${kpic2_bucket_name}")
     private String bucketName;
 
+    @Value("${kpic3_bucket_name}")
+    private String bucketName2;
+
     @Value("${kpic2_access_key}")
     private String access_key;
 
@@ -48,5 +51,15 @@ public class QiniuServiceImpl implements QiniuService{
     @Override
     public String generateUUID() {
         return UUID.randomUUID().toString().replace("-", "");
+    }
+
+    @Override
+    public UploadTokenInfo generateUploadToken2() {
+        UploadTokenInfo uploadTokenInfo = new UploadTokenInfo();
+
+        String key = UUID.randomUUID().toString().replace("-", "");
+        uploadTokenInfo.setKey(key);
+        uploadTokenInfo.setToken(auth.uploadToken(bucketName2));
+        return uploadTokenInfo;
     }
 }

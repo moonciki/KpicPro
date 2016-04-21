@@ -1,6 +1,7 @@
 package cn.kpic.juwin.service.impl;
 
 import cn.kpic.juwin.domain.ShortTip;
+import cn.kpic.juwin.mapper.ShortReplyMapper;
 import cn.kpic.juwin.mapper.ShortTipMapper;
 import cn.kpic.juwin.service.ShortTipService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,10 +17,21 @@ public class ShortTipServiceImpl implements ShortTipService {
     @Autowired
     private ShortTipMapper shortTipMapper;
 
+    @Autowired
+    private ShortReplyMapper shortReplyMapper;
+
     @Transactional
     @Override
     public void save(ShortTip shortTip) {
         this.shortTipMapper.save(shortTip);
+    }
+
+    @Override
+    @Transactional
+    public void delshort(Long id) {
+        this.shortReplyMapper.del(id);
+        this.shortTipMapper.delAllShortTips(id);
+
     }
 
 }

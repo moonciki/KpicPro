@@ -72,10 +72,20 @@
   </c:choose>
 
   <div class="main_01_title2"><span class="glyphicon glyphicon-edit" style="color:#FF9797"></span>&nbsp;&nbsp;申请事务处理</div>
-  <div class="main_01_unit">
-    <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
-    副团长申请表
-  </div>
+  <c:choose>
+    <c:when test="${flag == 4}">
+      <div class="main_01_unit_point">
+        <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
+        小管理猿申请表
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="main_01_unit" onclick="window.location.href='${pageContext.request.contextPath}/subject/manager/apply4615${pbar.id}'">
+        <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
+        小管理猿申请表
+      </div>
+    </c:otherwise>
+  </c:choose>
   <div class="main_01_unit">
     <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
     帖子恢复申请

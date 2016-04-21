@@ -33,7 +33,7 @@
         JOIN tb_topic_post ttp ON ttp.id = trp.topicId
         WHERE trt.pbarId = #{pbarId}
         AND trp.isdel = 0 AND ttp.isdel = 0
-        GROUP BY trt.replyId LIMIT #{page}, 10
+        GROUP BY trt.replyId ORDER BY count DESC LIMIT #{page}, 10
     </select>
 
     <delete id="delAllReplyTips" parameterType="java.lang.Long">

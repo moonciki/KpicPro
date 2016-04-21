@@ -9,4 +9,6 @@ public interface ShortTipService {
 
     void save(ShortTip shortTip);
 
+    void delshort(Long id);
+
 }

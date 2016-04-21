@@ -13,7 +13,6 @@ import java.util.Map;
 /**
  * Created by bjsunqinwen on 2016/2/23.
  */
-@Service
 public class MsgServiceImpl implements MsgService{
 
     @Autowired

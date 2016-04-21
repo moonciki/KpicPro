@@ -40,8 +40,8 @@
     <br/>
     <button type="button" class="btn btn-primary" id="tip_submmit">确定</button>
     <button type="button" class="btn btn-primary" id="tip_close">取消</button>
-    &nbsp;&nbsp;<span id="jb_load" style="display: none; color:#9D9D9D; font-size: 14px"><img src="${pageContext.request.contextPath}/static/images/loading.jpg" style="width: 30px; height: 30px"/>&nbsp;举报提交中..</span>
-  </div>
+    <span id="load_area"></span>
+    </div>
 </div>
 <div class="pic_big" id="pl_big">
   <div class="pl_content">
@@ -61,7 +61,6 @@
       <button id="shortxl" type="button" onclick="short_xl()" class="btn btn-warning"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button><br/>
       <span id="load_xl" style="display: none">加载中...</span>
       <span id="load_xl_nodata" style="display: none">没有更多数据了</span>
-
     </center>
     <br/><br/>
     <div class="panel panel-default" id="s_reply_area">

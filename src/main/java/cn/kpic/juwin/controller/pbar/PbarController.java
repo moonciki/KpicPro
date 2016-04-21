@@ -13,6 +13,7 @@ import cn.kpic.juwin.mapper.PbarTypeMapper;
 import cn.kpic.juwin.mapper.TagsMapper;
 import cn.kpic.juwin.qiniu.kpic2.QiniuService;
 import cn.kpic.juwin.service.PbarService;
+import cn.kpic.juwin.service.UserService;
 import cn.kpic.juwin.utils.CurrentUser;
 import cn.kpic.juwin.utils.StringDeal;
 import com.alibaba.fastjson.JSON;
@@ -49,6 +50,9 @@ public class PbarController {
     private PbarManagerApplyMapper pbarManagerApplyMapper;
 
     @Autowired
+    private UserService userService;
+
+    @Autowired
     private TagsMapper tagsMapper;
 
     @RequiresPermissions({"user"})
@@ -67,6 +71,11 @@ public class PbarController {
         PbarIndexVo pbarIndexVo = this.pbarService.getPbarIndex(pbarId);
         if(pbarIndexVo == null){
             return "/404";
+        }
+
+        User curr_user = CurrentUser.getUser();
+        if(curr_user != null){
+            model.addAttribute("role", this.userService.getRole(curr_user.getId(), pbarId));
         }
 
         model.addAttribute("pbar", pbarIndexVo);

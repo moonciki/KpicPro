@@ -8,6 +8,7 @@ $().ready(function() {
             uptoken_url: '/pbar/upload',
             domain: 'http://7xs5lv.com1.z0.glb.clouddn.com/',
             max_file_size: '0.025mb',
+            multi_selection:false,
             flash_swf_url: 'static/js/plupload/Moxie.swf',
             max_retries: 5,
             chunk_size: '1mb',

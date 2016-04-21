@@ -136,16 +136,73 @@
   </div>
   <div class="cd_title2">
     <span style="color:#FF95CA" class="glyphicon glyphicon-picture"></span>
-    云图管理
+    云图集管理
   </div>
-  <div id="p9" class="cd_unit">
-    <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
-    我的云相册
+
+  <c:choose>
+    <c:when test="${flag == 9}">
+      <div class="cd_unit_now">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        我的云图集
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="cd_unit" onclick="window.location.href='${pageContext.request.contextPath}/user/list/album'">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        我的云图集
+      </div>
+    </c:otherwise>
+  </c:choose>
+  <c:choose>
+    <c:when test="${flag == 10}">
+      <div class="cd_unit_now">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        制作云图集
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="cd_unit" onclick="window.location.href='${pageContext.request.contextPath}/user/make/album'">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        制作云图集
+      </div>
+    </c:otherwise>
+  </c:choose>
+
+  <div class="cd_title2">
+    <span style="color:#FF95CA" class="glyphicon glyphicon-music"></span>
+    乐库管理
   </div>
-  <div id="p10" class="cd_unit">
-    <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
-    我的云图集
-  </div>
+
+  <c:choose>
+    <c:when test="${flag == 13}">
+      <div class="cd_unit_now">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        我的乐库
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="cd_unit" onclick="window.location.href='${pageContext.request.contextPath}/user/list/music'">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        我的乐库
+      </div>
+    </c:otherwise>
+  </c:choose>
+  <c:choose>
+    <c:when test="${flag == 14}">
+      <div class="cd_unit_now">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        上传音乐
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="cd_unit" onclick="window.location.href='${pageContext.request.contextPath}/user/make/music'">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        上传音乐
+      </div>
+    </c:otherwise>
+  </c:choose>
+
+
   <div class="cd_title2">
     <span style="color:#FF95CA" class="glyphicon glyphicon-leaf"></span>
     我的话题

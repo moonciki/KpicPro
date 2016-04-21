@@ -358,7 +358,7 @@ function jubao3(id){
 }
 
 $("#tip_submmit").click(function(){
-    $("#jb_load").show();
+    $("#load_area").append("&nbsp;&nbsp;<span style=\"color:#9D9D9D; font-size: 14px\"><img src=\"/static/images/loading.jpg\" style=\"width: 30px; height: 30px\"/>&nbsp;举报提交中..</span>");
     $("#tip_submmit").attr("disabled", "disabled");
     $("#tip_close").attr("disabled", "disabled");
     var pbarId = $("#pbarId").val();
@@ -370,44 +370,67 @@ $("#tip_submmit").click(function(){
         if(type == 1){
             $.post("/topic/tip", {'id':id,'title':title,'msg':msg,'pbarId':pbarId}, function(data){
                 if(data.success){
-                   alert("举报成功！感谢您的反馈(*￣ω￣)~");
+                    $("#load_area").empty();
+                    $("#load_area").append("&nbsp;&nbsp;<span style=\"color:#9D9D9D; font-size: 14px\"><span class=\"glyphicon glyphicon-ok-circle\" style=\"color:#73BF00\"></span>&nbsp;举报成功！感谢您的反馈(*￣ω￣)~</span>")
+
                 }else{}
+
+                setTimeout(function(){
+                    $("#load_area").empty();
+                },2000);
                 $(".jb_topic"+id).removeAttr("onclick");
                 $(".jb_topic"+id).css("cursor","auto");
                 $(".jb_topic"+id).empty();
                 $(".jb_topic"+id).append("&nbsp;&nbsp;<span class=\"glyphicon glyphicon-flag\"></span>&nbsp;已举报")
-                $("#pl_tip").hide();
-                $("#tip_submmit").removeAttr("disabled");
-                $("#tip_close").removeAttr("disabled");
-                $("#jb_load").hide();
+                $("#pl_tip").fadeOut(2000);
+                setTimeout(function(){
+                    $("#tip_submmit").removeAttr("disabled");
+                    $("#tip_close").removeAttr("disabled");
+                },2000);
             });
         }else if(type == 2){
             $.post("/reply/tip", {'id':id,'title':title,'msg':msg,'pbarId':pbarId}, function(data){
                 if(data.success){
-                    alert("举报成功！感谢您的反馈(*￣ω￣)~");
+                    $("#load_area").empty();
+                    $("#load_area").append("&nbsp;&nbsp;<span style=\"color:#9D9D9D; font-size: 14px\"><span class=\"glyphicon glyphicon-ok-circle\" style=\"color:#73BF00\"></span>&nbsp;举报成功！感谢您的反馈(*￣ω￣)~</span>");
+
                 }else{}
+
+                setTimeout(function(){
+                    $("#load_area").empty();
+                },2000);
                 $(".reply_jb"+id).removeAttr("onclick");
                 $(".reply_jb"+id).css("cursor","auto");
                 $(".reply_jb"+id).empty();
                 $(".reply_jb"+id).append("&nbsp;&nbsp;<span class=\"glyphicon glyphicon-flag\"></span>&nbsp;已举报")
-                $("#pl_tip").hide();
-                $("#tip_submmit").removeAttr("disabled");
-                $("#tip_close").removeAttr("disabled");
-                $("#jb_load").hide();
+                $("#pl_tip").fadeOut(2000);
+                setTimeout(function(){
+                    $("#tip_submmit").removeAttr("disabled");
+                    $("#tip_close").removeAttr("disabled");
+                },2000);
+
+
             });
         }else if(type == 3){
             $.post("/short/tip", {'id':id,'title':title,'msg':msg,'pbarId':pbarId}, function(data){
                 if(data.success){
-                    alert("举报成功！感谢您的反馈(*￣ω￣)~");
+                    $("#load_area").empty();
+                    $("#load_area").append("&nbsp;&nbsp;<span style=\"color:#9D9D9D; font-size: 14px\"><span class=\"glyphicon glyphicon-ok-circle\" style=\"color:#73BF00\"></span>&nbsp;举报成功！感谢您的反馈(*￣ω￣)~</span>")
                 }else{}
+
+                setTimeout(function(){
+                    $("#load_area").empty();
+                },2000);
                 $(".short_jb"+id).removeAttr("onclick");
                 $(".short_jb"+id).css("cursor","auto");
                 $(".short_jb"+id).empty();
                 $(".short_jb"+id).append("&nbsp;&nbsp;<span class=\"glyphicon glyphicon-flag\"></span>&nbsp;已举报")
-                $("#pl_tip").hide();
-                $("#tip_submmit").removeAttr("disabled");
-                $("#tip_close").removeAttr("disabled");
-                $("#jb_load").hide();
+                $("#pl_tip").fadeOut(2000);
+                setTimeout(function(){
+                    $("#tip_submmit").removeAttr("disabled");
+                    $("#tip_close").removeAttr("disabled");
+                },2000);
+
             });
         }else{
             return;
