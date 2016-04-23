@@ -84,7 +84,7 @@ function jz(isjz, page, orderBy){
                     data[key].replyNum
                     +"</span><span class=\"badge pull-left\" style='background-color:"+data[key].color+"'><span class='glyphicon glyphicon-leaf'></span>&nbsp;"+
                     data[key].pbarName
-                    +"</span>&nbsp;&nbsp;<span style=\"font-size: 16px;font-weight: bold; color:#949449\" class=\"glyphicon glyphicon-transfer\"></span>&nbsp;&nbsp;<a style=\"font-size: 15px;\" href=\"/tuan/post/"+data[key].uid+".html\" target=\"_blank\">"
+                    +"</span>&nbsp;&nbsp;<span style=\"font-size: 16px;font-weight: bold; color:#949449\" class=\"glyphicon glyphicon-transfer\"></span>&nbsp;&nbsp;<a style=\"font-size: 15px;\" href=\"/post/reply/tp5416"+data[key].id+"\" target=\"_blank\">"
                     + data[key].title
                     +"</a>"
                 if(data[key].isBoutique == 1){
@@ -97,6 +97,8 @@ function jz(isjz, page, orderBy){
                     for(key2 in data[key].img){
                         if(data[key].img[key2].imgKey == "2"){
                             addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95\" title=\"视频\"/>&nbsp;&nbsp;&nbsp;&nbsp;";
+                        }else if(data[key].img[key2].imgKey == "3"){
+                            addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95\" title=\"音频\"/>&nbsp;&nbsp;&nbsp;&nbsp;";
                         }else{
                             addhtml +="<img src= \""+data[key].img[key2].imagePath+"?imageView2/1/w/156/h/90/q/95\" title=\"图片\"/>&nbsp;&nbsp;&nbsp;&nbsp;"
                         }

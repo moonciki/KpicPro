@@ -453,3 +453,41 @@ function getLocalTime(timer) {
         (d.getHours()) + ":" +
         (d.getMinutes());
 }
+
+function share_music(mp3url){
+    music_share_close();
+    var addhtml = "<div style=\"width:672px; height:50px;\"> <audio style=\"width: 672px\" controls=true>"+
+        "<source src=\""+mp3url+"\" />"+
+        "</audio></div>"
+    var ue = UE.getEditor('myEditor');
+    ue.execCommand('inserthtml', addhtml);
+}
+
+function self_music(){
+    var mp3wl = $("#mp3wl").val().trim();
+    if(mp3wl == "" || mp3wl == null){
+        alert("请输入外链");
+        return;
+    }
+
+    music_share_close();
+    var addhtml = "<div style=\"width:672px; height:50px;\"> <audio style=\"width: 672px\" controls=true>"+
+        "<source src=\""+mp3wl+"\" />"+
+        "</audio></div>"
+    var ue = UE.getEditor('myEditor');
+    ue.execCommand('inserthtml', addhtml);
+}
+
+function share_video(){
+
+    var videoUrl = $("#videoUrl").val().trim();
+
+    if(videoUrl == "" || videoUrl == null){
+        alert("请填写视频flash地址");
+        return;
+    }
+    video_share_close();
+    var addhtml = "<embed type=\"application/x-shockwave-flash\" class=\"edui-faked-video\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" src=\""+videoUrl+"\" width=\"672px\" height=\"440px\" wmode=\"transparent\" play=\"true\" loop=\"false\" menu=\"false\" allowscriptaccess=\"never\" allowfullscreen=\"true\" />";
+    var ue = UE.getEditor('myEditor');
+    ue.execCommand('inserthtml', addhtml);
+}

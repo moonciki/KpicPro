@@ -19,6 +19,29 @@
 <%@include file="../common/top.jsp" %>
 <div class="main">
   <%@include file="../common/manage_center_left.jsp"%>
+  <div class="pic_big">
+    <div class="pl_content">
+      <input type="hidden" value="0" id="gzht_page"/>
+      <input type="hidden" value="title, id, createTime, music, imageUrl, msg, picNum" id="title"/>
+      <input type="hidden" value="" id="id"/>
+      <input type="hidden" value="" id="createTime"/>
+      <input type="hidden" value="" id="music"/>
+      <input type="hidden" value="" id="imageUrl"/>
+      <input type="hidden" value="" id="msg"/>
+      <input type="hidden" value="" id="picNum"/>
+
+      <div class="well"><span class="glyphicon glyphicon-send" style="color:#FF95CA"></span>&nbsp;&nbsp;将<b>“舒服撒发生”</b>发布到：</div>
+
+      <span id="self_pbar">
+
+      </span>
+
+      <center><button type="button" onclick="jz(true)" class="btn btn-info" id="btn_jz1"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
+        <br/><span id="jzz1" style="display: none">加载中..</span><span id="my1" style="display: none">没有更多了</span>
+      </center>
+
+    </div>
+  </div>
   <div class="main_02">
     <div class="main_02_title">
       <span id="content_title">

@@ -29,8 +29,9 @@ public class ReplyUpdQueueMessageListener implements MessageListener{
         ObjectMessage objectMessage = (ObjectMessage)message;
         try{
             Long replyId = (Long)objectMessage.getObject();
-            ReplyPost replyPost = replyPostMapper.getById(replyId);
-            replyPost.setReplyNum(replyPost.getReplyNum() + 1);
+            ReplyPost replyPost = new ReplyPost();
+            replyPost.setId(replyId);
+            replyPost.setReplyNum(1);
             this.replyPostMapper.update(replyPost);
         }catch (JMSException e){
             e.printStackTrace();

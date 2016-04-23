@@ -2,8 +2,10 @@ package cn.kpic.juwin.jms.listener;
 
 import cn.kpic.juwin.constant.KpicConstant;
 import cn.kpic.juwin.domain.TopicImg;
+import cn.kpic.juwin.domain.TopicPost;
 import cn.kpic.juwin.domain.vo.JmsTopicImg;
 import cn.kpic.juwin.mapper.TopicImgMapper;
+import cn.kpic.juwin.mapper.TopicPostMapper;
 import cn.kpic.juwin.utils.StringDeal;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
@@ -11,7 +13,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,6 +31,9 @@ public class TopicPostImgQueueMessageListener implements MessageListener {
 
     @Autowired
     private TopicImgMapper topicImgMapper;
+
+    @Autowired
+    private TopicPostMapper topicPostMapper;
 
     @Override
     public void onMessage(Message message) {
@@ -52,6 +56,7 @@ public class TopicPostImgQueueMessageListener implements MessageListener {
                         list.add(topicImg);
                     }
                 }
+
                 if(src.tagName().equals("embed")){
                     TopicImg topicImg = new TopicImg();
                     topicImg.setTopicId(jmsTopicImg.getTopicPostid());
@@ -59,9 +64,21 @@ public class TopicPostImgQueueMessageListener implements MessageListener {
                     topicImg.setImgKey("2");
                     list.add(topicImg);
                 }
+
+                if(src.tagName().equals("source")){
+                    TopicImg topicImg = new TopicImg();
+                    topicImg.setTopicId(jmsTopicImg.getTopicPostid());
+                    topicImg.setImagePath(src.attr("src"));
+                    topicImg.setImgKey("3");
+                    list.add(topicImg);
+                }
             }
             if(list.size() > 0){
                 topicImgMapper.save(list);
+                TopicPost topicPost = new TopicPost();
+                topicPost.setId(jmsTopicImg.getTopicPostid());
+                topicPost.setNum(list.size());
+                this.topicPostMapper.update(topicPost);
             }
         }catch (JMSException e){
             e.printStackTrace();

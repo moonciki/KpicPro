@@ -12,16 +12,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
   -->
 <mapper namespace="cn.kpic.juwin.mapper.UserMapper">
 
-	<!--<resultMap type="cn.kpic.juwin.domain.User" id="User">
-		<id property="id" column="id" />
-		<result property="name" column="name" />
-		<result property="password" column="password"/>
-		<result property="age" column="age"/>
-	</resultMap>-->
-	
-	<!-- 这里的id：表示文件中的sql
-	将sql语句封装到mappedStatement对象中，所以讲id称为statement的id
-	 -->
 	<select id="findUserById" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.User">
 		SELECT * FROM tb_user WHERE id=#{id} AND isdel = 0
 	</select>
@@ -47,14 +37,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 	</select>
 
 	<update id="update" parameterType="cn.kpic.juwin.domain.User">
-		update tb_user SET
-		name = #{name},
-		age = #{age},
-		password = #{password},
-		address = #{address},
-		avater = #{avater},
-		tag = #{tag}
-		where id = #{id}
+		update tb_user
+		<trim prefix="set" suffixOverrides=",">
+			<if test="name != null">name = #{name},</if>
+			<if test="age != null">age = #{age},</if>
+			<if test="password != null">password = #{password},</if>
+			<if test="address != null">address = #{address},</if>
+			<if test="avater != null">avater = #{avater},</if>
+			<if test="tag != null">tag = #{tag},</if>
+		</trim>
+		where id = #{id,jdbcType=BIGINT}
 	</update>
 
 	<select id="getAllSmallManagerByPbarId" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.vo.TopicManager">

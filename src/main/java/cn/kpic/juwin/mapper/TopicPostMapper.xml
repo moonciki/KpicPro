@@ -38,7 +38,7 @@ ${}：表示拼接符，可能会引起sql注入
     <select id="getTopicPostByPbarId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PbarHomeTopicPost">
         SELECT ttp.id AS id, ttp.title AS title, ttp.shortText AS shortText, ttp.replyNum AS replyNum,
         ttp.isTop AS isTop, ttp.isBoutique AS isBoutique, tu.name AS userName, ttp.createTime AS createTime,
-        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater
+        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater, ttp.num
         FROM tb_topic_post ttp
         JOIN tb_user tu ON ttp.userId = tu.id
         WHERE ttp.pbarId = #{pbarId} AND ttp.isdel = 0 ORDER BY ttp.updateTime DESC LIMIT #{page}, 10
@@ -47,7 +47,7 @@ ${}：表示拼接符，可能会引起sql注入
     <select id="getTopicBlogOrPostByPbarId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PbarHomeTopicPost">
         SELECT ttp.id AS id, ttp.title AS title, ttp.shortText AS shortText, ttp.replyNum AS replyNum,
         ttp.isTop AS isTop, ttp.isBoutique AS isBoutique, tu.name AS userName, ttp.createTime AS createTime,
-        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater
+        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater, ttp.num
         FROM tb_topic_post ttp
         JOIN tb_user tu ON ttp.userId = tu.id
         WHERE ttp.pbarId = #{pbarId} AND ttp.isdel = 0 AND ttp.isBlog = #{isBlog} ORDER BY ttp.updateTime DESC LIMIT #{page}, 10
@@ -56,7 +56,7 @@ ${}：表示拼接符，可能会引起sql注入
     <select id="getJpTopicByPbarId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PbarHomeTopicPost">
         SELECT ttp.id AS id, ttp.title AS title, ttp.shortText AS shortText, ttp.replyNum AS replyNum,
         ttp.isTop AS isTop, ttp.isBoutique AS isBoutique, tu.name AS userName, ttp.createTime AS createTime,
-        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater
+        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater, ttp.num
         FROM tb_topic_post ttp
         JOIN tb_user tu ON ttp.userId = tu.id
         WHERE ttp.pbarId = #{pbarId} AND ttp.isdel = 0 AND ttp.isBoutique = #{isBoutique} ORDER BY ttp.updateTime DESC LIMIT #{page}, 10
@@ -78,9 +78,19 @@ ${}：表示拼接符，可能会引起sql注入
     </select>
 
     <update id="update" parameterType="cn.kpic.juwin.domain.TopicPost">
-        UPDATE tb_topic_post SET title = #{title}, content = #{content}, shortText = #{shortText},
-        pbarId = #{pbarId}, userId = #{userId}, createTime = #{createTime}, updateTime = #{updateTime}, replyNum = #{replyNum}
-        WHERE id = #{id}
+        update tb_topic_post
+        <trim prefix="set" suffixOverrides=",">
+            <if test="title != null">title = #{title},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="shortText != null">shortText = #{shortText},</if>
+            <if test="pbarId != null">pbarId = #{pbarId},</if>
+            <if test="userId != null">userId = #{userId},</if>
+            <if test="num != null">num = #{num},</if>
+            <if test="createTime != null">createTime = #{createTime},</if>
+            <if test="updateTime != null">updateTime = #{updateTime},</if>
+            <if test="replyNum != null">replyNum = replyNum,</if>
+        </trim>
+        where id = #{id,jdbcType=BIGINT}
     </update>
 
     <update id="del" parameterType="java.lang.Long">

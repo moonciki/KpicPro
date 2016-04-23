@@ -13,4 +13,6 @@ public class KpicConstant {
 
     public static final String REDIS_IP = "127.0.0.1";
 
+    public static final String NETEASE_CLOUD_MUSIC_SEARCH_URL = "http://music.163.com/api/search/pc";
+
 }

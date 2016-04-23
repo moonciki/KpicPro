@@ -34,6 +34,12 @@
     <input id="page" value="0" type="hidden"/>
     <div class="main_02_content">
 
+        <div class="panel panel-default">
+            <div class="panel-body" style="color:#ff7575">
+                <button type="button" class="btn btn-success" onclick="window.location.href='${pageContext.request.contextPath}/user/make/music'"><span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;上传</button>&nbsp;如果在音乐搜索中找不到你想要的音乐，就可以选择自己上传，然后将外链复制并粘贴到指定位置即可
+
+            </div>
+        </div>
 
       <span id="album_list">
 

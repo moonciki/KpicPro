@@ -30,7 +30,7 @@
       <ul class="list-group" style="color:#9D9D9D">
         <li class="list-group-item">话题名称：
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="text" class="form-control" id="name" name="name" value="${pbar.name}" placeholder="请输入话题名称">
+          <input type="text" class="form-control" id="name" name="name" disabled="disabled" value="${pbar.name}" placeholder="请输入话题名称">
           </li>
         <li class="list-group-item">话题签名：
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -44,13 +44,32 @@
       <ul class="list-group" style="color:#9D9D9D">
         <li class="list-group-item">话题logo:
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <img src="${pbar.logo}?imageView2/1/w/89/h/89/q/95"/>
+          <span id="logo_img"><img src="${pbar.logo}?imageView2/1/w/89/h/89/q/95"/></span>
         </li>
         <input type="hidden" name="logo" id="logo" value="${pbar.logo}"/>
+
+        <li class="list-group-item">修改话题logo:
+          <center>
+            <button type="button" id="sclogo" class="btn btn-info">上传新的logo图片</button>
+            <br/>
+            <br/>
+            <span class="badge">为了保证效果美观，请上传 <span style="color:#FFB5B5">宽：100px&nbsp;&nbsp;&nbsp;&nbsp;高：100px</span> 且大小<span style="color:#FFB5B5">小于30k</span>的图片</span>
+
+          </center>
+        </li>
+
         <li class="list-group-item">背景图片：
           &nbsp;&nbsp;&nbsp;
-          <img src="${pbar.backgroundLogo}?imageView2/1/w/680/q/95"/>
+          <span id="logo_bimg"><img src="${pbar.backgroundLogo}?imageView2/1/w/670/h/144/q/95"/></span>
           <input type="hidden" id="background_logo" name="background_logo" value="${pbar.backgroundLogo}"/>
+        </li>
+        <li class="list-group-item">修改背景图片：
+          <center>
+            <button type="button" id="scblogo" class="btn btn-info">上传新的背景图片</button>
+            <br/>
+            <br/>
+            <span class="badge">为了保证效果美观，请上传 <span style="color:#FFB5B5">宽：1100px&nbsp;&nbsp;&nbsp;&nbsp;高：244px</span> 且大小<span style="color:#FFB5B5">小于300k</span>的图片</span>
+          </center>
         </li>
       </ul>
       <input type="hidden" value="${pbar.id}" id="pbarId"/>
@@ -62,6 +81,8 @@
     </div>
   </div>
 </div>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/plupload/plupload.full.min.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/qiniu.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/pbar/manager_pbar_update.js"></script>
 </body>
 </html>

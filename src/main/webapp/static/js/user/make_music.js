@@ -37,7 +37,7 @@ $().ready(function() {
         browse_button: 'music_upload',
         uptoken_url: '/music/upload',
         domain: 'http://7xt8jn.com1.z0.glb.clouddn.com/',
-        max_file_size: '15mb',
+        max_file_size: '10mb',
         flash_swf_url: 'static/js/plupload/Moxie.swf',
         multi_selection:false,
         max_retries: 5,

@@ -63,23 +63,16 @@
 
   <update id="update" parameterType="cn.kpic.juwin.domain.ReplyPost">
     update tb_reply_post
-    set
-    isdel = #{isdel,jdbcType=INTEGER},
-
-    replyNum = #{replyNum,jdbcType=INTEGER},
-
-    num1 = #{num1,jdbcType=INTEGER},
-
-    num2 = #{num2,jdbcType=INTEGER},
-
-    num = #{num,jdbcType=INTEGER},
-
-    userId = #{userId,jdbcType=BIGINT},
-
-    topicId = #{topicId,jdbcType=BIGINT},
-
-    createTime = #{createTime,jdbcType=TIMESTAMP}
-
+    <trim prefix="set" suffixOverrides=",">
+      <if test="isdel != null">isdel = #{isdel},</if>
+      <if test="replyNum != null">replyNum = #{replyNum},</if>
+      <if test="num1 != null">num1 = #{num1},</if>
+      <if test="num2 != null">num2 = #{num2},</if>
+      <if test="num != null">num = num+1,</if>
+      <if test="userId != null">userId = #{userId},</if>
+      <if test="topicId != null">topicId = #{topicId},</if>
+      <if test="createTime != null">createTime = #{createTime},</if>
+    </trim>
     where id = #{id,jdbcType=BIGINT}
   </update>
 

@@ -1,10 +1,12 @@
 package cn.kpic.juwin.service.impl;
 
+import cn.kpic.juwin.constant.RedisCacheKey;
 import cn.kpic.juwin.domain.UserPbar;
 import cn.kpic.juwin.mapper.PbarManagerApplyMapper;
 import cn.kpic.juwin.mapper.UserPbarMapper;
 import cn.kpic.juwin.service.PbarManagerApplyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,6 +24,9 @@ public class PbarManagerApplyServiceImpl implements PbarManagerApplyService {
     @Autowired
     private PbarManagerApplyMapper pbarManagerApplyMapper;
 
+    @Autowired
+    private RedisTemplate redisTemplate;
+
     @Override
     @Transactional
     public void tg(Long userId, Long pbarId, Long id) {
@@ -30,6 +35,8 @@ public class PbarManagerApplyServiceImpl implements PbarManagerApplyService {
         userPbar.setPbarId(pbarId);
         userPbar.setType(2);
         userPbar.setUserId(userId);
+        String key = RedisCacheKey.PBAR_USER_ROLE + "_p" + pbarId + "_u" + userId;
+        this.redisTemplate.delete(key);//«Â¿Ìª∫¥Ê
         this.userPbarMapper.save(userPbar);
         this.pbarManagerApplyMapper.pass(id);
     }

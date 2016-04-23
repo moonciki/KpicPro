@@ -41,7 +41,7 @@
         <div class="well">
           <span style="color:#00AEAE;font-size:14px">
           <span class="glyphicon glyphicon-info-sign" style="color:#FF60AF"></span>
-          建议：乐库音乐用来分享和为图集做背景音乐，因此请尽量不要上传口水歌，纯音乐最佳，音乐文件不要超过15M，由于本站不支持转码，请您上传标准的Mp3文件
+          说明：乐库音乐用来上传一些在音乐搜索中找不到而您又很想要分享的音乐，音频文件不要超过10M，由于本站不支持转码，请您上传标准的Mp3文件
             谢谢您的合作 O(∩_∩)O哈哈~
           </span>
         </div>

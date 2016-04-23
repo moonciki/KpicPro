@@ -102,7 +102,7 @@ public class UserServiceImpl implements UserService {
                 if(this.isSmallManager(userId, pbarId)){
                     return "2";
                 }else{
-                    throw new RuntimeException();
+                    return "3";
                 }
             }
         }else{

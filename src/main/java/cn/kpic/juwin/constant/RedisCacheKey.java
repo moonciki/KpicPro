@@ -7,7 +7,7 @@ public class RedisCacheKey {
 
     /** 用于缓存每个话题下的前十页帖子信息缓存，用户发帖一次失效一次*/
     public final static String PBAR_PAGE = "pbar:pbar_page";
-    /** 用于缓存用户未读信息，已废弃*/
+    /** 用于缓存用户未读信息*/
     public final static String USER_NEWS = "user:news";
     /** 用于缓存话题首页话题信息，每隔 2 天失效一次*/
     public final static String PBAR_INDEX = "pbar:index";

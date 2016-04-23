@@ -8,7 +8,7 @@ public class TopicImg implements java.io.Serializable{
 
     private Long id;
     private String imagePath;
-    private String imgKey;//1£∫Õº∆¨  2£∫ ”∆µ
+    private String imgKey;//1£∫Õº∆¨  2£∫ ”∆µ   3£∫“Ù∆µ
     private Long topicId;
 
     public Long getId() {

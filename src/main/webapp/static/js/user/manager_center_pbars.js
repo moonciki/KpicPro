@@ -46,9 +46,9 @@ function jz(isjz){
             }
             addhtml+="</td><td>"
             if(data[key].role == 1){
-                addhtml += "<span style='color:#FF5151'>顶级管理员</span>"
+                addhtml += "<span style='color:#FF5151'><b>大管理员</b></span>"
             }else{
-                addhtml += "<span style='color:#FF5151'>次级管理员</span>"
+                addhtml += "<span style='color:#FF5151'>小管理员</span>"
             }
             addhtml += "</td><td><a href=\"\" target=\"_blank\">进入管理页</a>&nbsp;"
             if(data[key].ispass == 1){

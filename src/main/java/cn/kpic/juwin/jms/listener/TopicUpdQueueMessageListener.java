@@ -46,12 +46,11 @@ public class TopicUpdQueueMessageListener implements MessageListener {
 
         try{
             Long id = (Long)objectMessage.getObject();
-            TopicPost topicPost = topicPostMapper.getById(id);
-            if(topicPost != null){
-                topicPost.setUpdateTime(new Date());
-                topicPost.setReplyNum(topicPost.getReplyNum() + 1);
-                topicPostMapper.update(topicPost);
-            }
+            TopicPost topicPost = new TopicPost();
+            topicPost.setId(id);
+            topicPost.setUpdateTime(new Date());
+            topicPost.setReplyNum(1);
+            topicPostMapper.update(topicPost);
 
             /** 清除某团前十页缓存*/
             redisTemplate.delete(RedisCacheKey.PBAR_PAGE + topicPost.getPbarId());

@@ -21,7 +21,7 @@ public class Album {
 
     private Integer isdel;
 
-    private Long musicId;
+    private String music;
 
     private Date createTime;
 
@@ -73,14 +73,6 @@ public class Album {
         this.isdel = isdel;
     }
 
-    public Long getMusicId() {
-        return musicId;
-    }
-
-    public void setMusicId(Long musicId) {
-        this.musicId = musicId;
-    }
-
     public Date getCreateTime() {
         return createTime;
     }
@@ -95,5 +87,13 @@ public class Album {
 
     public void setUserId(Long userId) {
         this.userId = userId;
+    }
+
+    public String getMusic() {
+        return music;
+    }
+
+    public void setMusic(String music) {
+        this.music = music;
     }
 }

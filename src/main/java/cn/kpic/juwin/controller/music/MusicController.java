@@ -1,12 +1,15 @@
 package cn.kpic.juwin.controller.music;
 
 import cn.kpic.juwin.domain.*;
+import cn.kpic.juwin.domain.vo.Songs;
 import cn.kpic.juwin.domain.vo.UploadTokenInfo;
+import cn.kpic.juwin.http.HttpRequest;
 import cn.kpic.juwin.mapper.MusicMapper;
 import cn.kpic.juwin.qiniu.kpic2.QiniuService;
 import cn.kpic.juwin.service.MusicService;
 import cn.kpic.juwin.service.UserLevelService;
 import cn.kpic.juwin.utils.CurrentUser;
+import cn.kpic.juwin.utils.NetEaseMusicUtils;
 import com.alibaba.fastjson.JSON;
 import org.apache.log4j.Logger;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -18,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -142,6 +146,18 @@ public class MusicController {
         }
 
         return map;
+    }
+
+    /** ÍøÒ×ÔÆÒôÀÖ--ËÑË÷½Ó¿Ú*/
+    @RequiresPermissions({"user"})
+    @RequestMapping(value = "/netease/music/search")
+    @ResponseBody
+    public List<Songs> all(String key){
+        try{
+            return NetEaseMusicUtils.getSearchResult(key);
+        }catch (Exception e){
+            return null;
+        }
     }
 
     private String generateUUID() {

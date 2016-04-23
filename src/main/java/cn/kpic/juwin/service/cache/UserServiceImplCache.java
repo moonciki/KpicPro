@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.concurrent.TimeUnit;
+
 
 /**
  * Created by bjsunqinwen on 2016/4/16.
@@ -25,6 +27,7 @@ public class UserServiceImplCache extends UserServiceImpl{
         if(!redisTemplate.hasKey(key)){
             redisTemplate.boundValueOps(key).set(super.getRole(userId, pbarId));
         }
+        redisTemplate.expire(key, 1, TimeUnit.DAYS);
         return (String)redisTemplate.boundValueOps(key).get();
     }
 

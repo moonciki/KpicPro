@@ -217,7 +217,7 @@ $().ready(function(){
                     }
                     addhtml += data[key].title + "</a>"
                     if(data[key].isBoutique == 1){
-                        addhtml+="&nbsp;&nbsp;<span class=\"label label-warning\">精</span>"
+                        addhtml+="&nbsp;&nbsp;<span class=\"label label-warning jing\">精</span>"
                     }
                     addhtml+= "<span class=\"badge pull-right\" style=\"font-size:14px;background-color: #FF95CA\">"
                         +data[key].replyNum+
@@ -225,12 +225,16 @@ $().ready(function(){
                         +data[key].shortText+
                         "</span></div>"
                     if(data[key].img != "" && data[key].img != null){
-                        addhtml += "<div class=\"main01_01_img\"><div class=\"main01_01_img_num\"><span style=\"font-family:微软雅黑;font-size: 12px\"><span class='glyphicon glyphicon-camera' title='图片数'></span>&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='glyphicon glyphicon-facetime-video' title='视频数'></span>&nbsp;&nbsp;&nbsp;1</span></div>"
+                        addhtml += "<div class=\"main01_01_img\"><div class=\"main01_01_img_num\"><span style=\"font-family:微软雅黑;font-size: 12px\"><span class='glyphicon glyphicon-share-alt'></span> 共<span class='fxs'>&nbsp;&nbsp;"+data[key].num+"&nbsp;&nbsp;</span>个分享</div>"
                         for(key2 in data[key].img){
                             if(data[key].img[key2].imgKey == "2"){
                                 addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95\"" +
                                     " onmouseover = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo2.png?imageView2/1/w/156/h/90/q/95'\"" +
                                     " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 2)\" title=\"点击播放该视频\"/>&nbsp;&nbsp;&nbsp;&nbsp;";
+                            }else if(data[key].img[key2].imgKey == "3"){
+                                addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95\"" +
+                                    " onmouseover = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic2.jpg?imageView2/1/w/156/h/90/q/95'\"" +
+                                    " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 3)\" title=\"点击播放该音频\"/>&nbsp;&nbsp;&nbsp;&nbsp;";
                             }else{
                                 addhtml +="<img src=\""+data[key].img[key2].imagePath+"?imageView2/1/w/156/h/90/q/95\" class='post_pic' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 1)\" title=\"查看大图\"/>&nbsp;&nbsp;&nbsp;&nbsp;"
                             }
@@ -285,7 +289,7 @@ $().ready(function(){
                     }
                     addhtml += data[key].title + "</a>"
                     if(data[key].isBoutique == 1){
-                        addhtml+="&nbsp;&nbsp;<span class=\"label label-warning\">精</span>"
+                        addhtml+="&nbsp;&nbsp;<span class=\"label label-warning jing\">精</span>"
                     }
                     addhtml+= "<span class=\"badge pull-right\" style=\"font-size:14px;background-color: #FF95CA\">"
                         +data[key].replyNum+
@@ -293,12 +297,16 @@ $().ready(function(){
                         +data[key].shortText+
                         "</span></div>"
                     if(data[key].img != "" && data[key].img != null){
-                        addhtml += "<div class=\"main01_01_img\"><div class=\"main01_01_img_num\"><span style=\"font-family:微软雅黑;font-size: 12px\"><span class='glyphicon glyphicon-camera' title='图片数'></span>&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='glyphicon glyphicon-facetime-video' title='视频数'></span>&nbsp;&nbsp;&nbsp;1</span></div>"
+                        addhtml += "<div class=\"main01_01_img\"><div class=\"main01_01_img_num\"><span style=\"font-family:微软雅黑;font-size: 12px\"><span class='glyphicon glyphicon-share-alt'></span> 共<span class='fxs'>&nbsp;&nbsp;"+data[key].num+"&nbsp;&nbsp;</span>个分享</div>"
                         for(key2 in data[key].img){
                             if(data[key].img[key2].imgKey == "2"){
                                 addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95\"" +
                                     " onmouseover = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo2.png?imageView2/1/w/156/h/90/q/95'\"" +
                                     " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 2)\" title=\"点击播放该视频\"/>&nbsp;&nbsp;&nbsp;&nbsp;";
+                            }else if(data[key].img[key2].imgKey == "3"){
+                                addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95\"" +
+                                    " onmouseover = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic2.jpg?imageView2/1/w/156/h/90/q/95'\"" +
+                                    " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 3)\" title=\"点击播放该音频\"/>&nbsp;&nbsp;&nbsp;&nbsp;";
                             }else{
                                 addhtml +="<img src=\""+data[key].img[key2].imagePath+"?imageView2/1/w/156/h/90/q/95\" class='post_pic' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 1)\" title=\"查看大图\"/>&nbsp;&nbsp;&nbsp;&nbsp;"
                             }
@@ -382,6 +390,11 @@ function bigPic(img, flag){
         $(".pic_big_01").show();
         $(".pic_big_01_01").show();
         $("#pic_video").append("<embed type=\"application/x-shockwave-flash\" class=\"edui-faked-video\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" src=\""+img+"\" width=\"672px\" height=\"440px\" wmode=\"transparent\" play=\"true\" loop=\"false\" menu=\"false\" allowscriptaccess=\"never\" allowfullscreen=\"true\" />");
+    }else if(flag == 3){
+        var addhtml = "<center><div class=\"pic_big_03\"><div style=\"display: inline-block;width:750px; height:50px;\"> <audio style=\"width: 750px\" controls=true>"+
+            "<source src=\""+img+"\" />"+
+            "</audio></div>&nbsp;<button style=\"margin-top: -22px\" type=\"button\" onclick=\"close_music()\" class=\"btn btn-danger btn-sm\"><span class=\"glyphicon glyphicon-remove-sign\"></span>&nbsp;关闭</button></div></center>"
+        $("#music_bf").append(addhtml);
     }else{
         $("#pic_pic").append("<center><div style='margin-top: 5%'></div><div style=\"overflow-x :auto;overflow-y :auto;width:906px;height: 467px\"><img src=\""+img+"\" title=\"还原\" style=\"cursor:zoom-out\" onclick=\"clearAll()\"/></div></center>")
     }
@@ -395,6 +408,11 @@ function clearAll(){
     $(".pic_big_01_01").hide();
 }
 
+function close_music(){
+    $("#tp_video").hide();
+    $("#music_bf").empty();
+}
+
 function sq(){
     var userId = $("#userId").val();
     if(userId == "" || userId == null){
@@ -403,4 +421,45 @@ function sq(){
     }
     $("#pl_tip").show();
 }
+
+function share_music(mp3url){
+    music_share_close();
+    var addhtml = "<div style=\"width:672px; height:50px;\"> <audio style=\"width: 672px\" controls=true>"+
+        "<source src=\""+mp3url+"\" />"+
+        "</audio></div>"
+    var ue = UE.getEditor('myEditor');
+    ue.execCommand('inserthtml', addhtml);
+}
+
+function self_music(){
+    var mp3wl = $("#mp3wl").val().trim();
+    if(mp3wl == "" || mp3wl == null){
+        alert("请输入外链");
+        return;
+    }
+
+    music_share_close();
+    var addhtml = "<div style=\"width:672px; height:50px;\"> <audio style=\"width: 672px\" controls=true>"+
+        "<source src=\""+mp3wl+"\" />"+
+        "</audio></div>"
+    var ue = UE.getEditor('myEditor');
+    ue.execCommand('inserthtml', addhtml);
+}
+
+function share_video(){
+
+    var videoUrl = $("#videoUrl").val().trim();
+
+    if(videoUrl == "" || videoUrl == null){
+        alert("请填写视频flash地址");
+        return;
+    }
+    video_share_close();
+    var addhtml = "<embed type=\"application/x-shockwave-flash\" class=\"edui-faked-video\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" src=\""+videoUrl+"\" width=\"672px\" height=\"440px\" wmode=\"transparent\" play=\"true\" loop=\"false\" menu=\"false\" allowscriptaccess=\"never\" allowfullscreen=\"true\" />";
+    var ue = UE.getEditor('myEditor');
+    ue.execCommand('inserthtml', addhtml);
+}
+
+
+
 

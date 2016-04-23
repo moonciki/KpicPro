@@ -27,12 +27,15 @@
     <div class="pic_big_02">
         <span id="pic_pic"></span>
     </div>
+    <span id="music_bf"></span>
 </div>
 <%@include file="../common/top.jsp" %>
 <div class="top_blank"></div>
 <div class="main">
 
 <%@include file="../common/pbar.jsp" %>
+    
+    <%@include file="../common/share_media.jsp"%>
 
 <div class="mane">
     <div class="topbar">
@@ -116,8 +119,16 @@
                     <!--style给定宽度可以影响编辑器的最终宽度-->
                     <script type="text/plain" id="myEditor" name="content" style="width:700px;height:240px;"></script>
                 <br>
-                <button type="button" id="savePost" class="btn btn-info"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;发射~</button>
+                <button type="button" id="savePost" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;发射~</button>
+
+                <button type="button" id="music_share" class="btn btn-success"><span class="glyphicon glyphicon-music"></span>&nbsp;&nbsp;音频分享</button>
+
+                <button type="button" id="video_share" class="btn btn-success"><span class="glyphicon glyphicon-film"></span>&nbsp;&nbsp;视频分享</button>
             </div>
+
+
+
+
 
             <script type="text/javascript" charset="UTF-8" src="${pageContext.request.contextPath}/static/js/pbar/pbar_index.js"></script>
 
@@ -248,7 +259,8 @@
             </div>
         </div>
     </div>
-
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/music/music.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/video/video.js"></script>
 </div>
 </body>
 </html>

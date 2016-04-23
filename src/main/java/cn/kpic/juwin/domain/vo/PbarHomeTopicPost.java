@@ -43,6 +43,8 @@ public class PbarHomeTopicPost {
 
     private String color;
 
+    private String num;
+
     public Long getId() {
         return id;
     }
@@ -169,5 +171,13 @@ public class PbarHomeTopicPost {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public String getNum() {
+        return num;
+    }
+
+    public void setNum(String num) {
+        this.num = num;
     }
 }
