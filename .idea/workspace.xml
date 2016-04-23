@@ -1,70 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17a5a849-1c54-4076-b3d1-f2d8ebeb2848" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/http/HttpRequest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/utils/NetEaseMusicUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/vo/Songs.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/music/music.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/share_media.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/video/video.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/constant/KpicConstant.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/constant/KpicConstant.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/constant/KpicConstant.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/constant/KpicConstant.class" />
-      <change type="MODIFICATION" beforePath="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\build\classes\main\cn\kpic\juwin\jms\listener\TopicPostImgQueueMessageListener.class" afterPath="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\build\classes\main\cn\kpic\juwin\jms\listener\TopicPostImgQueueMessageListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/Album.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/Album.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/AlbumMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/AlbumMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/constant/KpicConstant.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/constant/KpicConstant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/music/MusicController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/music/MusicController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/vo/PbarHomeTopicPost.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/vo/PbarHomeTopicPost.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PbarManagerApplyServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PbarManagerApplyServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/constant/RedisCacheKey.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/constant/RedisCacheKey.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/ReplyPostMapper.xml" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/ReplyPostMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/ReplyPostMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/ReplyPostMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/ReplyPostMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/ReplyPostMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/ReplyUpdQueueMessageListener.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/ReplyUpdQueueMessageListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/TopicImg.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/TopicImg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/TopicPostMapper.xml" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/TopicPostMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/TopicPostMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/TopicPostMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/TopicPostMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/TopicPostMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/TopicUpdQueueMessageListener.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/TopicUpdQueueMessageListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/UserMapper.xml" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/UserMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/UserMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/UserMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/UserMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/UserMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/cache/UserServiceImplCache.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/cache/UserServiceImplCache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/css/user/album_list.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/user/album_list.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/user/album_list.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/user/album_list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/album_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/album_list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/user/make_music.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/user/make_music.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/make_music.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/make_music.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/user/manage_center_topic.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/user/manage_center_topic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/user/manager_center_pbars.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/user/manager_center_pbars.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/pbar/manager_pbar_update.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/pbar/manager_pbar_update.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/manager_pbar_update.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/manager_pbar_update.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/dialogs/music/music.css" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/dialogs/music/music.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/music/music.css" afterPath="$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/music/music.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/dialogs/music/music.html" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/dialogs/music/music.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/music/music.html" afterPath="$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/music/music.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/dialogs/music/music.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/dialogs/music/music.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/music/music.js" afterPath="$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/music/music.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/user/music_list.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/user/music_list.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/music_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/music_list.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/pbar.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/pbar.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/pbar/pbar_index.css" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/pbar/pbar_index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/pbar/pbar_index.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/pbar/pbar_index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/pbar/pbar_index.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/pbar/pbar_index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/pbar/pbar_index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/pbar/pbar_index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/pbar_index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/pbar_index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/reply/reply_index.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/reply/reply_index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reply/reply_index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reply/reply_index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.config.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.config.js" afterPath="$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/dialogs/video/video.html" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/dialogs/video/video.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/video/video.html" afterPath="$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/video/video.html" />
+    <list default="true" id="17a5a849-1c54-4076-b3d1-f2d8ebeb2848" name="Default" comment="网易云数据抓取，结合mp3上传源文件，分享合并">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/domain/vo/PbarHomeTopicPost.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/domain/vo/PbarHomeTopicPost.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/domain/vo/PbarHomeTopicPost.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/domain/vo/PbarHomeTopicPost.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/jms/listener/ReplyUpdQueueMessageListener.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/jms/listener/ReplyUpdQueueMessageListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/jms/listener/ReplyUpdQueueMessageListener.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/jms/listener/ReplyUpdQueueMessageListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/jms/listener/TopicUpdQueueMessageListener.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/jms/listener/TopicUpdQueueMessageListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/jms/listener/TopicUpdQueueMessageListener.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/jms/listener/TopicUpdQueueMessageListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/service/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/service/impl/UserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/service/impl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/service/impl/UserServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/user/manage_center_topic.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/user/manage_center_topic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/user/manager_center_pbars.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/user/manager_center_pbars.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/common/pbar.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/common/pbar.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/reply/reply_index.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/reply/reply_index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/reply/reply_index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/reply/reply_index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="KpicPro.iws" />
@@ -133,8 +83,8 @@
       <file leaf-file-name="album_list.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/album_list.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.90207714">
-              <caret line="105" column="29" selection-start-line="105" selection-start-column="29" selection-end-line="105" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.9347181">
+              <caret line="106" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="106" selection-end-column="1" />
               <folding>
                 <marker date="1461407883028" expanded="true" signature="503:518" placeholder="..." />
                 <marker date="1461407883028" expanded="true" signature="503:546" placeholder="..." />
@@ -1281,7 +1231,7 @@
       <workItem from="1461291005626" duration="24075000" />
       <workItem from="1461320112608" duration="7046000" />
       <workItem from="1461328300746" duration="1120000" />
-      <workItem from="1461375473968" duration="24307000" />
+      <workItem from="1461375473968" duration="24819000" />
     </task>
     <task id="LOCAL-00001" summary="话题管理页">
       <created>1460801172157</created>
@@ -1301,11 +1251,17 @@
       <option name="project" value="LOCAL" />
       <updated>1461243414379</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="网易云数据抓取，结合mp3上传源文件，分享合并">
+      <created>1461408710217</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1461408710217</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="189103000" />
+    <option name="totallyTimeSpent" value="189615000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1389,7 +1345,8 @@
     <MESSAGE value="话题管理页" />
     <MESSAGE value="话题管理--举报系统" />
     <MESSAGE value="音频上传、图集制作" />
-    <option name="LAST_COMMIT_MESSAGE" value="音频上传、图集制作" />
+    <MESSAGE value="网易云数据抓取，结合mp3上传源文件，分享合并" />
+    <option name="LAST_COMMIT_MESSAGE" value="网易云数据抓取，结合mp3上传源文件，分享合并" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1988,8 +1945,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/album_list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.90207714">
-          <caret line="105" column="29" selection-start-line="105" selection-start-column="29" selection-end-line="105" selection-end-column="29" />
+        <state vertical-scroll-proportion="0.9347181">
+          <caret line="106" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="106" selection-end-column="1" />
           <folding>
             <marker date="1461407883028" expanded="true" signature="503:518" placeholder="..." />
             <marker date="1461407883028" expanded="true" signature="503:546" placeholder="..." />

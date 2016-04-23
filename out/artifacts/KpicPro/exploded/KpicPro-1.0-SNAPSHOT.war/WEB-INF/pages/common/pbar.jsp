@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<div class="head" style="background-image: url('${pbar.backgroundLogo}');">
+<div class="head" style="background-image: url('${pbar.backgroundLogo}?imageView2/1/w/1100/h/244/q/95');">
   <div class="head_01_center">
     <input id="gz_pbarId" type="hidden" value="${pbar.id}"/>
     <input id="gz_num" type="hidden" value="${pbar.focusNum}"/>

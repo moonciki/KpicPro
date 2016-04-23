@@ -21,6 +21,7 @@
   <script type="text/javascript" src="${pageContext.request.contextPath}/ueditor/ueditor.all.js"></script>
 </head>
 <body>
+<%@include file="../common/share_media.jsp"%>
 <div class="pic_big" id="pl_tip" style="z-index: 1101">
   <div class="pic_big_tip" style="z-index: 1102">
     <input type="hidden" value="" id="tip_id"/>
@@ -205,12 +206,18 @@
       <script type="text/plain" id="myEditor" name="content" style="width:700px;height:240px;"></script>
       <br>
       <button type="button" id="saveReply" class="btn btn-info"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;发射~</button>
+
+      <button type="button" id="music_share" class="btn btn-success"><span class="glyphicon glyphicon-music"></span>&nbsp;&nbsp;音频分享</button>
+
+      <button type="button" id="video_share" class="btn btn-success"><span class="glyphicon glyphicon-film"></span>&nbsp;&nbsp;视频分享</button>
+
     </div>
 
   </div>
 </div>
 
 <script type="text/javascript" charset="UTF-8" src="${pageContext.request.contextPath}/static/js/reply/reply_index.js"></script>
-
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/music/music.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/video/video.js"></script>
 </body>
 </html>
