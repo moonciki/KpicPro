@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17a5a849-1c54-4076-b3d1-f2d8ebeb2848" name="Default" comment="">
+    <list default="true" id="17a5a849-1c54-4076-b3d1-f2d8ebeb2848" name="Default" comment="私信系统，话题首页云图集">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/service/impl/MsgServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/service/impl/MsgServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/service/impl/MsgServiceImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/service/impl/MsgServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/replypost/ReplyPostController.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/replypost/ReplyPostController.class" />
@@ -898,7 +898,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mapper" />
+              <option name="myItemId" value="replypost" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1291,7 +1291,7 @@
       <workItem from="1461580154375" duration="2702000" />
       <workItem from="1461634877807" duration="10654000" />
       <workItem from="1461649705225" duration="4641000" />
-      <workItem from="1461654702670" duration="12097000" />
+      <workItem from="1461654702670" duration="12140000" />
     </task>
     <task id="LOCAL-00001" summary="话题管理页">
       <created>1460801172157</created>
@@ -1341,11 +1341,17 @@
       <option name="project" value="LOCAL" />
       <updated>1461666799783</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="私信系统，话题首页云图集">
+      <created>1461666820016</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1461666820016</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241081000" />
+    <option name="totallyTimeSpent" value="241124000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1371,7 +1377,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19675675" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13081081" sideWeight="0.48290598" order="1" side_tool="false" content_ui="tabs" />
@@ -1538,13 +1544,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/replypost/ReplyPostController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="80" column="12" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -1856,6 +1855,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.26612905">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/replypost/ReplyPostController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.7032259">
+          <caret line="80" column="12" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
           <folding />
         </state>
       </provider>
