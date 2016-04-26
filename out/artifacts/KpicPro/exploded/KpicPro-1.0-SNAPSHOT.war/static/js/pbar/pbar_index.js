@@ -79,7 +79,7 @@ $().ready(function(){
                         addhtml+="<img src=\""+data.list[key].avater+"?imageView2/1/w/50/h/50/q/95\" class=\"manager_avater\"/>"
                     }
                     addhtml+="<div style=\"margin-left: 50px;margin-top: -1px\"><span style=\"margin-left: 10px; font-size: 10px;line-height: 1.8;font-family: 微软雅黑\"><a href=\"\" target=\"_blank\">"+
-                        data.list[key].name+"</a>&nbsp;&nbsp;<span class=\"badge\" style=\"background-color: #46A3FF;margin-bottom: 5px\">私信</span></span>"+
+                        data.list[key].name+"</a>&nbsp;&nbsp;<span class=\"badge\" onclick=\"sx("+data.list[key].id+")\" style=\"cursor:pointer;background-color: #46A3FF;margin-bottom: 5px\">私信</span></span>"+
                     "<div class=\"progress progress-striped active\" style=\"border: 2px solid #FF9797;\"><div class=\"progress-bar progress-bar-warning\" role=\"progressbar\"aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\"style=\"width: "+(data.list[key].score/allscore)*100+"%;\">"+
                     "<span class=\"sr-only\"></span></div></div><div style=\"margin-top: -20px\"><span style=\"color:#8E8E8E;font-size: 10px;font-family: 微软雅黑\">&nbsp;&nbsp;"+
                     "<span class=\"glyphicon glyphicon-apple\" style=\"color:#FF9797\"></span>&nbsp;<span style=\"color:#00AEAE;font-weight: bold\">"+data.list[key].level+"</span> 级 / <span style=\"color:#FF79BC;font-weight: bold\">"+data.list[key].score+"</span> 分</span>"+
@@ -332,6 +332,9 @@ $().ready(function(){
     $("#onlyPost").click(function(){
         $(".main01_01_reply").show();
         $(".current").removeClass();
+        $("#ytj_xl").hide();
+        $("#xl").show();
+        $("#xl").attr("disabled","disabled");
         $("#onlyPost").removeClass();
         $("#onlyPost").addClass("current");
         $("#topic_post_area").empty();
@@ -345,6 +348,9 @@ $().ready(function(){
     $("#onlyBlog").click(function(){
         $(".main01_01_reply").hide();
         $(".current").removeClass();
+        $("#ytj_xl").hide();
+        $("#xl").show();
+        $("#xl").attr("disabled","disabled");
         $("#onlyBlog").removeClass();
         $("#onlyBlog").addClass("current");
         $("#topic_post_area").empty();
@@ -358,6 +364,9 @@ $().ready(function(){
     $("#home").click(function(){
         $(".main01_01_reply").show();
         $(".current").removeClass();
+        $("#ytj_xl").hide();
+        $("#xl").show();
+        $("#xl").attr("disabled","disabled");
         $("#home").removeClass();
         $("#home").addClass("current");
         $("#topic_post_area").empty();
@@ -371,6 +380,9 @@ $().ready(function(){
     $("#jp").click(function(){
         $(".main01_01_reply").show();
         $(".current").removeClass();
+        $("#ytj_xl").hide();
+        $("#xl").show();
+        $("#xl").attr("disabled","disabled");
         $("#jp").removeClass();
         $("#jp").addClass("current");
         $("#topic_post_area").empty();
@@ -380,6 +392,93 @@ $().ready(function(){
         $("#isBoutique").val("1");
         jiazai();
     });
+
+    $("#ytj").click(function(){
+        $(".main01_01_reply").hide();
+        $(".current").removeClass();
+        $("#ytj_xl").show();
+        $("#xl").hide();
+        $("#ytj_xl").attr("disabled","disabled");
+        $("#ytj").removeClass();
+        $("#ytj").addClass("current");
+        $("#topic_post_area").empty();
+        $("#topic_post_area").append("<div class=\"main01_01_no_data\"><br/><br/><br/> <div class=\"loading\"></div></div>");
+        $("#isBlog").val("");
+        $("#page").val("0");
+        $("#isBoutique").val("");
+        jiazaiytj(false);
+    });
+
+    $("#ytj_xl").click(function(){
+        $("#ytj_xl").attr("disabled", "disabled");
+        jiazaiytj(true);
+    });
+
+    function jiazaiytj(isload){
+
+        var pbarId = $("#pbarId").val();
+        var page = $("#page").val();
+        var isempty = false;
+        if(isload){
+            $("#pageloading2").hide();
+            $("#pageloading").show();
+        }
+        $.post("/pbar/album/list", {'pbarId' : pbarId, 'page' : page}, function(data){
+            if(!isload){
+                $("#topic_post_area").empty();
+            }
+
+            if(data == "" || data == null){
+                isempty = true;
+                if(isload){
+                    $("#pageloading").hide();
+                    $("#pageloading2").fadeIn(800);
+                    setTimeout(function(){$("#pageloading2").fadeOut(800);},2000);
+                }else{
+                    $("#topic_post_area").append("<div class=\"main01_01_no_data\"><br/><br/><br/><div class=\"no_data\"></div></div>");
+                }
+
+            }else{
+                for(key in data){
+                    var addhtml = "<div class='main01_bw'><div class='pf'><span class=\"glyphicon glyphicon-triangle-left\"></span></div><div class='main01_01_user'>";
+
+                    if(data[key].avater == "" || data[key].avater == null){
+                        addhtml += "<img src='" + data[key].userPic + "?size=70' class='index_pic'/>";
+                    }else{
+                        addhtml += "<img src='" + data[key].avater + "?imageView2/1/w/70/h/70/q/95' class='index_pic'/>";
+                    }
+
+                    addhtml += "</div><div class='main01_01_user_reply'></div><div class=\"main01_01\"><div class=\"main01_01_01\">"
+
+                    addhtml+="<span class=\"label label-default tu\">图</span>&nbsp;<a href=\"/album/ab1654" + data[key].id + "\" target=\"_blank\" style=\"font-size: 15px;font-family:微软雅黑\">"
+
+                    addhtml += data[key].title + "</a>"
+
+                    addhtml+= "<br/><span style=\"line-height: 1.8;font-size: 12px;color: #9D9D9D\">"
+                        +data[key].msg+
+                        "</span></div>"
+                    addhtml += "<div class=\"main01_01_img\"><div class=\"main01_01_img_num2\"><span class='glyphicon glyphicon-camera'></span> 共<span class='fxs2'> "+data[key].picNum+" </span>张图片</div>"
+                    addhtml += "<img src=\""+data[key].imageUrl+"?imageView2/1/w/673/q/75\"/>"
+
+                    addhtml += "<div class=\"main01_01_02\"><span class=\"glyphicon glyphicon-user\" style=\"color: #84C1FF\"></span><span style=\"color: #9D9D9D;font-size: 12px;\">&nbsp;&nbsp;图集制作人："
+                        +data[key].userName+
+                        "</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"glyphicon glyphicon-time\" style=\"color: #FF79BC\"></span><span style=\"color: #9D9D9D;font-size: 12px;\">&nbsp;&nbsp;制作日期："
+                        +getLocalTime(data[key].createTime) +
+                        "</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"glyphicon glyphicon-time\" style=\"color:#FF5809\"></span><span style=\"color: #9D9D9D;font-size: 12px;\">&nbsp;&nbsp;发布日期："
+                        +getLocalTime(data[key].publishTime) +
+                        "</span></div></div>"
+
+                    $("#topic_post_area").append(addhtml);
+                    $("#ytj_xl").removeAttr('disabled');
+                    $("#page").val(page + 1);
+                    if(isload){
+                        $("#pageloading").hide();
+                    }
+                }
+            }
+        });
+    }
+
 
 });
 
@@ -460,6 +559,37 @@ function share_video(){
     ue.execCommand('inserthtml', addhtml);
 }
 
+function sx(userId){
+    $("#sx_userId").val(userId);
+    var login_user = $("#userId").val();
+    if(userId == login_user){
+        alert("自己不能给自己写私信哦~(⊙_⊙)~");
+        return;
+    }
+    $("#pl_sx").show();
+}
 
+$("#sx_close").click(function(){
+    $("#sx_msg").val("");
+    $("#pl_sx").hide();
+});
 
-
+$("#sx_submit").click(function(){
+    $("#sx_submit").attr("disabled", "disabled");
+    $("#sx_close").attr("disabled", "disabled");
+    $("#sx_load").show();
+    var userId = $("#sx_userId").val();
+    var content = $("#sx_msg").val();
+    $.post("/user/private/save", {'userId':userId, 'content':content}, function(data){
+        if(data){
+            alert("发送成功！");
+        }else{
+            alert("非常抱歉，后台程序出现未知错误，发送失败！");
+        }
+        $("#sx_submit").removeAttr("disabled");
+        $("#sx_close").removeAttr("disabled");
+        $("#sx_load").hide();
+        $("#sx_msg").val("");
+        $("#pl_sx").hide();
+    });
+});

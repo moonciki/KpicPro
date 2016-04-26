@@ -26,7 +26,7 @@ public class MsgServiceImplCache extends MsgServiceImpl {
         }else{
             int num = super.notRead(userId, type);
             redisTemplate.boundValueOps(key).set(num+"");
-            redisTemplate.expire(key, 1, TimeUnit.MINUTES);//每一分钟缓存失效一次
+            redisTemplate.expire(key, 1, TimeUnit.HOURS);//每一小时缓存失效一次
             return num;
         }
     }

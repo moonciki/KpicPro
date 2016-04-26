@@ -1,9 +1,13 @@
 package cn.kpic.juwin.service.impl;
 
+import cn.kpic.juwin.constant.RedisCacheKey;
 import cn.kpic.juwin.domain.Msg;
+import cn.kpic.juwin.domain.User;
 import cn.kpic.juwin.mapper.MsgMapper;
 import cn.kpic.juwin.service.MsgService;
+import cn.kpic.juwin.utils.CurrentUser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +21,9 @@ public class MsgServiceImpl implements MsgService{
 
     @Autowired
     private MsgMapper msgMapper;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     @Override
     @Transactional
@@ -35,6 +42,12 @@ public class MsgServiceImpl implements MsgService{
     @Override
     @Transactional
     public void update(Msg msg) {
-        this.msgMapper.update(msg);
+        User user = CurrentUser.getUser();
+        if(user != null){
+            String key = RedisCacheKey.USER_NEWS+user.getId();
+            this.redisTemplate.delete(key);//«Â¿Ìª∫¥Ê
+            this.msgMapper.update(msg);
+        }
+
     }
 }

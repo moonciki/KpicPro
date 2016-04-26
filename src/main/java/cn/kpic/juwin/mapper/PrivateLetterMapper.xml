@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace的作用在于对sql进行分类化管理，理解sql隔离
+这里注意：如果使用Mapper代理开发的话，那么namespace将会有特殊重要的作用
+ -->
+<!-- 知识点：
+#{}：表示占位符，预编译，不会引起sql注入
+${}：表示拼接符，可能会引起sql注入
+ -->
+<mapper namespace="cn.kpic.juwin.mapper.PrivateLetterMapper">
+
+    <insert id="save" parameterType="cn.kpic.juwin.domain.PrivateLetter">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into tb_private_letter
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="userId != null">userId,</if>
+            <if test="fromUserId != null">fromUserId,</if>
+            <if test="content != null">content,</if>
+            <if test="isReply != null">isReply,</if>
+            <if test="reply != null">reply,</if>
+            <if test="createTime != null">createTime,</if>
+            <if test="updateTime != null">updateTime,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="fromUserId != null">#{fromUserId},</if>
+            <if test="content != null">#{content},</if>
+            <if test="isReply != null">#{isReply},</if>
+            <if test="reply != null">#{reply},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+        </trim>
+    </insert>
+
+    <update id="update" parameterType="cn.kpic.juwin.domain.PrivateLetter">
+        update tb_private_letter
+        <trim prefix="set" suffixOverrides=",">
+            <if test="userId != null">userId = #{userId},</if>
+            <if test="fromUserId != null">fromUserId = #{fromUserId},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="isReply != null">isReply = #{isReply},</if>
+            <if test="reply != null">reply = #{reply},</if>
+            <if test="createTime != null">createTime = #{createTime},</if>
+            <if test="updateTime != null">updateTime = #{updateTime},</if>
+        </trim>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+
+    <select id="getAllNotReply" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PrivateLetterVo">
+      SELECT
+      tpl.id,
+      tpl.fromUserId AS userId,
+      tu.userPic,
+      tu.avater,
+      tu.name AS userName,
+      tpl.content,
+      tpl.createTime
+      FROM tb_private_letter tpl
+      JOIN tb_user tu ON tpl.fromUserId = tu.id
+      WHERE tpl.userId = #{userId} AND tpl.isReply = 0 ORDER BY tpl.createTime DESC LIMIT #{page}, 10;
+    </select>
+
+    <select id="getAllSelf" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PrivateLetterVo">
+        SELECT
+        tpl.id,
+        tpl.userId,
+        tu.name AS userName,
+        tpl.content,
+        tpl.isReply,
+        tpl.reply,
+        tpl.createTime,
+        tpl.updateTime
+        FROM tb_private_letter tpl
+        JOIN tb_user tu ON tpl.userId = tu.id
+        WHERE tpl.fromUserId = #{userId} ORDER BY tpl.createTime DESC LIMIT #{page}, 10;
+    </select>
+
+
+</mapper>

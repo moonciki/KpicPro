@@ -13,7 +13,7 @@
 <body>
 <div class="pic_big" id="tp_share_music">
   <div class="share_music_main">
-    <span class="badge pull-right" title="关闭" onclick="music_share_close()" style="font-weight:bold; cursor: pointer;background-color: #FF5151">×</span>
+    <span class="badge pull-right" title="关闭" onclick="music_share_close()" style="font-weight:bold; cursor: pointer;background-color: #FF5151"><span class="glyphicon glyphicon-remove"></span></span>
     <br/><br/>
     <div class="input-group" id="haha" style="margin: 0 auto;width: 350px">
       <input type="text" id="musicName" style="border: solid 2px #FF5151;" class="form-control">
@@ -65,7 +65,7 @@
 
     <div class="share_music_main">
 
-        <span class="badge pull-right" title="关闭" onclick="video_share_close()" style="font-weight:bold; cursor: pointer;background-color: #FF5151">×</span>
+        <span class="badge pull-right" title="关闭" onclick="video_share_close()" style="font-weight:bold; cursor: pointer;background-color: #FF5151"><span class="glyphicon glyphicon-remove"></span></span>
         <br/><br/>
         <div class="input-group" style="margin: 0 auto;width: 450px">
             <span class="input-group-addon" style="background-color: #FF5151; border: solid 1px #FF5151;  font-weight:bold; color:#FFF">视频FLASH地址：</span>

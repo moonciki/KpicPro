@@ -37,7 +37,6 @@
     <orderEntry type="library" exported="" name="Gradle: org.apache.commons:commons-email:1.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: commons-io:commons-io:2.3" level="project" />
     <orderEntry type="library" exported="" name="Gradle: commons-fileupload:commons-fileupload:1.2.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: commons-codec:commons-codec:1.6" level="project" />
     <orderEntry type="library" exported="" name="Gradle: javax.servlet:jstl:1.1.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: taglibs:standard:1.1.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: joda-time:joda-time:2.2" level="project" />
@@ -74,11 +73,6 @@
     <orderEntry type="library" exported="" name="Gradle: org.mybatis:mybatis-spring:1.2.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.4.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.codehaus.jackson:jackson-mapper-asl:1.9.7" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.qiniu:qiniu-java-sdk:7.0.8" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: commons-logging:commons-logging:1.1.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpclient:4.2" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpcore:4.2.1" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpmime:4.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.json:org.json:chargebee-1.0" level="project" />
     <orderEntry type="library" exported="" name="Gradle: javax.mail:mail:1.4" level="project" />
     <orderEntry type="library" exported="" name="Gradle: javax.activation:activation:1.1" level="project" />
@@ -95,11 +89,17 @@
     <orderEntry type="library" exported="" name="Gradle: org.codehaus.jackson:jackson-core-asl:1.9.7" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.squareup.okhttp:okhttp:2.7.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.squareup.okio:okio:1.6.0" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.slf4j:jcl-over-slf4j:1.6.6" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-api:1.7.5" level="project" />
     <orderEntry type="library" exported="" name="Gradle: com.google.code.gson:gson:2.3.1" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: mysql:mysql-connector-java:5.1.12" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: com.alibaba:druid:1.0.0" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.qiniu:qiniu-java-sdk:7.0.9" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.slf4j:jcl-over-slf4j:1.6.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-codec:commons-codec:1.6" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: commons-logging:commons-logging:1.1.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpclient:4.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpcore:4.2.1" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpmime:4.2" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-api:1.7.5" level="project" />
   </component>
 </module>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.PbarAlbumMapper">
+
+    <insert id="save" parameterType="cn.kpic.juwin.domain.PbarAlbum">
+        insert into tb_pbar_album (pbarId, albumId, createTime)
+        values (#{pbarId}, #{albumId}, #{createTime})
+    </insert>
+
+    <delete id="del" parameterType="java.lang.Long">
+        DELETE tb_pbar_album WHERE id = #{id}
+    </delete>
+
+    <select id="getAllAlbumByPbarId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PbarAlbumList">
+      SELECT
+      ta.id,
+      ta.title,
+      ta.msg,
+      ta.imageUrl,
+      ta.picNum,
+      tu.id AS userId,
+      tu.userPic,
+      tu.avater,
+      tu.name AS userName,
+      ta.music,
+      ta.createTime,
+      tpa.createTime AS publishTime
+      FROM tb_pbar_album tpa
+      JOIN tb_album ta ON tpa.albumId = ta.id
+      JOIN tb_user tu ON ta.userId = tu.id
+      WHERE tpa.pbarId = #{pbarId} AND ta.isdel = 0 ORDER BY tpa.createTime LIMIT #{page}, 10;
+    </select>
+
+</mapper>

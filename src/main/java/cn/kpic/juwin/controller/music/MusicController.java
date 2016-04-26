@@ -72,9 +72,7 @@ public class MusicController {
     public String makeMusic(Model model){
         User curr_user = CurrentUser.getUser();
         try{
-            UserLevel userLevel = userLevelService.getUserLevelByUserId(curr_user.getId());
             model.addAttribute("user", curr_user);
-            model.addAttribute("level", userLevel);
             model.addAttribute("flag",14);
             return "/user/make_music";
         }catch (Exception e){
@@ -102,9 +100,7 @@ public class MusicController {
     public String getAllMusic(Model model){
         User curr_user = CurrentUser.getUser();
         try{
-            UserLevel userLevel = userLevelService.getUserLevelByUserId(curr_user.getId());
             model.addAttribute("user", curr_user);
-            model.addAttribute("level", userLevel);
             model.addAttribute("flag",13);
             return "/user/music_list";
         }catch (Exception e){

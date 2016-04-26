@@ -13,47 +13,34 @@
   <title>${user.name}的管理中心</title>
 
   <link href="${pageContext.request.contextPath}/static/css/user/manage_center.css" rel="stylesheet">
-  <link href="${pageContext.request.contextPath}/static/css/user/album_list.css" rel="stylesheet">
 </head>
 <body>
 <%@include file="../common/top.jsp" %>
 <div class="main">
   <%@include file="../common/manage_center_left.jsp"%>
-  <div class="pic_big">
-    <div class="pl_content">
-      <span class="badge pull-right" id="closeh" title="关闭" style="background-color: #FF5151; cursor: pointer;"><span class="glyphicon glyphicon-remove"></span></span>
-      <input type="hidden" value="0" id="gzht_page"/>
-      <input type="hidden" value="" id="album_id"/>
-      <div class="well"><span class="glyphicon glyphicon-send" style="color:#FF95CA"></span>&nbsp;&nbsp;将<b>“<span id="point_title"></span>”</b>发布到：</div>
-
-        <span id="self_pbar">
-
-      </span>
-
-      <center><button type="button" onclick="jz(true)" class="btn btn-info" id="btn_jz1"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
-        <br/><span id="jzz1" style="display: none">加载中..</span><span id="my1" style="display: none">没有更多了</span>
-      </center>
-
-    </div>
-  </div>
   <div class="main_02">
     <div class="main_02_title">
       <span id="content_title">
         <span style="color:#FF79BC" class="glyphicon glyphicon-cog"></span>
         用户管理中心
         &nbsp;&nbsp;<span style="color:#8C8C00" class="glyphicon glyphicon-share-alt"></span>&nbsp;&nbsp;
-        <span style="color:#FF95CA" class="glyphicon glyphicon-picture"></span>
-        云图集管理
+        <span style="color:#FF95CA" class="glyphicon glyphicon-envelope"></span>
+        私信系统
         &nbsp;&nbsp;<span style="color:#8C8C00" class="glyphicon glyphicon-share-alt"></span>&nbsp;&nbsp;
         <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
-        我的云图集
+        查看私信
       </span>
     </div>
-    <input id="page" value="0" type="hidden"/>
     <div class="main_02_content">
 
 
-      <span id="album_list"></span>
+      <span id="sx_list">
+
+      </span>
+
+
+
+      <input type="hidden" id="page" value="0"/>
 
       <center>
         <button type="button" id="jz" class="btn btn-info">加载更多</button>
@@ -66,7 +53,7 @@
   </div>
 </div>
 
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/user/album_list.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/user/private_letter_self_list.js"></script>
 
 </body>
 </html>

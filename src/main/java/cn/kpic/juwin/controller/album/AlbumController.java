@@ -42,9 +42,7 @@ public class AlbumController {
     public String makeAlbum(Model model){
         User curr_user = CurrentUser.getUser();
         try{
-            UserLevel userLevel = userLevelService.getUserLevelByUserId(curr_user.getId());
             model.addAttribute("user", curr_user);
-            model.addAttribute("level", userLevel);
             model.addAttribute("flag",10);
             return "/user/make_album";
         }catch (Exception e){
@@ -73,9 +71,7 @@ public class AlbumController {
     public String getAllAlbum(Model model){
         User curr_user = CurrentUser.getUser();
         try{
-            UserLevel userLevel = userLevelService.getUserLevelByUserId(curr_user.getId());
             model.addAttribute("user", curr_user);
-            model.addAttribute("level", userLevel);
             model.addAttribute("flag",9);
             return "/user/album_list";
         }catch (Exception e){

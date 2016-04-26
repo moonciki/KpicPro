@@ -130,10 +130,34 @@
     <span style="color:#FF95CA" class="glyphicon glyphicon-envelope"></span>
     私信系统
   </div>
-  <div id="p8" class="cd_unit">
-    <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
-    查看私信
-  </div>
+  <c:choose>
+    <c:when test="${flag == 8}">
+      <div class="cd_unit_now">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        发给我的私信
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="cd_unit" onclick="window.location.href='${pageContext.request.contextPath}/user/private/letter'">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        发给我的私信
+      </div>
+    </c:otherwise>
+  </c:choose>
+  <c:choose>
+    <c:when test="${flag == 81}">
+      <div class="cd_unit_now">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        我发出的私信
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="cd_unit" onclick="window.location.href='${pageContext.request.contextPath}/user/private/letter2'">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        我发出的私信
+      </div>
+    </c:otherwise>
+  </c:choose>
   <div class="cd_title2">
     <span style="color:#FF95CA" class="glyphicon glyphicon-picture"></span>
     云图集管理

@@ -59,6 +59,7 @@ public class ReplyPostController {
         return result;
     }
 
+    @RequiresPermissions({"user"})
     @RequestMapping(value = "/tuan/reply/save")
     @ResponseBody
     public ReplyPost getReply(ReplyPost replyPost, Long pbarId, Long topicUserId){

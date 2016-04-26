@@ -30,7 +30,7 @@
 }
 
 .pic_big{
-    display: block;
+    display: none;
     margin: 0 auto;
     position: fixed;
     top: 0%;

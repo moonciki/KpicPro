@@ -5,15 +5,24 @@ body{
 }
 
 .tie{
-    background-color:#73BF00;
+    background-color:#FFF;
+    color:#64A600;
     font-size: 12px;
-    border: 1px solid #467500;
+    border: 1px solid #64A600;
+}
+
+.tu{
+    background-color:#FFF;
+    color:#FF5151;
+    font-size: 12px;
+    border: 1px solid #FF5151;
 }
 
 .bo{
-    background-color:#A6A600;
+    background-color:#FFF;
+    color:#A6A600;
     font-size: 12px;
-    border: 1px solid #5B5B00;
+    border: 1px solid #A6A600;
 }
 
 .index_pic{
@@ -62,8 +71,8 @@ body{
     margin-right: auto;
     width: 950px;
     padding-top: 56px;
-    border-radius: 100px;
     background-color: black;
+    border-radius: 100px;
     border: solid red 1px;
     box-shadow:0px 0px 40px red;
     min-height: 150px;
@@ -219,6 +228,7 @@ ul.parent li:hover .lines,.topbar li.current .lines {
 
 .main01{
     margin-top: 10px;
+    padding-bottom: 10px;
     float: left;
     border: 1px solid #E0E0E0;
     box-shadow:0px 0px 6px #FFD9EC;
@@ -369,6 +379,19 @@ ul.parent li:hover .lines,.topbar li.current .lines {
     background-image:url("numbg.png");
     float: left;
  }
+
+.main01_01_img_num2{
+    text-align: center;
+    padding: 10px;
+    width: auto;
+    font-size: 20px;
+    min-width: 156px;
+    color: #E0E0E0;
+    height: 60px;
+    position:absolute;
+    background-image:url("numbg.png");
+    float: left;
+}
 
 .jing{
     background-color: #ff7575;
@@ -694,5 +717,13 @@ div{
 
 .fxs{
     font-style: italic;
+    color:#ff7575;
+}
+
+.fxs2{
+    font-family: serif;
+    font-size: 35px;
+    font-style: italic;
+    font-weight: bold;
     color:#ff7575;
 }

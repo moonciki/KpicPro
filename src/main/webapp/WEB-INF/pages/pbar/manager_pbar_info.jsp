@@ -63,7 +63,7 @@
         </li>
         <li class="list-group-item">背景图片：
           &nbsp;&nbsp;&nbsp;
-          <img src="${pbar.backgroundLogo}?imageView2/1/w/680/q/95"/>
+          <img src="${pbar.backgroundLogo}?imageView2/1/w/670/h/144/q/95"/>
         </li>
       </ul>
     </div>

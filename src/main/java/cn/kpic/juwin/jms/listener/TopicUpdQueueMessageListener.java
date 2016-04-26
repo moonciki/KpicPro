@@ -52,9 +52,11 @@ public class TopicUpdQueueMessageListener implements MessageListener {
             topicPost.setReplyNum(1);
             topicPostMapper.update(topicPost);
 
-            /** 清除某团前十页缓存*/
-            redisTemplate.delete(RedisCacheKey.PBAR_PAGE + topicPost.getPbarId());
-
+            TopicPost topicPost1 = topicPostMapper.getById(id);
+            if(topicPost1 != null){
+                /** 清除某团前十页缓存*/
+                redisTemplate.delete(RedisCacheKey.PBAR_PAGE + topicPost1.getPbarId());
+            }
         }catch (JMSException e){
             e.printStackTrace();
         }catch (Exception e){

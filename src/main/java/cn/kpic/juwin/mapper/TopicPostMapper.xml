@@ -88,7 +88,7 @@ ${}：表示拼接符，可能会引起sql注入
             <if test="num != null">num = #{num},</if>
             <if test="createTime != null">createTime = #{createTime},</if>
             <if test="updateTime != null">updateTime = #{updateTime},</if>
-            <if test="replyNum != null">replyNum = replyNum,</if>
+            <if test="replyNum != null">replyNum = replyNum + 1,</if>
         </trim>
         where id = #{id,jdbcType=BIGINT}
     </update>
