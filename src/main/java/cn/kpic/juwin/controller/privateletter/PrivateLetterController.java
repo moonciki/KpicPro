@@ -77,7 +77,7 @@ public class PrivateLetterController {
 
 
     @RequiresPermissions({"user"})
-    @RequestMapping(value = "/user/private/letter2", method = RequestMethod.GET)
+    @RequestMapping(value = "/user/private/self/letter", method = RequestMethod.GET)
     public String getSelfLetter3(Model model){
         User curr_user = CurrentUser.getUser();
         try{
@@ -91,7 +91,7 @@ public class PrivateLetterController {
     }
 
     @RequiresPermissions({"user"})
-    @RequestMapping(value = "/user/private/letter2", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/private/self/letter", method = RequestMethod.POST)
     @ResponseBody
     public List<PrivateLetterVo> getSelfLetter4(@RequestParam(value = "page", defaultValue = "0", required = true)Integer page, Model model){
         User curr_user = CurrentUser.getUser();
@@ -106,7 +106,7 @@ public class PrivateLetterController {
     @RequestMapping(value = "/user/private/reply",method = RequestMethod.POST)
     @RequiresPermissions({"user"})
     @ResponseBody
-    public boolean replyPrivateLetter(String reply, Long id){
+    public boolean replyPrivateLetter(String reply, Long id, Long userId){
         try{
             if("".equals(reply.trim())||id == null){
                 return false;
@@ -115,7 +115,7 @@ public class PrivateLetterController {
             privateLetter.setIsReply(1);
             privateLetter.setReply(reply);
             privateLetter.setId(id);
-            this.privateLetterService.update(privateLetter);
+            this.privateLetterService.update(privateLetter, userId);
             return true;
         }catch (Exception e){
             e.printStackTrace();

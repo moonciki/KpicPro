@@ -430,7 +430,7 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/user/{userId}/index.html")
+    @RequestMapping(value = "/user/u6514{userId}/index.html")
     public String getUserDynamic(@PathVariable("userId")Long userId, Model model){
         String url = "/user/user_index";
         try{

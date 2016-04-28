@@ -50,7 +50,7 @@ function jz(isjz, page){
                     addhtml += "<span class=\"badge\" style='background-color:#64A600'><span class='glyphicon glyphicon-envelope'></span>&nbsp;"+ data[key].title +"</span>";
                 }
 
-                addhtml += "<span style='font-size: 10px'>&nbsp;&nbsp;您收到来自<a href='/user/" + data[key].fromUserId + "/index.html'>"+ data[key].fromUserName +"</a>的回复&nbsp;&nbsp;<span class='glyphicon glyphicon-share-alt'></span> 回复于："+getLocalTime(data[key].createTime)+
+                addhtml += "<span style='font-size: 10px'>&nbsp;&nbsp;您收到来自<a href='/user/u6514" + data[key].fromUserId + "/index.html'>"+ data[key].fromUserName +"</a>的回复&nbsp;&nbsp;<span class='glyphicon glyphicon-share-alt'></span> 回复于："+getLocalTime(data[key].createTime)+
                     "&nbsp;&nbsp;<a href='javascript:void(0);' target = \"_blank\" onclick=\"ckxq("
                 if(data[key].topicId == null || data[key].topicId == ""){
                     addhtml += "2, " + data[key].replyId;
@@ -82,7 +82,7 @@ function ckxq(flag, id){
         $.post("/user/ckxq/info",{'replyId':id}, function(data){
             if(data.topic != null && data.topic != ""){
 
-                $("#ckxq_topic_user").append("<span class=\"glyphicon glyphicon-user\"></span>&nbsp;发帖人：<a href=\"/user/" + data.topic.userId + "/index.html\" target=\"_blank\">"+data.topic.userName+"</a>"+
+                $("#ckxq_topic_user").append("<span class=\"glyphicon glyphicon-user\"></span>&nbsp;发帖人：<a href=\"/user/u6514" + data.topic.userId + "/index.html\" target=\"_blank\">"+data.topic.userName+"</a>"+
                 "&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"glyphicon glyphicon-time\"></span>&nbsp;发帖时间："+getLocalTime(data.topic.createTime)+"</span>");
                 $("#ckxq_title").append("<a href=\"/post/reply/tp5416"+data.topicId+"\" target=\"_blank\">"+data.topic.title);+"</a>";
 
@@ -92,7 +92,7 @@ function ckxq(flag, id){
             }
 
             if(data.reply != null && data.reply != ""){
-                $("#ckxq_reply_user").append("<span class=\"glyphicon glyphicon-user\"></span>&nbsp;发帖人：<a href=\"/user/" + data.reply.userId + "/index.html\" target=\"_blank\">"+data.reply.userName+"</a>"+
+                $("#ckxq_reply_user").append("<span class=\"glyphicon glyphicon-user\"></span>&nbsp;发帖人：<a href=\"/user/u6514" + data.reply.userId + "/index.html\" target=\"_blank\">"+data.reply.userName+"</a>"+
                 "&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"glyphicon glyphicon-time\"></span>&nbsp;发帖时间："+getLocalTime(data.reply.createTime));
                 $("#ckxq_reply_content").append(data.reply.content);
             }else{
@@ -108,7 +108,7 @@ function ckxq(flag, id){
             }else{
                 for(key in data){
                     var addhtml = "<br/><br/><span style=\"font-size: 10px; color: #7B7B7B; line-height: 2.0\"><span class=\"glyphicon glyphicon-share-alt\"></span>&nbsp;"+
-                        "该短评由 <a href=\"/user/"+data[key].userId+"/index.html\" target=\"_blank\">"+data[key].userName+"</a> 回复于 "+getLocalTime(data[key].createTime)+"</span><br/>"+data[key].content;
+                        "该短评由 <a href=\"/user/u6514"+data[key].userId+"/index.html\" target=\"_blank\">"+data[key].userName+"</a> 回复于 "+getLocalTime(data[key].createTime)+"</span><br/>"+data[key].content;
                     $("#ckxq_short_list").append(addhtml);
                 }
                 $("#btn_ckxq").removeAttr("disabled");
@@ -144,7 +144,7 @@ function ckxq_jz(){
 
             for(key in data){
                 var addhtml = "<br/><br/><span style=\"font-size: 10px; color: #7B7B7B; line-height: 2.0\"><span class=\"glyphicon glyphicon-share-alt\"></span>&nbsp;"+
-                    "该短评由 <a href=\"/user/"+data[key].userId+"/index.html\" target=\"_blank\">"+data[key].userName+"</a> 回复于 "+getLocalTime(data[key].createTime)+"</span><br/>"+data[key].content;
+                    "该短评由 <a href=\"/user/u6514"+data[key].userId+"/index.html\" target=\"_blank\">"+data[key].userName+"</a> 回复于 "+getLocalTime(data[key].createTime)+"</span><br/>"+data[key].content;
                 $("#ckxq_short_list").append(addhtml);
             }
             $("#ckxq_load").hide();

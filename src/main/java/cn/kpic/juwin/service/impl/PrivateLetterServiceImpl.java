@@ -1,9 +1,13 @@
 package cn.kpic.juwin.service.impl;
 
 import cn.kpic.juwin.domain.PrivateLetter;
+import cn.kpic.juwin.domain.User;
+import cn.kpic.juwin.domain.vo.JmsSystemMsg;
 import cn.kpic.juwin.domain.vo.PrivateLetterVo;
+import cn.kpic.juwin.jms.sender.SystemMsgQueueMessageSender;
 import cn.kpic.juwin.mapper.PrivateLetterMapper;
 import cn.kpic.juwin.service.PrivateLetterService;
+import cn.kpic.juwin.utils.CurrentUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,17 +25,35 @@ public class PrivateLetterServiceImpl implements PrivateLetterService{
     @Autowired
     private PrivateLetterMapper privateLetterMapper;
 
+    @Autowired
+    private SystemMsgQueueMessageSender systemMsgQueueMessageSender;
+
 
     @Override
     @Transactional
     public void save(PrivateLetter privateLetter) {
         this.privateLetterMapper.save(privateLetter);
+
+        User curr_user = CurrentUser.getUser();
+        JmsSystemMsg jmsSystemMsg = new JmsSystemMsg();
+        jmsSystemMsg.setTitle("您收到来自 <a href=\"/user/u6514"+curr_user.getId()+"/index.html\" target=\"_blank\">"+curr_user.getName()+"</a> 的一封私信");
+        jmsSystemMsg.setContent("<a href=\"/user/private/letter\">点击查看详情</a>");
+        jmsSystemMsg.setUserId(privateLetter.getUserId());
+        this.systemMsgQueueMessageSender.send(jmsSystemMsg);
+
     }
 
     @Override
     @Transactional
-    public void update(PrivateLetter privateLetter) {
+    public void update(PrivateLetter privateLetter, Long userId) {
         this.privateLetterMapper.update(privateLetter);
+        /** 发送系统消息提醒*/
+        JmsSystemMsg jmsSystemMsg = new JmsSystemMsg();
+        jmsSystemMsg.setTitle("系统消息：您的私信被回复");
+        jmsSystemMsg.setContent("<a href=\"/user/private/self/letter\">点击查看详情</a>");
+        jmsSystemMsg.setUserId(userId);
+        this.systemMsgQueueMessageSender.send(jmsSystemMsg);
+
     }
 
     @Override

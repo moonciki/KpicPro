@@ -280,6 +280,21 @@
 
     <!-- END -->
 
+    <!-- 系统消息发送任务 -->
+
+    <bean id="systemMsgQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="system-msg-queue" />
+    </bean>
+
+    <bean id="systemMsgContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="systemMsgQueue" />
+        <property name="messageListener" ref="systemMsgQueueMessageListener" />
+    </bean>
+
+    <!-- END -->
+
 
 
 

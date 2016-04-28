@@ -12,7 +12,7 @@ public interface PrivateLetterService {
 
     void save(PrivateLetter privateLetter);
 
-    void update(PrivateLetter privateLetter);
+    void update(PrivateLetter privateLetter, Long userId);
 
     List<PrivateLetterVo> getAllNotReply(Long userId, Integer page);
 

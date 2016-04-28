@@ -32,10 +32,9 @@ public class MsgServiceImpl implements MsgService{
     }
 
     @Override
-    public Integer notRead(Long userId, int type) {
+    public Integer notRead(Long userId) {
         Msg msg = new Msg();
         msg.setUserId(userId);
-        msg.setType(type);
         return this.msgMapper.notRead(msg);
     }
 
@@ -49,5 +48,15 @@ public class MsgServiceImpl implements MsgService{
             this.msgMapper.update(msg);
         }
 
+    }
+
+    @Override
+    public void clear(Msg msg) {
+        User user = CurrentUser.getUser();
+        if(user != null){
+            String key = RedisCacheKey.USER_NEWS+user.getId();
+            this.redisTemplate.delete(key);//«Â¿Ìª∫¥Ê
+            this.msgMapper.clear(msg);
+        }
     }
 }

@@ -108,9 +108,9 @@ public class ShortReplyController {
         if(content.contains("@")) {
             String result = StringDeal.getText(content).trim();
             String name = result.substring(result.indexOf('@'), result.indexOf(':'));
-            String newName = "<a href=\"/user/" + userId + "/index.html\" target=\"_blank\">" + name + "</a>";
+            String newName = "<a href=\"/user/u6514" + userId + "/index.html\" target=\"_blank\">" + name + "</a>";
             if(name.length() > 15){
-                newName = "<a href=\"/user/" + userId + "/index.html\" target=\"_blank\">id为"+userId+"的越界用户名</a>";
+                newName = "<a href=\"/user/u6514" + userId + "/index.html\" target=\"_blank\">id为"+userId+"的越界用户名</a>";
             }
             return result.replace(name, newName);
         }else{

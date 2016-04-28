@@ -3,7 +3,7 @@ package cn.kpic.juwin.domain;
 import java.util.Date;
 
 /**
- * Kpic主题帖
+ * 主题帖
  * Created by bjsunqinwen on 2016/3/9.
  */
 public class TopicPost implements java.io.Serializable{
@@ -31,19 +31,19 @@ public class TopicPost implements java.io.Serializable{
 
     private String shortText;
 
-    private int replyNum;
+    private Integer replyNum;
 
-    private int isTop;
+    private Integer isTop;
 
-    private int isBoutique;
+    private Integer isBoutique;
 
-    private int isdel;
+    private Integer isdel;
 
-    private int num1;
+    private Integer num1;
 
-    private int num2;
+    private Integer num2;
 
-    private int num;
+    private Integer num;
 
     private Long pbarId;
 
@@ -59,6 +59,14 @@ public class TopicPost implements java.io.Serializable{
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public String getTitle() {
@@ -77,59 +85,67 @@ public class TopicPost implements java.io.Serializable{
         this.content = content;
     }
 
-    public int getReplyNum() {
+    public String getShortText() {
+        return shortText;
+    }
+
+    public void setShortText(String shortText) {
+        this.shortText = shortText;
+    }
+
+    public Integer getReplyNum() {
         return replyNum;
     }
 
-    public void setReplyNum(int replyNum) {
+    public void setReplyNum(Integer replyNum) {
         this.replyNum = replyNum;
     }
 
-    public int getIsTop() {
+    public Integer getIsTop() {
         return isTop;
     }
 
-    public void setIsTop(int isTop) {
+    public void setIsTop(Integer isTop) {
         this.isTop = isTop;
     }
 
-    public int getIsBoutique() {
+    public Integer getIsBoutique() {
         return isBoutique;
     }
 
-    public void setIsBoutique(int isBoutique) {
+    public void setIsBoutique(Integer isBoutique) {
         this.isBoutique = isBoutique;
     }
 
-    public int getIsdel() {
+    public Integer getIsdel() {
         return isdel;
     }
 
-    public void setIsdel(int isdel) {
+    public void setIsdel(Integer isdel) {
         this.isdel = isdel;
     }
 
-    public int getNum1() {
+    public Integer getNum1() {
         return num1;
     }
 
-    public void setNum1(int num1) {
+    public void setNum1(Integer num1) {
         this.num1 = num1;
     }
 
-    public int getNum2() {
+    public Integer getNum2() {
         return num2;
     }
 
-    public void setNum2(int num2) {
+    public void setNum2(Integer num2) {
         this.num2 = num2;
     }
 
-    public int getNum() {
+    public Integer getNum() {
         return num;
     }
 
-    public void setNum(int num) {
+    public void setNum(Integer num) {
         this.num = num;
     }
 
@@ -163,21 +179,5 @@ public class TopicPost implements java.io.Serializable{
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
-    }
-
-    public String getUid() {
-        return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
-    }
-
-    public String getShortText() {
-        return shortText;
-    }
-
-    public void setShortText(String shortText) {
-        this.shortText = shortText;
     }
 }

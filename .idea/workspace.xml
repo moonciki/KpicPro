@@ -2,23 +2,79 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17a5a849-1c54-4076-b3d1-f2d8ebeb2848" name="Default" comment="私信系统，话题首页云图集">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/Home.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/home/HomeController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/vo/JmsSystemMsg.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/SystemMsg.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/systemmsg/SystemMsgController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/SystemMsgMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/SystemMsgMapper.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/SystemMsgQueueMessageListener.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/sender/SystemMsgQueueMessageSender.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/SystemMsgService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/SystemMsgServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/user/all_sys_msg.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/all_sys_msg.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/home.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
+      <change type="DELETED" beforePath="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\out\artifacts\KpicPro\exploded\KpicPro-1.0-SNAPSHOT.war\ueditor\themes\default\images\icons.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\src\main\webapp\ueditor\themes\default\images\icons.gif" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/MsgMapper.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/MsgMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/MsgMapper.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/MsgMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/service/MsgService.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/service/MsgService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/service/MsgService.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/service/MsgService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/service/impl/MsgServiceImpl.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/service/impl/MsgServiceImpl.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/service/impl/MsgServiceImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/service/impl/MsgServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/replypost/ReplyPostController.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/replypost/ReplyPostController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/replypost/ReplyPostController.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/replypost/ReplyPostController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/news/NewsController.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/news/NewsController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/news/NewsController.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/news/NewsController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/shortreply/ShortReplyController.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/shortreply/ShortReplyController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/shortreply/ShortReplyController.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/shortreply/ShortReplyController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/domain/TopicPost.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/domain/TopicPost.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/domain/TopicPost.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/domain/TopicPost.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/jms/listener/TopicUpdQueueMessageListener.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/jms/listener/TopicUpdQueueMessageListener.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/jms/listener/TopicUpdQueueMessageListener.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/jms/listener/TopicUpdQueueMessageListener.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/TopicPostMapper.xml" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/TopicPostMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/TopicPostMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/TopicPostMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/user/UserController.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/user/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/user/UserController.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/user/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/jms/listener/UserNewsQueueMessageListener.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/jms/listener/UserNewsQueueMessageListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/jms/listener/UserNewsQueueMessageListener.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/jms/listener/UserNewsQueueMessageListener.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/themes/default/images/icons.png" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/themes/default/images/icons.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ueditor/themes/default/images/icons.png" afterPath="$PROJECT_DIR$/src/main/webapp/ueditor/themes/default/images/icons.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/MsgMapper.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/MsgMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/MsgMapper.xml" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/MsgMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/MsgMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/MsgMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/MsgMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/MsgMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/MsgService.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/MsgService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/MsgServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/MsgServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/cache/MsgServiceImplCache.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/cache/MsgServiceImplCache.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/news/NewsController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/news/NewsController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/privateletter/PrivateLetterController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/privateletter/PrivateLetterController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/PrivateLetterMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/PrivateLetterMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/PrivateLetterService.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/PrivateLetterService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PrivateLetterServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PrivateLetterServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/shortreply/ShortReplyController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/shortreply/ShortReplyController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/TopicPost.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/TopicPost.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/user/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/user/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/UserNewsQueueMessageListener.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/UserNewsQueueMessageListener.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/applicationContext.xml" afterPath="$PROJECT_DIR$/build/resources/main/applicationContext.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/applicationContext.xml" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/applicationContext.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/properties/k-pic-prod.properties" afterPath="$PROJECT_DIR$/build/resources/main/properties/k-pic-prod.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/properties/k-pic-prod.properties" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/properties/k-pic-prod.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/user/manage_center.css" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/user/manage_center.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/css/user/manage_center.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/user/manage_center.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/common/manage_center_left.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/common/manage_center_left.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/pbar/pbar_index.css" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/pbar/pbar_index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/pbar/pbar_index.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/pbar/pbar_index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/pbar/pbar_index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/pbar/pbar_index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/manage_center_left.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/manage_center_left.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/user/manager_center_user_news.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/user/manager_center_user_news.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/user/manager_center_user_news.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/user/manager_center_user_news.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/pbar/manager_pbar_applys.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/pbar/manager_pbar_applys.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/css/pbar.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/pbar.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_list.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_list.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_self_list.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_self_list.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/common/top.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/common/top.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/top.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/top.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.config.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.config.js" afterPath="$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="KpicPro.iws" />
@@ -77,7 +133,100 @@
     <favorites_list name="KpicPro" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="Home.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/Home.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/home/HomeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.084746">
+              <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="top.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/top.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3859649">
+              <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/home.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pbar.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/pbar.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.357142">
+              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pbar_index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="133" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="all_sys_msg.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/all_sys_msg.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.9830508">
+              <caret line="14" column="101" selection-start-line="14" selection-start-column="101" selection-end-line="14" selection-end-column="101" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="5.032258">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -365,57 +514,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/webapp/static/js/pbar/manager_pbar_update.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/pbar.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/js/user/manage_center_topic.js" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/cache/UserServiceImplCache.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/js/user/manager_center_pbars.js" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PbarManagerApplyServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/Album.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/AlbumMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/css/user/album_list.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/album_list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/js/user/album_list.js" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/PbarAlbum.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/vo/PbarAlbumList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/PbarAlbumMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/PbarAlbumMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/PbarAlbumService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/pbaralbum/PbarAlbumController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/cache/PbarAlbumServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/share_media.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/replypost/ReplyPostController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/TopicPostMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/TopicUpdQueueMessageListener.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/properties/k-pic-prod.properties" />
-        <option value="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/PbarAlbumMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/manager_pbar_info.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/cache/MsgServiceImplCache.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/MsgServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/PrivateLetter.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/PrivateLetter.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/album/AlbumController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/music/MusicController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/user/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/pbar/pbar_index.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/private_letter_list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/css/user/manage_center.css" />
         <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/PrivateLetterMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/PrivateLetterService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PrivateLetterServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/private_letter_self_list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/manage_center_left.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/privateletter/PrivateLetterController.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/vo/PrivateLetterVo.java" />
-        <option value="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/PrivateLetterMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/PrivateLetterMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/pbar_index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/vo/JmsSystemMsg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/SystemMsgMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/SystemMsgService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/SystemMsg.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/SystemMsgServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/sender/SystemMsgQueueMessageSender.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/PrivateLetterService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/privateletter/PrivateLetterController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/user/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/shortreply/ShortReplyController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/js/pbar/manager_pbar_applys.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/js/user/manager_center_user_news.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_list.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_self_list.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/pbar_index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/UserNewsQueueMessageListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/SystemMsgQueueMessageListener.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/manage_center_left.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/MsgMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/MsgMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/MsgService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/MsgServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/cache/MsgServiceImplCache.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/news/NewsController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/systemmsg/SystemMsgController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/css/user/manage_center.css" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/SystemMsgMapper.xml" />
+        <option value="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/SystemMsgMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/js/user/all_sys_msg.js" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PrivateLetterServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/PrivateLetterMapper.xml" />
+        <option value="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/PrivateLetterMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.config.js" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/TopicPost.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/Home.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/home/HomeController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/all_sys_msg.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/css/home.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/css/pbar.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/js/common/top.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/top.jsp" />
       </list>
     </option>
   </component>
@@ -437,13 +586,16 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
+  </component>
   <component name="NamedScopeManager">
     <order />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1932" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -469,7 +621,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -636,172 +787,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KpicPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KpicPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KpicPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KpicPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KpicPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KpicPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="pbar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KpicPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KpicPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KpicPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KpicPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -898,55 +883,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="replypost" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KpicPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KpicPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KpicPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="KpicPro" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="build" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cn" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="kpic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="juwin" />
+              <option name="myItemId" value="home" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -954,6 +891,7 @@
       </pane>
       <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1291,7 +1229,12 @@
       <workItem from="1461580154375" duration="2702000" />
       <workItem from="1461634877807" duration="10654000" />
       <workItem from="1461649705225" duration="4641000" />
-      <workItem from="1461654702670" duration="12140000" />
+      <workItem from="1461654702670" duration="12788000" />
+      <workItem from="1461722748904" duration="3165000" />
+      <workItem from="1461727634525" duration="6967000" />
+      <workItem from="1461737727669" duration="12095000" />
+      <workItem from="1461753383861" duration="1823000" />
+      <workItem from="1461806951468" duration="17430000" />
     </task>
     <task id="LOCAL-00001" summary="话题管理页">
       <created>1460801172157</created>
@@ -1347,11 +1290,17 @@
       <option name="project" value="LOCAL" />
       <updated>1461666820016</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="私信系统，话题首页云图集">
+      <created>1461666856957</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1461666856957</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241124000" />
+    <option name="totallyTimeSpent" value="283252000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1363,34 +1312,34 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.097297296" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25621623" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29945946" sideWeight="0.517094" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19675675" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946696" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13081081" sideWeight="0.48290598" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15811966" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29621622" sideWeight="0.60363245" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19567567" sideWeight="0.60363245" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.09297297" sideWeight="0.48290598" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1446,423 +1395,414 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/UserNews.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19225967">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/ReplyPostServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.333333">
-          <caret line="117" column="56" selection-start-line="117" selection-start-column="48" selection-end-line="117" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/sender/UserNewsQueueMessageSender.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/pbarmanager/ManagerController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <caret line="57" column="9" selection-start-line="46" selection-start-column="8" selection-end-line="57" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/ReplyUpdQueueMessageListener.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/private_letter_list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16793893">
-          <caret line="18" column="30" selection-start-line="18" selection-start-column="30" selection-end-line="18" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.94104046">
+          <caret line="40" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/UserNewsQueueMessageListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="32" selection-start-line="49" selection-start-column="32" selection-end-line="49" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.60714287">
+          <caret line="50" column="57" selection-start-line="50" selection-start-column="57" selection-end-line="50" selection-end-column="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/Msg.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/MsgService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16793893">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.23987539">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/MsgServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="34" column="19" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/MsgMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37694705">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/MsgMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4352">
-          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/PbarAlbumMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29016787">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/AlbumMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.70983213">
-          <caret line="34" column="13" selection-start-line="7" selection-start-column="4" selection-end-line="34" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/album/AlbumController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20051746">
-          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/music/MusicController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="12" selection-start-line="73" selection-start-column="12" selection-end-line="73" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.60747665">
+          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/news/NewsController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+          <caret line="54" column="54" selection-start-line="54" selection-start-column="54" selection-end-line="54" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/pbar/PbarController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0804878">
+          <caret line="30" column="90" selection-start-line="30" selection-start-column="90" selection-end-line="30" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/cache/MsgServiceImplCache.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="195" column="8" selection-start-line="195" selection-start-column="8" selection-end-line="195" selection-end-column="8" />
+          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/pbarmanager/ManagerController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_self_list.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="12" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.65536726">
+          <caret line="32" column="39" selection-start-line="21" selection-start-column="16" selection-end-line="32" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/shortreply/ShortReplyController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/manager_center_user_news.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="101" column="46" selection-start-line="101" selection-start-column="46" selection-end-line="102" selection-end-column="38" />
+        <state vertical-scroll-proportion="-4.8333335">
+          <caret line="35" column="20" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/topicpost/TopicPostController.java">
+    <entry file="file://$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/MsgMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17464425">
-          <caret line="75" column="12" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.70433146">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/make_album.jsp">
+    <entry file="file://$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/SystemMsgMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.193548">
-          <caret line="20" column="23" selection-start-line="0" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.4506243">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/PrivateLetter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/SystemMsgMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17793594">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/vo/TopicManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14230272">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3984476">
-          <caret line="17" column="15" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/UserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="51" column="42" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36093143">
-          <caret line="75" column="51" selection-start-line="75" selection-start-column="41" selection-end-line="75" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/user/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6739974">
-          <caret line="480" column="56" selection-start-line="480" selection-start-column="56" selection-end-line="480" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/music_list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.539267">
-          <caret line="52" column="15" selection-start-line="47" selection-start-column="6" selection-end-line="52" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/music_list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7509434">
-          <caret line="37" column="70" selection-start-line="36" selection-start-column="12" selection-end-line="37" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/PrivateLetterMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PrivateLetterServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="38" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/private_letter_list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.16949153">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/album_list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="21" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-          <folding>
-            <marker date="1461553344158" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1461553344158" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1461553344158" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1461553344158" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1461553344158" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1461553344158" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1461553344158" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1461553344158" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/user/album_list.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33292383">
-          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/album_list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.25287357">
-          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/user/manage_center.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35135135">
-          <caret line="195" column="20" selection-start-line="195" selection-start-column="20" selection-end-line="195" selection-end-column="20" />
-          <folding />
+        <state vertical-scroll-proportion="0.13571429">
+          <caret line="19" column="56" selection-start-line="19" selection-start-column="56" selection-end-line="19" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/PrivateLetterService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="37" />
-          <folding />
+        <state vertical-scroll-proportion="0.17480136">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/SystemMsgServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7253122">
+          <caret line="44" column="53" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/systemmsg/SystemMsgController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6753689">
+          <caret line="63" column="52" selection-start-line="63" selection-start-column="52" selection-end-line="63" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/SystemMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17480136">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_17/src.zip!/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3325766">
+          <caret line="104" column="36" selection-start-line="104" selection-start-column="36" selection-end-line="104" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/PrivateLetterMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9304897">
+          <caret line="86" column="9" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/PrivateLetterMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6672297">
+          <caret line="82" column="60" selection-start-line="0" selection-start-column="0" selection-end-line="86" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/privateletter/PrivateLetterController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="95" column="25" selection-start-line="95" selection-start-column="25" selection-end-line="95" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="98" column="49" selection-start-line="98" selection-start-column="49" selection-end-line="98" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/vo/PrivateLetterVo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74580646">
-          <caret line="102" column="33" selection-start-line="102" selection-start-column="33" selection-end-line="102" selection-end-column="33" />
-          <folding>
-            <element signature="e#1771#1772#0" expanded="true" />
-            <element signature="e#1821#1822#0" expanded="true" />
-            <element signature="e#1865#1866#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/PrivateLetterMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/http/HttpRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="86" selection-end-column="9" />
-          <folding>
-            <marker date="1461663972282" expanded="true" signature="-1:-1" placeholder="update tb_pr..." />
-            <marker date="1461663972282" expanded="true" signature="-1:-1" placeholder="SELECT tpl.i..tb_private_letter..." />
-            <marker date="1461663972282" expanded="true" signature="-1:-1" placeholder="SELECT tpl.i..tb_private_letter..." />
-          </folding>
+          <caret line="62" column="7" selection-start-line="62" selection-start-column="7" selection-end-line="62" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/PrivateLetterMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/manager_center_user_news.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8536978">
-          <caret line="86" column="9" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
-          <folding>
-            <marker date="1461663981485" expanded="true" signature="-1:-1" placeholder="update tb_pr..." />
-            <marker date="1461663981485" expanded="true" signature="-1:-1" placeholder="SELECT tpl.i..tb_private_letter..." />
-            <marker date="1461663981485" expanded="true" signature="-1:-1" placeholder="SELECT tpl.i..tb_private_letter..." />
-          </folding>
+        <state vertical-scroll-proportion="0.39542484">
+          <caret line="101" column="16" selection-start-line="97" selection-start-column="10" selection-end-line="101" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/manage_center_left.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.040502794">
-          <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36903226">
-          <caret line="34" column="129" selection-start-line="34" selection-start-column="129" selection-end-line="34" selection-end-column="129" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/private_letter_self_list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5268817">
-          <caret line="49" column="15" selection-start-line="49" selection-start-column="15" selection-end-line="49" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_self_list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6529032">
-          <caret line="34" column="42" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
-          <folding>
-            <marker date="1461664232246" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1461664232246" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1461664232246" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/pbar_index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.612904">
-          <caret line="94" column="22" selection-start-line="94" selection-start-column="22" selection-end-line="94" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/reply/reply_index.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PrivateLetterServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/ReplyTipMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6429479">
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/UserFocusMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58068615">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/ueditor/themes/default/css/ueditor.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.9142857">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6309963">
+          <caret line="88" column="29" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.5136417">
+          <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/common/pbar.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/TopicPost.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.43535">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/ReplyPostMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1460951504621" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1460951504621" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1461379874777" expanded="true" signature="-1:-1" placeholder="select , fro..." />
+            <marker date="1461379874777" expanded="true" signature="-1:-1" placeholder="select trp.c..tb_reply_post..." />
+            <marker date="1461379874777" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <marker date="1461379874777" expanded="true" signature="-1:-1" placeholder="update tb_re..." />
+            <marker date="1461379874777" expanded="true" signature="-1:-1" placeholder="SELECT trp.i..tb_reply_post..." />
+            <marker date="1461379874777" expanded="true" signature="-1:-1" placeholder="SELECT trp.i..tb_reply_post..." />
+            <marker date="1461379874777" expanded="true" signature="-1:-1" placeholder="update tb_re..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/common/top.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/TopicPostServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="87" column="45" selection-start-line="87" selection-start-column="45" selection-end-line="87" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1379#1380#0" expanded="false" />
+            <element signature="e#1437#1438#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/common/user_self_info.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/topicpost/TopicPostController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="62" column="44" selection-start-line="62" selection-start-column="44" selection-end-line="62" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/cd.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/ReplyPostServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reply/reply_index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6106443">
-          <caret line="135" column="46" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/pbar/pbar_index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="132" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/pbar.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26612905">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <caret line="101" column="41" selection-start-line="101" selection-start-column="41" selection-end-line="101" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/replypost/ReplyPostController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7032259">
-          <caret line="80" column="12" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="66" column="50" selection-start-line="66" selection-start-column="50" selection-end-line="66" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/TopicPostMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.034400947">
+          <caret line="79" column="65" selection-start-line="79" selection-start-column="65" selection-end-line="79" selection-end-column="65" />
+          <folding>
+            <marker date="1461570818050" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..tb_topic_post..." />
+            <marker date="1461570818050" expanded="true" signature="-1:-1" placeholder="SELECT ttp.t..tb_topic_post..." />
+            <marker date="1461570818050" expanded="true" signature="-1:-1" placeholder="SELECT ttp.i..tb_topic_post..." />
+            <marker date="1461570818050" expanded="true" signature="-1:-1" placeholder="SELECT ttp.i..tb_topic_post..." />
+            <marker date="1461570818050" expanded="true" signature="-1:-1" placeholder="SELECT ttp.i..tb_topic_post..." />
+            <marker date="1461570818050" expanded="true" signature="-1:-1" placeholder="SELECT ttp.i..tb_topic_post..." />
+            <marker date="1461570818050" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..tb_topic_post..." />
+            <marker date="1461570818050" expanded="true" signature="-1:-1" placeholder="update tb_to..." />
+            <marker date="1461570818050" expanded="true" signature="-1:-1" placeholder="UPDATE tb_to..." />
+            <marker date="1461570818050" expanded="true" signature="-1:-1" placeholder="SELECT ttp.i..tb_topic_post..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/all_sys_msg.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.86121">
+          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding>
+            <marker date="1461742722228" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1461742722228" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1461742722228" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/Home.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/home/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.032258">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/user/manage_center.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5769231">
+          <caret line="219" column="34" selection-start-line="219" selection-start-column="27" selection-end-line="219" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/manage_center_left.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40809444">
+          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/all_sys_msg.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9830508">
+          <caret line="14" column="101" selection-start-line="14" selection-start-column="101" selection-end-line="14" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="133" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/pbar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.357142">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/common/top.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.09895053">
+          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
+          <folding>
+            <marker date="1461840512173" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/home.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.084746">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/top.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3859649">
+          <caret line="12" column="68" selection-start-line="12" selection-start-column="68" selection-end-line="12" selection-end-column="68" />
           <folding />
         </state>
       </provider>

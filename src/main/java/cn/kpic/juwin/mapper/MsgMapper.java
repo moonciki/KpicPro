@@ -15,4 +15,8 @@ public interface MsgMapper {
 
     void update(Msg msg);
 
+    void clear(Msg msg);
+
+    Integer notReadByType(Msg msg);
+
 }

@@ -9,7 +9,9 @@ public interface MsgService {
 
     void addMsg(Msg msg);
 
-    Integer notRead(Long userId, int type);
+    Integer notRead(Long userId);
 
     void update(Msg msg);
+
+    void clear(Msg msg);
 }

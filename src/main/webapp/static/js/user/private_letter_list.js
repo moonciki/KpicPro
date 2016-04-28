@@ -28,11 +28,11 @@ function jz(){
                 }
 
                 addhtml+="</div><div class=\"sx_02\">" +
-                    "<b>于 "+getLocalTime(data[key].createTime)+" 收到来自<a href=\"/user/"+data[key].userId+"/index.html\" target=\"_blank\">"+data[key].userName+"</a>的私信：</b>"+
+                    "<b>于 "+getLocalTime(data[key].createTime)+" 收到来自<a href=\"/user/u6514"+data[key].userId+"/index.html\" target=\"_blank\">"+data[key].userName+"</a>的私信：</b>"+
                     "<hr/>"+data[key].content+
                     "<br/><br/><br/><span class=\"badge pull-left hf_sx\" onclick=\"sx_hf("+data[key].id+")\" style=\"background-color: #64A600\"><span class=\"glyphicon glyphicon-send\"></span> 回复</span><br/><br/>"+
                         "<span id=\"area_"+data[key].id+"\" style=\"display:none;\"><textarea class=\"form-control\" rows=\"3\" id=\"wbk_"+data[key].id+"\"></textarea><br/>"
-                    +"<button type=\"button\" id=\"tj_"+data[key].id+"\" onclick=\"tj("+data[key].id+")\" class=\"btn btn-primary btn-xs\">提交</button></span>"+
+                    +"<button type=\"button\" id=\"tj_"+data[key].id+"\" onclick=\"tj("+data[key].id+","+data[key].userId+")\" class=\"btn btn-primary btn-xs\">提交</button></span>"+
                 "</div></div>"
             }
             $("#sx_list").append(addhtml);
@@ -47,14 +47,14 @@ function sx_hf(id){
     $("#area_"+id).show();
 }
 
-function tj(sx_id){
+function tj(sx_id, user_id){
     $("#tj_"+sx_id).attr("disabled", "disabled");
     var reply = $("#wbk_"+sx_id).val();
     if(reply.trim() == ""){
         alert("回复不能为空！");
         return;
     }
-    $.post("/user/private/reply", {'id':sx_id, 'reply':reply}, function(data){
+    $.post("/user/private/reply", {'id':sx_id, 'reply':reply, 'userId':user_id}, function(data){
         if(data){
             $("#sx_"+sx_id).fadeOut(1000);
         }else{

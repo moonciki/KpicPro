@@ -18,13 +18,13 @@ public class MsgServiceImplCache extends MsgServiceImpl {
     private RedisTemplate redisTemplate;
 
     @Override
-    public Integer notRead(Long userId, int type) {
+    public Integer notRead(Long userId) {
 
         String key = RedisCacheKey.USER_NEWS+userId;
         if(redisTemplate.hasKey(key)){
             return Integer.parseInt(redisTemplate.boundValueOps(key).get()+"");
         }else{
-            int num = super.notRead(userId, type);
+            int num = super.notRead(userId);
             redisTemplate.boundValueOps(key).set(num+"");
             redisTemplate.expire(key, 1, TimeUnit.HOURS);//每一小时缓存失效一次
             return num;

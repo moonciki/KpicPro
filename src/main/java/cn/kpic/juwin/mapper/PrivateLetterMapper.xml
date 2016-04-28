@@ -80,7 +80,7 @@ ${}：表示拼接符，可能会引起sql注入
         tpl.updateTime
         FROM tb_private_letter tpl
         JOIN tb_user tu ON tpl.userId = tu.id
-        WHERE tpl.fromUserId = #{userId} ORDER BY tpl.createTime DESC LIMIT #{page}, 10;
+        WHERE tpl.fromUserId = #{userId} ORDER BY tpl.updateTime DESC LIMIT #{page}, 10;
     </select>
 
 

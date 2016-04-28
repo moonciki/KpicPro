@@ -3,6 +3,7 @@ package cn.kpic.juwin.controller.news;
 import cn.kpic.juwin.domain.Msg;
 import cn.kpic.juwin.domain.User;
 import cn.kpic.juwin.domain.vo.UserNewsVo;
+import cn.kpic.juwin.mapper.MsgMapper;
 import cn.kpic.juwin.service.MsgService;
 import cn.kpic.juwin.service.UserNewsService;
 import cn.kpic.juwin.utils.CurrentUser;
@@ -28,12 +29,15 @@ public class NewsController {
     @Autowired
     private MsgService msgService;
 
+    @Autowired
+    private MsgMapper msgMapper;
+
     @RequiresPermissions({"user"})
     @RequestMapping(value = "/user/all/notread/news")
     @ResponseBody
     public Integer getAllNotRead(){
         User user = CurrentUser.getUser();
-        Integer num = msgService.notRead(user.getId(), 0);
+        Integer num = msgService.notRead(user.getId());
         return num;
     }
 
@@ -53,12 +57,11 @@ public class NewsController {
         model.addAttribute("user", user_curr);
         model.addAttribute("flag", 6);
         User user = CurrentUser.getUser();
-        model.addAttribute("num", msgService.notRead(user.getId(), 0));
         Msg msg = new Msg();
         msg.setUserId(user.getId());
         msg.setType(0);
-        msg.setNum(0);
-        msgService.update(msg);
+        model.addAttribute("num", this.msgMapper.notReadByType(msg));
+        msgService.clear(msg);
         return "/user/manager_center_user_news";
     }
 

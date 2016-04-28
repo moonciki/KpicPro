@@ -214,7 +214,7 @@
     width: 600px;
     height: auto;
     margin-left: 20px;
-    min-height: 200px;
+    min-height: 1px;
     float: left;
     border-bottom: solid 1px #E0E0E0;
     border-left: solid 1px #E0E0E0;

@@ -16,7 +16,7 @@ function jz(){
             var addhtml = "";
             for(key in data){
                 addhtml += "<div id=\"sq"+data[key].id+"\" class=\"panel panel-default\"><div class=\"panel-heading\"><h3 class=\"panel-title\" style=\"color:#7B7B7B;font-family:'MicrosoftYaHei'\">"+
-                    "<span class=\"glyphicon glyphicon-align-justify\"style=\"color:#FF95CA\"></span>&nbsp;申请人：<a href=\"/user/"+data[key].userId+"/index.html\">"+data[key].userName+"</a> &nbsp;&nbsp;&nbsp;&nbsp;申请日期：<span style=\"color:#FF8040\">" + getLocalTime(data[key].createTime) + "</span>"+
+                    "<span class=\"glyphicon glyphicon-align-justify\"style=\"color:#FF95CA\"></span>&nbsp;申请人：<a href=\"/user/u6514"+data[key].userId+"/index.html\">"+data[key].userName+"</a> &nbsp;&nbsp;&nbsp;&nbsp;申请日期：<span style=\"color:#FF8040\">" + getLocalTime(data[key].createTime) + "</span>"+
                     "<span class=\"badge pull-right\" onclick=\"tg("+data[key].id+","+data[key].userId+")\" style=\"margin-left:10px;cursor:pointer;background-color:#64A600\"><span class=\"glyphicon glyphicon-ok-sign\"></span> 通过</span>&nbsp;&nbsp;&nbsp;&nbsp;"+
                     "<span class=\"badge pull-right\" onclick=\"btg("+data[key].id+")\" style=\"cursor:pointer;background-color:#ff7575\"><span class=\"glyphicon glyphicon-remove-sign\"></span> 不通过"+
                     "</span></h3></div> <div class=\"panel-body\"> "+data[key].msg+" </div> </div>";

@@ -26,13 +26,24 @@ private Long id;
     </insert>
 
     <select id="notRead" parameterType="cn.kpic.juwin.domain.Msg" resultType="java.lang.Integer">
+        SELECT SUM(num) FROM tb_msg WHERE userId = #{userId}
+    </select>
+
+    <select id="notReadByType" parameterType="cn.kpic.juwin.domain.Msg" resultType="java.lang.Integer">
         SELECT num FROM tb_msg WHERE userId = #{userId} AND type = #{type}
     </select>
 
     <update id="update" parameterType="cn.kpic.juwin.domain.Msg">
         UPDATE tb_msg
         SET
-        num = #{num}
+        num = num + 1
+        WHERE userId = #{userId} AND type = #{type}
+    </update>
+
+    <update id="clear" parameterType="cn.kpic.juwin.domain.Msg">
+        UPDATE tb_msg
+        SET
+        num = 0
         WHERE userId = #{userId} AND type = #{type}
     </update>
 
