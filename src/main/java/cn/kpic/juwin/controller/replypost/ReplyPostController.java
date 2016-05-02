@@ -46,10 +46,30 @@ public class ReplyPostController {
         if(pbarIndexVo == null){
             return "/404";
         }
+
         model.addAttribute("user", CurrentUser.getUser());
         model.addAttribute("postMSg", topicPostMsg);
         model.addAttribute("pbar", pbarIndexVo);
+        if(topicPostMsg.getIsBlog() != 0){
+            return "/reply_index_blog";
+        }
         return "/reply/reply_index";
+    }
+
+    @RequestMapping(value = "/post/reply/at5416{uuId}")
+    public String getAllBlogPost(@PathVariable("uuId") Long uuId, Model model){
+        TopicPostMsg topicPostMsg = this.topicPostService.getByUid(uuId);
+        PbarIndexVo pbarIndexVo = this.pbarService.getPbarIndex(topicPostMsg.getPbarId());
+        if(pbarIndexVo == null){
+            return "/404";
+        }
+        model.addAttribute("user", CurrentUser.getUser());
+        model.addAttribute("postMSg", topicPostMsg);
+        model.addAttribute("pbar", pbarIndexVo);
+        if(topicPostMsg.getIsBlog() != 1){
+            return "/reply_index";
+        }
+        return "/reply/reply_index_blog";
     }
 
     @RequestMapping(value = "/tuan/post/getallreply")

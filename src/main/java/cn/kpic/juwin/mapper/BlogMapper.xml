@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.BlogMapper">
+
+    <insert id="save" parameterType="cn.kpic.juwin.domain.Blog">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into tb_blog
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="title != null">title,</if>
+            <if test="content != null">content,</if>
+            <if test="userId != null">userId,</if>
+            <if test="isdel != null">isdel,</if>
+            <if test="shortContent != null">shortContent,</if>
+            <if test="createTime != null">createTime,</if>
+            <if test="updateTime != null">updateTime,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id,jdbcType=BIGINT},</if>
+            <if test="title != null">#{title,jdbcType=VARCHAR},</if>
+            <if test="content != null">#{content,jdbcType=VARCHAR},</if>
+            <if test="userId != null">#{userId,jdbcType=BIGINT},</if>
+            <if test="isdel != null">#{isdel,jdbcType=INTEGER},</if>
+            <if test="shortContent != null">#{shortContent,jdbcType=VARCHAR},</if>
+            <if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},</if>
+            <if test="updateTime != null">#{updateTime,jdbcType=TIMESTAMP},</if>
+        </trim>
+    </insert>
+
+    <select id="gatAllBlog" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.Blog">
+        SELECT id, title, shortContent, createTime FROM tb_blog
+        WHERE userId = #{userId} AND isdel = 0 ORDER BY createTime DESC LIMIT #{page}, 10
+    </select>
+
+    <select id="gatBlog" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.Blog">
+        SELECT * FROM tb_blog
+        WHERE id = #{id} AND isdel = 0
+    </select>
+
+</mapper>

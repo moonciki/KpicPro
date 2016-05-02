@@ -82,6 +82,8 @@ public class TopicPostServiceImpl implements TopicPostService {
             topicPost.setShortText(shortContent);
             topicPost.setUpdateTime(date);
             topicPost.setUserId(userId);
+            topicPost.setIsBlog(0);
+            topicPost.setIsBoutique(0);
             topicPostMapper.save(topicPost);
             /** 持久化图片信息交由队列处理*/
             JmsTopicImg jmsTopicImg = new JmsTopicImg(content, topicPost.getId());

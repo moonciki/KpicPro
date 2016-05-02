@@ -169,6 +169,41 @@
       </div>
     </c:otherwise>
   </c:choose>
+
+  <div class="cd_title2">
+    <span style="color:#FF95CA" class="glyphicon glyphicon-list-alt"></span>
+    博文管理
+  </div>
+
+  <c:choose>
+    <c:when test="${flag == 29}">
+      <div class="cd_unit_now">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        我的博文
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="cd_unit" onclick="window.location.href='${pageContext.request.contextPath}/user/list/blog'">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        我的博文
+      </div>
+    </c:otherwise>
+  </c:choose>
+  <c:choose>
+    <c:when test="${flag == 30}">
+      <div class="cd_unit_now">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        写博文
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="cd_unit" onclick="window.location.href='${pageContext.request.contextPath}/user/make/blog'">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        写博文
+      </div>
+    </c:otherwise>
+  </c:choose>
+
   <div class="cd_title2">
     <span style="color:#FF95CA" class="glyphicon glyphicon-picture"></span>
     云图集管理

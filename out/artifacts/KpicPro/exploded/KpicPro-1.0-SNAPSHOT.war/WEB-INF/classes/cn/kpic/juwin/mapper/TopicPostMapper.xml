@@ -16,8 +16,8 @@ ${}：表示拼接符，可能会引起sql注入
         <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert into tb_topic_post ( title, content, shortText, pbarId, userId, createTime, updateTime)
-        values (#{title}, #{content}, #{shortText}, #{pbarId}, #{userId}, #{createTime}, #{updateTime})
+        insert into tb_topic_post ( title, content, shortText, pbarId, userId, createTime, updateTime, isBlog, isBoutique)
+        values (#{title}, #{content}, #{shortText}, #{pbarId}, #{userId}, #{createTime}, #{updateTime}, #{isBlog}, #{isBoutique})
     </insert>
 
     <select id="getByPbarId" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.TopicPost">
@@ -65,7 +65,7 @@ ${}：表示拼接符，可能会引起sql注入
     <select id="getByUid" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.vo.TopicPostMsg">
         SELECT ttp.id AS id, ttp.title AS title, ttp.replyNum AS replyNum,
         ttp.isTop AS isTop, ttp.isBoutique AS isBoutique, tu.name AS userName, ttp.createTime AS createTime,
-        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.content AS content, tu.avater AS avater, ttp.pbarId AS pbarId, tu.id AS userId
+        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.content AS content, tu.avater AS avater, ttp.isBlog, ttp.pbarId AS pbarId, tu.id AS userId
         FROM tb_topic_post ttp
         JOIN tb_user tu ON ttp.userId = tu.id
         WHERE ttp.id = #{id} AND ttp.isdel = 0

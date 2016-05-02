@@ -51,6 +51,7 @@ public class PbarAlbumController {
 
             return result;
         }catch (Exception e){
+            e.printStackTrace();
             logger.error("add pbar_album_list error ! pbarId = "+pbarId);
         }
         return null;

@@ -11,10 +11,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>${postMSg.title}</title>
+  <title>${postMSg.title}</title>
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
   <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
-  <link href="${pageContext.request.contextPath}/static/css/pbar/pbar_index.css" rel="stylesheet">
+  <link href="${pageContext.request.contextPath}/static/css/pbar/pbar_index_blog.css" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ueditor/themes/default/css/ueditor.css"/>
   <script type="text/javascript" src="${pageContext.request.contextPath}/ueditor/ueditor.config.js"></script>
@@ -42,7 +42,7 @@
     <button type="button" class="btn btn-primary" id="tip_submmit">确定</button>
     <button type="button" class="btn btn-primary" id="tip_close">取消</button>
     <span id="load_area"></span>
-    </div>
+  </div>
 </div>
 <div class="pic_big" id="pl_big">
   <div class="pl_content">
@@ -88,12 +88,12 @@
 <%@include file="../common/top.jsp" %>
 <div class="top_blank"></div>
 <div class="main">
-<input type="hidden" id="short_page" value="0"/>
+  <input type="hidden" id="short_page" value="0"/>
 
   <%@include file="../common/pbar.jsp" %>
 
   <div class="mane" style="padding-top:14px;padding-left: 10px">
-    <span class="label label-default" style="background-color:${pbar.color};font-family: 微软雅黑;font-size: 20px">标题</span>
+    <span class="label label-default" style="background-color:${pbar.color};font-family: 微软雅黑;font-size: 20px">文章</span>
     <span style="font-family: 微软雅黑;font-size: 18px; color: #006699">${postMSg.title}</span>
   </div>
 
@@ -127,9 +127,9 @@
       <div class="reply_body_main_02"><div class="pf3"><span class="glyphicon glyphicon-triangle-left"></span></div>
 
         <div class="reply_body_main_02_01">
-          <span class="glyphicon glyphicon-user" style="color: #84C1FF"></span><span style="color: #9D9D9D;font-size: 12px;">&nbsp;&nbsp;发帖人：
+          <span class="glyphicon glyphicon-user" style="color: #84C1FF"></span><span style="color: #9D9D9D;font-size: 12px;">&nbsp;&nbsp;文章发表人：
           ${postMSg.userName}
-          </span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-time" style="color: #FF79BC"></span><span style="color: #9D9D9D;font-size: 12px;">&nbsp;&nbsp;发帖日期：
+          </span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-time" style="color: #FF79BC"></span><span style="color: #9D9D9D;font-size: 12px;">&nbsp;&nbsp;发布日期：
           <fmt:formatDate value="${postMSg.createTime}" pattern="yyyy 年 MM 月 dd 日"/>
           </span>
           <input type="hidden" id="pbarId" value="${postMSg.pbarId}"/>
@@ -148,10 +148,10 @@
           </c:choose>
 
 
-          <span class="badge pull-right" style="font-size:14px;background-color: #FF95CA"># 楼主</span>
+          <span class="badge pull-right" style="font-size:14px;background-color: #FF95CA">作者</span>
         </div>
         <div class="reply_body_main_content">
-        <span style="font-size: 12px; line-height: 1.8">${postMSg.content}</span>
+          <span style="font-size: 12px; line-height: 1.8">${postMSg.content}</span>
         </div>
         <div class="reply_body_main_02_01"></div>
       </div>
@@ -161,7 +161,7 @@
 
       <span style="font-family: 微软雅黑;font-size: 38px; color: #E0E0E0">————————-—-</span>
       <span class="glyphicon glyphicon-star" style="font-size: 20px;color: #E0E0E0"></span>
-      <span style="font-family: 微软雅黑;font-size: 28px; color: #E0E0E0">最新跟帖</span>
+      <span style="font-family: 微软雅黑;font-size: 28px; color: #E0E0E0">最新评价</span>
       <span class="glyphicon glyphicon-star" style="font-size: 20px;color: #E0E0E0"></span>
       <span style="font-family: 微软雅黑;font-size: 38px; color: #E0E0E0">-—-————————</span>
 
@@ -181,13 +181,13 @@
       <div style="display: none" id="pageloading2" style="font-size: 14px;"><br/>没有更多了</div>
 
     </div>
-  <c:choose>
-    <c:when test="${user != null}">
-      <input type="hidden" id = "userId" value="${user.id}"/>
-      <input type="hidden" id = "userName" value="${user.name}"/>
-    </c:when>
-    <c:otherwise></c:otherwise>
-  </c:choose>
+    <c:choose>
+      <c:when test="${user != null}">
+        <input type="hidden" id = "userId" value="${user.id}"/>
+        <input type="hidden" id = "userName" value="${user.name}"/>
+      </c:when>
+      <c:otherwise></c:otherwise>
+    </c:choose>
     <input type="hidden" id = "page" value="0"/>
     <input type="hidden" id = "topicId" value="${postMSg.id}"/>
 

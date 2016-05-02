@@ -17,6 +17,8 @@ public class TopicPostMsg {
 
     private int isTop;
 
+    private Integer isBlog;
+
     private int isBoutique;
 
     private String userName;
@@ -145,5 +147,13 @@ public class TopicPostMsg {
 
     public void setIsTip(Boolean isTip) {
         this.isTip = isTip;
+    }
+
+    public Integer getIsBlog() {
+        return isBlog;
+    }
+
+    public void setIsBlog(Integer isBlog) {
+        this.isBlog = isBlog;
     }
 }

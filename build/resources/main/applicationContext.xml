@@ -295,6 +295,21 @@
 
     <!-- END -->
 
+    <!-- 发表博文任务 -->
+
+    <bean id="publishBlogQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="publish-blog-queue" />
+    </bean>
+
+    <bean id="publishBlogContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="publishBlogQueue" />
+        <property name="messageListener" ref="publishBlogQueueMessageListener" />
+    </bean>
+
+    <!-- END -->
+
 
 
 

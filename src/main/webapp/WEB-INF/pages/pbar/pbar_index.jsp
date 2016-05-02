@@ -68,7 +68,7 @@
                     </li>
                     <li style="cursor:pointer;" id="onlyBlog">
                         <span class="glyphicon glyphicon-list-alt" style="color: #D9B300;"></span>
-                        &nbsp;&nbsp;只看博文
+                        &nbsp;&nbsp;只看文章
                         <span class="lines"></span>
                     </li>
                     <li style="cursor:pointer;" id="jp">

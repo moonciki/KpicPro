@@ -53,6 +53,8 @@ public class TopicPost implements java.io.Serializable{
 
     private Date updateTime;
 
+    private Integer isBlog;
+
     public Long getId() {
         return id;
     }
@@ -179,5 +181,13 @@ public class TopicPost implements java.io.Serializable{
 
     public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
+    }
+
+    public Integer getIsBlog() {
+        return isBlog;
+    }
+
+    public void setIsBlog(Integer isBlog) {
+        this.isBlog = isBlog;
     }
 }

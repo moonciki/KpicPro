@@ -211,7 +211,7 @@ $().ready(function(){
 
                     addhtml += "</div><div class='main01_01_user_reply'></div><div class=\"main01_01\"><div class=\"main01_01_01\">"
                     if(data[key].isBlog == 1){
-                        addhtml+="<span class=\"label label-default bo\">博</span>&nbsp;<a href=\"http-equiv\" style=\"font-size: 15px;font-family:微软雅黑\">"
+                        addhtml+="<span class=\"label label-default bo\">文</span>&nbsp;<a class=\"clj_blog\" href=\"/post/reply/at5416" + data[key].id + "\" target=\"_blank\">"
                     }else{
                         addhtml+="<span class=\"label label-default tie\">帖</span>&nbsp;<a href=\"/post/reply/tp5416" + data[key].id + "\" target=\"_blank\" style=\"font-size: 15px;font-family:微软雅黑\">"
                     }
@@ -283,7 +283,7 @@ $().ready(function(){
 
                     addhtml += "</div><div class='main01_01_user_reply'></div><div class=\"main01_01\"><div class=\"main01_01_01\">"
                     if(data[key].isBlog == 1){
-                        addhtml+="<span class=\"label label-default bo\">博</span>&nbsp;<a href=\"http-equiv\" style=\"font-size: 15px;font-family:微软雅黑\">"
+                        addhtml+="<span class=\"label label-default bo\">文</span>&nbsp;<a class=\"clj_blog\" href=\"/post/reply/at5416" + data[key].id + "\" target=\"_blank\">"
                     }else{
                         addhtml+="<span class=\"label label-default tie\">帖</span>&nbsp;<a href=\"/post/reply/tp5416" + data[key].id + "\" target=\"_blank\" style=\"font-size: 15px;font-family:微软雅黑\">"
                     }
@@ -490,9 +490,9 @@ function bigPic(img, flag){
         $(".pic_big_01_01").show();
         $("#pic_video").append("<embed type=\"application/x-shockwave-flash\" class=\"edui-faked-video\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" src=\""+img+"\" width=\"672px\" height=\"440px\" wmode=\"transparent\" play=\"true\" loop=\"false\" menu=\"false\" allowscriptaccess=\"never\" allowfullscreen=\"true\" />");
     }else if(flag == 3){
-        var addhtml = "<center><div class=\"pic_big_03\"><div style=\"display: inline-block;width:750px; height:50px;\"> <audio style=\"width: 750px\" controls=true>"+
+        var addhtml = "<div class=\"pic_big_03\"><div class='pic_big_03_1'></div><div class='pic_big_03_2'><center><div style=\"display: inline-block;width:520px; height:50px;\"> <audio style=\"margin-top:10px;width: 450px\" controls=true>"+
             "<source src=\""+img+"\" />"+
-            "</audio></div>&nbsp;<button style=\"margin-top: -22px\" type=\"button\" onclick=\"close_music()\" class=\"btn btn-danger btn-sm\"><span class=\"glyphicon glyphicon-remove-sign\"></span>&nbsp;关闭</button></div></center>"
+            "</audio>&nbsp;<button style=\"margin-top: -22px\" type=\"button\" onclick=\"close_music()\" class=\"btn btn-danger btn-sm\"><span class=\"glyphicon glyphicon-remove-sign\"></span>&nbsp;关闭</button></div></center></div><div class='pic_big_03_1'></div></div>"
         $("#music_bf").append(addhtml);
     }else{
         $("#pic_pic").append("<center><div style='margin-top: 5%'></div><div style=\"overflow-x :auto;overflow-y :auto;width:906px;height: 467px\"><img src=\""+img+"\" title=\"还原\" style=\"cursor:zoom-out\" onclick=\"clearAll()\"/></div></center>")

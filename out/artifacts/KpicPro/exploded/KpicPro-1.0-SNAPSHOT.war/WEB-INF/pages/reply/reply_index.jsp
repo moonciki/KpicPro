@@ -161,7 +161,7 @@
 
       <span style="font-family: 微软雅黑;font-size: 38px; color: #E0E0E0">————————-—-</span>
       <span class="glyphicon glyphicon-star" style="font-size: 20px;color: #E0E0E0"></span>
-      <span style="font-family: 微软雅黑;font-size: 28px; color: #E0E0E0">回复帖</span>
+      <span style="font-family: 微软雅黑;font-size: 28px; color: #E0E0E0">最新跟帖</span>
       <span class="glyphicon glyphicon-star" style="font-size: 20px;color: #E0E0E0"></span>
       <span style="font-family: 微软雅黑;font-size: 38px; color: #E0E0E0">-—-————————</span>
 

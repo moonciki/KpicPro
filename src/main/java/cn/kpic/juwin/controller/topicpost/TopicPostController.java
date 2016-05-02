@@ -51,6 +51,7 @@ public class TopicPostController {
         }
     }
 
+    @RequiresPermissions({"user"})
     @RequestMapping(value = "/tuan/post/save")
     @ResponseBody
     public TopicPost saveTopicPost(String title, String content, String shortContent,
@@ -60,7 +61,7 @@ public class TopicPostController {
             if(StringUtils.isBlank(title) || StringUtils.isBlank(content)){
                 return null;
             }
-            return topicPostService.addTopicPost(title, content, shortContent, pbarId, userId);
+            return topicPostService.addTopicPost(title, content, StringDeal.getText(shortContent), pbarId, userId);
         }catch (Exception e){
             e.printStackTrace();
             return null;
