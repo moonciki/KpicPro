@@ -39,7 +39,7 @@
         <br/>
         <button type="button" class="btn btn-primary" id="sx_submit">发送</button>
         <button type="button" class="btn btn-primary" id="sx_close">取消</button>
-        &nbsp;&nbsp;<span id="sx_load" style="display: none; color:#9D9D9D; font-size: 14px"><img src="${pageContext.request.contextPath}/static/images/loading.jpg" style="width: 30px; height: 30px"/>&nbsp;提交中..</span>
+        &nbsp;&nbsp;<span id="sx_load" style="display: none; color:#9D9D9D; font-size: 14px"><img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg" style="width: 30px; height: 30px"/>&nbsp;提交中..</span>
     </div>
 </div>
 <%@include file="../common/top.jsp" %>
@@ -105,7 +105,7 @@
                 <button type="button" id="xl" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
                 <button type="button" style="display: none" id="ytj_xl" class="btn btn-danger"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
 
-            <div style="display: none" id="pageloading"><br/><img src="${pageContext.request.contextPath}/static/images/page_loading.gif"/></div>
+            <div style="display: none" id="pageloading"><br/><img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/page_loading.gif"/></div>
             <div style="display: none" id="pageloading2" style="font-size: 14px;"><br/>没有更多了</div></div>
             <div style="display: none">
                 <input id="pbarId" type="hidden" value="${pbar.id}"/>
@@ -261,7 +261,7 @@
                             <br/>
                             <button type="button" class="btn btn-primary" id="tip_submit">发送</button>
                             <button type="button" class="btn btn-primary" id="tip_close">取消</button>
-                            &nbsp;&nbsp;<span id="jb_load" style="display: none; color:#9D9D9D; font-size: 14px"><img src="${pageContext.request.contextPath}/static/images/loading.jpg" style="width: 30px; height: 30px"/>&nbsp;申请提交中..</span>
+                            &nbsp;&nbsp;<span id="jb_load" style="display: none; color:#9D9D9D; font-size: 14px"><img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg" style="width: 30px; height: 30px"/>&nbsp;申请提交中..</span>
                         </div>
                     </div>
 

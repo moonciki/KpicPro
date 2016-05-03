@@ -177,7 +177,7 @@
     <div class="reply_body_main" style="text-align: center">
 
       <button type="button" id="xl" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
-      <div style="display: none" id="pageloading"><br/><img src="${pageContext.request.contextPath}/static/images/page_loading.gif"/></div>
+      <div style="display: none" id="pageloading"><br/><img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/page_loading.gif"/></div>
       <div style="display: none" id="pageloading2" style="font-size: 14px;"><br/>没有更多了</div>
 
     </div>

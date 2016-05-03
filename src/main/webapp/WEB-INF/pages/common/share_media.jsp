@@ -31,7 +31,7 @@
 
 <span style="color:#FF60AF;display: none" id="loading">
     <center>
-      <img src="${pageContext.request.contextPath}/static/images/page_loading.gif">
+      <img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/page_loading.gif">
     </center>
 </span>
 

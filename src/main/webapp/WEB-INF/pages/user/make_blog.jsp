@@ -30,23 +30,23 @@
         用户管理中心
         &nbsp;&nbsp;<span style="color:#8C8C00" class="glyphicon glyphicon-share-alt"></span>&nbsp;&nbsp;
         <span style="color:#FF95CA" class="glyphicon glyphicon-list-alt"></span>
-        博文管理
+        文章管理
         &nbsp;&nbsp;<span style="color:#8C8C00" class="glyphicon glyphicon-share-alt"></span>&nbsp;&nbsp;
         <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
-        写博文
+        写文章
       </span>
     </div>
     <div class="main_02_content">
       <span id="html" style="display: none">
         <button type="button" onclick="window.location.href='${pageContext.request.contextPath}/user/list/blog'" class="btn btn-danger btn-lg btn-block">
-          <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;恭喜您，博文已提交完成，请点击查看
+          <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;恭喜您，文章已提交完成，请点击查看
         </button>
       </span>
       <span id="html2">
         <div class="well">
           <span style="color:#00AEAE;font-size:14px">
           <span class="glyphicon glyphicon-info-sign" style="color:#FF60AF"></span>
-          说明：可以在此写个人博客，写好的博客自己可以按需要发布到已关注的话题下
+          说明：可以在此写个人文章，写好的文章自己可以按需要发布到已关注的话题下
           </span>
         </div>
 

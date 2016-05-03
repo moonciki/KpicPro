@@ -39,6 +39,7 @@
     </c:otherwise>
   </c:choose>
 
+  <c:if test="${role == '1'}">
   <c:choose>
     <c:when test="${flag == 2}">
       <div class="main_01_unit_point">
@@ -53,6 +54,7 @@
       </div>
     </c:otherwise>
   </c:choose>
+  </c:if>
 
 
   <div class="main_01_title2"><span class="glyphicon glyphicon-flag" style="color:#FF9797"></span>&nbsp;&nbsp;举报事务处理</div>
@@ -71,6 +73,7 @@
     </c:otherwise>
   </c:choose>
 
+  <c:if test="${role == '1'}">
   <div class="main_01_title2"><span class="glyphicon glyphicon-edit" style="color:#FF9797"></span>&nbsp;&nbsp;申请事务处理</div>
   <c:choose>
     <c:when test="${flag == 4}">
@@ -90,19 +93,24 @@
     <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
     帖子恢复申请
   </div>
+  </c:if>
 
-
+  <c:if test="${role == '1'}">
   <div class="main_01_title2"><span class="glyphicon glyphicon-user" style="color:#FF9797"></span>&nbsp;&nbsp;小管理猿们</div>
   <div class="main_01_unit">
     <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
     小管理猿信息管理
   </div>
+  </c:if>
+
 
   <div class="main_01_title2"><span class="glyphicon glyphicon-info-sign" style="color:#FF9797"></span>&nbsp;&nbsp;关注</div>
   <div class="main_01_unit">
     <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
     关注话题成员
   </div>
+
+  <c:if test="${role == '1'}">
   <div class="main_01_title2"><span class="glyphicon glyphicon-fire" style="color:#FF9797"></span>&nbsp;&nbsp;推广&活动</div>
   <div class="main_01_unit">
     <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
@@ -112,7 +120,9 @@
     <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
     推广设置
   </div>
+  </c:if>
   <div class="main_01_foot"></div>
+
 </div>
 </body>
 </html>

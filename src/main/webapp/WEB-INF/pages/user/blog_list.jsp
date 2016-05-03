@@ -42,11 +42,11 @@
         <span style="color:#FF79BC" class="glyphicon glyphicon-cog"></span>
         用户管理中心
         &nbsp;&nbsp;<span style="color:#8C8C00" class="glyphicon glyphicon-share-alt"></span>&nbsp;&nbsp;
-        <span style="color:#FF95CA" class="glyphicon glyphicon-picture"></span>
-        云图集管理
+        <span style="color:#FF95CA" class="glyphicon glyphicon-list-alt"></span>
+        文章管理
         &nbsp;&nbsp;<span style="color:#8C8C00" class="glyphicon glyphicon-share-alt"></span>&nbsp;&nbsp;
         <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
-        我的云图集
+        我的文章
       </span>
     </div>
     <input id="page" value="0" type="hidden"/>

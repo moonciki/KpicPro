@@ -358,7 +358,7 @@ function jubao3(id){
 }
 
 $("#tip_submmit").click(function(){
-    $("#load_area").append("&nbsp;&nbsp;<span style=\"color:#9D9D9D; font-size: 14px\"><img src=\"/static/images/loading.jpg\" style=\"width: 30px; height: 30px\"/>&nbsp;举报提交中..</span>");
+    $("#load_area").append("&nbsp;&nbsp;<span style=\"color:#9D9D9D; font-size: 14px\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg\" style=\"width: 30px; height: 30px\"/>&nbsp;举报提交中..</span>");
     $("#tip_submmit").attr("disabled", "disabled");
     $("#tip_close").attr("disabled", "disabled");
     var pbarId = $("#pbarId").val();

@@ -20,7 +20,7 @@ function jz(){
                     "<span style=\"color:#737300;font-size: 15px;font-weight: bold;font-family: 微软雅黑\"><span class=\"glyphicon glyphicon-star-empty\"></span>"+
                     "标题为：</span><br/><a href=\"/post/reply/tp5416" + data[key].topicId + "\" target=\"_blank\" title=\"点击进入查看详情\">" + data[key].title + "</a>"+
                     "<br/>被举报了 <span style=\"color:red;font-weight: bold\">"+data[key].count+"</span> 次，举报类型为："+data[key].type+"&nbsp;&nbsp;&nbsp;&nbsp;" +
-                    "<span id='anload"+data[key].topicId+"' style='display:none;font-family: 微软雅黑;font-size: 12px'><img src='/static/images/loading.jpg' height='30px'/>&nbsp;处理中..</span><span id='an"+data[key].topicId+"' style='font-family: 微软雅黑;font-size: 12px'><a style='cursor:pointer' onclick='deltopic("+data[key].topicId+")'><span class='glyphicon glyphicon-remove-circle'></span>&nbsp;删除该帖子</a>" +
+                    "<span id='anload"+data[key].topicId+"' style='display:none;font-family: 微软雅黑;font-size: 12px'><img src='http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg' height='30px'/>&nbsp;处理中..</span><span id='an"+data[key].topicId+"' style='font-family: 微软雅黑;font-size: 12px'><a style='cursor:pointer' onclick='deltopic("+data[key].topicId+")'><span class='glyphicon glyphicon-remove-circle'></span>&nbsp;删除该帖子</a>" +
                     "&nbsp;&nbsp;<a style='cursor:pointer' onclick='igntopic("+data[key].topicId+")'><span class='glyphicon glyphicon-eye-close'></span>&nbsp;忽略举报</a></span>"+
                     "</div></div>";
             }
@@ -54,7 +54,7 @@ function jz2(){
                     "<br/><span style='color:#007979'><span class='glyphicon glyphicon-comment'></span> 评论内容:</span><br/>"+
                     "<span style='color:#7B7B7B'>"+data[key].shortText+"</span>"+
                     "<br/>被举报了 <span style=\"color:red;font-weight: bold\">"+data[key].count+"</span> 次，举报类型为："+data[key].type+"&nbsp;&nbsp;&nbsp;&nbsp;" +
-                    "<span id='anreplyload"+data[key].replyId+"' style='display:none;font-family: 微软雅黑;font-size: 12px'><img src='/static/images/loading.jpg' height='30px'/>&nbsp;处理中..</span><span id='anreply"+data[key].replyId+"' style='font-family: 微软雅黑;font-size: 12px'><a style='cursor:pointer' onclick='delreply("+data[key].replyId+")'><span class='glyphicon glyphicon-remove-circle'></span>&nbsp;删除该帖子</a>" +
+                    "<span id='anreplyload"+data[key].replyId+"' style='display:none;font-family: 微软雅黑;font-size: 12px'><img src='http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg' height='30px'/>&nbsp;处理中..</span><span id='anreply"+data[key].replyId+"' style='font-family: 微软雅黑;font-size: 12px'><a style='cursor:pointer' onclick='delreply("+data[key].replyId+")'><span class='glyphicon glyphicon-remove-circle'></span>&nbsp;删除该帖子</a>" +
                     "&nbsp;&nbsp;<a style='cursor:pointer' onclick='ignreply("+data[key].replyId+")'><span class='glyphicon glyphicon-eye-close'></span>&nbsp;忽略举报</a></span>"+
                     "</div></div>";
             }
@@ -84,7 +84,7 @@ function jz3(){
                     "<span style=\"color:#737300;font-size: 15px;font-weight: bold;font-family: 微软雅黑\"><span class=\"glyphicon glyphicon-star-empty\"></span>"+
                     "短评内容为：</span><br/>" + data[key].content +
                     "<br/>被举报了 <span style=\"color:red;font-weight: bold\">"+data[key].count+"</span> 次，举报类型为："+data[key].type+"&nbsp;&nbsp;&nbsp;&nbsp;" +
-                    "<span id='anshortload"+data[key].shortId+"' style='display:none;font-family: 微软雅黑;font-size: 12px'><img src='/static/images/loading.jpg' height='30px'/>&nbsp;处理中..</span><span id='anshort"+data[key].shortId+"' style='font-family: 微软雅黑;font-size: 12px'><a style='cursor:pointer' onclick='delshort("+data[key].shortId+")'><span class='glyphicon glyphicon-remove-circle'></span>&nbsp;删除该帖子</a>" +
+                    "<span id='anshortload"+data[key].shortId+"' style='display:none;font-family: 微软雅黑;font-size: 12px'><img src='http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg' height='30px'/>&nbsp;处理中..</span><span id='anshort"+data[key].shortId+"' style='font-family: 微软雅黑;font-size: 12px'><a style='cursor:pointer' onclick='delshort("+data[key].shortId+")'><span class='glyphicon glyphicon-remove-circle'></span>&nbsp;删除该帖子</a>" +
                     "&nbsp;&nbsp;<a style='cursor:pointer' onclick='ignshort("+data[key].shortId+")'><span class='glyphicon glyphicon-eye-close'></span>&nbsp;忽略举报</a></span>"+
                     "</div></div>";
             }

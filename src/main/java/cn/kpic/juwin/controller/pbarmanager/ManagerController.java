@@ -46,8 +46,12 @@ public class ManagerController {
     public String enterPbarManager(@PathVariable("pbarId") Long pbarId,Model model){
         try{
             User curr_user = CurrentUser.getUser();
+            String role = this.userService.getRole(curr_user.getId(), pbarId);
+            if("3".equals(role)){
+                return "/404";
+            }
             model.addAttribute("user", curr_user);
-            model.addAttribute("role", this.userService.getRole(curr_user.getId(), pbarId));
+            model.addAttribute("role", role);
             model.addAttribute("pbar", this.pbarService.getPbarIndex(pbarId));
             model.addAttribute("flag", 1);
             return "/pbar/manager_pbar_info";
@@ -63,8 +67,12 @@ public class ManagerController {
     public String updPbarManager(@PathVariable("pbarId") Long pbarId,Model model){
         try{
             User curr_user = CurrentUser.getUser();
+            String role = this.userService.getRole(curr_user.getId(), pbarId);
+            if(!"1".equals(role)){
+                return "/404";
+            }
             model.addAttribute("user", curr_user);
-            model.addAttribute("role", this.userService.getRole(curr_user.getId(), pbarId));
+            model.addAttribute("role", role);
             model.addAttribute("pbar", this.pbarService.getPbarIndex(pbarId));
             model.addAttribute("flag", 2);
             return "/pbar/manager_pbar_update";
@@ -80,6 +88,11 @@ public class ManagerController {
     @ResponseBody
     public boolean updPbarManagerForm(@PathVariable("pbarId") Long pbarId,Pbar pbar){
         try{
+            User curr_user = CurrentUser.getUser();
+            String role = this.userService.getRole(curr_user.getId(), pbarId);
+            if(!"1".equals(role)){
+                return false;
+            }
             pbar.setId(pbarId);
             this.pbarService.update(pbar);
             this.pbarService.clearCache(RedisCacheKey.PBAR_INDEX+pbarId);
@@ -96,8 +109,12 @@ public class ManagerController {
     public String tips(@PathVariable("pbarId") Long pbarId,Model model){
         try{
             User curr_user = CurrentUser.getUser();
+            String role = this.userService.getRole(curr_user.getId(), pbarId);
+            if("3".equals(role)){
+                return "/404";
+            }
             model.addAttribute("user", curr_user);
-            model.addAttribute("role", this.userService.getRole(curr_user.getId(), pbarId));
+            model.addAttribute("role", role);
             model.addAttribute("pbar", this.pbarService.getPbarIndex(pbarId));
             model.addAttribute("flag", 3);
             return "/pbar/manager_pbar_tips";
@@ -113,6 +130,10 @@ public class ManagerController {
     public String showAllApplys(@PathVariable("pbarId") Long pbarId, Model model){
         try{
             User curr_user = CurrentUser.getUser();
+            String role = this.userService.getRole(curr_user.getId(), pbarId);
+            if(!"1".equals(role)){
+                return "/404";
+            }
             model.addAttribute("user", curr_user);
             model.addAttribute("role", this.userService.getRole(curr_user.getId(), pbarId));
             model.addAttribute("pbar", this.pbarService.getPbarIndex(pbarId));
@@ -130,6 +151,11 @@ public class ManagerController {
     @ResponseBody
     public List<PbarManagerApplyVo> getAllApplys(Long pbarId, @RequestParam(value = "page", defaultValue = "0", required = true)Integer page){
         try{
+            User curr_user = CurrentUser.getUser();
+            String role = this.userService.getRole(curr_user.getId(), pbarId);
+            if(!"1".equals(role)){
+                return null;
+            }
             if(pbarId == null || pbarId < 0){
                 return null;
             }
@@ -147,6 +173,11 @@ public class ManagerController {
     @RequestMapping(value = "/pbar/manager/apply/tg")
     @ResponseBody
     public boolean tg(Long userId, Long pbarId, Long id){
+        User curr_user = CurrentUser.getUser();
+        String role = this.userService.getRole(curr_user.getId(), pbarId);
+        if(!"1".equals(role)){
+            return false;
+        }
         if(userId == null || pbarId == null || id == null){
             return false;
         }

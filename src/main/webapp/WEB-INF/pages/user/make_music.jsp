@@ -63,7 +63,7 @@
           </button>
           <br/>
           <span id="upload_loading" style="display:none;padding-left: 100px">
-            <img src="${pageContext.request.contextPath}/static/images/loading.jpg" style="width: 30px"/>
+            <img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg" style="width: 30px"/>
             &nbsp;上传中...
           </span>
           <br/>
