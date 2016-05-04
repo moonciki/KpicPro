@@ -1,52 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="17a5a849-1c54-4076-b3d1-f2d8ebeb2848" name="Default" comment="私信系统，话题首页云图集">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/ueditor/themes/default/css/ueditor2.css" />
-      <change type="DELETED" beforePath="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\out\artifacts\KpicPro\exploded\KpicPro-1.0-SNAPSHOT.war\static\images\1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\out\artifacts\KpicPro\exploded\KpicPro-1.0-SNAPSHOT.war\static\images\2.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\out\artifacts\KpicPro\exploded\KpicPro-1.0-SNAPSHOT.war\static\images\3.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\out\artifacts\KpicPro\exploded\KpicPro-1.0-SNAPSHOT.war\static\images\bg.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\out\artifacts\KpicPro\exploded\KpicPro-1.0-SNAPSHOT.war\static\images\bg3.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\out\artifacts\KpicPro\exploded\KpicPro-1.0-SNAPSHOT.war\static\images\loading.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\out\artifacts\KpicPro\exploded\KpicPro-1.0-SNAPSHOT.war\static\images\page_loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\out\artifacts\KpicPro\exploded\KpicPro-1.0-SNAPSHOT.war\static\images\userpic.png" afterPath="" />
+    <list default="true" id="17a5a849-1c54-4076-b3d1-f2d8ebeb2848" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/qiniu/QiNiuCallback.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/qiniu/QiNiuCallback.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/qiniu/QiNiuCallback.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/qiniu/QiNiuCallback.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/themes/default/images/icons.png" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/themes/default/images/icons.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ueditor/themes/default/images/icons.png" afterPath="$PROJECT_DIR$/src/main/webapp/ueditor/themes/default/images/icons.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/utils/NetEaseMusicUtils.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/utils/NetEaseMusicUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/qiniu/QiNiuCallback.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/qiniu/QiNiuCallback.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/dialogs/image/image.html" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/dialogs/image/image.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/image/image.html" afterPath="$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/image/image.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/make_blog.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/make_blog.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/user/manage_center.css" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/user/manage_center.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/css/user/manage_center.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/user/manage_center.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/common/manage_center_left.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/common/manage_center_left.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/pbar/pbar_index.css" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/pbar/pbar_index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/pbar/pbar_index.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/pbar/pbar_index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/pbar/pbar_index.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/pbar/pbar_index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/pbar/pbar_index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/pbar/pbar_index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/pbar_index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/pbar_index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index_blog.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index_blog.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/reply/reply_index.css" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/reply/reply_index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/css/reply/reply_index.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/reply/reply_index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/reply/reply_index.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/reply/reply_index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/reply/reply_index.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/reply/reply_index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/reply/reply_index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/reply/reply_index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reply/reply_index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reply/reply_index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/share_media.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/share_media.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.all.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.all.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.all.js" afterPath="$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.all.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.all.min.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.all.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.all.min.js" afterPath="$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.all.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.config.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.config.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/themes/default/css/ueditor.css" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/themes/default/css/ueditor.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ueditor/themes/default/css/ueditor.css" afterPath="$PROJECT_DIR$/src/main/webapp/ueditor/themes/default/css/ueditor.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/lang/zh-cn/zh-cn.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/lang/zh-cn/zh-cn.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ueditor/lang/zh-cn/zh-cn.js" afterPath="$PROJECT_DIR$/src/main/webapp/ueditor/lang/zh-cn/zh-cn.js" />
     </list>
     <list id="e186a0ab-92c4-4983-921e-38162be3a11e" name="Failed commit: Default" comment="私信系统，话题首页云图集" />
     <ignored path="KpicPro.iws" />
@@ -270,7 +243,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="35" column="75" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -1413,7 +1388,7 @@
       <workItem from="1462263767443" duration="12149000" />
       <workItem from="1462325866452" duration="9196000" />
       <workItem from="1462347523937" duration="949000" />
-      <workItem from="1462358850714" duration="1247000" />
+      <workItem from="1462358850714" duration="1445000" />
     </task>
     <task id="LOCAL-00001" summary="话题管理页">
       <created>1460801172157</created>
@@ -1499,11 +1474,17 @@
       <option name="project" value="LOCAL" />
       <updated>1462259458068</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="私信系统，话题首页云图集">
+      <created>1462360423927</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1462360423927</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355895000" />
+    <option name="totallyTimeSpent" value="356093000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1894,7 +1875,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="75" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
