@@ -196,20 +196,18 @@
 
     <!--发帖子-->
     <div class="main01_01_reply" style="margin-left:70px;padding-bottom:50px;padding-top:50px;padding-left:130px; width: 940px">
-
+      <div class="bjq_btn2 music_button" id="music_share"></div>
+      <div class="bjq_btn2 video_button" id="video_share"></div>
+      <div class="bjq_btn2 eif_button" id="eif_share"></div>
       <div class="xiu" style="font-size: 66px; font-weight:bold; font-family: 微软雅黑">咻~ 已发射！</div>
       <div class="reply_loading"><div class="loading" style="padding-top: 120px;font-family: 微软雅黑;">发送中...</div></div>
       <span style="font-size: 15px;font-family: 微软雅黑">回复TA</span>
       <br/>
       <br/>
       <!--style给定宽度可以影响编辑器的最终宽度-->
-      <script type="text/plain" id="myEditor" name="content" style="width:700px;height:240px;"></script>
+      <script type="text/plain" id="myEditor" name="content" style="width:722px;height:240px;"></script>
       <br>
       <button type="button" id="saveReply" class="btn btn-info"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;发射~</button>
-
-      <button type="button" id="music_share" class="btn btn-success"><span class="glyphicon glyphicon-music"></span>&nbsp;&nbsp;音频分享</button>
-
-      <button type="button" id="video_share" class="btn btn-success"><span class="glyphicon glyphicon-film"></span>&nbsp;&nbsp;视频分享</button>
 
     </div>
 

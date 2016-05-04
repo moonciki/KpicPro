@@ -1,5 +1,25 @@
 
 $().ready(function(){
+
+
+    $('.music_button').hover(function(){
+        $(this).addClass("music_button_hover");
+    },function(){
+        $(this).removeClass("music_button_hover");
+    });
+
+    $('.video_button').hover(function(){
+        $(this).addClass("music_button_hover");
+    },function(){
+        $(this).removeClass("music_button_hover");
+    });
+
+    $('.eif_button').hover(function(){
+        $(this).addClass("music_button_hover");
+    },function(){
+        $(this).removeClass("music_button_hover");
+    });
+
     $("#tip_submit").click(function(){
         $("#jb_load").show();
         $("#tip_submit").attr("disabled", "disabled");
@@ -488,7 +508,7 @@ function bigPic(img, flag){
     if(flag == 2){
         $(".pic_big_01").show();
         $(".pic_big_01_01").show();
-        $("#pic_video").append("<embed type=\"application/x-shockwave-flash\" class=\"edui-faked-video\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" src=\""+img+"\" width=\"672px\" height=\"440px\" wmode=\"transparent\" play=\"true\" loop=\"false\" menu=\"false\" allowscriptaccess=\"never\" allowfullscreen=\"true\" />");
+        $("#pic_video").append("<embed type=\"application/x-shockwave-flash\" class=\"edui-faked-video\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" src=\""+img+"\" width=\"682px\" height=\"440px\" wmode=\"transparent\" play=\"true\" loop=\"false\" menu=\"false\" allowscriptaccess=\"never\" allowfullscreen=\"true\" />");
     }else if(flag == 3){
         var addhtml = "<div class=\"pic_big_03\"><div class='pic_big_03_1'></div><div class='pic_big_03_2'><center><div style=\"display: inline-block;width:520px; height:50px;\"> <audio style=\"margin-top:10px;width: 450px\" controls=true>"+
             "<source src=\""+img+"\" />"+
@@ -523,7 +543,7 @@ function sq(){
 
 function share_music(mp3url){
     music_share_close();
-    var addhtml = "<div style=\"width:672px; height:50px;\"> <audio style=\"width: 672px\" controls=true>"+
+    var addhtml = "<div style=\"width:682px; height:50px;\"> <audio style=\"width: 682px\" controls=true>"+
         "<source src=\""+mp3url+"\" />"+
         "</audio></div>"
     var ue = UE.getEditor('myEditor');
@@ -538,7 +558,7 @@ function self_music(){
     }
 
     music_share_close();
-    var addhtml = "<div style=\"width:672px; height:50px;\"> <audio style=\"width: 672px\" controls=true>"+
+    var addhtml = "<div style=\"width:682px; height:50px;\"> <audio style=\"width: 682px\" controls=true>"+
         "<source src=\""+mp3wl+"\" />"+
         "</audio></div>"
     var ue = UE.getEditor('myEditor');
@@ -554,7 +574,7 @@ function share_video(){
         return;
     }
     video_share_close();
-    var addhtml = "<embed type=\"application/x-shockwave-flash\" class=\"edui-faked-video\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" src=\""+videoUrl+"\" width=\"672px\" height=\"440px\" wmode=\"transparent\" play=\"true\" loop=\"false\" menu=\"false\" allowscriptaccess=\"never\" allowfullscreen=\"true\" />";
+    var addhtml = "<embed type=\"application/x-shockwave-flash\" class=\"edui-faked-video\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" src=\""+videoUrl+"\" width=\"682px\" height=\"440px\" wmode=\"transparent\" play=\"true\" loop=\"false\" menu=\"false\" allowscriptaccess=\"never\" allowfullscreen=\"true\" />";
     var ue = UE.getEditor('myEditor');
     ue.execCommand('inserthtml', addhtml);
 }

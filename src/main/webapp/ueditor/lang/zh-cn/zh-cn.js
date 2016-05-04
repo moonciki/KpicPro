@@ -225,7 +225,7 @@ UE.I18N['zh-cn'] = {
     'insertimage':{
         'static':{
             lang_tab_remote:"远程图片", //节点
-            lang_tab_local:"本地上传",
+            lang_tab_local:"上传图片（注意上传的图片最大不能超过800K）",
             lang_tab_imgManager:"在线管理",
             lang_tab_imgSearch:"图片搜索",
             lang_input_url:"地 址：",

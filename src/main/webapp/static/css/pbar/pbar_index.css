@@ -80,7 +80,7 @@ body{
     margin-top: 8%;
     margin-left: auto;
     margin-right: auto;
-    width: 692px;
+    width: 702px;
     height: 460px;
     border: solid #6C6C6C 10px;
     border-radius: 8px;
@@ -128,7 +128,7 @@ body{
 
 .pic_big_01_01{
     margin-top: -450px;
-    margin-left: 683px;
+    margin-left: 693px;
     cursor: pointer;
     width: 30px;
     height: 30px;
@@ -444,8 +444,53 @@ ul.parent li:hover .lines,.topbar li.current .lines {
     min-width: 75px;
     height: 30px;
     position:absolute;
+    z-index: 1001;
+    float: left;
+}
+.bjq_btn{
+    margin-top: 106px;
+}
+.bjq_btn2{
+    margin-top: 50px;
+}
+.music_button{
+    margin-left: 452px;
+    width: 85px;
+    height: 70px;
+    cursor: pointer;
+    background-image: url("http://7xtmxr.com1.z0.glb.clouddn.com/static/edit6.png");
+    border: solid 1px #E0E0E0;
+    position:absolute;
     z-index: 1000;
     float: left;
+}
+
+.video_button{
+    margin-left: 541px;
+    width: 85px;
+    height: 70px;
+    cursor: pointer;
+    background-image: url("http://7xtmxr.com1.z0.glb.clouddn.com/static/edit7.png");
+    border: solid 1px #E0E0E0;
+    position:absolute;
+    z-index: 1000;
+    float: left;
+}
+
+.eif_button{
+    margin-left: 630px;
+    width: 85px;
+    height: 70px;
+    cursor: pointer;
+    background-image: url("http://7xtmxr.com1.z0.glb.clouddn.com/static/edit8.png");
+    border: solid 1px #E0E0E0;
+    position:absolute;
+    z-index: 1000;
+    float: left;
+}
+
+.music_button_hover{
+    border: solid 1px #FF95CA;
 }
 
 
@@ -456,7 +501,7 @@ div{
 
 .reply_loading{
     display: none;
-    padding-top: 100px;
+    padding-top: 140px;
     text-align: center;
     font-size: 16px;
     width: 702px;
@@ -666,7 +711,7 @@ div{
 
 .reply_body_main_content{
     padding-left: 30px;
-    width: 672px;
+    width: 722px;
     height:30px;
     height: auto;
 }
@@ -740,14 +785,21 @@ div{
 
 .share_music_main{
     padding: 20px;
-    margin-top: 8%;
+    margin-top: 3%;
     margin-left: auto;
     margin-right: auto;
     width: 520px;
-    height: 510px;
+    height: 570px;
     background-color: #FFF;
     border: solid 10px #6C6C6C;
     border-radius: 8px;
+}
+
+.video_logo{
+    width: 444px;
+    height: 326px;
+    margin: auto 0;
+    background-image: url("http://7xtmxr.com1.z0.glb.clouddn.com/static/video_logos.png");
 }
 
 .fxs{

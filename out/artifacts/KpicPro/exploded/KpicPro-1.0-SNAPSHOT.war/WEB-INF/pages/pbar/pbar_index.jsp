@@ -127,20 +127,20 @@
 
             <!--发帖子-->
             <div class="main01_01_reply" style="padding: 50px">
+                <div class="bjq_btn music_button" id="music_share"></div>
+                <div class="bjq_btn video_button" id="video_share"></div>
+                <div class="bjq_btn eif_button" id="eif_share"></div>
                 <div class="xiu" style="font-size: 66px; font-weight:bold; font-family: 微软雅黑">咻~ 已发射！</div>
                 <div class="reply_loading"><div class="loading" style="margin-top:50px;padding-top: 120px;font-family: 微软雅黑;">发送中...</div></div>
                 <span style="font-size: 15px;font-family: 微软雅黑"><span class="glyphicon glyphicon-pencil" style="color:#FF79BC"></span>&nbsp;&nbsp;发表主题帖</span>
                 <br/><br/>
-                <input type="text" class="form-control" style="width: 700px" id="title" placeholder="请输入标题">
+                <input type="text" class="form-control" style="width: 722px" id="title" placeholder="请输入标题">
                 <br/>
                     <!--style给定宽度可以影响编辑器的最终宽度-->
-                    <script type="text/plain" id="myEditor" name="content" style="width:700px;height:240px;"></script>
+                    <script type="text/plain" id="myEditor" name="content" style="width:722px;height:240px;"></script>
                 <br>
                 <button type="button" id="savePost" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;发射~</button>
 
-                <button type="button" id="music_share" class="btn btn-success"><span class="glyphicon glyphicon-music"></span>&nbsp;&nbsp;音频分享</button>
-
-                <button type="button" id="video_share" class="btn btn-success"><span class="glyphicon glyphicon-film"></span>&nbsp;&nbsp;视频分享</button>
             </div>
 
 

@@ -33,7 +33,7 @@ public class QiNiuCallback {
                 json.put("original", callback.get("name"));
                 int width = Integer.parseInt((String)callback.get("w"));
                 if(width > 677){
-                    json.put("url", callback.get("key")+"?imageView2/2/w/672/q/95");
+                    json.put("url", callback.get("key")+"?imageView2/2/w/682/q/95");
                 }else{
                     json.put("url", callback.get("key"));
                 }

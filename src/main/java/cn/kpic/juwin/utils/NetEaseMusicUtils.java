@@ -1,5 +1,6 @@
 package cn.kpic.juwin.utils;
 
+import cn.kpic.juwin.domain.SystemMsg;
 import cn.kpic.juwin.domain.vo.Songs;
 import cn.kpic.juwin.http.HttpRequest;
 
@@ -46,6 +47,15 @@ public class NetEaseMusicUtils {
             }
         }else{
             return null;
+        }
+    }
+
+    public static void main(String[] args){
+        try{
+            String sr= HttpRequest.sendGet("http://buzz098x.hz.youdao.com:30033/api/kpidata/v1.0/queryKpiData?key=retweet_from_java&beginDate=20110901&endDate=20110910", "");
+            System.out.print("^^^^^"+sr);
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 

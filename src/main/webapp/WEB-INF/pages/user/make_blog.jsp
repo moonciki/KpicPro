@@ -14,7 +14,7 @@
 
   <link href="${pageContext.request.contextPath}/static/css/user/manage_center.css" rel="stylesheet"/>
 
-  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ueditor/themes/default/css/ueditor.css"/>
+  <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/ueditor/themes/default/css/ueditor2.css"/>
   <script type="text/javascript" src="${pageContext.request.contextPath}/ueditor/ueditor.config2.js"></script>
   <script type="text/javascript" src="${pageContext.request.contextPath}/ueditor/ueditor.all.js"></script>
 

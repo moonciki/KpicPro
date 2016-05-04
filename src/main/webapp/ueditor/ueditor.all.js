@@ -12376,7 +12376,7 @@ UE.plugins['video'] = function (){
             var html = [],id = 'tmpVedio';
             for(var i=0,vi,len = videoObjs.length;i<len;i++){
                  vi = videoObjs[i];
-                 html.push(creatInsertStr( vi.url, vi.width || 672,  vi.height || 440, id + i,null,false));
+                 html.push(creatInsertStr( vi.url, vi.width || 722,  vi.height || 440, id + i,null,false));
             }
             me.execCommand("inserthtml",html.join(""),true);
             var rng = this.selection.getRange();

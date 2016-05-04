@@ -14,7 +14,7 @@
 <div class="pic_big" id="tp_share_music">
   <div class="share_music_main">
     <span class="badge pull-right" title="关闭" onclick="music_share_close()" style="font-weight:bold; cursor: pointer;background-color: #FF5151"><span class="glyphicon glyphicon-remove"></span></span>
-    <br/><br/>
+    <br/><center><b>音源：</b><img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/wyy.png?imageView2/1/w/20/h/20/q/100">&nbsp;<a href="http://music.163.com/" target="_blank">网易云音乐</a></center><br/>
     <div class="input-group" id="haha" style="margin: 0 auto;width: 350px">
       <input type="text" id="musicName" style="border: solid 2px #FF5151;" class="form-control">
         <span class="input-group-btn">
@@ -66,7 +66,9 @@
     <div class="share_music_main">
 
         <span class="badge pull-right" title="关闭" onclick="video_share_close()" style="font-weight:bold; cursor: pointer;background-color: #FF5151"><span class="glyphicon glyphicon-remove"></span></span>
-        <br/><br/>
+        <br/>
+        <center><span class="badge" style="font-size:15px;background-color: #ff7575">本站支持任何以flash播放器为主的视频站的视频分享</span></center>
+        <br/>
         <div class="input-group" style="margin: 0 auto;width: 450px">
             <span class="input-group-addon" style="background-color: #FF5151; border: solid 1px #FF5151;  font-weight:bold; color:#FFF">视频FLASH地址：</span>
             <input type="text" id="videoUrl" style="border: solid 2px #FF5151;" class="form-control">
@@ -74,7 +76,8 @@
         <br/>
         <center><button type="button" onclick="share_video()" class="btn btn-primary"><span class="glyphicon glyphicon-share"></span>&nbsp;分享</button></center>
         <br/>
-
+        <span class="glyphicon glyphicon-tag" style="color: #FF79BC"></span>&nbsp;说明：下面的视频网站分享有教程参考哦~<a href="" target="_blank">点我查看</a>
+        <div class="video_logo"></div>
 
 
     </div>
