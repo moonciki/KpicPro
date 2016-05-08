@@ -2,24 +2,67 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17a5a849-1c54-4076-b3d1-f2d8ebeb2848" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/qiniu/QiNiuCallback.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/qiniu/QiNiuCallback.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/qiniu/QiNiuCallback.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/qiniu/QiNiuCallback.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/themes/default/images/icons.png" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/themes/default/images/icons.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/dialogs/image/image.html" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/dialogs/image/image.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/user/manage_center.css" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/user/manage_center.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/Emotion.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/emotion/EmotionController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/EmotionMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/EmotionMapper.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/EmotionService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/EmotionServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/user/make_emotion.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/make_emotion.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/user_self_info.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/user_self_info2.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/user_self_topics.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/topicpost/TopicPostController.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/topicpost/TopicPostController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/topicpost/TopicPostController.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/topicpost/TopicPostController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/user/UserController.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/controller/user/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/user/UserController.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/controller/user/UserController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/UserFocusMapper.class" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/UserFocusMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/UserFocusMapper.class" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/UserFocusMapper.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/constant/KpicConstant.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/constant/KpicConstant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PrivateLetterServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PrivateLetterServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/topicpost/TopicPostController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/topicpost/TopicPostController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/user/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/user/UserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/UserFocusMapper.java" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/UserFocusMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/UserFocusMapper.xml" afterPath="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/UserFocusMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/UserFocusMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/classes/cn/kpic/juwin/mapper/UserFocusMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/UserFocusMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/UserFocusMapper.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/user/blog_list.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/user/blog_list.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/blog_list.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/blog_list.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/common/manage_center_left.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/common/manage_center_left.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/manage_center_left.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/manage_center_left.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/user/manage_center_topic.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/user/manage_center_topic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/user/manage_center_topic.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/user/manage_center_topic.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/user/manage_center_topic.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/user/manage_center_topic.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/manage_center_topic.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/manage_center_topic.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/pbar/pbar_index.css" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/pbar/pbar_index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/pbar/pbar_index.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/pbar/pbar_index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/pbar/pbar_index.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/pbar/pbar_index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/pbar/pbar_index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/pbar/pbar_index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/reply/reply_index.css" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/reply/reply_index.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/pbar_index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/pbar_index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_list.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_list.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/reply/reply_index.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/reply/reply_index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/reply/reply_index.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/reply/reply_index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/reply/reply_index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/reply/reply_index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.all.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.all.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.all.min.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.all.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.config.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/ueditor.config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/themes/default/css/ueditor.css" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/themes/default/css/ueditor.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reply/reply_index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reply/reply_index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/common/top.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/common/top.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/top.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/top.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/user/user_index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/user/user_index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/user_index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/user_index.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/user/user_info.css" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/css/user/user_info.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/css/user/user_info.css" afterPath="$PROJECT_DIR$/src/main/webapp/static/css/user/user_info.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/common/user_self_info.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/common/user_self_info.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/common/user_self_info.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/common/user_self_info.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/common/user_self_info.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/common/user_self_info.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/user_self_info.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/user_self_info.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/user/user_self_subjects.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/static/js/user/user_self_subjects.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/static/js/user/user_self_subjects.js" afterPath="$PROJECT_DIR$/src/main/webapp/static/js/user/user_self_subjects.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/user/user_self_subjects.jsp" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/WEB-INF/pages/user/user_self_subjects.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/user_self_subjects.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/user_self_subjects.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/lang/zh-cn/zh-cn.js" afterPath="$PROJECT_DIR$/out/artifacts/KpicPro/exploded/KpicPro-1.0-SNAPSHOT.war/ueditor/lang/zh-cn/zh-cn.js" />
     </list>
     <list id="e186a0ab-92c4-4983-921e-38162be3a11e" name="Failed commit: Default" comment="私信系统，话题首页云图集" />
     <ignored path="KpicPro.iws" />
@@ -60,20 +103,6 @@
                 <option name="myItemId" value="KpicPro" />
                 <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
               </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="Dependencies" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-              </PATH_ELEMENT>
-            </PATH>
-            <PATH>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ExternalProjectsStructure$RootNode" />
-              </PATH_ELEMENT>
-              <PATH_ELEMENT>
-                <option name="myItemId" value="KpicPro" />
-                <option name="myItemType" value="com.intellij.openapi.externalSystem.view.ProjectNode" />
-              </PATH_ELEMENT>
             </PATH>
           </tree_state>
         </projects_view>
@@ -88,8 +117,107 @@
       <file leaf-file-name="pbar_index.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/pbar_index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="131" column="69" selection-start-line="131" selection-start-column="69" selection-end-line="131" selection-end-column="69" />
+            <state vertical-scroll-proportion="-5.892857">
+              <caret line="36" column="71" selection-start-line="36" selection-start-column="71" selection-end-line="36" selection-end-column="71" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reply_index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reply/reply_index.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.0714285">
+              <caret line="93" column="46" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="63" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reply_index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/reply/reply_index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="533" column="21" selection-start-line="533" selection-start-column="21" selection-end-line="533" selection-end-column="21" />
+              <folding>
+                <marker date="1462719046727" expanded="true" signature="1796:1812" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="2095:2109" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="2133:2164" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="2328:2342" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="2366:2397" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="2565:2596" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="3116:3156" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="3361:3405" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="3529:3562" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="3688:3718" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="5548:5564" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="5847:5861" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="5885:5916" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="6066:6080" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="6104:6135" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="6256:6296" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="6427:6471" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="6592:6625" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="6738:6768" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="8284:8300" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="8595:8609" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="8633:8664" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="8836:8850" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="8874:8905" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="9077:9108" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="9623:9663" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="9892:9936" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="10072:10105" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="10239:10269" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="12410:12437" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="12691:12713" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="13808:13839" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="14582:14607" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="14963:14990" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="16162:16184" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="16841:16866" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="17969:17999" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="18080:18105" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="18738:18768" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="18825:18838" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="19811:19841" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="19898:19911" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="20887:20917" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="20974:20987" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="22184:22209" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="22228:22240" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="22618:22643" placeholder="..." />
+                <marker date="1462719046727" expanded="true" signature="22662:22674" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="applicationContext.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.0">
+              <caret line="175" column="41" selection-start-line="175" selection-start-column="41" selection-end-line="175" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="k-pic-prod.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/properties/k-pic-prod.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pbar_index.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="828" column="20" selection-start-line="828" selection-start-column="20" selection-end-line="828" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -99,172 +227,101 @@
         <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/pbar/pbar_index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="7" selection-start-line="16" selection-start-column="4" selection-end-line="20" selection-end-column="7" />
+              <caret line="653" column="8" selection-start-line="653" selection-start-column="8" selection-end-line="653" selection-end-column="8" />
               <folding>
-                <marker date="1462330231056" expanded="true" signature="2041:2054" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="2085:2116" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="2167:2198" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="2971:3019" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="3071:3085" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="3141:3173" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="3201:3233" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="4068:4102" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="4119:4188" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="4512:4538" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="4680:4687" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="4811:4828" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="4845:4892" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="4981:4994" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="5024:5055" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="5108:5139" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="5388:5436" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="5488:5502" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="5554:5586" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="5621:5653" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="8245:8277" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="8373:8413" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="8493:8540" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="8712:8726" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="8750:8781" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="8926:8940" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="8964:8995" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="9163:9176" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="9200:9231" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="11752:11792" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="11893:11940" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="12213:12245" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="14220:14234" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="14258:14289" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="14460:14474" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="14498:14529" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="14718:14731" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="14755:14786" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="17333:17373" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="17474:17521" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="17794:17826" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="19800:19814" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="19838:19869" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="20040:20054" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="20078:20109" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="20298:20311" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="20335:20366" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="25588:25635" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="26129:26143" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="26167:26198" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="26371:26385" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="26409:26440" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="26629:26642" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="26666:26697" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="27788:27835" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="27854:27882" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="27987:28004" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="28315:28329" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="28350:28409" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="29034:29059" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="29078:29090" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="29468:29493" placeholder="..." />
-                <marker date="1462330231056" expanded="true" signature="29512:29524" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="2041:2054" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="2085:2116" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="2167:2198" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="2971:3019" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="3071:3085" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="3141:3173" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="3201:3233" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="4068:4102" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="4119:4188" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="4512:4538" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="4680:4687" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="4811:4828" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="4845:4892" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="4981:4994" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="5024:5055" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="5108:5139" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="5388:5436" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="5488:5502" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="5554:5586" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="5621:5653" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="8245:8277" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="8373:8413" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="8493:8540" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="8712:8726" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="8750:8781" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="8926:8940" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="8964:8995" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="9163:9176" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="9200:9231" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="11752:11792" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="11893:11940" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="12213:12245" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="14220:14234" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="14258:14289" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="14460:14474" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="14498:14529" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="14718:14731" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="14755:14786" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="17333:17373" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="17474:17521" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="17794:17826" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="19800:19814" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="19838:19869" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="20040:20054" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="20078:20109" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="20298:20311" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="20335:20366" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="25588:25635" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="26129:26143" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="26167:26198" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="26371:26385" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="26409:26440" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="26629:26642" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="26666:26697" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="27788:27835" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="27854:27882" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="27987:28004" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="28315:28329" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="28350:28409" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="29034:29059" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="29078:29090" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="29468:29493" placeholder="..." />
+                <marker date="1462719095246" expanded="true" signature="29512:29524" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reply_index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/reply/reply_index.js">
+      <file leaf-file-name="make_emotion.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/make_emotion.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-              <folding>
-                <marker date="1462330240245" expanded="true" signature="1796:1812" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="2095:2109" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="2133:2164" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="2328:2342" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="2366:2397" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="2565:2596" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="3116:3156" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="3361:3405" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="3529:3562" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="3688:3718" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="5548:5564" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="5847:5861" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="5885:5916" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="6066:6080" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="6104:6135" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="6256:6296" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="6427:6471" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="6592:6625" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="6738:6768" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="8284:8300" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="8595:8609" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="8633:8664" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="8836:8850" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="8874:8905" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="9077:9108" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="9623:9663" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="9892:9936" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="10072:10105" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="10239:10269" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="12410:12437" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="12691:12713" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="13808:13839" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="14582:14607" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="14963:14990" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="16162:16184" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="16841:16866" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="17969:17999" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="18080:18105" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="18738:18768" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="18825:18838" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="19811:19841" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="19898:19911" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="20887:20917" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="20974:20987" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="22184:22209" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="22228:22240" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="22618:22643" placeholder="..." />
-                <marker date="1462330240245" expanded="true" signature="22662:22674" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reply_index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reply/reply_index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="200" column="33" selection-start-line="200" selection-start-column="33" selection-end-line="200" selection-end-column="33" />
+              <caret line="88" column="44" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QiNiuCallback.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/qiniu/QiNiuCallback.java">
+      <file leaf-file-name="TopicPostImgQueueMessageListener.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="75" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pbar_index.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="479" column="12" selection-start-line="479" selection-start-column="12" selection-end-line="479" selection-end-column="12" />
+              <caret line="51" column="104" selection-start-line="51" selection-start-column="104" selection-end-line="51" selection-end-column="104" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MusicController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/music/MusicController.java">
+      <file leaf-file-name="KpicConstant.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/constant/KpicConstant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.71575344">
+              <caret line="11" column="88" selection-start-line="11" selection-start-column="88" selection-end-line="11" selection-end-column="88" />
               <folding />
             </state>
           </provider>
@@ -397,7 +454,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="2924478821471" />
+        <entry key="$PROJECT_DIR$" value="2924746740401" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -475,9 +532,9 @@
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.jackson/jackson-core-asl/1.9.7/2dd41e7570f5c73e63a6a1311671a60c817e1989/jackson-core-asl-1.9.7.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.7.1/ceb7144b7dcf3690aaea0853ebfde8a8b5af208c/okhttp-2.7.1.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.6.0/98476622f10715998eacf9240d6b479f12c66143/okio-1.6.0.jar" />
-                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.6.6/ec497945fdcaf7fd970ae9931b9bbfaf735d385e/jcl-over-slf4j-1.6.6.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.5/6b262da268f8ad9eff941b25503a9198f0a0ac93/slf4j-api-1.7.5.jar" />
                             <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar" />
+                            <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.slf4j/jcl-over-slf4j/1.6.6/ec497945fdcaf7fd970ae9931b9bbfaf735d385e/jcl-over-slf4j-1.6.6.jar" />
                           </list>
                         </option>
                         <option name="path" value="$PROJECT_DIR$" />
@@ -558,41 +615,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/sender/PublishBlogQueueMessageSender.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/blog/BlogController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/TopicPost.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/js/user/blog_list.js" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/TopicPostServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/PublishBlogQueueMessageListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/vo/TopicPostMsg.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/TopicPostMapper.xml" />
-        <option value="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/TopicPostMapper.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/UserNewsQueueMessageListener.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/replypost/ReplyPostController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/pbarmanager/ManagerController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/manage_pbar_left.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reply/reply_index_blog.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/manage_center_reply.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/manage_center_topic.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/manager_center_pbars.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/manager_center_short_reply.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/manager_center_user_news.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/album_pic_list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/js/pbar/manager_pbar_tips.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/make_music.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/css/user/album_list.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/css/user/user_info.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_manager.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/css/user/cd.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/manage_center_left.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/blog_list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.config.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/ueditor/themes/default/css/ueditor.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/js/common/pbar.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/css/reply/reply_index.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/share_media.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/image/image.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/ueditor/lang/zh-cn/zh-cn.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/make_blog.jsp" />
@@ -602,13 +624,48 @@
         <option value="$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.all.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.all.min.js" />
         <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/qiniu/QiNiuCallback.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/pbar_index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reply/reply_index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/js/pbar/pbar_index.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/js/reply/reply_index.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index.css" />
         <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/utils/NetEaseMusicUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/TopicImgMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/music/MusicController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/user_self_info2.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/top.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/user_index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/manage_center_topic.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/js/user/manage_center_topic.js" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/topicpost/TopicPostController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/user_self_topics.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/UserFocusMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/css/user/user_info.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/js/user/user_self_subjects.js" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/user/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PrivateLetterServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/user_self_subjects.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/UserFocusMapper.xml" />
+        <option value="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/UserFocusMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/css/user_self_info.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/user_self_info.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/js/common/user_self_info.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_list.js" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/Emotion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/Emotion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/EmotionMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/manage_center_left.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/blog_list.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/js/user/blog_list.js" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/EmotionService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/EmotionServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/make_emotion.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/emotion/EmotionController.java" />
+        <option value="$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/EmotionMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/EmotionMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/js/user/make_emotion.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reply/reply_index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/pbar_index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/js/reply/reply_index.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/static/js/pbar/pbar_index.js" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/constant/KpicConstant.java" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.java" />
       </list>
     </option>
   </component>
@@ -639,8 +696,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -665,8 +722,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -774,6 +829,74 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -930,6 +1053,134 @@
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="static" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -971,7 +1222,85 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="properties" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="listener" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="emotion" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1006,9 +1335,65 @@
               <option name="myItemId" value="classes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kpic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="juwin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KpicPro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cn" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kpic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="juwin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mapper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1027,22 +1412,38 @@
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="FullScreen" value="false" />
     <property name="dynamic.classpath" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="117" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="123" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="123" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="916" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="117" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="123" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="123" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="916" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.kpic.juwin.domain.vo" />
-      <recent name="cn.kpic.juwin.http" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\KpicPro\build\classes\main\cn\kpic\juwin\mapper" />
       <recent name="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\src\main\webapp\ueditor\themes\default\images" />
       <recent name="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\src\main\webapp\ueditor\themes\default\css" />
       <recent name="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\build\classes\main\cn\kpic\juwin\mapper" />
       <recent name="D:\KpicPro\src\main\webapp\static\images" />
-      <recent name="D:\KpicPro\build\classes\main\cn\kpic\juwin\mapper" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\src\main\webapp\WEB-INF\pages\common" />
       <recent name="C:\Users\bjsunqinwen\IdeaProjects\KpicPro\src\main\webapp\static\css\user" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.kpic.juwin.domain.vo" />
+      <recent name="cn.kpic.juwin.http" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Unnamed">
@@ -1106,6 +1507,25 @@
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -1389,6 +1809,10 @@
       <workItem from="1462325866452" duration="9196000" />
       <workItem from="1462347523937" duration="949000" />
       <workItem from="1462358850714" duration="1445000" />
+      <workItem from="1462373558580" duration="1679000" />
+      <workItem from="1462590710384" duration="17233000" />
+      <workItem from="1462628159026" duration="13149000" />
+      <workItem from="1462713936387" duration="5887000" />
     </task>
     <task id="LOCAL-00001" summary="话题管理页">
       <created>1460801172157</created>
@@ -1484,7 +1908,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="356093000" />
+    <option name="totallyTimeSpent" value="394041000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1496,34 +1920,34 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25621623" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23327896" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29945946" sideWeight="0.517094" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32959402" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.063621536" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17945945" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972974" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1945629" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2677761" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32980332" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.04957356" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.04765507" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31783783" sideWeight="0.60363245" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47634584" sideWeight="0.60363245" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34702703" sideWeight="0.48290598" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.08646003" sideWeight="0.48290598" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1574,7 +1998,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="54" />
+      <option name="time" value="57" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1583,486 +2007,502 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/3.2.4.RELEASE/a0784984bc522a5cee4fba609d510abf6a9cf1cd/spring-webmvc-3.2.4.RELEASE-sources.jar!/org/springframework/web/servlet/DispatcherServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33231708">
-          <caret line="858" column="0" selection-start-line="858" selection-start-column="0" selection-end-line="858" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/3.2.4.RELEASE/a0784984bc522a5cee4fba609d510abf6a9cf1cd/spring-webmvc-3.2.4.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33231708">
-          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/3.2.4.RELEASE/a0784984bc522a5cee4fba609d510abf6a9cf1cd/spring-webmvc-3.2.4.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33231708">
-          <caret line="685" column="0" selection-start-line="685" selection-start-column="0" selection-end-line="685" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/3.2.4.RELEASE/a0784984bc522a5cee4fba609d510abf6a9cf1cd/spring-webmvc-3.2.4.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33231708">
-          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/3.2.4.RELEASE/64a18f9ab380dff61216a1f9ec12773c2868ab2a/spring-web-3.2.4.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33231708">
-          <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="131" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/pbarmanager/ManagerController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/UserFocusMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="25" selection-start-line="79" selection-start-column="25" selection-end-line="79" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reply/reply_index_blog.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.483871">
-          <caret line="179" column="126" selection-start-line="179" selection-start-column="126" selection-end-line="179" selection-end-column="126" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/manage_center_reply.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.83871">
-          <caret line="59" column="87" selection-start-line="59" selection-start-column="87" selection-end-line="59" selection-end-column="87" />
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/manage_center_topic.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.83871">
-          <caret line="53" column="87" selection-start-line="53" selection-start-column="87" selection-end-line="53" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/manager_center_pbars.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.83871">
-          <caret line="56" column="87" selection-start-line="56" selection-start-column="87" selection-end-line="56" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/manager_center_user_news.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43979058">
-          <caret line="112" column="47" selection-start-line="112" selection-start-column="47" selection-end-line="112" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/manager_center_short_reply.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.478185">
-          <caret line="48" column="87" selection-start-line="48" selection-start-column="87" selection-end-line="48" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/make_music.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.116071425">
-          <caret line="59" column="63" selection-start-line="59" selection-start-column="63" selection-end-line="59" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/album_pic_list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45">
-          <caret line="711" column="59" selection-start-line="711" selection-start-column="59" selection-end-line="711" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/user/album_list.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="80" selection-start-line="39" selection-start-column="80" selection-end-line="39" selection-end-column="80" />
+        <state vertical-scroll-proportion="-11.5">
+          <caret line="46" column="23" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/user/user_info.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="153" column="13" selection-start-line="153" selection-start-column="13" selection-end-line="153" selection-end-column="13" />
+          <caret line="29" column="25" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_manager.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/UserFocus.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="136" column="72" selection-start-line="136" selection-start-column="72" selection-end-line="136" selection-end-column="72" />
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ueditor/themes/default/dialogbase.css">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/TopicPostServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33333334">
-          <caret line="64" column="41" selection-start-line="64" selection-start-column="41" selection-end-line="64" selection-end-column="41" />
+        <state vertical-scroll-proportion="-5.5">
+          <caret line="91" column="82" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="82" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/searchreplace/searchreplace.html">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/user_index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35178572">
-          <caret line="13" column="170" selection-start-line="13" selection-start-column="170" selection-end-line="13" selection-end-column="170" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/user/cd.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7394247">
-          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/pbar/manager_pbar_tips.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48995537">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/manage_center_left.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="187" column="12" selection-start-line="187" selection-start-column="12" selection-end-line="187" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/blog_list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="44" column="71" selection-start-line="44" selection-start-column="71" selection-end-line="44" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/album_list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/cd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16393442">
-          <caret line="5" column="7" selection-start-line="1" selection-start-column="4" selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="84" column="19" selection-start-line="84" selection-start-column="19" selection-end-line="84" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/video/video.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/common/pbar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="10" selection-start-line="11" selection-start-column="10" selection-end-line="11" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/share_media.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="73" column="81" selection-start-line="73" selection-start-column="81" selection-end-line="73" selection-end-column="81" />
+        <state vertical-scroll-proportion="1.2480417">
+          <caret line="81" column="214" selection-start-line="81" selection-start-column="214" selection-end-line="81" selection-end-column="214" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/image/image.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/topicpost/TopicPostController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="198" column="33" selection-start-line="198" selection-start-column="33" selection-end-line="198" selection-end-column="33" />
+        <state vertical-scroll-proportion="-18.466667">
+          <caret line="89" column="88" selection-start-line="89" selection-start-column="88" selection-end-line="89" selection-end-column="88" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/image/image.html">
+    <entry file="file://$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/UserFocusMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="89" selection-start-line="13" selection-start-column="89" selection-end-line="13" selection-end-column="89" />
+        <state vertical-scroll-proportion="0.92843693">
+          <caret line="45" column="9" selection-start-line="45" selection-start-column="9" selection-end-line="45" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ueditor/lang/zh-cn/zh-cn.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/UserFocusMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="227" column="50" selection-start-line="227" selection-start-column="50" selection-end-line="227" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.43502825">
+          <caret line="17" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="45" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ueditor/themes/default/css/ueditor.css">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/user_self_topics.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="297" column="1" selection-start-line="297" selection-start-column="1" selection-end-line="297" selection-end-column="1" />
+        <state vertical-scroll-proportion="-11.035714">
+          <caret line="34" column="32" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ueditor/themes/default/css/ueditor2.css">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/user_self_subjects.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="432" column="50" selection-start-line="432" selection-start-column="50" selection-end-line="432" selection-end-column="50" />
+        <state vertical-scroll-proportion="-10.633333">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/make_blog.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/user_self_subjects.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.064516">
-          <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+        <state vertical-scroll-proportion="-10.964286">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/reply/reply_index.css">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/pbar.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="1.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/fonts/glyphicons-halflings-regular.svg">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PrivateLetterServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.821429">
-          <caret line="152" column="73" selection-start-line="152" selection-start-column="73" selection-end-line="152" selection-end-column="73" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="39" column="83" selection-start-line="39" selection-start-column="83" selection-end-line="39" selection-end-column="83" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.all.js">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/user_self_info.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="12378" column="66" selection-start-line="12378" selection-start-column="66" selection-end-line="12378" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ueditor/ueditor.all.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="315" column="12" selection-start-line="315" selection-start-column="12" selection-end-line="315" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index_blog.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="647" column="11" selection-start-line="647" selection-start-column="11" selection-end-line="647" selection-end-column="11" />
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/user/manage_center.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="162" column="11" selection-start-line="162" selection-start-column="11" selection-end-line="162" selection-end-column="11" />
+        <state vertical-scroll-proportion="-6.8333335">
+          <caret line="206" column="14" selection-start-line="206" selection-start-column="14" selection-end-line="206" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/qiniu/QiNiuCallback.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/common/user_self_info.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="75" selection-start-line="35" selection-start-column="75" selection-end-line="35" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.46904317">
+          <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/pbar_index.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/user_self_info.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="131" column="69" selection-start-line="131" selection-start-column="69" selection-end-line="131" selection-end-column="69" />
+        <state vertical-scroll-proportion="0.33861387">
+          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reply/reply_index.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/MsgMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="200" column="33" selection-start-line="200" selection-start-column="33" selection-end-line="200" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.46341464">
+          <caret line="13" column="4" selection-start-line="0" selection-start-column="0" selection-end-line="50" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/pbar/pbar_index.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/BlogMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="7" selection-start-line="16" selection-start-column="4" selection-end-line="20" selection-end-column="7" />
-          <folding>
-            <marker date="1462330231056" expanded="true" signature="2041:2054" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="2085:2116" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="2167:2198" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="2971:3019" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="3071:3085" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="3141:3173" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="3201:3233" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="4068:4102" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="4119:4188" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="4512:4538" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="4680:4687" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="4811:4828" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="4845:4892" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="4981:4994" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="5024:5055" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="5108:5139" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="5388:5436" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="5488:5502" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="5554:5586" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="5621:5653" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="8245:8277" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="8373:8413" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="8493:8540" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="8712:8726" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="8750:8781" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="8926:8940" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="8964:8995" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="9163:9176" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="9200:9231" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="11752:11792" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="11893:11940" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="12213:12245" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="14220:14234" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="14258:14289" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="14460:14474" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="14498:14529" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="14718:14731" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="14755:14786" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="17333:17373" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="17474:17521" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="17794:17826" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="19800:19814" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="19838:19869" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="20040:20054" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="20078:20109" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="20298:20311" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="20335:20366" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="25588:25635" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="26129:26143" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="26167:26198" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="26371:26385" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="26409:26440" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="26629:26642" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="26666:26697" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="27788:27835" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="27854:27882" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="27987:28004" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="28315:28329" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="28350:28409" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="29034:29059" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="29078:29090" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="29468:29493" placeholder="..." />
-            <marker date="1462330231056" expanded="true" signature="29512:29524" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.3564728">
+          <caret line="10" column="20" selection-start-line="0" selection-start-column="0" selection-end-line="44" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/reply/reply_index.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/user/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.470919">
+          <caret line="553" column="104" selection-start-line="553" selection-start-column="104" selection-end-line="553" selection-end-column="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/make_blog.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding>
-            <marker date="1462330240245" expanded="true" signature="1796:1812" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="2095:2109" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="2133:2164" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="2328:2342" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="2366:2397" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="2565:2596" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="3116:3156" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="3361:3405" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="3529:3562" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="3688:3718" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="5548:5564" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="5847:5861" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="5885:5916" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="6066:6080" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="6104:6135" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="6256:6296" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="6427:6471" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="6592:6625" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="6738:6768" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="8284:8300" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="8595:8609" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="8633:8664" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="8836:8850" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="8874:8905" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="9077:9108" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="9623:9663" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="9892:9936" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="10072:10105" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="10239:10269" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="12410:12437" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="12691:12713" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="13808:13839" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="14582:14607" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="14963:14990" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="16162:16184" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="16841:16866" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="17969:17999" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="18080:18105" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="18738:18768" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="18825:18838" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="19811:19841" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="19898:19911" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="20887:20917" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="20974:20987" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="22184:22209" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="22228:22240" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="22618:22643" placeholder="..." />
-            <marker date="1462330240245" expanded="true" signature="22662:22674" placeholder="..." />
-          </folding>
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/Emotion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2776618">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/album/AlbumController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1160221">
+          <caret line="34" column="35" selection-start-line="34" selection-start-column="35" selection-end-line="34" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/EmotionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13996316">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/make_music.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9222904">
+          <caret line="96" column="3" selection-start-line="31" selection-start-column="0" selection-end-line="96" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/make_album.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33178654">
+          <caret line="54" column="45" selection-start-line="54" selection-start-column="39" selection-end-line="54" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/make_music.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46403712">
+          <caret line="67" column="17" selection-start-line="64" selection-start-column="10" selection-end-line="67" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/make_album.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="144" column="30" selection-start-line="144" selection-start-column="30" selection-end-line="144" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/make_emotion.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.214286">
+          <caret line="61" column="32" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/classes/main/cn/kpic/juwin/mapper/EmotionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.13718411">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/EmotionMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.86281586">
+          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/EmotionServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15938303">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/common/manage_center_left.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.033033">
+          <caret line="248" column="110" selection-start-line="248" selection-start-column="110" selection-end-line="248" selection-end-column="110" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/EmotionMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5861183">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/blog_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49357328">
+          <caret line="56" column="21" selection-start-line="56" selection-start-column="21" selection-end-line="56" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/blog_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5645646">
+          <caret line="22" column="54" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49614397">
+          <caret line="37" column="42" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/emotion/EmotionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="48" selection-start-line="69" selection-start-column="48" selection-end-line="69" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/user/private_letter_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08108108">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.0">
+          <caret line="175" column="41" selection-start-line="175" selection-start-column="41" selection-end-line="175" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/properties/k-pic-prod.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/static/css/pbar/pbar_index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="479" column="12" selection-start-line="479" selection-start-column="12" selection-end-line="479" selection-end-column="12" />
+          <caret line="828" column="20" selection-start-line="828" selection-start-column="20" selection-end-line="828" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/utils/NetEaseMusicUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/reply/reply_index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.0714285">
+          <caret line="93" column="46" selection-start-line="93" selection-start-column="46" selection-end-line="93" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/pbar/pbar_index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.892857">
+          <caret line="36" column="71" selection-start-line="36" selection-start-column="71" selection-end-line="36" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/reply/reply_index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="41" selection-start-line="55" selection-start-column="41" selection-end-line="55" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/TopicImgMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.171875">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/TopicImgMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4419643">
-          <caret line="18" column="76" selection-start-line="18" selection-start-column="76" selection-end-line="18" selection-end-column="76" />
+          <caret line="533" column="21" selection-start-line="533" selection-start-column="21" selection-end-line="533" selection-end-column="21" />
           <folding>
-            <marker date="1462239412517" expanded="true" signature="-1:-1" placeholder="SELECT image..tb_topic_img..." />
+            <marker date="1462719046727" expanded="true" signature="1796:1812" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="2095:2109" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="2133:2164" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="2328:2342" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="2366:2397" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="2565:2596" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="3116:3156" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="3361:3405" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="3529:3562" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="3688:3718" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="5548:5564" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="5847:5861" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="5885:5916" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="6066:6080" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="6104:6135" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="6256:6296" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="6427:6471" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="6592:6625" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="6738:6768" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="8284:8300" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="8595:8609" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="8633:8664" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="8836:8850" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="8874:8905" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="9077:9108" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="9623:9663" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="9892:9936" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="10072:10105" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="10239:10269" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="12410:12437" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="12691:12713" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="13808:13839" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="14582:14607" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="14963:14990" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="16162:16184" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="16841:16866" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="17969:17999" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="18080:18105" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="18738:18768" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="18825:18838" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="19811:19841" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="19898:19911" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="20887:20917" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="20974:20987" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="22184:22209" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="22228:22240" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="22618:22643" placeholder="..." />
+            <marker date="1462719046727" expanded="true" signature="22662:22674" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/music/MusicController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/pbar/pbar_index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
+          <caret line="653" column="8" selection-start-line="653" selection-start-column="8" selection-end-line="653" selection-end-column="8" />
+          <folding>
+            <marker date="1462719095246" expanded="true" signature="2041:2054" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="2085:2116" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="2167:2198" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="2971:3019" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="3071:3085" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="3141:3173" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="3201:3233" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="4068:4102" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="4119:4188" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="4512:4538" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="4680:4687" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="4811:4828" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="4845:4892" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="4981:4994" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="5024:5055" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="5108:5139" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="5388:5436" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="5488:5502" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="5554:5586" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="5621:5653" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="8245:8277" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="8373:8413" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="8493:8540" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="8712:8726" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="8750:8781" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="8926:8940" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="8964:8995" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="9163:9176" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="9200:9231" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="11752:11792" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="11893:11940" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="12213:12245" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="14220:14234" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="14258:14289" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="14460:14474" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="14498:14529" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="14718:14731" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="14755:14786" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="17333:17373" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="17474:17521" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="17794:17826" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="19800:19814" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="19838:19869" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="20040:20054" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="20078:20109" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="20298:20311" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="20335:20366" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="25588:25635" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="26129:26143" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="26167:26198" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="26371:26385" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="26409:26440" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="26629:26642" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="26666:26697" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="27788:27835" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="27854:27882" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="27987:28004" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="28315:28329" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="28350:28409" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="29034:29059" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="29078:29090" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="29468:29493" placeholder="..." />
+            <marker date="1462719095246" expanded="true" signature="29512:29524" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/static/js/user/make_emotion.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="44" selection-start-line="88" selection-start-column="44" selection-end-line="88" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="51" column="104" selection-start-line="51" selection-start-column="104" selection-end-line="51" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/constant/KpicConstant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71575344">
+          <caret line="11" column="88" selection-start-line="11" selection-start-column="88" selection-end-line="11" selection-end-column="88" />
           <folding />
         </state>
       </provider>

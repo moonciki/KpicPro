@@ -81,19 +81,15 @@ public class TopicPostController {
         return "/user/manage_center_topic";
     }
 
-    @RequiresPermissions({"user"})
     @RequestMapping(value = "/user/management/center/topics2")
     @ResponseBody
-    public List<PbarHomeTopicPost> getAllSelfPost2(@RequestParam(value = "isBlog", required = true, defaultValue = "0")int isBlog,
+    public List<PbarHomeTopicPost> getAllSelfPost2(Long userId, @RequestParam(value = "isBlog", required = true, defaultValue = "0")int isBlog,
                                                    @RequestParam(value = "page", required = true, defaultValue = "0")int page,
                                                    @RequestParam(value = "orderBy", required = true, defaultValue = "ttp.updateTime DESC")String orderBy){
-        User curr_user = CurrentUser.getUser();
-        if(curr_user != null){
-            List<PbarHomeTopicPost> list = this.topicPostService.getAllTopicPostByUid(curr_user.getId(), (page*10), isBlog, orderBy);
-            return list;
-        }else{
-            return null;
-        }
+
+        List<PbarHomeTopicPost> list = this.topicPostService.getAllTopicPostByUid(userId, (page*10), isBlog, orderBy);
+        return list;
+
     }
 
 }

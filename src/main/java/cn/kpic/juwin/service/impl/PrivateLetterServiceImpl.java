@@ -37,7 +37,7 @@ public class PrivateLetterServiceImpl implements PrivateLetterService{
         User curr_user = CurrentUser.getUser();
         JmsSystemMsg jmsSystemMsg = new JmsSystemMsg();
         jmsSystemMsg.setTitle("您收到来自 <a href=\"/user/u6514"+curr_user.getId()+"/index.html\" target=\"_blank\">"+curr_user.getName()+"</a> 的一封私信");
-        jmsSystemMsg.setContent("<a href=\"/user/private/letter\">点击查看详情</a>");
+        jmsSystemMsg.setContent("<a href=\"/user/private/letter\" target=\"_blank\">点击查看详情</a>");
         jmsSystemMsg.setUserId(privateLetter.getUserId());
         this.systemMsgQueueMessageSender.send(jmsSystemMsg);
 
@@ -50,7 +50,7 @@ public class PrivateLetterServiceImpl implements PrivateLetterService{
         /** 发送系统消息提醒*/
         JmsSystemMsg jmsSystemMsg = new JmsSystemMsg();
         jmsSystemMsg.setTitle("系统消息：您的私信被回复");
-        jmsSystemMsg.setContent("<a href=\"/user/private/self/letter\">点击查看详情</a>");
+        jmsSystemMsg.setContent("<a href=\"/user/private/self/letter\" target=\"_blank\">点击查看详情</a>");
         jmsSystemMsg.setUserId(userId);
         this.systemMsgQueueMessageSender.send(jmsSystemMsg);
 

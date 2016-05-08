@@ -62,7 +62,8 @@ function jz(isjz, page, orderBy){
     }else{
 
     }
-    $.post("/user/management/center/topics2",{'page':page, 'orderBy':orderBy}, function(data){
+    var userId = $("#userId").val();
+    $.post("/user/management/center/topics2",{'userId':userId, 'page':page, 'orderBy':orderBy}, function(data){
         if(data == "" || data == null){
             if(!isjz){
                 $(".loading3").hide();

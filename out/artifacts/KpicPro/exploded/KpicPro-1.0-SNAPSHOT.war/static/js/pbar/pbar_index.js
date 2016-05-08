@@ -613,3 +613,57 @@ $("#sx_submit").click(function(){
         $("#pl_sx").hide();
     });
 });
+
+$("#eif_share").click(function(){
+    $("#tp_eif").show();
+});
+
+
+
+jz();
+
+$("#jz").click(function(){
+    jz();
+});
+
+var i=1;
+
+function jz(){
+    $("#jz").attr("disabled", "disabled");
+    $("#load").show();
+    var page = $("#page_eif").val();
+    $.post("/user/emotion/list", {'page':page}, function(data){
+        if(data == null || data == ""){
+            $("#load").hide();
+            if(i==1){
+                $("#eif_content").append("<center><br/><br/><br/><br/><a href='/user/emotion/save' target='_blank'>当前您的表情包空空如也，点击添加</a></center>");
+            }
+            $("#no_data").fadeIn(400);
+            setTimeout(function(){$("#no_data").fadeOut(1000);},2000);
+        }else{
+            var addhtml = "";
+            for(key in data){
+                addhtml+="<div class=\"eif_unit\"><img onclick=\"emotion_add('"+data[key].url+"?imageView2/1/w/600/q/95')\" style=\"border-radius:6px\" src=\""+data[key].url+"?imageView2/1/w/114/h/114/q/95\" title=\""+data[key].title+"\"/></div>"
+            }
+            $("#eif_content").append(addhtml);
+            $("#load").hide();
+            $("#page_eif").val(parseInt(page)+1);
+            $("#jz").removeAttr("disabled");
+        }
+    });
+    i++;
+}
+
+function eif_close(){
+    $("#tp_eif").hide();
+}
+
+function emotion_add(url){
+    var addhtml = "<img src=\""+url+"\"/>"
+    var ue = UE.getEditor('myEditor');
+    ue.execCommand('inserthtml', addhtml);
+    $("#tp_eif").hide();
+}
+
+
+

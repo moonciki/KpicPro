@@ -1,0 +1,23 @@
+.pic_big{
+    display: none;
+    margin: 0 auto;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-image:url("http://7xtmxr.com1.z0.glb.clouddn.com/static/numbg.png");
+    z-index:1001;
+}
+
+.pic_big_tip{
+    margin-top: 8%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    width: 450px;
+    height: 330px;
+    background-color: #FFF;
+    border: solid 10px #7B7B7B;
+    border-radius: 8px;
+}

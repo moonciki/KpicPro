@@ -238,6 +238,21 @@
     </c:otherwise>
   </c:choose>
 
+  <c:choose>
+    <c:when test="${flag == 100}">
+      <div class="cd_unit_now">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        上传表情包图
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="cd_unit" onclick="window.location.href='${pageContext.request.contextPath}/user/emotion/save'">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        上传表情包图
+      </div>
+    </c:otherwise>
+  </c:choose>
+
   <div class="cd_title2">
     <span style="color:#FF95CA" class="glyphicon glyphicon-music"></span>
     乐库管理

@@ -23,4 +23,6 @@ public interface UserFocusMapper {
 
     List<User> getAllFocus(Map<String, Object> params);
 
+    UserFocus isgz(UserFocus userFocus);
+
 }

@@ -22,7 +22,7 @@ function jz(){
                 addhtml+="<div class=\"sx\" id=\"sx_"+data[key].id+"\"><div class=\"sx_01\">"
 
                 if(data[key].avater == "" || data[key].avater == null){
-                    addhtml+="<img src=\""+data[key].userPic+"\" class=\"sx_avater\"/>"
+                    addhtml+="<img src=\""+data[key].userPic+"?size=98\" class=\"sx_avater\"/>"
                 }else{
                     addhtml+="<img src=\""+data[key].avater+"\" class=\"sx_avater\"/>"
                 }

@@ -48,7 +48,8 @@ public class TopicPostImgQueueMessageListener implements MessageListener {
             for (Element src : media) {
                 if (src.tagName().equals("img")){
                     /** 这里拿到用户上传的图片，根据七牛url获取，防止了表情图片的乱入*/
-                    if(src.attr("src").substring(0, 37).equals(KpicConstant.QINIU_IMG_URL1)){
+                    String url = src.attr("src").substring(0, 37);
+                    if(url.equals(KpicConstant.QINIU_IMG_URL1) || url.equals(KpicConstant.QINIU_IMG_URL2)){
                         TopicImg topicImg = new TopicImg();
                         topicImg.setTopicId(jmsTopicImg.getTopicPostid());
                         topicImg.setImagePath(StringDeal.removeQuestionMark(src.attr("src")));

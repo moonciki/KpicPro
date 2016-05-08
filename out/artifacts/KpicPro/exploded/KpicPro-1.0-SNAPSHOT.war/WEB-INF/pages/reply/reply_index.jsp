@@ -85,6 +85,38 @@
   </div>
 
 </div>
+
+
+<div class="pic_big" id="tp_eif">
+  <center>
+    <div class="eif">
+      <div class="eif_top">表情包-------<a href="${pageContext.request.contextPath}/user/emotion/save" target="_blank">上传表情</a>
+        <span class="badge pull-right" style="font-weight:bold;background-color: #FF2D2D;cursor: pointer;font-size: 20px" onclick="eif_close()" title="关闭">×</span>
+      </div>
+
+      <div class="eif_content">
+                <span id="eif_content">
+
+                </span>
+      </div>
+
+
+
+      <br/>
+
+      <input type="hidden" id="page_eif" value="0"/>
+
+      <center>
+        <button type="button" id="jz" class="btn btn-info">加载更多</button>
+        <br/>
+        <span id="load" style="display: none">加载中...</span>
+        <span id="no_data" style="display: none">没有更多了</span>
+      </center>
+    </div>
+  </center>
+</div>
+
+
 <%@include file="../common/top.jsp" %>
 <div class="top_blank"></div>
 <div class="main">

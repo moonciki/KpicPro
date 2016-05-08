@@ -11,7 +11,8 @@ function jz3(isjz){
     var page = $("#fans_page").val();
     $("#btn_jz3").attr("disabled", "disabled")
     $("#jzz3").show();
-    $.post("/user/focus/fans", {'page' : page}, function(data){
+    var userId = $("#userId").val();
+    $.post("/user/focus/fans", {'userId' : userId,'page' : page}, function(data){
 
         if(data == "" || data == null){
             if(isjz){
@@ -34,7 +35,7 @@ function jz3(isjz){
             $("#jzz3").hide();
             var addhtml = "<div class=\"panel panel-default\"><div class=\"panel-body\">"
             if(data[key].avater == "" || data[key].avater == null){
-                addhtml += "<img src=\""+data[key].userPic+"?imageView2/1/w/50/h/50/q/90\"/>"
+                addhtml += "<img src=\""+data[key].userPic+"?size=50\"/>"
             }else{
                 addhtml += "<img src=\""+data[key].avater+"?imageView2/1/w/50/h/50/q/90\"/>"
             }
@@ -42,7 +43,7 @@ function jz3(isjz){
 
             addhtml+="<span style='margin-left: 50px;color:#8E8E8E; font-size:18px'><b>"+data[key].name+"</b></span>"+
 
-                "<span class=\"badge pull-right\" onclick='tzr("+data[key].id+")'>进入TA的个人主页 >></span>"+
+                "<span class=\"badge pull-right\" style='margin-top:15px;background-color:#FF79BC;cursor:pointer' onclick='tzr("+data[key].id+")'>进入TA的个人主页 >></span>"+
                 "</div></div>"
             $("#fensi").append(addhtml);
 
@@ -56,7 +57,8 @@ function jz2(isjz){
     var page = $("#gzr_page").val();
     $("#btn_jz2").attr("disabled", "disabled")
     $("#jzz2").show();
-    $.post("/user/focus/users", {'page' : page}, function(data){
+    var userId = $("#userId").val();
+    $.post("/user/focus/users", {'userId':userId, 'page' : page}, function(data){
 
         if(data == "" || data == null){
             if(isjz){
@@ -79,7 +81,7 @@ function jz2(isjz){
             $("#jzz2").hide();
             var addhtml = "<div class=\"panel panel-default\"><div class=\"panel-body\">"
                 if(data[key].avater == "" || data[key].avater == null){
-                    addhtml += "<img src=\""+data[key].userPic+"?imageView2/1/w/50/h/50/q/90\"/>"
+                    addhtml += "<img src=\""+data[key].userPic+"?size=50\"/>"
                 }else{
                     addhtml += "<img src=\""+data[key].avater+"?imageView2/1/w/50/h/50/q/90\"/>"
                 }
@@ -87,7 +89,7 @@ function jz2(isjz){
 
                 addhtml+="<span style='margin-left: 50px;color:#8E8E8E; font-size:18px'><b>"+data[key].name+"</b></span>"+
 
-                "<span class=\"badge pull-right\" onclick='tzr("+data[key].id+")'>进入TA的个人主页 >></span>"+
+                "<span class=\"badge pull-right\" style='margin-top:15px;background-color:#FF79BC;cursor:pointer' onclick='tzr("+data[key].id+")'>进入TA的个人主页 >></span>"+
             "</div></div>"
             $("#gzr").append(addhtml);
 
@@ -102,7 +104,8 @@ function jz(isjz){
     var page = $("#gzht_page").val();
     $("#btn_jz1").attr("disabled", "disabled")
     $("#jzz1").show();
-    $.post("/user/focus/subjects", {'page' : page}, function(data){
+    var userId = $("#userId").val();
+    $.post("/user/focus/subjects", {'userId':userId, 'page' : page}, function(data){
 
         if(data == "" || data == null){
             if(isjz){
@@ -143,5 +146,5 @@ function tzht(id){
 }
 
 function tzr(id){
-    window.open("");
+    window.open("/user/u6514"+id+"/index.html");
 }

@@ -32,7 +32,7 @@
       </span>
     </div>
     <div class="main_02_content">
-
+      <input type="hidden" id="userId" value="${user.id}"/>
       <div class="panel panel-default" style="border: 1px solid #E0E0E0">
         <div class="panel-body">
           <span class="glyphicon glyphicon-sort" style="color: #64A600"></span>&nbsp;&nbsp;按条件排序：

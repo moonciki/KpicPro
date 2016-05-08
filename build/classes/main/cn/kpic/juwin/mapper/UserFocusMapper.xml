@@ -13,7 +13,7 @@ ${}：表示拼接符，可能会引起sql注入
 <mapper namespace="cn.kpic.juwin.mapper.UserFocusMapper">
 
     <insert id="save" parameterType="cn.kpic.juwin.domain.UserFocus">
-        insert into tb_user_focus (userId1, userId)
+        insert into tb_user_focus (userId1, userId2)
         values (#{userId1}, #{userId2})
     </insert>
 
@@ -28,13 +28,18 @@ ${}：表示拼接符，可能会引起sql注入
     <select id="getAllFans" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.User">
         SELECT tu.id, tu.name, tu.userPic, tu.avater FROM tb_user_focus tuf
         JOIN tb_user tu ON tu.id = tuf.userId2
-        WHERE tuf.userId1 = #{userId} LIMIT #{page}, 10
+        WHERE tuf.userId1 = #{userId} ORDER BY tuf.id DESC LIMIT #{page}, 10
     </select>
 
     <select id="getAllFocus" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.User">
         SELECT tu.id, tu.name, tu.userPic, tu.avater FROM tb_user_focus tuf
         JOIN tb_user tu ON tu.id = tuf.userId1
-        WHERE tuf.userId2 = #{userId} LIMIT #{page}, 10
+        WHERE tuf.userId2 = #{userId} ORDER BY tuf.id DESC LIMIT #{page}, 10
+    </select>
+
+    <select id="isgz" parameterType="cn.kpic.juwin.domain.UserFocus" resultType="cn.kpic.juwin.domain.UserFocus">
+        SELECT * FROM tb_user_focus
+        WHERE userId1 = #{userId1} AND userId2 = #{userId2}
     </select>
 
 

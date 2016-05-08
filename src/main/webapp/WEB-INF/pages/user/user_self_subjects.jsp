@@ -18,14 +18,14 @@
   <%@include file="../common/user_self_info.jsp"%>
 
   <div class="content">
-
+    <input type="hidden" id="userId" value="${user2.id}"/>
     <ul id="myTab" class="nav nav-tabs">
       <li class="active"><a href="#home" data-toggle="tab">
-        <span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;我关注的话题</a>
+        <span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;关注的话题</a>
       </li>
-      <li><a href="#ios" data-toggle="tab"><span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;我关注的人</a></li>
+      <li><a href="#ios" data-toggle="tab"><span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;关注的人</a></li>
 
-      <li><a href="#fans" data-toggle="tab"><span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;我的粉丝</a></li>
+      <li><a href="#fans" data-toggle="tab"><span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;粉丝们</a></li>
 
     </ul>
     <div id="myTabContent" class="tab-content">
@@ -71,7 +71,7 @@
 
             </span>
 
-            <center><button type="button" onclick="jz2(true)" class="btn btn-info" id="btn_jz3"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
+            <center><button type="button" onclick="jz3(true)" class="btn btn-info" id="btn_jz3"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
               <br/><span id="jzz3" style="display: none">加载中..</span><span id="my3" style="display: none">没有更多了</span>
             </center>
 

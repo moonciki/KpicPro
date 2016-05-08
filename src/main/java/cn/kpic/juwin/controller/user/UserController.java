@@ -1,28 +1,26 @@
 package cn.kpic.juwin.controller.user;
 
-import cn.kpic.juwin.domain.Pbar;
-import cn.kpic.juwin.domain.PbarFocus;
-import cn.kpic.juwin.domain.User;
-import cn.kpic.juwin.domain.UserLevel;
+import cn.kpic.juwin.domain.*;
+import cn.kpic.juwin.domain.vo.JmsSystemMsg;
 import cn.kpic.juwin.domain.vo.JmsUpdPbar;
+import cn.kpic.juwin.domain.vo.JmsUpgrade;
 import cn.kpic.juwin.domain.vo.TopicManager;
 import cn.kpic.juwin.jms.sender.PbarUpdQueueMessageSender;
+import cn.kpic.juwin.jms.sender.SystemMsgQueueMessageSender;
+import cn.kpic.juwin.jms.sender.UpgradeQueueMessageSender;
 import cn.kpic.juwin.mapper.PbarFocusMapper;
 import cn.kpic.juwin.mapper.PbarManagerApplyMapper;
-import cn.kpic.juwin.mapper.PbarMapper;
 import cn.kpic.juwin.mapper.UserFocusMapper;
 import cn.kpic.juwin.service.PbarService;
 import cn.kpic.juwin.service.UserLevelService;
 import cn.kpic.juwin.service.UserService;
 import cn.kpic.juwin.utils.CurrentUser;
-import com.sun.javafx.sg.PGShape;
 import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.subject.Subject;
-import org.jsoup.helper.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -59,6 +57,12 @@ public class UserController {
 
     @Autowired
     private PbarUpdQueueMessageSender pbarUpdQueueMessageSender;
+
+    @Autowired
+    private SystemMsgQueueMessageSender systemMsgQueueMessageSender;
+
+    @Autowired
+    private UpgradeQueueMessageSender upgradeQueueMessageSender;
 
     private Logger logger = Logger.getLogger(UserController.class);
 
@@ -242,13 +246,27 @@ public class UserController {
         }
     }
 
-    @RequiresPermissions({"user"})
-    @RequestMapping(value = "/user/focus/subjects.html")
-    public String getPbarFocus(Model model){
+    @RequestMapping(value = "/u6514{userId}/focus/subjects.html")
+    public String getPbarFocus(@PathVariable("userId")Long userId, Model model){
         try{
 
             User curr_user = CurrentUser.getUser();
-            model.addAttribute("user", curr_user);
+            if(curr_user != null){
+                model.addAttribute("user", curr_user);
+                if(String.valueOf(curr_user.getId()).equals(String.valueOf(userId))){
+                    model.addAttribute("user2", curr_user);
+                    model.addAttribute("is_login", true);
+                }else{
+                    curr_user = this.userService.getUserById(userId);
+                    model.addAttribute("user2", curr_user);
+                    model.addAttribute("is_login", false);
+                }
+            }else {
+                model.addAttribute("is_login", false);
+                curr_user = this.userService.getUserById(userId);
+                model.addAttribute("user2", curr_user);
+            }
+
             model.addAttribute("flag", 2);
 
             return "/user/user_self_subjects";
@@ -259,15 +277,42 @@ public class UserController {
         }
     }
 
-    @RequiresPermissions({"user"})
-    @RequestMapping(value = "/user/focus/subjects")
-    @ResponseBody
-    public List<Pbar> getPbarFocus(@RequestParam(value = "page", defaultValue = "0", required = true) int page){
+    @RequestMapping(value = "/u6514{userId}/history/topic.html")
+    public String historyTopic(@PathVariable("userId")Long userId, Model model){
         try{
 
             User curr_user = CurrentUser.getUser();
+            if(curr_user != null){
+                model.addAttribute("user", curr_user);
+                if(String.valueOf(curr_user.getId()).equals(String.valueOf(userId))){
+                    model.addAttribute("user2", curr_user);
+                    model.addAttribute("is_login", true);
+                }else{
+                    curr_user = this.userService.getUserById(userId);
+                    model.addAttribute("user2", curr_user);
+                    model.addAttribute("is_login", false);
+                }
+            }else {
+                model.addAttribute("is_login", false);
+                curr_user = this.userService.getUserById(userId);
+                model.addAttribute("user2", curr_user);
+            }
+            model.addAttribute("flag", 4);
 
-            List<Pbar> result = this.pbarService.getAllPbarFocus(curr_user.getId(), page * 10);
+            return "/user/user_self_topics";
+
+        }catch (Exception e){
+            e.printStackTrace();
+            return "/404";
+        }
+    }
+
+    @RequestMapping(value = "/user/focus/subjects")
+    @ResponseBody
+    public List<Pbar> getPbarFocus(Long userId, @RequestParam(value = "page", defaultValue = "0", required = true) int page){
+        try{
+
+            List<Pbar> result = this.pbarService.getAllPbarFocus(userId, page * 10);
 
             return result;
 
@@ -276,18 +321,14 @@ public class UserController {
             return null;
         }
     }
-
-    @RequiresPermissions({"user"})
     @RequestMapping(value = "/user/focus/users")
     @ResponseBody
-    public List<User> getUserFocus(@RequestParam(value = "page", defaultValue = "0", required = true) int page){
+    public List<User> getUserFocus(Long userId, @RequestParam(value = "page", defaultValue = "0", required = true) int page){
         try{
-
-            User curr_user = CurrentUser.getUser();
 
             Map<String, Object> params = new HashMap<>();
             params.put("page", page);
-            params.put("userId", curr_user.getId());
+            params.put("userId", userId);
 
             List<User> result = this.userFocusMapper.getAllFocus(params);
 
@@ -299,17 +340,16 @@ public class UserController {
         }
     }
 
-    @RequiresPermissions({"user"})
     @RequestMapping(value = "/user/focus/fans")
     @ResponseBody
-    public List<User> getUserFans(@RequestParam(value = "page", defaultValue = "0", required = true) int page){
+    public List<User> getUserFans(Long userId, @RequestParam(value = "page", defaultValue = "0", required = true) int page){
         try{
 
-            User curr_user = CurrentUser.getUser();
+
 
             Map<String, Object> params = new HashMap<>();
             params.put("page", page);
-            params.put("userId", curr_user.getId());
+            params.put("userId", userId);
 
             List<User> result = this.userFocusMapper.getAllFans(params);
 
@@ -434,24 +474,32 @@ public class UserController {
     public String getUserDynamic(@PathVariable("userId")Long userId, Model model){
         String url = "/user/user_index";
         try{
+
             User curr_user = CurrentUser.getUser();
-            if(curr_user != null && String.valueOf(curr_user.getId()).equals(String.valueOf(userId))){
-
-                return "redirect:/user/info.html";
-
-            }else{
-
-                User user = this.userService.getUserById(userId);
-
+            if(curr_user != null){
+                model.addAttribute("user", curr_user);
+                if(String.valueOf(curr_user.getId()).equals(String.valueOf(userId))){
+                    model.addAttribute("user2", curr_user);
+                    model.addAttribute("is_login", true);
+                }else{
+                    curr_user = this.userService.getUserById(userId);
+                    model.addAttribute("user2", curr_user);
+                    model.addAttribute("is_login", false);
+                }
+            }else {
+                model.addAttribute("is_login", false);
+                curr_user = this.userService.getUserById(userId);
+                model.addAttribute("user2", curr_user);
+            }
                 UserLevel userLevel = this.userLevelService.getUserLevelByUserId(userId);
-
                 model.addAttribute("level", userLevel);
-
-                model.addAttribute("user", user);
+                model.addAttribute("allscore", CurrentUser.getFinalScore(userLevel.getLevel()));
+                model.addAttribute("fansNum", userFocusMapper.getFansNum(curr_user.getId()));
+                model.addAttribute("flag", 1);
 
                 return url;
 
-            }
+
 
 
         }catch (Exception e){
@@ -484,5 +532,57 @@ public class UserController {
 
     }
 
+
+    @RequiresPermissions({"user"})
+    @RequestMapping(value = "/user/center/gz")
+    @ResponseBody
+    public boolean gz(Long userId){
+
+        try{
+            if(userId == null){
+                return false;
+            }
+            User curr = CurrentUser.getUser();
+            UserFocus userFocus = new UserFocus();
+            userFocus.setUserId1(userId);
+            userFocus.setUserId2(curr.getId());
+            this.userFocusMapper.save(userFocus);
+
+            /** 发送系统消息*/
+            JmsSystemMsg jmsSystemMsg = new JmsSystemMsg();
+            jmsSystemMsg.setTitle("恭喜您，您有一位新粉丝，您的经验+10");
+            jmsSystemMsg.setContent("<a href=\"/u6514"+userId+"/focus/subjects.html\" target=\"_blank\">点击查看详情</a>");
+            jmsSystemMsg.setUserId(userId);
+            this.systemMsgQueueMessageSender.send(jmsSystemMsg);
+
+            /** 升级相关*/
+            upgradeQueueMessageSender.send(new JmsUpgrade(userId, 15));//经验+15
+
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @RequiresPermissions({"user"})
+    @RequestMapping(value = "/user/center/isgz")
+    @ResponseBody
+    public boolean isgz(Long userId){
+        try{
+            if(userId == null){
+                return false;
+            }
+            User curr = CurrentUser.getUser();
+            UserFocus userFocus = new UserFocus();
+            userFocus.setUserId1(userId);
+            userFocus.setUserId2(curr.getId());
+            UserFocus userFocus1 = this.userFocusMapper.isgz(userFocus);
+            return userFocus1 == null ? false : true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 
 }

@@ -50,7 +50,8 @@ function jz(isjz){
     var page = $("#gzht_page").val();
     $("#btn_jz1").attr("disabled", "disabled")
     $("#jzz1").show();
-    $.post("/user/focus/subjects", {'page' : page}, function(data){
+    var userId = $("#userId").val();
+    $.post("/user/focus/subjects", {'userId' : userId, 'page' : page}, function(data){
 
         if(data == "" || data == null){
             if(isjz){
