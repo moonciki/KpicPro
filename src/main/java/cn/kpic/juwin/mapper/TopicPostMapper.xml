@@ -86,6 +86,7 @@ ${}：表示拼接符，可能会引起sql注入
             <if test="pbarId != null">pbarId = #{pbarId},</if>
             <if test="userId != null">userId = #{userId},</if>
             <if test="num != null">num = #{num},</if>
+            <if test="isBoutique != null">isBoutique = #{isBoutique}#,</if>
             <if test="createTime != null">createTime = #{createTime},</if>
             <if test="updateTime != null">updateTime = #{updateTime},</if>
             <if test="replyNum != null">replyNum = replyNum + 1,</if>

@@ -27,4 +27,6 @@ public interface TopicPostService {
 
     void del(Long id);
 
+    void update(TopicPost topicPost);
+
 }

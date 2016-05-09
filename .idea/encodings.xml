@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/album/AlbumController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/replypost/ReplyPostController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PrivateLetterServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/common/user_self_info.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/music/music.js" charset="UTF-8" />

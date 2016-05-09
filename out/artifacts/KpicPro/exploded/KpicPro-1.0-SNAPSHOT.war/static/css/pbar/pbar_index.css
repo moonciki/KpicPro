@@ -648,6 +648,10 @@ div{
     height: auto;
 }
 
+.jp{
+    background: url("http://7xtmxr.com1.z0.glb.clouddn.com/static/jpbg.png") top right  no-repeat #FFF;
+}
+
 .reply_body_main_01{
     float:left;
     padding-left: 10px;

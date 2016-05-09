@@ -132,7 +132,16 @@
   <div class="mane2">
     <div class="pf2"><span class="glyphicon glyphicon-triangle-top" style="font-size: 36px"></span></div><div class="mane2_reply"></div><div class="mane2_reply2"></div>
   </div>
-  <div class="reply_body">
+
+  <c:choose>
+    <c:when test="${postMSg.isBoutique == 1}">
+      <div class="reply_body jp">
+    </c:when>
+    <c:otherwise>
+      <div class="reply_body">
+    </c:otherwise>
+  </c:choose>
+
     <div class="reply_body_main">
       <div class="reply_body_main_01" style="padding-left: 0px">
         <c:choose>
@@ -178,6 +187,39 @@
             <span class="glyphicon glyphicon-flag"></span>&nbsp;举报</span>
             </c:otherwise>
           </c:choose>
+
+
+          <c:choose>
+            <c:when test="${user != null}">
+              <c:if test="${user.id == pbar. userId}">
+                <span style="color: #BEBEBE; font-size: 12px">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <c:choose>
+                  <c:when test="${postMSg.isBoutique == 1}">
+                    <span class="glyphicon glyphicon-pushpin"></span>&nbsp;<span id="qxjp"><span style="cursor: pointer" onclick="qxjp_click(${postMSg.id})">取消精品</span></span></span>
+                  </c:when>
+                  <c:otherwise>
+                    <span class="glyphicon glyphicon-pushpin"></span>&nbsp;<span id="jp"><span style="cursor: pointer" onclick="jp_click(${postMSg.id})">加精</span></span></span>
+                  </c:otherwise>
+                </c:choose>
+              </c:if>
+              <c:if test="${role != null and role == 2}">
+                <span style="color: #BEBEBE; font-size: 12px">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <c:choose>
+                  <c:when test="${postMSg.isBoutique == 1}">
+                    <span class="glyphicon glyphicon-pushpin"></span>&nbsp;<span id="qxjp"><span style="cursor: pointer" onclick="qxjp_click(${postMSg.id})">取消精品</span></span></span>
+                  </c:when>
+                  <c:otherwise>
+                    <span class="glyphicon glyphicon-pushpin"></span>&nbsp;<span id="jp"><span style="cursor: pointer" onclick="jp_click(${postMSg.id})">加精</span></span></span>
+                  </c:otherwise>
+                </c:choose>
+              </c:if>
+            </c:when>
+            <c:otherwise>
+            </c:otherwise>
+          </c:choose>
+
 
 
           <span class="badge pull-right" style="font-size:14px;background-color: #FF95CA"># 楼主</span>

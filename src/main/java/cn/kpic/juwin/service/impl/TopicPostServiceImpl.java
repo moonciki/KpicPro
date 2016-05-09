@@ -188,4 +188,10 @@ public class TopicPostServiceImpl implements TopicPostService {
         this.topicPostMapper.del(id);
         this.topicTipMapper.delAllTips(id);
     }
+
+    @Override
+    @Transactional
+    public void update(TopicPost topicPost) {
+        this.topicPostMapper.update(topicPost);
+    }
 }

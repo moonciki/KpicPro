@@ -560,3 +560,34 @@ function emotion_add(url){
     ue.execCommand('inserthtml', addhtml);
     $("#tp_eif").hide();
 }
+
+function qxjp_click(id){
+    $("#qxjp").empty();
+    $("#qxjp").append("取消中..");
+    $.post("/user/m/qxjp", {'id' : id}, function(data){
+        if(data){
+            $("#qxjp").empty();
+            $("#qxjp").append("设置成功");
+            $(".reply_body").removeClass("jp");
+        }else{
+            $("#qxjp").empty();
+            $("#qxjp").append("设置失败，请刷新重试");
+        }
+    });
+}
+
+function jp_click(id){
+    $("#jp").empty();
+    $("#jp").append("加精中..");
+    var userId = $("#topicUserId").val();
+    $.post("/user/m/jp", {'id' : id, 'userId' : userId}, function(data){
+        if(data){
+            $("#jp").empty();
+            $("#jp").append("加精成功");
+            $(".reply_body").addClass("jp");
+        }else{
+            $("#jp").empty();
+            $("#jp").append("设置失败，请刷新重试");
+        }
+    });
+}

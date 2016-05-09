@@ -85,6 +85,37 @@
   </div>
 
 </div>
+
+<div class="pic_big" id="tp_eif">
+  <center>
+    <div class="eif">
+      <div class="eif_top">表情包-------<a href="${pageContext.request.contextPath}/user/emotion/save" target="_blank">上传表情</a>
+        <span class="badge pull-right" style="font-weight:bold;background-color: #FF2D2D;cursor: pointer;font-size: 20px" onclick="eif_close()" title="关闭">×</span>
+      </div>
+
+      <div class="eif_content">
+                <span id="eif_content">
+
+                </span>
+      </div>
+
+
+
+      <br/>
+
+      <input type="hidden" id="page_eif" value="0"/>
+
+      <center>
+        <button type="button" id="jz" class="btn btn-info">加载更多</button>
+        <br/>
+        <span id="load" style="display: none">加载中...</span>
+        <span id="no_data" style="display: none">没有更多了</span>
+      </center>
+    </div>
+  </center>
+</div>
+
+
 <%@include file="../common/top.jsp" %>
 <div class="top_blank"></div>
 <div class="main">
@@ -100,7 +131,14 @@
   <div class="mane2">
     <div class="pf2"><span class="glyphicon glyphicon-triangle-top" style="font-size: 36px"></span></div><div class="mane2_reply"></div><div class="mane2_reply2"></div>
   </div>
-  <div class="reply_body">
+  <c:choose>
+  <c:when test="${postMSg.isBoutique == 1}">
+  <div class="reply_body jp">
+    </c:when>
+    <c:otherwise>
+    <div class="reply_body">
+      </c:otherwise>
+      </c:choose>
     <div class="reply_body_main">
       <div class="reply_body_main_01" style="padding-left: 0px">
         <c:choose>
@@ -144,6 +182,37 @@
               <span class = "jb_topic${postMSg.id}" style="color: #BEBEBE; cursor:pointer; font-size: 12px" onclick="jubao(${postMSg.id})">
             &nbsp;&nbsp;&nbsp;&nbsp;
             <span class="glyphicon glyphicon-flag"></span>&nbsp;举报</span>
+            </c:otherwise>
+          </c:choose>
+
+          <c:choose>
+            <c:when test="${user != null}">
+              <c:if test="${user.id == pbar. userId}">
+                <span style="color: #BEBEBE; font-size: 12px">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <c:choose>
+                  <c:when test="${postMSg.isBoutique == 1}">
+                    <span class="glyphicon glyphicon-pushpin"></span>&nbsp;<span id="qxjp"><span style="cursor: pointer" onclick="qxjp_click(${postMSg.id})">取消精品</span></span></span>
+                  </c:when>
+                  <c:otherwise>
+                    <span class="glyphicon glyphicon-pushpin"></span>&nbsp;<span id="jp"><span style="cursor: pointer" onclick="jp_click(${postMSg.id})">加精</span></span></span>
+                  </c:otherwise>
+                </c:choose>
+              </c:if>
+              <c:if test="${role != null and role == 2}">
+                <span style="color: #BEBEBE; font-size: 12px">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <c:choose>
+                  <c:when test="${postMSg.isBoutique == 1}">
+                    <span class="glyphicon glyphicon-pushpin"></span>&nbsp;<span id="qxjp"><span style="cursor: pointer" onclick="qxjp_click(${postMSg.id})">取消精品</span></span></span>
+                  </c:when>
+                  <c:otherwise>
+                    <span class="glyphicon glyphicon-pushpin"></span>&nbsp;<span id="jp"><span style="cursor: pointer" onclick="jp_click(${postMSg.id})">加精</span></span></span>
+                  </c:otherwise>
+                </c:choose>
+              </c:if>
+            </c:when>
+            <c:otherwise>
             </c:otherwise>
           </c:choose>
 
@@ -196,21 +265,18 @@
 
     <!--发帖子-->
     <div class="main01_01_reply" style="margin-left:70px;padding-bottom:50px;padding-top:50px;padding-left:130px; width: 940px">
-
+      <div class="bjq_btn2 music_button" id="music_share"></div>
+      <div class="bjq_btn2 video_button" id="video_share"></div>
+      <div class="bjq_btn2 eif_button" id="eif_share"></div>
       <div class="xiu" style="font-size: 66px; font-weight:bold; font-family: 微软雅黑">咻~ 已发射！</div>
       <div class="reply_loading"><div class="loading" style="padding-top: 120px;font-family: 微软雅黑;">发送中...</div></div>
       <span style="font-size: 15px;font-family: 微软雅黑">回复TA</span>
       <br/>
       <br/>
       <!--style给定宽度可以影响编辑器的最终宽度-->
-      <script type="text/plain" id="myEditor" name="content" style="width:700px;height:240px;"></script>
+      <script type="text/plain" id="myEditor" name="content" style="width:722px;height:240px;"></script>
       <br>
       <button type="button" id="saveReply" class="btn btn-info"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;发射~</button>
-
-      <button type="button" id="music_share" class="btn btn-success"><span class="glyphicon glyphicon-music"></span>&nbsp;&nbsp;音频分享</button>
-
-      <button type="button" id="video_share" class="btn btn-success"><span class="glyphicon glyphicon-film"></span>&nbsp;&nbsp;视频分享</button>
-
     </div>
 
   </div>
