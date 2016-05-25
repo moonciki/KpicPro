@@ -91,7 +91,7 @@ public class TopicPostServiceImpl implements TopicPostService {
             /** 升级相关消息*/
             upgradeQueueMessageSender.send(new JmsUpgrade(user.getId(), 5));//经验+5
             /** 修改主题的主题帖数量*/
-            JmsUpdPbar jmsUpdPbar = new JmsUpdPbar(0, pbarId);
+            JmsUpdPbar jmsUpdPbar = new JmsUpdPbar(0, pbarId, userId);
             pbarUpdQueueMessageSender.send(jmsUpdPbar);
             return topicPost;
         }else{

@@ -11,5 +11,6 @@ import java.util.List;
 public interface AlbumService {
 
     void saveAlbum(Album album, List<Pic> pics);
-
+    void delAlbum(Long id);
+    void addMusic(String url, Long id);
 }

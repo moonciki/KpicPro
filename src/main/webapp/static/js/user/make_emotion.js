@@ -87,7 +87,7 @@ $().ready(function() {
                 console.log(info);
                 info = JSON.parse(info);
                 $("#upload_loading").hide();
-                $("#url").val("<img src=\"http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key);
+                $("#url").val("http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key);
                 $("#img_url").append("<img src=\"http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key+"?imageView2/1/w/600/q/95\"/>");
                 $("#an").append("<button type=\"button\" onclick=\"tj()\" class=\"btn btn-success\">添加</button>")
             },

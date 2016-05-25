@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.PicCommentMapper">
+    <insert id="save" parameterType="cn.kpic.juwin.domain.PicComment">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into tb_pic_comment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="content != null">content,</if>
+            <if test="userId != null">userId,</if>
+            <if test="createTime != null">createTime,</if>
+            <if test="albumId != null">albumId,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id,jdbcType=BIGINT},</if>
+            <if test="content != null">#{content,jdbcType=VARCHAR},</if>
+            <if test="userId != null">#{userId,jdbcType=BIGINT},</if>
+            <if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},</if>
+            <if test="albumId != null">#{albumId,jdbcType=BIGINT}</if>
+        </trim>
+    </insert>
+
+    <select id="getAllByAlbumId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PicCommentVo">
+        SELECT
+        tpc.content,
+        tpc.createTime,
+        tpc.userId,
+        tu.avater,
+        tu.userPic,
+        tu.name AS userName
+        FROM tb_pic_comment tpc
+        JOIN tb_user tu ON tpc.userId = tu.id
+        WHERE tpc.albumId = #{albumId} ORDER BY tpc.createTime DESC LIMIT #{page}, 10
+    </select>
+
+</mapper>

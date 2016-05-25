@@ -62,6 +62,14 @@
             如果不上传则默认图集第一张图片为封面
           </span><br/>
           <span id="fm_url"></span>
+
+          <span id="upload_loading1" style="display: none">
+          <center>
+            <img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg">
+            <br/>
+            <span style="font-weight: bold;color:#FF60AF">上传中...</span>
+          </center></span>
+
         </li>
       </ul>
 

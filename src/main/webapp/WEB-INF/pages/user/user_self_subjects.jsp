@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <html>
 <head>
-  <title>${user.name}的关注</title>
+  <title>${user2.name}的关注</title>
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
   <script src="${pageContext.request.contextPath}/static/js/jquery-1.10.2.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>

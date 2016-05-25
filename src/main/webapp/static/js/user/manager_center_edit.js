@@ -71,18 +71,28 @@ $().ready(function(){
         var age = $("#age").val();
         var password = $("#password").val();
         var address = $("#address").val();
-        var avater = $("#avater").html();
+        var avater = $("#avater").html().trim();
         var tag = $("#tag").val();
         var id = $("#id").val();
         $.post("/user/management/center/update", {'id' : id, 'name' : name, 'age' : age, 'password' : password, 'address' : address, 'avater' : avater, 'tag' : tag}, function(data){
            alert(data);
             if(data.success){
                $(".loading2").show();
-               $.post("/logout2", function(data){});
            }else{
                alert("修改失败！");
                window.location.href = "/user/management/center/edit";
            }
+        });
+
+    });
+    $("#submit3").click(function(){
+        $(".loading2").hide();
+    });
+    $("#submit2").click(function(){
+        $.post("/logout2", function(data){
+            if(data.success){
+                window.location.reload();
+            }else{}
         });
 
     });

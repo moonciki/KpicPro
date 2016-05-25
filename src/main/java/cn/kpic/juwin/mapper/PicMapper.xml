@@ -32,4 +32,8 @@
         </foreach>
     </insert>
 
+    <select id="getAllPics" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.Pic">
+        SELECT msg, imgUrl FROM tb_pic WHERE albumId = #{id}
+    </select>
+
 </mapper>

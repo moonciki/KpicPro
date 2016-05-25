@@ -30,4 +30,6 @@ public interface PbarMapper {
 
     void delFocusNum(Long id);
 
+    void delFocus(Map params);
+
 }

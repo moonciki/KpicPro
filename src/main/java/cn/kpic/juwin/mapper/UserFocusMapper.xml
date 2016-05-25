@@ -42,5 +42,10 @@ ${}：表示拼接符，可能会引起sql注入
         WHERE userId1 = #{userId1} AND userId2 = #{userId2}
     </select>
 
+    <delete id="delUserFocus" parameterType="java.util.Map">
+        DELETE FROM tb_user_focus
+        WHERE userId1 = #{userId1} AND userId2 = #{userId2}
+    </delete>
+
 
 </mapper>

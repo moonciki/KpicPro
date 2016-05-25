@@ -45,6 +45,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 			<if test="address != null">address = #{address},</if>
 			<if test="avater != null">avater = #{avater},</if>
 			<if test="tag != null">tag = #{tag},</if>
+			<if test="sex != null">sex = #{sex},</if>
+			<if test="birth != null">birth = #{birth},</if>
+			<if test="postNum != null">postNum = #{postNum},</if>
 		</trim>
 		where id = #{id,jdbcType=BIGINT}
 	</update>
@@ -69,6 +72,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		FROM tb_user_pbar
 		WHERE pbarId = #{pbarId} AND userId = #{userId} AND type = 2
 	</select>
+
+	<select id="getAllPbarUsers" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.UserVo">
+		SELECT
+		tu.id,
+		tu.name,
+		tu.age,
+		tu.sex,
+		tu.tag,
+		tu.avater,
+		tu.userPic,
+		tul.level,
+		tul.score
+		FROM
+		tb_pbar_focus tpf
+		JOIN tb_user tu ON tpf.userId = tu.id
+		JOIN tb_user_level tul ON tu.id = tul.userId
+		WHERE tpf.pbarId = #{pbarId} AND tu.isdel = 0
+		ORDER BY tpf.createTime DESC
+		LIMIT #{page}, 10
+	</select>
+
+	<update id="updPostNum" parameterType="java.lang.Long">
+		update tb_user set postNum = postNum + 1 where id = #{id}
+	</update>
 
 	
 </mapper>

@@ -25,7 +25,7 @@
     <br/>
 <span style="color:#FF60AF;display: none" id="no_data">
     <center>
-      <span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;非常抱歉，没有找到您想要的歌曲，您可以试着<a href="${pageContext.request.contextPath}/user/make/music">上传</a>
+      <span class="glyphicon glyphicon-info-sign"></span>&nbsp;&nbsp;非常抱歉，没有找到您想要的歌曲，您可以试着<a href="${pageContext.request.contextPath}/user/make/music" target="_blank">上传</a>
     </center>
 </span>
 
@@ -39,10 +39,8 @@
       <span style="color:#FF60AF"><span class="glyphicon glyphicon-music"></span>&nbsp;我们为您找到了以下音源：</span>
     </div>
     <center>
+
 <span id="music_content">
-
-
-
 </span>
 
         <span style="color:#FF60AF;display: none" id="mhs">没有合适的？<span onclick="music_dw()" style="cursor: pointer;">点我</span></span>

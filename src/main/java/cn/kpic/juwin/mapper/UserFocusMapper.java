@@ -25,4 +25,6 @@ public interface UserFocusMapper {
 
     UserFocus isgz(UserFocus userFocus);
 
+    void delUserFocus(Map params);
+
 }

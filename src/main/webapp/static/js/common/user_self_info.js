@@ -23,14 +23,14 @@ if(userId == "" || userId == null){
     $.post("/user/center/isgz", {'userId' : userId2}, function(data){
         if(data){
             $("#isgz").empty();
-            $("#isgz").append("<button type=\"button\" class=\"btn btn-success\"><span class=\"glyphicon glyphicon-ok-sign\"></span> 已关注</button>");
+            $("#isgz").append("<button title='取消关注' type=\"button\" id=\"qxgz\" onclick=\"qxgz()\" class=\"btn btn-success\"><span class=\"glyphicon glyphicon-ok-sign\"></span> 已关注</button>");
         }else{
             $("#gz").removeAttr("disabled");
         }
     });
 }
 
-$("#gz").click(function(){
+function gz(){
     $("#gz").attr("disabled", "disabled");
     var userId = $("#userId1").val();
     if(userId == null || userId == ""){
@@ -38,23 +38,40 @@ $("#gz").click(function(){
         $("#gz").removeAttr("disabled");
         return;
     }
-
     var userId2 = $("#userId2").val();
-
     $.post("/user/center/gz", {'userId' : userId2}, function(data){
         if(data){
             $("#isgz").empty();
-            $("#isgz").append("<button type=\"button\" class=\"btn btn-success\"><span class=\"glyphicon glyphicon-ok-sign\"></span> 已关注</button>");
+            $("#isgz").append("<button title='取消关注' type=\"button\" id=\"qxgz\" onclick=\"qxgz()\" class=\"btn btn-success\"><span class=\"glyphicon glyphicon-ok-sign\"></span> 已关注</button>");
         }else{
             alert("关注失败！请刷新重试~");
         }
     });
-});
+}
+
+function qxgz(){
+    $("#qxgz").attr("disabled", "disabled");
+    var userId = $("#userId1").val();
+    if(userId == null || userId == ""){
+        alert("要先登录哦~");
+        $("#qxgz").removeAttr("disabled");
+        return;
+    }
+    var userId2 = $("#userId2").val();
+    $.post("/user/qx/focus_u", {'userId' : userId2}, function(data){
+        if(data){
+            $("#isgz").empty();
+            $("#isgz").append("<button type=\"button\" id=\"gz\" onclick=\"gz()\" class=\"btn btn-danger\"><span class=\"glyphicon glyphicon-plus-sign\"></span> 关注</button>");
+        }else{
+            alert("操作失败！请刷新重试~");
+        }
+    });
+}
 
 
 function sx(userId){
-    var userId = $("#userId1").val();
-    if(userId == null || userId == ""){
+    var userId1 = $("#userId1").val();
+    if(userId1 == null || userId1 == ""){
         alert("要先登录哦~");
         return;
     }
@@ -72,6 +89,7 @@ $("#sx_submit").click(function(){
     $("#sx_close").attr("disabled", "disabled");
     $("#sx_load").show();
     var userId = $("#sx_userId").val();
+    alert(userId);
     var content = $("#sx_msg").val();
     $.post("/user/private/save", {'userId':userId, 'content':content}, function(data){
         if(data){

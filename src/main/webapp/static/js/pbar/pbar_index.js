@@ -98,7 +98,7 @@ $().ready(function(){
                     }else{
                         addhtml+="<img src=\""+data.list[key].avater+"?imageView2/1/w/50/h/50/q/95\" class=\"manager_avater\"/>"
                     }
-                    addhtml+="<div style=\"margin-left: 50px;margin-top: -1px\"><span style=\"margin-left: 10px; font-size: 10px;line-height: 1.8;font-family: 微软雅黑\"><a href=\"\" target=\"_blank\">"+
+                    addhtml+="<div style=\"margin-left: 50px;margin-top: -1px\"><span style=\"margin-left: 10px; font-size: 10px;line-height: 1.8;font-family: 微软雅黑\"><a href=\"/user/u6514"+data.list[key].id+"/index.html\" target = \"_blank\">"+
                         data.list[key].name+"</a>&nbsp;&nbsp;<span class=\"badge\" onclick=\"sx("+data.list[key].id+")\" style=\"cursor:pointer;background-color: #46A3FF;margin-bottom: 5px\">私信</span></span>"+
                     "<div class=\"progress progress-striped active\" style=\"border: 2px solid #FF9797;\"><div class=\"progress-bar progress-bar-warning\" role=\"progressbar\"aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\"style=\"width: "+(data.list[key].score/allscore)*100+"%;\">"+
                     "<span class=\"sr-only\"></span></div></div><div style=\"margin-top: -20px\"><span style=\"color:#8E8E8E;font-size: 10px;font-family: 微软雅黑\">&nbsp;&nbsp;"+
@@ -250,13 +250,13 @@ $().ready(function(){
                             if(data[key].img[key2].imgKey == "2"){
                                 addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95\"" +
                                     " onmouseover = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo2.png?imageView2/1/w/156/h/90/q/95'\"" +
-                                    " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 2)\" title=\"点击播放该视频\"/>&nbsp;&nbsp;&nbsp;&nbsp;";
+                                    " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 2)\" title=\"点击播放该视频\"/>&nbsp;&nbsp;&nbsp;";
                             }else if(data[key].img[key2].imgKey == "3"){
                                 addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95\"" +
                                     " onmouseover = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic2.jpg?imageView2/1/w/156/h/90/q/95'\"" +
-                                    " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 3)\" title=\"点击播放该音频\"/>&nbsp;&nbsp;&nbsp;&nbsp;";
+                                    " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 3)\" title=\"点击播放该音频\"/>&nbsp;&nbsp;&nbsp;";
                             }else{
-                                addhtml +="<img src=\""+data[key].img[key2].imagePath+"?imageView2/1/w/156/h/90/q/95\" class='post_pic' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 1)\" title=\"查看大图\"/>&nbsp;&nbsp;&nbsp;&nbsp;"
+                                addhtml +="<img src=\""+data[key].img[key2].imagePath+"?imageView2/1/w/156/h/90/q/95\" class='post_pic' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 1)\" title=\"查看大图\"/>&nbsp;&nbsp;&nbsp;"
                             }
                         }
                     }
@@ -322,13 +322,13 @@ $().ready(function(){
                             if(data[key].img[key2].imgKey == "2"){
                                 addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95\"" +
                                     " onmouseover = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo2.png?imageView2/1/w/156/h/90/q/95'\"" +
-                                    " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 2)\" title=\"点击播放该视频\"/>&nbsp;&nbsp;&nbsp;&nbsp;";
+                                    " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 2)\" title=\"点击播放该视频\"/>&nbsp;&nbsp;&nbsp;";
                             }else if(data[key].img[key2].imgKey == "3"){
                                 addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95\"" +
                                     " onmouseover = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic2.jpg?imageView2/1/w/156/h/90/q/95'\"" +
-                                    " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 3)\" title=\"点击播放该音频\"/>&nbsp;&nbsp;&nbsp;&nbsp;";
+                                    " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 3)\" title=\"点击播放该音频\"/>&nbsp;&nbsp;&nbsp;";
                             }else{
-                                addhtml +="<img src=\""+data[key].img[key2].imagePath+"?imageView2/1/w/156/h/90/q/95\" class='post_pic' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 1)\" title=\"查看大图\"/>&nbsp;&nbsp;&nbsp;&nbsp;"
+                                addhtml +="<img src=\""+data[key].img[key2].imagePath+"?imageView2/1/w/156/h/90/q/95\" class='post_pic' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 1)\" title=\"查看大图\"/>&nbsp;&nbsp;&nbsp;"
                             }
                         }
                     }
@@ -353,6 +353,7 @@ $().ready(function(){
         $(".main01_01_reply").show();
         $(".current").removeClass();
         $("#ytj_xl").hide();
+        $("#tcy_xl").hide();
         $("#xl").show();
         $("#xl").attr("disabled","disabled");
         $("#onlyPost").removeClass();
@@ -369,6 +370,7 @@ $().ready(function(){
         $(".main01_01_reply").hide();
         $(".current").removeClass();
         $("#ytj_xl").hide();
+        $("#tcy_xl").hide();
         $("#xl").show();
         $("#xl").attr("disabled","disabled");
         $("#onlyBlog").removeClass();
@@ -385,6 +387,7 @@ $().ready(function(){
         $(".main01_01_reply").show();
         $(".current").removeClass();
         $("#ytj_xl").hide();
+        $("#tcy_xl").hide();
         $("#xl").show();
         $("#xl").attr("disabled","disabled");
         $("#home").removeClass();
@@ -401,6 +404,7 @@ $().ready(function(){
         $(".main01_01_reply").show();
         $(".current").removeClass();
         $("#ytj_xl").hide();
+        $("#tcy_xl").hide();
         $("#xl").show();
         $("#xl").attr("disabled","disabled");
         $("#jp").removeClass();
@@ -413,10 +417,28 @@ $().ready(function(){
         jiazai();
     });
 
+    $("#tcy").click(function(){
+        $(".main01_01_reply").hide();
+        $(".current").removeClass();
+        $("#ytj_xl").hide();
+        $("#tcy_xl").show();
+        $("#xl").hide();
+        $("#tcy_xl").attr("disabled","disabled");
+        $("#tcy").removeClass();
+        $("#tcy").addClass("current");
+        $("#topic_post_area").empty();
+        $("#topic_post_area").append("<div class=\"main01_01_no_data\"><br/><br/><br/> <div class=\"loading\"></div></div>");
+        $("#isBlog").val("");
+        $("#page").val("0");
+        $("#isBoutique").val("");
+        jiazaituanchengyuan(false);
+    });
+
     $("#ytj").click(function(){
         $(".main01_01_reply").hide();
         $(".current").removeClass();
         $("#ytj_xl").show();
+        $("#tcy_xl").hide();
         $("#xl").hide();
         $("#ytj_xl").attr("disabled","disabled");
         $("#ytj").removeClass();
@@ -432,6 +454,11 @@ $().ready(function(){
     $("#ytj_xl").click(function(){
         $("#ytj_xl").attr("disabled", "disabled");
         jiazaiytj(true);
+    });
+
+    $("#tcy_xl").click(function(){
+        $("#tcy_xl").attr("disabled", "disabled");
+        jiazaituanchengyuan(true);
     });
 
     function jiazaiytj(isload){
@@ -490,6 +517,76 @@ $().ready(function(){
 
                     $("#topic_post_area").append(addhtml);
                     $("#ytj_xl").removeAttr('disabled');
+                    $("#page").val(page + 1);
+                    if(isload){
+                        $("#pageloading").hide();
+                    }
+                }
+            }
+        });
+    }
+
+    function jiazaituanchengyuan(isload){
+
+        var pbarId = $("#pbarId").val();
+        var page = $("#page").val();
+        var isempty = false;
+        if(isload){
+            $("#pageloading2").hide();
+            $("#pageloading").show();
+        }
+        $.post("/user/pbar/users", {'pbarId' : pbarId, 'page' : page}, function(data){
+            if(!isload){
+                $("#topic_post_area").empty();
+            }
+
+            if(data == "" || data == null){
+                isempty = true;
+                if(isload){
+                    $("#pageloading").hide();
+                    $("#pageloading2").fadeIn(800);
+                    setTimeout(function(){$("#pageloading2").fadeOut(800);},2000);
+                }else{
+                    $("#topic_post_area").append("<div class=\"main01_01_no_data\"><br/><br/><br/><div class=\"no_data\"></div></div>");
+                }
+
+            }else{
+                for(key in data){
+
+                    var allscore = 0;
+                    if(data[key].level == 0){
+                        allscore = 15;
+                    }else{
+                        allscore = data[key].level * 15 * 2;
+                    }
+
+                    var addhtml = "<div class='pbar_users'><div class='pbar_users_01'>";
+                        if(data[key].avater == "" || data[key].avater == null){
+                            addhtml+="<img src=\""+data[key].userPic+"?size=100\" class=\"pbar_users_pic\"/>";
+                        }else{
+                            addhtml+="<img src=\""+data[key].avater+"?imageView2/1/w/100/h/100/q/95\" class=\"pbar_users_pic\"/>";
+                        }
+                        addhtml+="</div><div class='pbar_users_02'>昵称：<a href=\"/user/u6514"+data[key].id+"/index.html\" target = \"_blank\">"+data[key].name+"</a>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"badge\" onclick=\"sx("+data[key].id+")\" style=\"cursor:pointer;background-color: #46A3FF;margin-bottom: 5px\">私信</span><br/>"+
+						"性别："
+						if(data[key].sex == 0){
+							addhtml+="<span class=\"boy\">♂</span>";
+						}else{
+							addhtml+="<span class=\"girl\">♀</span>";
+						}
+						addhtml+="<br/>签名：<span style=\"font-size:12px;font-color:#FF79BC\">"
+						if(data[key].tag == "" || data[key].tag == null){
+							addhtml+="这家伙很潇洒，没有留下什么签名~";
+						}else{
+							addhtml+=data[key].tag;
+						}
+						addhtml+="</span>"
+						addhtml+="</div><div class='pbar_users_03'>"+
+                            "<div class=\"progress progress-striped active\" style=\"border: 2px solid #65b2ff;\"><div class=\"progress-bar progress-bar-info\" role=\"progressbar\"aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\"style=\"width: "+(data[key].score/allscore)*100+"%;\">"+
+                            "<span class=\"sr-only\"></span></div></div><div style=\"margin-top: -20px\"><span style=\"color:#8E8E8E;font-size: 10px;font-family: 微软雅黑\">&nbsp;&nbsp;"+
+                            "<span class=\"glyphicon glyphicon-apple\" style=\"color:#FF9797\"></span>&nbsp;<span style=\"color:#00AEAE;font-weight: bold\">"+data[key].level+"</span> 级 / <span style=\"color:#FF79BC;font-weight: bold\">"+data[key].score+"</span> 分</span>"+
+                            "</div></div></div></div>";
+                    $("#topic_post_area").append(addhtml);
+                    $("#tcy_xl").removeAttr('disabled');
                     $("#page").val(page + 1);
                     if(isload){
                         $("#pageloading").hide();
@@ -582,6 +679,10 @@ function share_video(){
 function sx(userId){
     $("#sx_userId").val(userId);
     var login_user = $("#userId").val();
+    if(login_user==null || login_user == ""){
+        alert("请先登录~");
+        return;
+    }
     if(userId == login_user){
         alert("自己不能给自己写私信哦~(⊙_⊙)~");
         return;
@@ -665,5 +766,20 @@ function emotion_add(url){
     $("#tp_eif").hide();
 }
 
+var pbar_userId = $("#pbar_user_id").val();
+$.post("/user/pbar/manager", {'userId':pbar_userId}, function(data){
+   if(data == "" || data == null){
+       $("#big_manager").append("获取不到大管理猿的信息");
+       return;
+   }
+    var addhtml = "<center>";
+            if(data.avater == "" || data.avater == null){
+                addhtml+="<img src=\""+data.userPic+"?size=100\" class=\"userbigpic\"/>";
+            }else{
+                addhtml+="<img src=\""+data.avater+"?imageView2/1/w/100/h/100/q/95\" class=\"userbigpic\"/>";
+            }
+        addhtml+="</center><br/><br/><center>昵称：<a href=\"/user/u6514"+data.id+"/index.html\" target = \"_blank\">"+data.name+"</a>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"badge\" onclick=\"sx("+data.id+")\" style=\"cursor:pointer;background-color: #46A3FF;margin-bottom: 5px\">私信</span></center>";
+    $("#big_manager").append(addhtml);
+});
 
 

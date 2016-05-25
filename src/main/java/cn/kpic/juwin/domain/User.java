@@ -1,7 +1,5 @@
 package cn.kpic.juwin.domain;
 
-import org.apache.commons.mail.Email;
-
 import java.util.Date;
 
 /**
@@ -13,6 +11,8 @@ public class User implements java.io.Serializable{
     private String email;
     private String password;
     private int age;
+    private int sex;
+    private String birth;
     private String userPic;
     private Date createTime;
     private int postNum;
@@ -115,5 +115,21 @@ public class User implements java.io.Serializable{
 
     public void setAvater(String avater) {
         this.avater = avater;
+    }
+
+    public int getSex() {
+        return sex;
+    }
+
+    public void setSex(int sex) {
+        this.sex = sex;
+    }
+
+    public String getBirth() {
+        return birth;
+    }
+
+    public void setBirth(String birth) {
+        this.birth = birth;
     }
 }

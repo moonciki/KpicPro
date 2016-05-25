@@ -44,4 +44,32 @@
         WHERE id = #{id} AND isdel = 0
     </select>
 
+    <update id="delAlbum" parameterType="java.lang.Long">
+        update tb_album set isdel = 1 where id = #{id}
+    </update>
+
+    <update id="addMusic" parameterType="java.util.Map">
+        update tb_album set music = #{music} where id = #{id}
+    </update>
+
+    <select id="getAlbumMsg" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.vo.AlbumVo">
+        SELECT
+        ta.id,
+        ta.title,
+        ta.msg,
+        ta.imageUrl,
+        ta.picNum,
+        ta.userId,
+        ta.music,
+        ta.createTime,
+        tu.name AS userName,
+        tu.sex,
+        tu.userPic,
+        tu.avater,
+        tu.tag
+        FROM tb_album ta
+        JOIN tb_user tu ON ta.userId = tu.id
+        WHERE ta.id = #{id} AND ta.isdel = 0
+    </select>
+
 </mapper>

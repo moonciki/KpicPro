@@ -124,5 +124,9 @@
     update tb_pbar set focus_num = focus_num - 1 where id = #{id}
   </update>
 
+  <delete id="delFocus" parameterType="java.util.Map">
+    DELETE FROM tb_pbar_focus WHERE userId = #{userId} AND pbarId = #{pbarId}
+  </delete>
+
 
 </mapper>

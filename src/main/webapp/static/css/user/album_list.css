@@ -41,6 +41,18 @@
     z-index:1001;
 }
 
+.share_music_main{
+    padding: 20px;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 520px;
+    height: 570px;
+    background-color: #FFF;
+    border: solid 10px #6C6C6C;
+    border-radius: 8px;
+}
+
 .pl_content{
     margin-top: 5%;
     margin-left: auto;

@@ -19,7 +19,7 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/ueditor/ueditor.all.js"></script>
 </head>
 <body>
-
+<input type="hidden" value="${pbar.userId}" id="pbar_user_id"/>
 <div class="pic_big" id="tp_video">
     <div class="pic_big_01" style="background-color: black; display: none">
         <span id="pic_video"></span><div class="pic_big_01_01" title="关闭" onclick="clearAll()"></div>
@@ -110,7 +110,7 @@
                         &nbsp;&nbsp;云图集
                         <span class="lines"></span>
                     </li>
-                    <li style="cursor:pointer;">
+                    <li style="cursor:pointer;" id = "tcy">
                         <span class="glyphicon glyphicon-tags" style="color: #AD5A5A"></span>
                         &nbsp;&nbsp;团成员
                         <span class="lines"></span>
@@ -133,6 +133,7 @@
             <div class="main01_bw" style="padding-top: 25px;text-align: center">
                 <button type="button" id="xl" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
                 <button type="button" style="display: none" id="ytj_xl" class="btn btn-danger"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
+                <button type="button" style="display: none" id="tcy_xl" class="btn btn-danger"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
 
             <div style="display: none" id="pageloading"><br/><img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/page_loading.gif"/></div>
             <div style="display: none" id="pageloading2" style="font-size: 14px;"><br/>没有更多了</div></div>
@@ -156,9 +157,11 @@
 
             <!--发帖子-->
             <div class="main01_01_reply" style="padding: 50px">
+
                 <div class="bjq_btn music_button" id="music_share"></div>
                 <div class="bjq_btn video_button" id="video_share"></div>
                 <div class="bjq_btn eif_button" id="eif_share"></div>
+
                 <div class="xiu" style="font-size: 66px; font-weight:bold; font-family: 微软雅黑">咻~ 已发射！</div>
                 <div class="reply_loading"><div class="loading" style="margin-top:50px;padding-top: 120px;font-family: 微软雅黑;">发送中...</div></div>
                 <span style="font-size: 15px;font-family: 微软雅黑"><span class="glyphicon glyphicon-pencil" style="color:#FF79BC"></span>&nbsp;&nbsp;发表主题帖</span>
@@ -180,11 +183,13 @@
 
         </div>
         <div class="main02">
-            <div class="main02_01">
+            <div class="main02_01" id = "dl_head">
 
                 <c:choose>
                     <c:when test="${user == null}">
-                        未登录
+                        <script type="text/javascript">
+                            $("#dl_head").hide();
+                        </script>
                     </c:when>
                     <c:otherwise>
                         <div class="main02_01_01">
@@ -218,15 +223,15 @@
                                 <c:choose>
                                     <c:when test="${role != null and role == 1}">
                                         <span class="glyphicon glyphicon-record" style="color:#FF79BC"></span>
-                                        身份：<span class="badge">大管理员</span>
+                                        身份：<span class="badge">大管理猿</span>
                                     </c:when>
                                     <c:when test="${role != null and role == 2}">
                                         <span class="glyphicon glyphicon-record" style="color:#FF79BC"></span>
-                                        身份：<span class="badge">小管理员</span>
+                                        身份：<span class="badge">小管理猿</span>
                                     </c:when>
                                     <c:otherwise>
                                         <span class="glyphicon glyphicon-record" style="color:#FF79BC"></span>
-                                        身份：<span class="badge">普通人</span>
+                                        身份：<span class="badge">非管理猿</span>
                                     </c:otherwise>
                                 </c:choose>
                                 <br/><br/>
@@ -245,6 +250,19 @@
                     </c:otherwise>
                 </c:choose>
 
+            </div>
+            <div class="main02_02">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <span style="color:#8E8E8E; font-size: 14px;font-weight:bold;font-family: 微软雅黑"><span class="glyphicon glyphicon-user" style="color:${pbar.color};"></span>&nbsp;本话题所属人（大管理猿）</span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <span id="big_manager"></span>
+                    </div>
+                </div>
             </div>
             <div class="main02_02">
                 <div class="panel panel-default">

@@ -13,4 +13,6 @@ public interface PicMapper {
 
     void saves(List<Pic> pic);
 
+    List<Pic> getAllPics(Long id);
+
 }

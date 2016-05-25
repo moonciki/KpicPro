@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <html>
 <head>
-  <title>${user.name}的个人首页</title>
+  <title>${user2.name}的个人首页</title>
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
   <script src="${pageContext.request.contextPath}/static/js/jquery-1.10.2.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
@@ -46,33 +46,52 @@
       <div class="user_info_content">
         <div class="user_info_box">
           <div class="user_info_box_unit">
-            <span class="glyphicon glyphicon-user"></span>
+            <span class="glyphicon glyphicon-user" style="color:#ff8fb8"></span>
             &nbsp;&nbsp;用户昵称：${user2.name}
           </div>
           <div class="user_info_box_unit">
-            <span class="glyphicon glyphicon-stats"></span>
+            <span class="glyphicon glyphicon-stats" style="color:#ff8fb8"></span>
             &nbsp;&nbsp;用户级别：<span style="color:#FF5151"><b>${level.level}</b></span> 级
           </div>
         </div>
 
         <div class="user_info_box">
           <div class="user_info_box_unit">
-            <span class="glyphicon glyphicon-list-alt"></span>
+            <span class="glyphicon glyphicon-bookmark" style="color:#ff8fb8"></span>
+            &nbsp;&nbsp;性别：
+            <c:choose>
+              <c:when test="${user2.sex == 0}">
+                <span class="boy">♂</span>
+              </c:when>
+              <c:otherwise>
+                <span class="girl">♀</span>
+              </c:otherwise>
+            </c:choose>
+          </div>
+          <div class="user_info_box_unit">
+            <span class="glyphicon glyphicon-bold" style="color:#ff8fb8"></span>
+            &nbsp;&nbsp;生日：${user2.birth}
+          </div>
+        </div>
+
+        <div class="user_info_box">
+          <div class="user_info_box_unit">
+            <span class="glyphicon glyphicon-list-alt" style="color:#ff8fb8"></span>
             &nbsp;&nbsp;累计发帖：<span style="color:#FF60AF"><b>${user2.postNum}</b></span>
           </div>
           <div class="user_info_box_unit">
-            <span class="glyphicon glyphicon-record"></span>
+            <span class="glyphicon glyphicon-record" style="color:#ff8fb8"></span>
             &nbsp;&nbsp;当前经验：<span style="color:#9F35FF"><b>${level.score}</b></span>
           </div>
         </div>
 
         <div class="user_info_box">
           <div class="user_info_box_unit">
-            <span class="glyphicon glyphicon-fire"></span>
+            <span class="glyphicon glyphicon-fire" style="color:#ff8fb8"></span>
             &nbsp;&nbsp;总粉丝量：<span style="color:#46A3FF"><b>${fansNum}</b></span>
           </div>
           <div class="user_info_box_unit">
-            <span class="glyphicon glyphicon-map-marker"></span>
+            <span class="glyphicon glyphicon-map-marker" style="color:#ff8fb8"></span>
             &nbsp;&nbsp;现居坐标：${user2.address}
           </div>
         </div>

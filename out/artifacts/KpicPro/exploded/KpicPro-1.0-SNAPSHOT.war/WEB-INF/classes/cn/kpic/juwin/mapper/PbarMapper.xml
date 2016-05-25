@@ -111,7 +111,7 @@
     JOIN tb_pbar_type tpt ON tp.type = tpt.id
     WHERE tup.userId = #{userId} AND tp.isdel = 0 ORDER BY tup.createTime DESC LIMIT #{page}, 10
   </select>
-  
+
   <update id="addTopicNum" parameterType="java.lang.Long">
     update tb_pbar set topic_num = topic_num + 1 where id = #{id}
   </update>
@@ -123,6 +123,10 @@
   <update id="delFocusNum" parameterType="java.lang.Long">
     update tb_pbar set focus_num = focus_num - 1 where id = #{id}
   </update>
+
+  <delete id="delFocus" parameterType="java.util.Map">
+    DELETE FROM tb_pbar_focus WHERE userId = #{userId} AND pbarId = #{pbarId}
+  </delete>
 
 
 </mapper>

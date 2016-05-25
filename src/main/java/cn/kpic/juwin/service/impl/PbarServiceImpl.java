@@ -109,4 +109,13 @@ public class PbarServiceImpl implements PbarService {
 
     @Override
     public void clearCache(String key) {}
+
+    @Override
+    @Transactional
+    public void delFocusService(Long userId, Long pbarId) {
+        Map params = new HashMap();
+        params.put("userId", userId);
+        params.put("pbarId", pbarId);
+        this.pbarMapper.delFocus(params);
+    }
 }

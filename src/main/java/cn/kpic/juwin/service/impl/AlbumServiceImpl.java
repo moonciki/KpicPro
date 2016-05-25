@@ -11,7 +11,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by bjsunqinwen on 2016/4/20.
@@ -31,12 +33,26 @@ public class AlbumServiceImpl implements AlbumService {
         album.setUserId(CurrentUser.getUser().getId());
         album.setCreateTime(new Date());
         album.setIsdel(0);
-        album.setPicNum(0);
+        album.setPicNum(pics.size());
         this.albumMapper.save(album);
         for(Pic pic : pics){
             pic.setAlbumId(album.getId());
         }
         this.picMapper.saves(pics);
+    }
+
+    @Override
+    @Transactional
+    public void delAlbum(Long id) {
+        this.albumMapper.delAlbum(id);
+    }
+
+    @Override
+    public void addMusic(String url, Long id) {
+        Map params = new HashMap();
+        params.put("id", id);
+        params.put("music", url);
+        this.albumMapper.addMusic(params);
     }
 
 }

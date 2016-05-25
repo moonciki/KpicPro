@@ -1,8 +1,10 @@
 package cn.kpic.juwin.jms.listener;
 
 import cn.kpic.juwin.constant.RedisCacheKey;
+import cn.kpic.juwin.domain.User;
 import cn.kpic.juwin.domain.vo.JmsUpdPbar;
 import cn.kpic.juwin.mapper.PbarMapper;
+import cn.kpic.juwin.mapper.UserMapper;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -27,6 +29,9 @@ public class PbarUpdQueueMessageListener implements MessageListener{
     private PbarMapper pbarMapper;
 
     @Autowired
+    private UserMapper userMapper;
+
+    @Autowired
     private RedisTemplate redisTemplate;
 
     @Override
@@ -47,6 +52,10 @@ public class PbarUpdQueueMessageListener implements MessageListener{
                 /** Çå»º´æ*/
                 String key = RedisCacheKey.PBAR_INDEX + jmsUpdPbar.getPbarId();
                 redisTemplate.delete(key);
+
+                if(jmsUpdPbar.getUserId() != null){
+                    this.userMapper.updPostNum(jmsUpdPbar.getUserId());
+                }
 
             }
         }catch (JMSException e){

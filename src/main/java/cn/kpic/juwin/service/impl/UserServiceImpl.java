@@ -5,6 +5,7 @@ import cn.kpic.juwin.domain.Msg;
 import cn.kpic.juwin.domain.Pbar;
 import cn.kpic.juwin.domain.User;
 import cn.kpic.juwin.domain.vo.TopicManager;
+import cn.kpic.juwin.domain.vo.UserVo;
 import cn.kpic.juwin.mapper.MsgMapper;
 import cn.kpic.juwin.mapper.PbarMapper;
 import cn.kpic.juwin.mapper.UserMapper;
@@ -108,5 +109,14 @@ public class UserServiceImpl implements UserService {
         }else{
             throw new RuntimeException();
         }
+    }
+
+    @Override
+    public List<UserVo> getAllPbarUsers(Long pbarId, Integer page) {
+        Map params = new HashMap();
+        params.put("pbarId", pbarId);
+        params.put("page", page);
+        List<UserVo> result = this.userMapper.getAllPbarUsers(params);
+        return result.size() == 0 ? null : result;
     }
 }

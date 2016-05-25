@@ -2,6 +2,7 @@ package cn.kpic.juwin.mapper;
 
 import cn.kpic.juwin.domain.User;
 import cn.kpic.juwin.domain.vo.TopicManager;
+import cn.kpic.juwin.domain.vo.UserVo;
 
 import java.util.List;
 import java.util.Map;
@@ -20,5 +21,7 @@ public interface UserMapper {
 	User findUserByName(String name);
 	void update(User user);
 	List<TopicManager> getAllSmallManagerByPbarId(Long id);
-	List<Long> isSmallManager(Map<String, Object> params);
+	List<Long> isSmallManager(Map params);
+	List<UserVo> getAllPbarUsers(Map params);
+	void updPostNum(Long id);
 }

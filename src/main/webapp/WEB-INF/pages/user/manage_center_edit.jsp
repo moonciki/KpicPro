@@ -98,20 +98,17 @@
   <div class="panel panel-default" style="width: 500px; height: 300px; margin-top: 10%; margin-left: 40%;">
     <div class="panel-heading">
       <span class="glyphicon glyphicon-bookmark" style="color: #FF60AF"></span>
-      &nbsp;&nbsp;Kpic提醒您
+      &nbsp;&nbsp;咔哔提醒
     </div>
     <div class="panel-body" style="text-align: center">
       <span style="font-size: 15px">
         <span class="glyphicon glyphicon-ok-circle" style="font-size:25px;color:#73BF00"></span>
-        恭喜您，修改成功O(∩_∩)O~ 现在请您重新登录看看效果吧~
+        恭喜您，修改成功O(∩_∩)O~ 不过效果要想看到效果需要重新登录系统哦~现在请您重新登录看看效果吧~
       </span>
-      <br/>
-      <br/>
-      <input type="text" style="width: 450px" class="form-control" value="${user.name}" placeholder="请输入昵称"/>
-      <br/>
-      <input type="password" style="width: 450px" class="form-control" value="" placeholder="请输入密码"/>
-      <br/>
-      <button id="submit2" type="button" class="btn btn-success">确认</button>
+      <br/><br/><br/>
+      <button id="submit2" type="button" class="btn btn-success">重新登录</button>
+      &nbsp;&nbsp;
+      <button id="submit3" type="button" class="btn btn-success">取消</button>
 
     </div>
   </div>

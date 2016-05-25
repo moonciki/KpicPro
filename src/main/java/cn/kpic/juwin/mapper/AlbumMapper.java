@@ -1,6 +1,7 @@
 package cn.kpic.juwin.mapper;
 
 import cn.kpic.juwin.domain.Album;
+import cn.kpic.juwin.domain.vo.AlbumVo;
 
 import java.util.List;
 import java.util.Map;
@@ -16,4 +17,9 @@ public interface AlbumMapper {
 
     Album gatAlbum(Long id);
 
+    void delAlbum(Long id);
+
+    void addMusic(Map params);
+
+    AlbumVo getAlbumMsg(Long id);
 }

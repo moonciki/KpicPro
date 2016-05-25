@@ -7,7 +7,7 @@ $().ready(function(){
             if(!data){
                 $("#isgz_pbar").append("<button type=\"button\" id=\"gzaniu\" style=\"font-family: 微软雅黑\"  class=\"btn btn-danger\" onclick='gz_pbar_ff("+pbarId+")'><span class=\"glyphicon glyphicon-plus-sign\"></span>&nbsp;关注("+gz_num+")</button>");
             }else{
-                $("#isgz_pbar").append("<button type=\"button\" style=\"font-family: 微软雅黑\" class=\"btn btn-success\"><span class=\"glyphicon glyphicon-ok-sign\"></span>&nbsp;已关注("+gz_num+")</button>");
+                $("#isgz_pbar").append("<button title =\"取消关注\" type=\"button\" id=\"quguan\" style=\"font-family: 微软雅黑\" class=\"btn btn-success\" onclick='gz_pbar_qx("+pbarId+")'><span class=\"glyphicon glyphicon-ok-sign\"></span>&nbsp;已关注("+gz_num+")</button>");
             }
         })
     }else{
@@ -27,7 +27,25 @@ function gz_pbar_ff(pbarId){
     $.post("/user/pbar/focus", {'pbarId' : pbarId}, function(data){
         if(data){
             $("#isgz_pbar").empty();
-            $("#isgz_pbar").append("<button type=\"button\" style=\"font-family: 微软雅黑\" class=\"btn btn-success\"><span class=\"glyphicon glyphicon-ok-sign\"></span>&nbsp;已关注("+(parseInt(gz_num)+1)+")</button>");
+            $("#isgz_pbar").append("<button title =\"取消关注\" type=\"button\" id=\"quguan\" style=\"font-family: 微软雅黑\" class=\"btn btn-success\" onclick='gz_pbar_qx("+pbarId+")'><span class=\"glyphicon glyphicon-ok-sign\"></span>&nbsp;已关注("+gz_num+")</button>");
+        }else{
+            alert(data.msg);
+        }
+    })
+}
+
+function gz_pbar_qx(pbarId){
+    var userId = $("#userId").val();
+    if(userId == "" || userId == null){
+        alert("请先登录~");
+        return;
+    }
+    $("#quguan").attr("disabled", "disabled");
+    var gz_num = $("#gz_num").val();
+    $.post("/user/qx/focus_p", {'pbarId' : pbarId}, function(data){
+        if(data){
+            $("#isgz_pbar").empty();
+            $("#isgz_pbar").append("<button type=\"button\" id=\"gzaniu\" style=\"font-family: 微软雅黑\"  class=\"btn btn-danger\" onclick='gz_pbar_ff("+pbarId+")'><span class=\"glyphicon glyphicon-plus-sign\"></span>&nbsp;关注("+gz_num+")</button>");
         }else{
             alert(data.msg);
         }
