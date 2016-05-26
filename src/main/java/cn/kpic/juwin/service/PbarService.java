@@ -27,5 +27,6 @@ public interface PbarService {
 
     void delFocusService(Long userId, Long pbarId);
 
+    List<PbarIndexVo> getSearchResult(String kword, Integer page);
 
 }

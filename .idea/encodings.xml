@@ -5,10 +5,12 @@
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/replypost/ReplyPostController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PrivateLetterServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/album/read_album.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/common/top.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/common/user_self_info.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/music/music.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/pbar/manager_pbar_applys.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/pbar/manager_pbar_tips.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/pbar/pbar_result.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/album_list.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/all_sys_msg.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/blog_list.js" charset="UTF-8" />

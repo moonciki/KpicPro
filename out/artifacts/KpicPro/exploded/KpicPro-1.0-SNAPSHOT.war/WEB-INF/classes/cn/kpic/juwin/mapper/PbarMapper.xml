@@ -128,5 +128,13 @@
     DELETE FROM tb_pbar_focus WHERE userId = #{userId} AND pbarId = #{pbarId}
   </delete>
 
+  <select id="getSearchResult" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PbarIndexVo">
+    SELECT tp.id, tp.name, tp.msg,tp.tags AS tag, tp.topic_num AS topicNum, tp.focus_num AS focusNum,
+    tp.logo, tp.color, tpt.name AS type, tp.type AS typeId
+    FROM tb_pbar tp
+    JOIN tb_pbar_type tpt ON tp.type = tpt.id
+    WHERE tp.ispass = 1 AND isdel = 0 AND (tp.name LIKE #{kword} OR tp.tags LIKE #{kword}) ORDER BY tp.update_time DESC LIMIT #{page}, 10
+  </select>
+
 
 </mapper>

@@ -17,10 +17,7 @@ import org.jsoup.helper.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by bjsunqinwen on 2016/3/22.
@@ -117,5 +114,17 @@ public class PbarServiceImpl implements PbarService {
         params.put("userId", userId);
         params.put("pbarId", pbarId);
         this.pbarMapper.delFocus(params);
+    }
+
+    @Override
+    public List<PbarIndexVo> getSearchResult(String kword, Integer page) {
+        Map<String, Object> params = new HashMap<String, Object>();
+        params.put("kword","%"+kword+"%");
+        params.put("page", page);
+        List<PbarIndexVo> result = this.pbarMapper.getSearchResult(params);
+        for(PbarIndexVo pbarIndexVo : result){
+            pbarIndexVo.setTags(JSON.parseArray(pbarIndexVo.getTag(), TagsVo.class));
+        }
+        return result.size() == 0 ? null : result;
     }
 }

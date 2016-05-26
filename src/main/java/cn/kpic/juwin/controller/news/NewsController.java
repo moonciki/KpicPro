@@ -51,7 +51,7 @@ public class NewsController {
     }
 
     @RequiresPermissions({"user"})
-    @RequestMapping(value = "user/all/user/news")
+    @RequestMapping(value = "/user/all/user/news")
     public String getAllUserNewsTransfer(Model model){
         User user_curr = CurrentUser.getUser();
         model.addAttribute("user", user_curr);

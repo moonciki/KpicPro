@@ -56,7 +56,7 @@ $().ready(function(){
                     "<span class=\"glyphicon glyphicon-user\" style=\"color: #84C1FF\"></span><span style=\"color: #9D9D9D;font-size: 12px;\">&nbsp;&nbsp;发帖人："+
                         data[key].userName +
                 "</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"glyphicon glyphicon-time\" style=\"color: #FF79BC\"></span><span style=\"color: #9D9D9D;font-size: 12px;\">&nbsp;&nbsp;回复时间："+
-            + data[key].createTime+ "</span>"
+             getLocalTime(data[key].createTime)+ "</span>"
                         if(data[key].isTip){
                             addHtml+="<span style = \"color: #BEBEBE; font-size: 13px\">&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"glyphicon glyphicon-flag\"></span>&nbsp;已举报</span>"
                         }else{
@@ -118,7 +118,7 @@ $().ready(function(){
                     "<span class=\"glyphicon glyphicon-user\" style=\"color: #84C1FF\"></span><span style=\"color: #9D9D9D;font-size: 12px;\">&nbsp;&nbsp;发帖人："+
                     userName +
                 "</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"glyphicon glyphicon-time\" style=\"color: #FF79BC\"></span><span style=\"color: #9D9D9D;font-size: 12px;\">&nbsp;&nbsp;回复时间："+
-                + data.createTime +
+                 getLocalTime(data.createTime) +
                     "<span class=\"badge pull-right\" style=\"font-size:14px;background-color: #E1E100\"># NEW</span>"
 
                 if(userId == topicUserId){
@@ -164,8 +164,8 @@ $().ready(function(){
                         "<div class=\"reply_body_main_02_01\">"+
                         "<span class=\"glyphicon glyphicon-user\" style=\"color: #84C1FF\"></span><span style=\"color: #9D9D9D;font-size: 12px;\">&nbsp;&nbsp;发帖人："+
                         data[key].userName +
-                        "</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"glyphicon glyphicon-time\" style=\"color: #FF79BC\"></span><span style=\"color: #9D9D9D;font-size: 12px;\">&nbsp;&nbsp;回复时间："+
-                        + data[key].createTime+ "</span>"
+                        "</span>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"glyphicon glyphicon-time\" style=\"color: #FF79BC\"></span><span style=\"color: #9D9D9D;font-size: 12px;\">&nbsp;&nbsp;回复时间："
+                        + getLocalTime(data[key].createTime)+ "</span>"
                     if(data[key].isTip){
                         addHtml+="<span style = \"color: #BEBEBE; font-size: 13px\">&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"glyphicon glyphicon-flag\"></span>&nbsp;已举报</span>"
                     }else{

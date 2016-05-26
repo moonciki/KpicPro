@@ -17,6 +17,8 @@ public class PbarIndexVo {
 
     private List<TagsVo> tags;
 
+    private Long typeId;
+
     private String type;
 
     private String msg;
@@ -125,5 +127,13 @@ public class PbarIndexVo {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    public Long getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(Long typeId) {
+        this.typeId = typeId;
     }
 }

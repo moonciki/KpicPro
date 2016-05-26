@@ -55,7 +55,7 @@ function jz(isjz, page){
                 if(data[key].topicId == null || data[key].topicId == ""){
                     addhtml += "2, " + data[key].replyId;
                 }else{
-                    addhtml += "1, 'tp5416" + data[key].topicId +"'";
+                    addhtml += "1, 'tp5416" + data[key].topicId +"/rp5416"+data[key].replyId+"'";
                 }
                     addhtml+=")\"><span class='glyphicon glyphicon-eye-open'></span>&nbsp;查看详情</a></span>"+
                 "<div class='panel panel-default' style='background-color: #FFF8D7'><div class='panel-body'>"

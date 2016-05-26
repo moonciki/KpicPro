@@ -114,6 +114,7 @@ public class ReplyPostServiceImpl implements ReplyPostService {
                 userNews.setFromUserId(replyPost.getUserId());
                 userNews.setPbarId(pbarId);
                 userNews.setTopicId(replyPost.getTopicId());
+                userNews.setReplyId(replyPost.getId());
                 userNews.setShortContent(replyPost.getShortText());
                 userNewsQueueMessageSender.send(userNews);
             }

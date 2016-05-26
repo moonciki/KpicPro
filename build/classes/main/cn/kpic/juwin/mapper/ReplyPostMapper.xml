@@ -82,7 +82,16 @@
     tu.userPic AS userPic, tu.avater AS avater
     FROM tb_reply_post trp
     JOIN tb_user tu ON trp.userId = tu.id
-    WHERE trp.topicId = #{topicId} AND trp.isdel = 0 ORDER BY trp.createTime DESC LIMIT #{page},10
+    WHERE trp.topicId = #{topicId} AND trp.isdel = 0 ORDER BY trp.createTime LIMIT #{page},10
+  </select>
+
+  <select id="getReplyById" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.vo.ReplyPostList">
+    SELECT trp.id, trp.content, trp.replyNum,
+    trp.userId, trp.createTime, tu.name AS userName,
+    tu.userPic AS userPic, tu.avater AS avater
+    FROM tb_reply_post trp
+    JOIN tb_user tu ON trp.userId = tu.id
+    WHERE trp.id = #{id} AND trp.isdel = 0
   </select>
 
   <select id="getAllSelfReply" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.SelfReply">

@@ -219,9 +219,6 @@
             <c:otherwise>
             </c:otherwise>
           </c:choose>
-
-
-
           <span class="badge pull-right" style="font-size:14px;background-color: #FF95CA"># 楼主</span>
         </div>
         <div class="reply_body_main_content">
@@ -229,17 +226,43 @@
         </div>
         <div class="reply_body_main_02_01"></div>
       </div>
-
     </div>
     <div style="text-align: center; line-height: 3.8">
 
       <span style="font-family: 微软雅黑;font-size: 38px; color: #E0E0E0">————————-—-</span>
       <span class="glyphicon glyphicon-star" style="font-size: 20px;color: #E0E0E0"></span>
-      <span style="font-family: 微软雅黑;font-size: 28px; color: #E0E0E0">最新跟帖</span>
+      <span style="font-family: 微软雅黑;font-size: 28px; color: #E0E0E0">帖子回复</span>
       <span class="glyphicon glyphicon-star" style="font-size: 20px;color: #E0E0E0"></span>
       <span style="font-family: 微软雅黑;font-size: 38px; color: #E0E0E0">-—-————————</span>
 
     </div>
+
+      <c:if test="${reply != null}">
+        <div class="reply_body_main"><div class = "reply_body_main_01">
+          <c:choose>
+            <c:when test="${reply.avater == '' || reply.avater == null}">
+              <img src="${reply.userPic}?size=70" class="userpic_hpost"/>
+            </c:when>
+            <c:otherwise>
+              <img src="${reply.avater}?imageView2/1/w/70/h/70/q/95" class="userpic_hpost"/>
+            </c:otherwise>
+          </c:choose>
+        </div><div class="main01_01_user_reply" style = "border-color:#fff #FF79BC #fff #fff;margin-top: 23px"></div><div class="reply_body_main_02" style="border: 1px solid #FF79BC;background-color: #FFECF5">
+          <div class="pf3"><span class="glyphicon glyphicon-triangle-left" style="color:#FFECF5"></span></div>
+          <div class="reply_body_main_02_01">
+            <span class="glyphicon glyphicon-user" style="color: #84C1FF"></span><span style="color: #9D9D9D;font-size: 12px;">&nbsp;&nbsp;发帖人：
+      ${reply.userName}
+      </span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-time" style="color: #FF79BC"></span><span style="color: #9D9D9D;font-size: 12px;">&nbsp;&nbsp;回复时间：
+              ${reply.createTime}</span>
+          </div><div class="reply_body_main_content"><span style="font-size: 12px; line-height: 1.8">
+            ${reply.content}</span></div>
+          <div class="reply_body_main_02_01" style="color:#ADADAD; font-size: 11px">
+
+          </div>
+        </div>
+        </div>
+
+      </c:if>
 
     <span id = "reply_post_area">
       <div id = "starting" class="reply_body_main">

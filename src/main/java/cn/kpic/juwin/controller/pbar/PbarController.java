@@ -18,6 +18,7 @@ import cn.kpic.juwin.utils.CurrentUser;
 import cn.kpic.juwin.utils.StringDeal;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.jsoup.helper.StringUtil;
@@ -271,4 +272,21 @@ public class PbarController {
         return JSON.toJSONString(result);
     }
 
+    /** 关键词搜索*/
+    @RequestMapping(value = "/kabi/search/kw_{kw}")
+    public String Search(@PathVariable("kw") String kw, Model model){
+        model.addAttribute("user", CurrentUser.getUser());
+        model.addAttribute("kw", kw);
+        return "/pbar/pbar_result";
+    }
+
+    /** 关键词搜索接口*/
+    @RequestMapping(value = "/kabi/search/result")
+    @ResponseBody
+    public List<PbarIndexVo> getResult(String kw, Integer page){
+        if(StringUtils.isBlank(kw)){
+            return null;
+        }
+        return this.pbarService.getSearchResult(kw, page*10);
+    }
 }

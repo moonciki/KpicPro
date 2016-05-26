@@ -26,4 +26,6 @@ public interface ReplyPostMapper {
 
     void del(Long id);
 
+    ReplyPostList getReplyById(Long id);
+
 }

@@ -6,6 +6,7 @@ import cn.kpic.juwin.domain.User;
 import cn.kpic.juwin.domain.vo.*;
 import cn.kpic.juwin.jms.sender.SystemMsgQueueMessageSender;
 import cn.kpic.juwin.jms.sender.UpgradeQueueMessageSender;
+import cn.kpic.juwin.mapper.ReplyPostMapper;
 import cn.kpic.juwin.service.PbarService;
 import cn.kpic.juwin.service.ReplyPostService;
 import cn.kpic.juwin.service.TopicPostService;
@@ -38,6 +39,9 @@ public class ReplyPostController {
     private ReplyPostService replyPostService;
 
     @Autowired
+    private ReplyPostMapper replyPostMapper;
+
+    @Autowired
     private UserService userService;
 
     @Autowired
@@ -62,6 +66,28 @@ public class ReplyPostController {
             model.addAttribute("role", this.userService.getRole(curr_user.getId(), topicPostMsg.getPbarId()));
         }
 
+        model.addAttribute("user", CurrentUser.getUser());
+        model.addAttribute("postMSg", topicPostMsg);
+        model.addAttribute("pbar", pbarIndexVo);
+        if(topicPostMsg.getIsBlog() != 0){
+            return "/reply_index_blog";
+        }
+        return "/reply/reply_index";
+    }
+
+    @RequestMapping(value = "/post/reply/tp5416{uuId}/rp5416{replyId}")
+    public String getAllReplyPost2(@PathVariable("uuId") Long uuId, @PathVariable("replyId")Long replyId, Model model){
+        TopicPostMsg topicPostMsg = this.topicPostService.getByUid(uuId);
+        PbarIndexVo pbarIndexVo = this.pbarService.getPbarIndex(topicPostMsg.getPbarId());
+        if(pbarIndexVo == null){
+            return "/404";
+        }
+
+        User curr_user = CurrentUser.getUser();
+        if(curr_user != null){
+            model.addAttribute("role", this.userService.getRole(curr_user.getId(), topicPostMsg.getPbarId()));
+        }
+        model.addAttribute("reply", this.replyPostMapper.getReplyById(replyId));
         model.addAttribute("user", CurrentUser.getUser());
         model.addAttribute("postMSg", topicPostMsg);
         model.addAttribute("pbar", pbarIndexVo);

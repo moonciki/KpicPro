@@ -112,7 +112,7 @@
                     </li>
                     <li style="cursor:pointer;" id = "tcy">
                         <span class="glyphicon glyphicon-tags" style="color: #AD5A5A"></span>
-                        &nbsp;&nbsp;团成员
+                        &nbsp;&nbsp;话题成员
                         <span class="lines"></span>
                     </li>
                 </ul>

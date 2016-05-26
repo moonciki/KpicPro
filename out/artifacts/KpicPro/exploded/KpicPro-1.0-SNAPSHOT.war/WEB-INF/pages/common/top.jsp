@@ -12,16 +12,10 @@
 
     <div class="logo" onclick="window.location.href='/'" title="咔哔社区"></div>
 
-    
-    <select class="form-control" style="color:#ff91ba;margin-left:30px;border:2px #ffaad5 solid;margin-top:8px;width:110px;display: inline">
-      <option>搜索话题</option>
-      <option>搜索帖子</option>
-      <option>搜索图集</option>
-      <option>搜索用户</option>
-    </select>
-    <input type="text" class="form-control" id="name"
-           placeholder="请输入搜索内容" style="margin-top:-51px;border:2px #ffaad5 solid;width:360px;display:inline;">
-    <button type="button" class="btn btn-info" style="margin-top:-3px;background-color:#ffaad5;border:1px solid #ffaad5;display: inline"><span class="glyphicon glyphicon-search"></span>&nbsp;搜索</button>
+
+    <input type="text" class="form-control" id="top_kw"
+           placeholder="输入你感兴趣的话题" style="margin-left:30px;margin-top:8px;border:2px #ffaad5 solid;width:460px;display:inline;">
+    <button type="button" id="top_s" class="btn btn-info" style="margin-top:-3px;background-color:#ffaad5;border:1px solid #ffaad5;display: inline"><span class="glyphicon glyphicon-search"></span>&nbsp;搜索</button>
 
     <div class="top_content">
       <c:choose>
@@ -49,8 +43,6 @@
 
           &nbsp;&nbsp;&nbsp;&nbsp;
           <span class="glyphicon glyphicon-heart" style="color:#FF9797"></span>&nbsp;<a href="${pageContext.request.contextPath}/u6514${user.id}/focus/subjects.html" title="我的关注" target="_blank">关注</a>
-
-
         </c:when>
         <c:otherwise>
           <button type="button" class="btn btn-info btn-sm">
@@ -62,7 +54,16 @@
         </c:otherwise>
       </c:choose>
     </div>
-
+<script type="text/javascript">
+  $("#top_s").click(function(){
+    var kw = $("#top_kw").val().trim();
+    if(kw == ""){
+      alert("要输入内容哦~");
+      return;
+    }
+    window.open("/kabi/search/kw_"+kw);
+  });
+</script>
   </div>
 <%--</ol>--%>
 

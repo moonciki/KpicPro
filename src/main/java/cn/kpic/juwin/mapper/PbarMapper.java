@@ -32,4 +32,6 @@ public interface PbarMapper {
 
     void delFocus(Map params);
 
+    List<PbarIndexVo> getSearchResult(Map params);
+
 }
