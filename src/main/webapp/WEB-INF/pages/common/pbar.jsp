@@ -59,6 +59,7 @@
           <c:otherwise>
           </c:otherwise>
         </c:choose>
+
     </center>
 
   </div>

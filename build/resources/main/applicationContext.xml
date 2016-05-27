@@ -177,137 +177,134 @@
     </bean>
 
     <!--主题帖图片信息存储-->
-
     <bean id="topicPostImgQueue" class="org.apache.activemq.command.ActiveMQQueue">
         <constructor-arg index="0" value="topic-post-img" />
     </bean>
-
     <bean id="jmsTopicPostImgContainer"
           class="org.springframework.jms.listener.DefaultMessageListenerContainer">
         <property name="connectionFactory" ref="connectionFactory" />
         <property name="destination" ref="topicPostImgQueue" />
         <property name="messageListener" ref="topicPostImgQueueMessageListener" />
     </bean>
-
     <!-- END -->
 
     <!--回复帖图片信息存储-->
-
     <bean id="replyPostImgQueue" class="org.apache.activemq.command.ActiveMQQueue">
         <constructor-arg index="0" value="reply-post-img" />
     </bean>
-
     <bean id="jmsReplyPostImgContainer"
           class="org.springframework.jms.listener.DefaultMessageListenerContainer">
         <property name="connectionFactory" ref="connectionFactory" />
         <property name="destination" ref="replyPostImgQueue" />
         <property name="messageListener" ref="replyPostImgQueueMessageListener" />
     </bean>
-
     <!-- END -->
 
     <!--发回复帖时需要更新主题帖一些字段-->
-
     <bean id="topicUpdQueue" class="org.apache.activemq.command.ActiveMQQueue">
         <constructor-arg index="0" value="topic-upd-queue" />
     </bean>
-
     <bean id="jmsTopicUpdContainer" class="org.springframework.jms.listener.DefaultMessageListenerContainer">
         <property name="connectionFactory" ref="connectionFactory" />
         <property name="destination" ref="topicUpdQueue" />
         <property name="messageListener" ref="topicUpdQueueMessageListener" />
     </bean>
-
     <!--END-->
 
     <!-- 发短评时需要更新回复帖一些字段 -->
-
     <bean id="replyUpdQueue" class="org.apache.activemq.command.ActiveMQQueue">
         <constructor-arg index="0" value="replyupd-queue" />
     </bean>
-
     <bean id="replyUpdContainer"
           class="org.springframework.jms.listener.DefaultMessageListenerContainer">
         <property name="connectionFactory" ref="connectionFactory" />
         <property name="destination" ref="replyUpdQueue" />
         <property name="messageListener" ref="replyUpdQueueMessageListener" />
     </bean>
-
     <!-- END -->
 
     <!-- 升级相关 -->
-
     <bean id="upGradeQueue" class="org.apache.activemq.command.ActiveMQQueue">
         <constructor-arg index="0" value="upgrade-queue" />
     </bean>
-
     <bean id="upGradePostImgContainer"
           class="org.springframework.jms.listener.DefaultMessageListenerContainer">
         <property name="connectionFactory" ref="connectionFactory" />
         <property name="destination" ref="upGradeQueue" />
         <property name="messageListener" ref="upgradeQueueMessageListener" />
     </bean>
-
     <!-- END -->
 
     <!-- 消息盒子相关 -->
-
     <bean id="userNewsQueue" class="org.apache.activemq.command.ActiveMQQueue">
         <constructor-arg index="0" value="usernews-queue" />
     </bean>
-
     <bean id="userNewsContainer"
           class="org.springframework.jms.listener.DefaultMessageListenerContainer">
         <property name="connectionFactory" ref="connectionFactory" />
         <property name="destination" ref="userNewsQueue" />
         <property name="messageListener" ref="userNewsQueueMessageListener" />
     </bean>
-
     <!-- END -->
 
     <!-- 主题修改相关，主要用于累加主题帖子数量和关注数量 -->
-
     <bean id="pbarUpdQueue" class="org.apache.activemq.command.ActiveMQQueue">
         <constructor-arg index="0" value="pbar-upd-queue" />
     </bean>
-
     <bean id="pbarUpdContainer"
           class="org.springframework.jms.listener.DefaultMessageListenerContainer">
         <property name="connectionFactory" ref="connectionFactory" />
         <property name="destination" ref="pbarUpdQueue" />
         <property name="messageListener" ref="pbarUpdQueueMessageListener" />
     </bean>
-
     <!-- END -->
 
     <!-- 系统消息发送任务 -->
-
     <bean id="systemMsgQueue" class="org.apache.activemq.command.ActiveMQQueue">
         <constructor-arg index="0" value="system-msg-queue" />
     </bean>
-
     <bean id="systemMsgContainer"
           class="org.springframework.jms.listener.DefaultMessageListenerContainer">
         <property name="connectionFactory" ref="connectionFactory" />
         <property name="destination" ref="systemMsgQueue" />
         <property name="messageListener" ref="systemMsgQueueMessageListener" />
     </bean>
-
     <!-- END -->
 
     <!-- 发表博文任务 -->
-
     <bean id="publishBlogQueue" class="org.apache.activemq.command.ActiveMQQueue">
         <constructor-arg index="0" value="publish-blog-queue" />
     </bean>
-
     <bean id="publishBlogContainer"
           class="org.springframework.jms.listener.DefaultMessageListenerContainer">
         <property name="connectionFactory" ref="connectionFactory" />
         <property name="destination" ref="publishBlogQueue" />
         <property name="messageListener" ref="publishBlogQueueMessageListener" />
     </bean>
+    <!-- END -->
 
+    <!-- 节操值操作任务 -->
+    <bean id="userIntegrityUpdQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="user-integrity-queue" />
+    </bean>
+    <bean id="userIntegrityUpdContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="userIntegrityUpdQueue" />
+        <property name="messageListener" ref="userIntegrityUpdQueueMessageListener" />
+    </bean>
+    <!-- END -->
+
+    <!-- 清除举报任务 -->
+    <bean id="tipQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="tip-queue" />
+    </bean>
+    <bean id="tipContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="tipQueue" />
+        <property name="messageListener" ref="tipQueueMessageListener" />
+    </bean>
     <!-- END -->
 
 

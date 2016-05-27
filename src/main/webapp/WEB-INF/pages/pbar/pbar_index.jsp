@@ -116,6 +116,16 @@
                         <span class="lines"></span>
                     </li>
                 </ul>
+                <!-- JiaThis Button BEGIN -->
+                <span style="font-weight: bold;color:#FF359A;font-size: 14px;">分享到：</span>
+                <div class="jiathis_style" style="display: inline-block;margin-top: 20px">
+                    <a class="jiathis_button_qzone" href="http://www.baidu.com"></a>
+                    <a class="jiathis_button_tsina"></a>
+                    <a class="jiathis_button_weixin"></a>
+                    <a class="jiathis_button_tieba"></a>
+                </div>
+                <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+                <!-- JiaThis Button END -->
             </div>
         </div>
     </div>

@@ -8,7 +8,9 @@ import cn.kpic.juwin.jms.sender.UpgradeQueueMessageSender;
 import cn.kpic.juwin.mapper.PbarFocusMapper;
 import cn.kpic.juwin.mapper.PbarManagerApplyMapper;
 import cn.kpic.juwin.mapper.UserFocusMapper;
+import cn.kpic.juwin.mapper.UserIntegrityMapper;
 import cn.kpic.juwin.service.PbarService;
+import cn.kpic.juwin.service.UserIntegrityService;
 import cn.kpic.juwin.service.UserLevelService;
 import cn.kpic.juwin.service.UserService;
 import cn.kpic.juwin.utils.CurrentUser;
@@ -60,6 +62,9 @@ public class UserController {
 
     @Autowired
     private UpgradeQueueMessageSender upgradeQueueMessageSender;
+
+    @Autowired
+    private UserIntegrityService userIntegrityService;
 
     private Logger logger = Logger.getLogger(UserController.class);
 
@@ -482,6 +487,7 @@ public class UserController {
             }
             UserLevel userLevel = this.userLevelService.getUserLevelByUserId(userId);
             model.addAttribute("level", userLevel);
+            model.addAttribute("jc", this.userIntegrityService.getByUserId(userId));
             model.addAttribute("allscore", CurrentUser.getFinalScore(userLevel.getLevel()));
             model.addAttribute("fansNum", userFocusMapper.getFansNum(curr_user.getId()));
             model.addAttribute("flag", 1);

@@ -718,6 +718,9 @@ div{
     width: 722px;
     height:30px;
     height: auto;
+    word-break: break-all;
+    work-wrap: break-word;
+    overflow: hidden;
 }
 
 .pl_user{

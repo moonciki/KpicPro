@@ -1,6 +1,7 @@
 package cn.kpic.juwin.constant;
 
 /**
+ * 缓存的key常量
  * Created by bjsunqinwen on 2016/3/15.
  */
 public class RedisCacheKey {
@@ -13,5 +14,7 @@ public class RedisCacheKey {
     public final static String PBAR_INDEX = "pbar:index";
     /** 用于缓存话题管理页面对当前用户身份的缓存：大管理员&小管理员,每 1 天失效一次*/
     public final static String PBAR_USER_ROLE = "pbar:manager:role";
+    /** 用于缓存用户节操值，每一周失效一次*/
+    public final static String USER_JC_NUM = "user:jiecao";
 
 }

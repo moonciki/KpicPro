@@ -7,6 +7,10 @@
         delete from tb_short_reply where isdel = 1
     </delete>
 
+    <select id="getObj" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.ShortReply">
+        SELECT content,userId FROM tb_short_reply WHERE id = #{id}
+    </select>
+
     <insert id="insert" parameterType="cn.kpic.juwin.domain.ShortReply">
         <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
             SELECT LAST_INSERT_ID()

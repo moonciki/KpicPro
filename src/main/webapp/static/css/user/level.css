@@ -84,3 +84,12 @@
     from {background-position:0 0;}
     to {background-position:0 -64px;}
 }
+
+.jcjdt{
+    width: 600px;
+    height: 25px;
+    float: left;
+    border-radius: 100px;
+    border: 5px solid #F0F0F0;
+    background-image: url("http://7xtmxr.com1.z0.glb.clouddn.com/static/jc.png");
+}

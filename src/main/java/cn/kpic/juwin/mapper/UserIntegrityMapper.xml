@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace的作用在于对sql进行分类化管理，理解sql隔离
+这里注意：如果使用Mapper代理开发的话，那么namespace将会有特殊重要的作用
+ -->
+<!-- 知识点：
+#{}：表示占位符，预编译，不会引起sql注入
+${}：表示拼接符，可能会引起sql注入
+ -->
+<mapper namespace="cn.kpic.juwin.mapper.UserIntegrityMapper">
+
+    <insert id="save" parameterType="cn.kpic.juwin.domain.UserIntegrity">
+        insert into tb_user_integrity (userId, num)
+        values (#{userId}, #{num})
+    </insert>
+
+    <select id="getByUserId" parameterType="java.lang.Long" resultType="java.lang.Integer">
+        SELECT num FROM tb_user_integrity WHERE userId = #{userId}
+    </select>
+
+    <update id="reduceNum" parameterType="java.util.Map">
+        update tb_user_integrity set
+        num = num-#{num,jdbcType=INTEGER}
+        where userId = #{userId,jdbcType=BIGINT}
+    </update>
+
+    <update id="addNum" parameterType="java.util.Map">
+        update tb_user_integrity set
+        num = num+#{num,jdbcType=INTEGER}
+        where userId = #{userId,jdbcType=BIGINT}
+    </update>
+
+</mapper>
