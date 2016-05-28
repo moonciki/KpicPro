@@ -53,8 +53,8 @@ public class ShortTipServiceImpl implements ShortTipService {
         this.tipQueueMessageSender.send(jmsTip);
 
         JmsSystemMsg jmsSystemMsg = new JmsSystemMsg();
-        jmsSystemMsg.setTitle("ÄãµÄ¶ÌÆÀÓÉÓÚÎ¥¹æ±»¹ÜÀíÔ³É¾³ı£¬ÄãµÄ½Ú²ÙÖµ-1");
-        jmsSystemMsg.setContent("Äã·¢²¼µÄÄÚÈİÎª£º<span style=\"color:#FF79BC\">"+shortReply.getContent()+"</span>µÄ¶ÌÆÀ£¬¿ÉÄÜÉæÏÓÎ¥¹æ£¬±»¹ÜÀíÔ³É¾³ı");
+        jmsSystemMsg.setTitle("ä½ çš„çŸ­è¯„ç”±äºè¿è§„è¢«ç®¡ç†çŒ¿åˆ é™¤ï¼Œä½ çš„èŠ‚æ“å€¼-1");
+        jmsSystemMsg.setContent("ä½ å‘å¸ƒçš„å†…å®¹ä¸ºï¼š<span style=\"color:#FF79BC\">"+shortReply.getContent()+"</span>çš„çŸ­è¯„ï¼Œå¯èƒ½æ¶‰å«Œè¿è§„ï¼Œè¢«ç®¡ç†çŒ¿åˆ é™¤");
         jmsSystemMsg.setUserId(shortReply.getUserId());
         this.systemMsgQueueMessageSender.send(jmsSystemMsg);
     }

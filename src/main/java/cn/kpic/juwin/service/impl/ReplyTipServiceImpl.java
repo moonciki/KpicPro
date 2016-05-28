@@ -53,8 +53,8 @@ public class ReplyTipServiceImpl implements ReplyTipService {
         this.tipQueueMessageSender.send(jmsTip);
 
         JmsSystemMsg jmsSystemMsg = new JmsSystemMsg();
-        jmsSystemMsg.setTitle("ÄãµÄ»Ø¸´ÌûÓÉÓÚÎ¥¹æ±»¹ÜÀíÔ³É¾³ı£¬ÄãµÄ½Ú²ÙÖµ-2");
-        jmsSystemMsg.setContent("Äã·¢²¼µÄÄÚÈİÎª£º<span style=\"color:#FF79BC\">"+replyPost.getShortText()+"</span>µÄ»Ø¸´Ìû×Ó£¬¿ÉÄÜÉæÏÓÎ¥¹æ£¬±»¹ÜÀíÔ³É¾³ı");
+        jmsSystemMsg.setTitle("ä½ çš„å›å¤å¸–ç”±äºè¿è§„è¢«ç®¡ç†çŒ¿åˆ é™¤ï¼Œä½ çš„èŠ‚æ“å€¼-2");
+        jmsSystemMsg.setContent("ä½ å‘å¸ƒçš„å†…å®¹ä¸ºï¼š<span style=\"color:#FF79BC\">"+replyPost.getShortText()+"</span>çš„å›å¤å¸–å­ï¼Œå¯èƒ½æ¶‰å«Œè¿è§„ï¼Œè¢«ç®¡ç†çŒ¿åˆ é™¤");
         jmsSystemMsg.setUserId(replyPost.getUserId());
         this.systemMsgQueueMessageSender.send(jmsSystemMsg);
     }

@@ -28,22 +28,63 @@
 
     <div class="user_jdt">
       <div class="user_jdt_unit_01">
-        <span class="glyphicon glyphicon-leaf" style="color:#82D900"></span>
-        &nbsp;&nbsp;距离下次升级进度（<span style="color: #FF60AF"><b>${level.score}</b></span>
-        /
-        <span style="color: #009393"><b>${allscore}</b></span>）
-      </div>
-      <div class="user_jdt_unit_02">
-        <div class="progressbar" data-perc="${(level.score/allscore)*100}">
-          <div class="bar color3"><span></span></div>
-          <div class="label"><span></span></div>
+        <div style="width: 900px;height: auto;min-height: 1px;">
+        <div class="sjjdt_hh" style="width: ${(level.score/allscore)*700}px"></div>
+        <div class="sjjdt_dh"></div>
+          &nbsp;&nbsp;<span style="color:#FF79BC;font-size: 12px;font-weight: bold">升级进度：
+          <span style="color: #64A600">${level.score}</span>
+          /
+          <span style="color: #009393">${allscore}</span></span>
+        </div>
+
+        <div style="width: 700px;height: auto;min-height: 1px;">
+        <div class="sjjdt">
+          <div class="sjjdt_c" style="width: ${(level.score/allscore)*700}px"></div>
+        </div>
         </div>
       </div>
     </div>
 
     <div class="user_jdt">
       <div class="user_jdt_unit_01">
-        <div class="jcjdt"></div>
+        <div style="width: 900px;height: auto;min-height: 1px;">
+          <div class="sjjdt_hh" style="width: ${(jc/100)*700}px"></div>
+          <div class="jcjdt_dh"></div>
+          &nbsp;&nbsp;<span style="color:#FF79BC;font-size: 12px;font-weight: bold">节操值：<span style="font-size: 15px;color:green">${jc}</span></span>
+        </div>
+
+        <div style="width: 700px;height: auto;min-height: 1px;">
+          <div class="jcjdt">
+            <div class="jcjdt_c" style="width: ${(jc/100)*700}px"></div>
+          </div>
+        </div>
+        <div class="jcjdt_js" title="点我查看节操值规则" data-toggle="modal" data-target="#myModal"></div>
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content" style="width: 670px">
+              <div class="modal-header" style="background-color: #FF79BC;color:#FFF;border-radius: 4px">
+                <button type="button" class="close"
+                        data-dismiss="modal" aria-hidden="true">
+                  &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                  节操值的解释
+                </h4>
+              </div>
+              <div class="modal-body">
+                <div class="jcjs_c"></div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default"
+                        data-dismiss="modal">关闭
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 

@@ -53,8 +53,8 @@ public class TopicTipServiceImpl implements TopicTipService {
         this.tipQueueMessageSender.send(jmsTip);
 
         JmsSystemMsg jmsSystemMsg = new JmsSystemMsg();
-        jmsSystemMsg.setTitle("ÄãµÄÖ÷ÌâÌûÓÉÓÚÎ¥¹æ±»¹ÜÀíÔ³É¾³ı£¬ÄãµÄ½Ú²ÙÖµ-3");
-        jmsSystemMsg.setContent("Äã·¢²¼µÄ±êÌâÎª£º<span style=\"color:#FF79BC\">"+topicPost.getTitle()+"</span>µÄÌû×Ó£¬¿ÉÄÜÉæÏÓÎ¥¹æ£¬±»¹ÜÀíÔ³É¾³ı");
+        jmsSystemMsg.setTitle("ä½ çš„ä¸»é¢˜å¸–ç”±äºè¿è§„è¢«ç®¡ç†çŒ¿åˆ é™¤ï¼Œä½ çš„èŠ‚æ“å€¼-3");
+        jmsSystemMsg.setContent("ä½ å‘å¸ƒçš„æ ‡é¢˜ä¸ºï¼š<span style=\"color:#FF79BC\">"+topicPost.getTitle()+"</span>çš„å¸–å­ï¼Œå¯èƒ½æ¶‰å«Œè¿è§„ï¼Œè¢«ç®¡ç†çŒ¿åˆ é™¤");
         jmsSystemMsg.setUserId(topicPost.getUserId());
         this.systemMsgQueueMessageSender.send(jmsSystemMsg);
     }
