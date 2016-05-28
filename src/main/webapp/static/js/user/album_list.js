@@ -106,6 +106,11 @@ function jz(isjz){
 }
 
 function fbtj(title, id){
+    var jc = $("#jc").val();
+    if(jc <= 28){
+        alert("由于您的节操值降至28以下，当前处于禁言状态，无法发布图集");
+        return;
+    }
     $(".fb_pbar").show();
     $("#point_title").append(title);
     $("#album_id").val(id);

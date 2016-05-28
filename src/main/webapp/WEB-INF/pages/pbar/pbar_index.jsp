@@ -167,22 +167,34 @@
 
             <!--发帖子-->
             <div class="main01_01_reply" style="padding: 50px">
+                <c:choose>
+                    <c:when test="${user != null}">
+                        <c:choose>
+                            <c:when test="${jc <= 28}">
+                                <center>由于您的节操值低于<span style="color:#CD3333;font-weight: bold">28</span>，当前处于<span style="color:#CD3333;font-weight: bold">禁言</span>状态，无法发表主题帖</center>
+                            </c:when>
+                            <c:otherwise>
+                                <div class="bjq_btn music_button" id="music_share"></div>
+                                <div class="bjq_btn video_button" id="video_share"></div>
+                                <div class="bjq_btn eif_button" id="eif_share"></div>
 
-                <div class="bjq_btn music_button" id="music_share"></div>
-                <div class="bjq_btn video_button" id="video_share"></div>
-                <div class="bjq_btn eif_button" id="eif_share"></div>
-
-                <div class="xiu" style="font-size: 66px; font-weight:bold; font-family: 微软雅黑">咻~ 已发射！</div>
-                <div class="reply_loading"><div class="loading" style="margin-top:50px;padding-top: 120px;font-family: 微软雅黑;">发送中...</div></div>
-                <span style="font-size: 15px;font-family: 微软雅黑"><span class="glyphicon glyphicon-pencil" style="color:#FF79BC"></span>&nbsp;&nbsp;发表主题帖</span>
-                <br/><br/>
-                <input type="text" class="form-control" style="width: 722px" id="title" placeholder="请输入标题">
-                <br/>
-                    <!--style给定宽度可以影响编辑器的最终宽度-->
-                    <script type="text/plain" id="myEditor" name="content" style="width:722px;height:240px;"></script>
-                <br>
-                <button type="button" id="savePost" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;发射~</button>
-
+                                <div class="xiu" style="font-size: 66px; font-weight:bold; font-family: 微软雅黑">咻~ 已发射！</div>
+                                <div class="reply_loading"><div class="loading" style="margin-top:50px;padding-top: 120px;font-family: 微软雅黑;">发送中...</div></div>
+                                <span style="font-size: 15px;font-family: 微软雅黑"><span class="glyphicon glyphicon-pencil" style="color:#FF79BC"></span>&nbsp;&nbsp;发表主题帖</span>
+                                <br/><br/>
+                                <input type="text" class="form-control" style="width: 722px" id="title" placeholder="请输入标题">
+                                <br/>
+                                <!--style给定宽度可以影响编辑器的最终宽度-->
+                                <script type="text/plain" id="myEditor" name="content" style="width:722px;height:240px;"></script>
+                                <br>
+                                <button type="button" id="savePost" class="btn btn-primary"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;发射~</button>
+                            </c:otherwise>
+                        </c:choose>
+                    </c:when>
+                    <c:otherwise>
+                        <center>您当前还没有登录哦，<a href="${pageContext.request.contextPath}/index" target="_blank">登录</a>后才能发帖~</center>
+                    </c:otherwise>
+                </c:choose>
             </div>
 
 

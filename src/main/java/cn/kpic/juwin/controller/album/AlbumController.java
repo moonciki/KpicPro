@@ -9,6 +9,7 @@ import cn.kpic.juwin.mapper.AlbumMapper;
 import cn.kpic.juwin.mapper.PicMapper;
 import cn.kpic.juwin.service.AlbumService;
 import cn.kpic.juwin.service.PicCommentService;
+import cn.kpic.juwin.service.UserIntegrityService;
 import cn.kpic.juwin.service.UserLevelService;
 import cn.kpic.juwin.utils.CurrentUser;
 import cn.kpic.juwin.utils.StringDeal;
@@ -51,6 +52,9 @@ public class AlbumController {
 
     @Autowired
     private SystemMsgQueueMessageSender systemMsgQueueMessageSender;
+
+    @Autowired
+    private UserIntegrityService userIntegrityService;
 
     @RequiresPermissions({"user"})
     @RequestMapping(value = "/user/make/album", method = RequestMethod.GET)
@@ -99,7 +103,8 @@ public class AlbumController {
         User curr_user = CurrentUser.getUser();
         try{
             model.addAttribute("user", curr_user);
-            model.addAttribute("flag",9);
+            model.addAttribute("flag", 9);
+            model.addAttribute("jc", this.userIntegrityService.getByUserId(curr_user.getId()));
             return "/user/album_list";
         }catch (Exception e){
             e.printStackTrace();

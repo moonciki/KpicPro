@@ -13,6 +13,7 @@ import cn.kpic.juwin.mapper.PbarTypeMapper;
 import cn.kpic.juwin.mapper.TagsMapper;
 import cn.kpic.juwin.qiniu.kpic2.QiniuService;
 import cn.kpic.juwin.service.PbarService;
+import cn.kpic.juwin.service.UserIntegrityService;
 import cn.kpic.juwin.service.UserService;
 import cn.kpic.juwin.utils.CurrentUser;
 import cn.kpic.juwin.utils.StringDeal;
@@ -56,6 +57,9 @@ public class PbarController {
     @Autowired
     private TagsMapper tagsMapper;
 
+    @Autowired
+    private UserIntegrityService userIntegrityService;
+
     @RequiresPermissions({"user"})
     @RequestMapping(value = "/pbar/pbar_add")
     public String add(){
@@ -77,6 +81,7 @@ public class PbarController {
         User curr_user = CurrentUser.getUser();
         if(curr_user != null){
             model.addAttribute("role", this.userService.getRole(curr_user.getId(), pbarId));
+            model.addAttribute("jc",this.userIntegrityService.getByUserId(curr_user.getId()));
         }
 
         model.addAttribute("pbar", pbarIndexVo);
@@ -196,6 +201,7 @@ public class PbarController {
         model.addAttribute("user", user);
         model.addAttribute("flag", 12);
         model.addAttribute("allType", this.pbarTypeMapper.getAllType());
+        model.addAttribute("jc", this.userIntegrityService.getByUserId(user.getId()));
         return "/user/manager_center_pbars_apply";
     }
 

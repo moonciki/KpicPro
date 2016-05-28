@@ -21,6 +21,7 @@
   <%@include file="../common/manage_center_left.jsp"%>
   <div class="pic_big">
     <input type="hidden" value="${user.id}" id="userId"/>
+    <input type="hidden" value="${jc}" id="jc"/>
     <div class="pl_content">
       <span class="badge pull-right" id="closeh" title="关闭" style="background-color: #FF5151; cursor: pointer;"><span class="glyphicon glyphicon-remove"></span></span>
       <input type="hidden" value="0" id="gzht_page"/>

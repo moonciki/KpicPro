@@ -19,13 +19,10 @@
   <link href="${pageContext.request.contextPath}/static/css/user/level.css" rel="stylesheet">
 </head>
 <body>
-<%@include file="../common/top.jsp" %>
+<%@include file="../common/top.jsp"%>
 <div class="main">
-
   <%@include file="../common/user_self_info.jsp"%>
-
   <div class="content">
-
     <div class="user_jdt">
       <div class="user_jdt_unit_01">
         <div style="width: 900px;height: auto;min-height: 1px;">
@@ -70,7 +67,7 @@
                   &times;
                 </button>
                 <h4 class="modal-title" id="myModalLabel">
-                  节操值的解释
+                  <b>有关节操值的解释</b>
                 </h4>
               </div>
               <div class="modal-body">
@@ -142,17 +139,11 @@
           </div>
         </div>
       </div>
-
       <c:if test="${is_login == true}">
-        <button type="button" class="btn btn-info" onclick="window.open('${pageContext.request.contextPath}/user/management/center/edit')"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;编辑个人信息</button>
+        <button type="button" class="btn btn-info" style="margin-top: 15px" onclick="window.open('${pageContext.request.contextPath}/user/management/center/edit')"><span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;编辑个人信息</button>
       </c:if>
-
-
     </div>
-
-
   </div>
-
 </div>
 
 <script type="text/javascript" charset="UTF-8" src="${pageContext.request.contextPath}/static/js/user/user_info.js"></script>

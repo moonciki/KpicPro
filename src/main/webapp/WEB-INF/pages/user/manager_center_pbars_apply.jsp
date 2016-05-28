@@ -35,9 +35,14 @@
     <input type="hidden" id="userId" value="${user.id}"/>
 
     <div class="main_02_content">
-
-          <div class="loading3" style="display:none"></div><br/>
-          <div id="loading4" style="color:#FF79BC;display: none">申请递交中...</div>
+        <c:choose>
+          <c:when test="${jc <= 28}">
+            <br/><br/><br/>
+            <center>由于您的节操值低于<span style="color:#CD3333;font-weight: bold">28</span>，当前处于<span style="color:#CD3333;font-weight: bold">禁言</span>状态，无法申请话题</center>
+          </c:when>
+          <c:otherwise>
+            <div class="loading3" style="display:none"></div><br/>
+            <div id="loading4" style="color:#FF79BC;display: none">申请递交中...</div>
           <span id="pbar_add_success" style="display: none;">
             <center>
               <button type="button" class="btn btn-success" onclick="window.location.href='${pageContext.request.contextPath}/user/all/user/subject'">
@@ -45,151 +50,153 @@
               </button>
             </center>
           </span>
-      <div id="zt">
-          <span class="glyphicon glyphicon-align-center" style="color: #00AEAE"></span>&nbsp;&nbsp;<span style="color:#FF8F59; line-height: 2.5">基本信息</span>
-          <ul class="list-group">
-            <li class="list-group-item">
-              话题名称：<br/><br/>
-              <input type="text" style="width: 500px" id="name" class="form-control" placeholder="请输入话题名称"/>
-            </li>
-            <li class="list-group-item">
-              话题主题色：<br/><br/>
-              <input type="radio" name="color" class="color" value="#FF9797" checked="checked"/>
-              <span class="label" style="background-color: #FF9797">#FF9797</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
+            <div id="zt">
+              <span class="glyphicon glyphicon-align-center" style="color: #00AEAE"></span>&nbsp;&nbsp;<span style="color:#FF8F59; line-height: 2.5">基本信息</span>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  话题名称：<br/><br/>
+                  <input type="text" style="width: 500px" id="name" class="form-control" placeholder="请输入话题名称"/>
+                </li>
+                <li class="list-group-item">
+                  话题主题色：<br/><br/>
+                  <input type="radio" name="color" class="color" value="#FF9797" checked="checked"/>
+                  <span class="label" style="background-color: #FF9797">#FF9797</span>
+                  &nbsp;&nbsp;&nbsp;
 
-              <input type="radio" name="color" class="color" value="#00CACA"/>
-              <span class="label" style="background-color: #00CACA">#00CACA</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="color" class="color" value="#00CACA"/>
+                  <span class="label" style="background-color: #00CACA">#00CACA</span>
+                  &nbsp;&nbsp;&nbsp;
 
-              <input type="radio" name="color" class="color" value="#6A6AFF"/>
-              <span class="label" style="background-color: #6A6AFF">#6A6AFF</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="color" class="color" value="#6A6AFF"/>
+                  <span class="label" style="background-color: #6A6AFF">#6A6AFF</span>
+                  &nbsp;&nbsp;&nbsp;
 
-              <input type="radio" name="color" class="color" value="#82D900"/>
-              <span class="label" style="background-color: #82D900">#82D900</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="color" class="color" value="#82D900"/>
+                  <span class="label" style="background-color: #82D900">#82D900</span>
+                  &nbsp;&nbsp;&nbsp;
 
-              <input type="radio" name="color" class="color" value="#A6A600"/>
-              <span class="label" style="background-color: #A6A600">#A6A600</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="color" class="color" value="#A6A600"/>
+                  <span class="label" style="background-color: #A6A600">#A6A600</span>
+                  &nbsp;&nbsp;&nbsp;
 
-              <input type="radio" name="color" class="color" value="#FF8000"/>
-              <span class="label" style="background-color: #FF8000">#FF8000</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="color" class="color" value="#FF8000"/>
+                  <span class="label" style="background-color: #FF8000">#FF8000</span>
+                  &nbsp;&nbsp;&nbsp;
 
-              <input type="radio" name="color" class="color" value="#B87070"/>
-              <span class="label" style="background-color: #B87070">#B87070</span>
-              <br/><br/>
+                  <input type="radio" name="color" class="color" value="#B87070"/>
+                  <span class="label" style="background-color: #B87070">#B87070</span>
+                  <br/><br/>
 
-              <input type="radio" name="color" class="color" value="#A5A552"/>
-              <span class="label" style="background-color: #A5A552">#A5A552</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="color" class="color" value="#A5A552"/>
+                  <span class="label" style="background-color: #A5A552">#A5A552</span>
+                  &nbsp;&nbsp;&nbsp;
 
-              <input type="radio" name="color" class="color" value="#FF77FF"/>
-              <span class="label" style="background-color: #FF77FF">#FF77FF</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="color" class="color" value="#FF77FF"/>
+                  <span class="label" style="background-color: #FF77FF">#FF77FF</span>
+                  &nbsp;&nbsp;&nbsp;
 
-              <input type="radio" name="color" class="color" value="#BE77FF"/>
-              <span class="label" style="background-color: #BE77FF">#BE77FF</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="color" class="color" value="#BE77FF"/>
+                  <span class="label" style="background-color: #BE77FF">#BE77FF</span>
+                  &nbsp;&nbsp;&nbsp;
 
-              <input type="radio" name="color" class="color" value="#02C874"/>
-              <span class="label" style="background-color: #02C874">#02C874</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="color" class="color" value="#02C874"/>
+                  <span class="label" style="background-color: #02C874">#02C874</span>
+                  &nbsp;&nbsp;&nbsp;
 
-              <input type="radio" name="color" class="color" value="#FFD306"/>
-              <span class="label" style="background-color: #FFD306">#FFD306</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="color" class="color" value="#FFD306"/>
+                  <span class="label" style="background-color: #FFD306">#FFD306</span>
+                  &nbsp;&nbsp;&nbsp;
 
-              <input type="radio" name="color" class="color" value="#B766AD"/>
-              <span class="label" style="background-color: #B766AD">#B766AD</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="color" class="color" value="#B766AD"/>
+                  <span class="label" style="background-color: #B766AD">#B766AD</span>
+                  &nbsp;&nbsp;&nbsp;
 
-              <input type="radio" name="color" class="color" value="#6FB7B7"/>
-              <span class="label" style="background-color: #6FB7B7">#6FB7B7</span>
-              &nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="color" class="color" value="#6FB7B7"/>
+                  <span class="label" style="background-color: #6FB7B7">#6FB7B7</span>
+                  &nbsp;&nbsp;&nbsp;
 
-            </li>
-            <li class="list-group-item">
-              分类：<br/><br/>
-              <select class="form-control" id="type" style="width: 300px">
-                <c:forEach items="${allType}" var="item">
-                  <option value="${item.id}">${item.name}</option>
-                </c:forEach>
-              </select>
+                </li>
+                <li class="list-group-item">
+                  分类：<br/><br/>
+                  <select class="form-control" id="type" style="width: 300px">
+                    <c:forEach items="${allType}" var="item">
+                      <option value="${item.id}">${item.name}</option>
+                    </c:forEach>
+                  </select>
 
-            </li>
-            <li class="list-group-item">
-              请简单描述一下本话题：<br/><br/>
-              <textarea class="form-control" id="msg" rows="3"></textarea>
-            </li>
+                </li>
+                <li class="list-group-item">
+                  请简单描述一下本话题：<br/><br/>
+                  <textarea class="form-control" id="msg" rows="3"></textarea>
+                </li>
 
-          </ul>
+              </ul>
 
-      <span class="glyphicon glyphicon-camera" style="color: #00AEAE"></span>&nbsp;&nbsp;<span style="color:#FF8F59; line-height: 2.5">logo上传</span>
-      <span style="color:#BEBEBE;font-size: 12px"><b> *上传的图片宽度为100px × 100px 最佳，大小小于25K</b></span>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div id="logo_show" style="border: solid 1px #66B3FF; height: 102px;width: 102px;">
-            <span id="scz" style="color:#ffaad5; line-height: 5.5; display: none"><center>上传中..</center></span>
-          </div>
-          <br/>
-          &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" id="logo_upload" class="btn btn-info"><span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;上传</button>
-          <input type="hidden" id="logo" value=""/>
-        </div>
-      </div>
-
-
-      <span class="glyphicon glyphicon-tags" style="color: #00AEAE"></span>&nbsp;&nbsp;<span style="color:#FF8F59; line-height: 2.5">请为该话题加一些标签</span>
-      <span style="color:#BEBEBE;font-size: 12px"><b> * 每个话题最多能加4个标签</b></span>
-      <div class="panel panel-default">
-
-        <input type="hidden" value="" id="tag_value"/>
-
-        <div class="panel-body">
-          <span id="tags_show"></span><span class="label" id="tag_close" style="display:none; background-color: #ffaad5; cursor: pointer">重新设置</span><br/>
-          <br/>
-          <input type="text" class="form-control" id="tags" placeholder="请输入标签名" style="width: 300px; float: left;">
-          &nbsp;&nbsp;
-          <button type="button" id="add_tags" class="btn btn-success">添加</button>
-          <br/>
-          <br/>
-
-          <input type="radio" name="tag_color" class="tag_color" checked="checked" value="#ff7575"/>
-          <span class="label" style="background-color: #ff7575">#ff7575</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-
-          <input type="radio" name="tag_color" class="tag_color" value="#FF8000"/>
-          <span class="label" style="background-color: #FF8000">#FF8000</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-
-          <input type="radio" name="tag_color" class="tag_color" value="#0066cc"/>
-          <span class="label" style="background-color: #0066cc">#0066cc</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-
-          <input type="radio" name="tag_color" class="tag_color" value="#A6A600"/>
-          <span class="label" style="background-color: #A6A600">#A6A600</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-
-          <input type="radio" name="tag_color" class="tag_color" value="#00AEAE"/>
-          <span class="label" style="background-color: #00AEAE">#00AEAE</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-
-          <input type="radio" name="tag_color" class="tag_color" value="#7274A7"/>
-          <span class="label" style="background-color: #7274A7">#7274A7</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-
-          <input type="radio" name="tag_color" class="tag_color" value="#FF60AF"/>
-          <span class="label" style="background-color: #FF60AF">#FF60AF</span>
-          &nbsp;&nbsp;&nbsp;&nbsp;
+              <span class="glyphicon glyphicon-camera" style="color: #00AEAE"></span>&nbsp;&nbsp;<span style="color:#FF8F59; line-height: 2.5">logo上传</span>
+              <span style="color:#BEBEBE;font-size: 12px"><b> *上传的图片宽度为100px × 100px 最佳，大小小于25K</b></span>
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <div id="logo_show" style="border: solid 1px #66B3FF; height: 102px;width: 102px;">
+                    <span id="scz" style="color:#ffaad5; line-height: 5.5; display: none"><center>上传中..</center></span>
+                  </div>
+                  <br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<button type="button" id="logo_upload" class="btn btn-info"><span class="glyphicon glyphicon-cloud-upload"></span>&nbsp;上传</button>
+                  <input type="hidden" id="logo" value=""/>
+                </div>
+              </div>
 
 
-        </div>
-      </div>
+              <span class="glyphicon glyphicon-tags" style="color: #00AEAE"></span>&nbsp;&nbsp;<span style="color:#FF8F59; line-height: 2.5">请为该话题加一些标签</span>
+              <span style="color:#BEBEBE;font-size: 12px"><b> * 每个话题最多能加4个标签</b></span>
+              <div class="panel panel-default">
 
-      <button type="button" id="save_pbar" class="btn btn-success">递交申请</button>
-      </div>
+                <input type="hidden" value="" id="tag_value"/>
+
+                <div class="panel-body">
+                  <span id="tags_show"></span><span class="label" id="tag_close" style="display:none; background-color: #ffaad5; cursor: pointer">重新设置</span><br/>
+                  <br/>
+                  <input type="text" class="form-control" id="tags" placeholder="请输入标签名" style="width: 300px; float: left;">
+                  &nbsp;&nbsp;
+                  <button type="button" id="add_tags" class="btn btn-success">添加</button>
+                  <br/>
+                  <br/>
+
+                  <input type="radio" name="tag_color" class="tag_color" checked="checked" value="#ff7575"/>
+                  <span class="label" style="background-color: #ff7575">#ff7575</span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+
+                  <input type="radio" name="tag_color" class="tag_color" value="#FF8000"/>
+                  <span class="label" style="background-color: #FF8000">#FF8000</span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+
+                  <input type="radio" name="tag_color" class="tag_color" value="#0066cc"/>
+                  <span class="label" style="background-color: #0066cc">#0066cc</span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+
+                  <input type="radio" name="tag_color" class="tag_color" value="#A6A600"/>
+                  <span class="label" style="background-color: #A6A600">#A6A600</span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+
+                  <input type="radio" name="tag_color" class="tag_color" value="#00AEAE"/>
+                  <span class="label" style="background-color: #00AEAE">#00AEAE</span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+
+                  <input type="radio" name="tag_color" class="tag_color" value="#7274A7"/>
+                  <span class="label" style="background-color: #7274A7">#7274A7</span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+
+                  <input type="radio" name="tag_color" class="tag_color" value="#FF60AF"/>
+                  <span class="label" style="background-color: #FF60AF">#FF60AF</span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+
+
+                </div>
+              </div>
+
+              <button type="button" id="save_pbar" class="btn btn-success">递交申请</button>
+            </div>
+          </c:otherwise>
+        </c:choose>
     </div>
   </div>
 </div>

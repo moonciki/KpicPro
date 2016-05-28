@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by bjsunqinwen on 2016/5/27.
  */
@@ -27,6 +29,7 @@ public class UserIntegrityServiceImplCache extends UserIntegrityServiceImpl {
             Integer num = super.getByUserId(userId);
             if(num != null){
                 redisTemplate.boundValueOps(key).set(num+"");
+                redisTemplate.expire(key, 7, TimeUnit.DAYS);
             }else{
                 return null;
             }

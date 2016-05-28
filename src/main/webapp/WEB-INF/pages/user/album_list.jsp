@@ -18,6 +18,7 @@
 <body>
 <%@include file="../common/top.jsp" %>
 <input type="hidden" id="ddddd" value="${user.id}"/>
+<input type="hidden" id="jc" value="${jc}"/>
 <div class="main">
   <%@include file="../common/manage_center_left.jsp"%>
   <div class="pic_big fb_pbar">

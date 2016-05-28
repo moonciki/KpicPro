@@ -7,10 +7,7 @@ import cn.kpic.juwin.domain.vo.*;
 import cn.kpic.juwin.jms.sender.SystemMsgQueueMessageSender;
 import cn.kpic.juwin.jms.sender.UpgradeQueueMessageSender;
 import cn.kpic.juwin.mapper.ReplyPostMapper;
-import cn.kpic.juwin.service.PbarService;
-import cn.kpic.juwin.service.ReplyPostService;
-import cn.kpic.juwin.service.TopicPostService;
-import cn.kpic.juwin.service.UserService;
+import cn.kpic.juwin.service.*;
 import cn.kpic.juwin.utils.CurrentUser;
 import org.apache.log4j.Logger;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -42,6 +39,9 @@ public class ReplyPostController {
     private ReplyPostMapper replyPostMapper;
 
     @Autowired
+    private UserIntegrityService userIntegrityService;
+
+    @Autowired
     private UserService userService;
 
     @Autowired
@@ -64,11 +64,12 @@ public class ReplyPostController {
         User curr_user = CurrentUser.getUser();
         if(curr_user != null){
             model.addAttribute("role", this.userService.getRole(curr_user.getId(), topicPostMsg.getPbarId()));
+            model.addAttribute("jc",this.userIntegrityService.getByUserId(curr_user.getId()));
         }
-
-        model.addAttribute("user", CurrentUser.getUser());
+        model.addAttribute("user", curr_user);
         model.addAttribute("postMSg", topicPostMsg);
         model.addAttribute("pbar", pbarIndexVo);
+
         if(topicPostMsg.getIsBlog() != 0){
             return "/reply_index_blog";
         }

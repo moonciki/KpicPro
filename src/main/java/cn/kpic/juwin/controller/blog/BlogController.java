@@ -7,6 +7,7 @@ import cn.kpic.juwin.domain.vo.JmsPublishBlog;
 import cn.kpic.juwin.jms.sender.PublishBlogQueueMessageSender;
 import cn.kpic.juwin.mapper.BlogMapper;
 import cn.kpic.juwin.service.BlogService;
+import cn.kpic.juwin.service.UserIntegrityService;
 import cn.kpic.juwin.utils.CurrentUser;
 import cn.kpic.juwin.utils.StringDeal;
 import org.apache.log4j.Logger;
@@ -40,6 +41,9 @@ public class BlogController {
 
     @Autowired
     private PublishBlogQueueMessageSender publishBlogQueueMessageSender;
+
+    @Autowired
+    private UserIntegrityService userIntegrityService;
 
     @RequiresPermissions({"user"})
     @RequestMapping(value = "/user/make/blog")
@@ -93,6 +97,7 @@ public class BlogController {
         try{
             model.addAttribute("user", curr_user);
             model.addAttribute("flag",29);
+            model.addAttribute("jc",this.userIntegrityService.getByUserId(curr_user.getId()));
             return "/user/blog_list";
         }catch (Exception e){
             e.printStackTrace();
