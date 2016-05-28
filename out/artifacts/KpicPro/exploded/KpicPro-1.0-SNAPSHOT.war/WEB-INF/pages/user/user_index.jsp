@@ -41,6 +41,11 @@
       </div>
     </div>
 
+    <div class="user_jdt">
+      <div class="user_jdt_unit_01">
+        <div class="jcjdt"></div>
+      </div>
+    </div>
 
     <div class="user_info">
       <div class="user_info_content">
