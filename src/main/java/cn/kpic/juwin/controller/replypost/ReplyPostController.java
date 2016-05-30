@@ -6,6 +6,7 @@ import cn.kpic.juwin.domain.User;
 import cn.kpic.juwin.domain.vo.*;
 import cn.kpic.juwin.jms.sender.SystemMsgQueueMessageSender;
 import cn.kpic.juwin.jms.sender.UpgradeQueueMessageSender;
+import cn.kpic.juwin.jms.sender.UserIntegrityUpdQueueMessageSender;
 import cn.kpic.juwin.mapper.ReplyPostMapper;
 import cn.kpic.juwin.service.*;
 import cn.kpic.juwin.utils.CurrentUser;
@@ -52,6 +53,9 @@ public class ReplyPostController {
 
     @Autowired
     private SystemMsgQueueMessageSender systemMsgQueueMessageSender;
+
+    @Autowired
+    private UserIntegrityUpdQueueMessageSender userIntegrityUpdQueueMessageSender;
 
     @RequestMapping(value = "/post/reply/tp5416{uuId}")
     public String getAllReplyPost(@PathVariable("uuId") Long uuId, Model model){
@@ -203,10 +207,13 @@ public class ReplyPostController {
                 /** 帖子加精，经验值 +10*/
                 upgradeQueueMessageSender.send(new JmsUpgrade(userId, 10));//经验+10
                 JmsSystemMsg jmsSystemMsg = new JmsSystemMsg();
-                jmsSystemMsg.setTitle("您发表的帖子被加精，经验+10");
+                jmsSystemMsg.setTitle("您发表的帖子被加精，经验+10，节操值+3");
                 jmsSystemMsg.setContent("<a href=\"/post/reply/tp5416"+id+"\" target=\"_blank\">点击查看详情</a>");
                 jmsSystemMsg.setUserId(userId);
                 this.systemMsgQueueMessageSender.send(jmsSystemMsg);
+
+                JmsUserIntegrityUpd jmsUserIntegrityUpd = new JmsUserIntegrityUpd(userId, 3, 1);
+                this.userIntegrityUpdQueueMessageSender.send(jmsUserIntegrityUpd);
             }
             return true;
         }catch (Exception e){
