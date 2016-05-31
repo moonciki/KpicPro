@@ -98,6 +98,9 @@ $().ready(function(){
                     }else{
                         addhtml+="<img src=\""+data.list[key].avater+"?imageView2/1/w/50/h/50/q/95\" class=\"manager_avater\"/>"
                     }
+                    if(data.isjm == 1){
+                        addhtml+="<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
+                    }
                     addhtml+="<div style=\"margin-left: 50px;margin-top: -1px\"><span style=\"margin-left: 10px; font-size: 10px;line-height: 1.8;font-family: 微软雅黑\"><a href=\"/user/u6514"+data.list[key].id+"/index.html\" target = \"_blank\">"+
                         data.list[key].name+"</a>&nbsp;&nbsp;<span class=\"badge\" onclick=\"sx("+data.list[key].id+")\" style=\"cursor:pointer;background-color: #46A3FF;margin-bottom: 5px\">私信</span></span>"+
                     "<div class=\"progress progress-striped active\" style=\"border: 2px solid #FF9797;\"><div class=\"progress-bar progress-bar-warning\" role=\"progressbar\"aria-valuenow=\"60\" aria-valuemin=\"0\" aria-valuemax=\"100\"style=\"width: "+(data.list[key].score/allscore)*100+"%;\">"+
@@ -228,6 +231,9 @@ $().ready(function(){
                     }else{
                         addhtml += "<img src='" + data[key].avater + "?imageView2/1/w/70/h/70/q/95' class='index_pic'/>";
                     }
+                    if(data[key].isjm == 1) {
+                        addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
+                    }
 
                     addhtml += "</div><div class='main01_01_user_reply'></div><div class=\"main01_01\"><div class=\"main01_01_01\">"
                     if(data[key].isBlog == 1){
@@ -300,7 +306,9 @@ $().ready(function(){
                     }else{
                         addhtml += "<img src='" + data[key].avater + "?imageView2/1/w/70/h/70/q/95' class='index_pic'/>";
                     }
-
+                    if(data[key].isjm == 1) {
+                        addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
+                    }
                     addhtml += "</div><div class='main01_01_user_reply'></div><div class=\"main01_01\"><div class=\"main01_01_01\">"
                     if(data[key].isBlog == 1){
                         addhtml+="<span class=\"label label-default bo\">文</span>&nbsp;<a class=\"clj_blog\" href=\"/post/reply/at5416" + data[key].id + "\" target=\"_blank\">"
@@ -494,7 +502,9 @@ $().ready(function(){
                     }else{
                         addhtml += "<img src='" + data[key].avater + "?imageView2/1/w/70/h/70/q/95' class='index_pic'/>";
                     }
-
+                    if(data[key].isjm == 1) {
+                        addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
+                    }
                     addhtml += "</div><div class='main01_01_user_reply'></div><div class=\"main01_01\"><div class=\"main01_01_01\">"
 
                     addhtml+="<span class=\"label label-default tu\">图</span>&nbsp;<a href=\"/album/ab1654" + data[key].id + "\" target=\"_blank\" style=\"font-size: 15px;font-family:微软雅黑\">"
@@ -566,7 +576,10 @@ $().ready(function(){
                         }else{
                             addhtml+="<img src=\""+data[key].avater+"?imageView2/1/w/100/h/100/q/95\" class=\"pbar_users_pic\"/>";
                         }
-                        addhtml+="</div><div class='pbar_users_02'>昵称：<a href=\"/user/u6514"+data[key].id+"/index.html\" target = \"_blank\">"+data[key].name+"</a>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"badge\" onclick=\"sx("+data[key].id+")\" style=\"cursor:pointer;background-color: #46A3FF;margin-bottom: 5px\">私信</span><br/>"+
+                    if(data[key].isjm == 1) {
+                        addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
+                    }
+                    addhtml+="</div><div class='pbar_users_02'>昵称：<a href=\"/user/u6514"+data[key].id+"/index.html\" target = \"_blank\">"+data[key].name+"</a>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"badge\" onclick=\"sx("+data[key].id+")\" style=\"cursor:pointer;background-color: #46A3FF;margin-bottom: 5px\">私信</span><br/>"+
 						"性别："
 						if(data[key].sex == 0){
 							addhtml+="<span class=\"boy\">♂</span>";
@@ -683,6 +696,11 @@ function sx(userId){
         alert("请先登录~");
         return;
     }
+    var jc = $("#jc").val();
+    if(jc <= 14){
+        alert("您目前处于禁言状态，无法私信任何人~");
+        return;
+    }
     if(userId == login_user){
         alert("自己不能给自己写私信哦~(⊙_⊙)~");
         return;
@@ -778,7 +796,7 @@ $.post("/user/pbar/manager", {'userId':pbar_userId}, function(data){
             }else{
                 addhtml+="<img src=\""+data.avater+"?imageView2/1/w/100/h/100/q/95\" class=\"userbigpic\"/>";
             }
-        addhtml+="</center><br/><br/><center>昵称：<a href=\"/user/u6514"+data.id+"/index.html\" target = \"_blank\">"+data.name+"</a>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"badge\" onclick=\"sx("+data.id+")\" style=\"cursor:pointer;background-color: #46A3FF;margin-bottom: 5px\">私信</span></center>";
+    addhtml+="</center><br/><br/><center>昵称：<a href=\"/user/u6514"+data.id+"/index.html\" target = \"_blank\">"+data.name+"</a>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"badge\" onclick=\"sx("+data.id+")\" style=\"cursor:pointer;background-color: #46A3FF;margin-bottom: 5px\">私信</span></center>";
     $("#big_manager").append(addhtml);
 });
 

@@ -42,26 +42,31 @@
       <span style="color:#00AEAE;font-size:16px"><span class="glyphicon glyphicon-info-sign" style="color:#FF60AF"></span>
         建议：上传图片前尽量用专业工具美化并处理一下图片，并保证单张图片大小不超过1M
       </span></div>
-      <ul class="list-group">
-        <input type="hidden" style="width: 500px" id="id" value="${user.id}"/>
-        <li class="list-group-item">图集名称
-          <input type="text" style="width: 500px" id="name" class="form-control"/>
-        </li>
-        <li class="list-group-item">图集描述
-          <textarea id="msg" class="form-control" rows="3"></textarea>
-        </li>
-        <li class="list-group-item">封面：
-          <input type="hidden" id="imageUrl" value=""/>
-          <button type="button" id="fm_upload" class="btn btn-primary">
-            <span class="glyphicon glyphicon-cloud-upload"></span>
-            上传封面
-          </button>
-          &nbsp;&nbsp;&nbsp;
+      <c:choose>
+        <c:when test="${jc <= 28}">
+          <center>目前您的节操值低于<span style="font-weight: bold;color:red">28</span>，处于禁言状态，无法制作图集</center>
+        </c:when>
+        <c:otherwise>
+          <ul class="list-group">
+            <input type="hidden" style="width: 500px" id="id" value="${user.id}"/>
+            <li class="list-group-item">图集名称
+              <input type="text" style="width: 500px" id="name" class="form-control"/>
+            </li>
+            <li class="list-group-item">图集描述
+              <textarea id="msg" class="form-control" rows="3"></textarea>
+            </li>
+            <li class="list-group-item">封面：
+              <input type="hidden" id="imageUrl" value=""/>
+              <button type="button" id="fm_upload" class="btn btn-primary">
+                <span class="glyphicon glyphicon-cloud-upload"></span>
+                上传封面
+              </button>
+              &nbsp;&nbsp;&nbsp;
           <span style="color:#ff7575">
             <span class="glyphicon glyphicon-info-sign"></span>
             如果不上传则默认图集第一张图片为封面
           </span><br/>
-          <span id="fm_url"></span>
+              <span id="fm_url"></span>
 
           <span id="upload_loading1" style="display: none">
           <center>
@@ -70,20 +75,20 @@
             <span style="font-weight: bold;color:#FF60AF">上传中...</span>
           </center></span>
 
-        </li>
-      </ul>
+            </li>
+          </ul>
 
 
 
-      当前第
-      <span id="already_num" style="font-size: 20px;font-weight: bold;color:#ff7575;font-style: italic">1</span>
-      张图片
-      <div class="panel panel-default">
-        <div class="panel-body">
-          请输入图片描述：
-          <textarea class="form-control" id="picContent_1" rows="3"></textarea>
-          <br/>
-          <center>
+          当前第
+          <span id="already_num" style="font-size: 20px;font-weight: bold;color:#ff7575;font-style: italic">1</span>
+          张图片
+          <div class="panel panel-default">
+            <div class="panel-body">
+              请输入图片描述：
+              <textarea class="form-control" id="picContent_1" rows="3"></textarea>
+              <br/>
+              <center>
             <span id="picBtn_1">
               <button id="picBtn1" type="button" class="btn btn-info">
                 <span class="glyphicon glyphicon-cloud-upload"></span>
@@ -93,9 +98,9 @@
             <span id="picUrl_1">
               <input id="picUrl_1_content" value="" type="hidden"/>
             </span>
-          </center>
-        </div>
-      </div>
+              </center>
+            </div>
+          </div>
 
       <span id="pic_xl">
 
@@ -103,28 +108,30 @@
 
       </span>
 
-      <center>
+          <center>
         <span style="font-size: 15px;">
         还可以添加
         <span id="sy_num" style="font-size: 20px;font-weight: bold;color:#ff7575;font-style: italic">29</span>
         张图片
         </span>
-      </center>
-      <br/>
-      <button type="button" id="jxtj" class="btn btn-success btn-lg btn-block">
-        <span class="glyphicon glyphicon-camera"></span>
-        继续添加图片
-      </button>
+          </center>
+          <br/>
+          <button type="button" id="jxtj" class="btn btn-success btn-lg btn-block">
+            <span class="glyphicon glyphicon-camera"></span>
+            继续添加图片
+          </button>
 
-      <button type="button" id="done" class="btn btn-primary btn-lg btn-block">
-        <span class="glyphicon glyphicon-send"></span>
-        完成
-      </button>
+          <button type="button" id="done" class="btn btn-primary btn-lg btn-block">
+            <span class="glyphicon glyphicon-send"></span>
+            完成
+          </button>
 
 
 
-      <input type="hidden" value="1" id="already_numt"/>
-      <input type="hidden" value="29" id="sy_numt"/>
+          <input type="hidden" value="1" id="already_numt"/>
+          <input type="hidden" value="29" id="sy_numt"/>
+        </c:otherwise>
+      </c:choose>
       </span>
     </div>
   </div>

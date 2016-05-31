@@ -1,6 +1,7 @@
 package cn.kpic.juwin.controller.replypost;
 
 import cn.kpic.juwin.domain.ReplyPost;
+import cn.kpic.juwin.domain.SystemMsg;
 import cn.kpic.juwin.domain.TopicPost;
 import cn.kpic.juwin.domain.User;
 import cn.kpic.juwin.domain.vo.*;

@@ -193,13 +193,13 @@
     <c:when test="${flag == 30}">
       <div class="cd_unit_now">
         <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
-        写博文
+        写文章
       </div>
     </c:when>
     <c:otherwise>
       <div class="cd_unit" onclick="window.location.href='${pageContext.request.contextPath}/user/make/blog'">
         <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
-        写博文
+        写文章
       </div>
     </c:otherwise>
   </c:choose>

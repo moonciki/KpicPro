@@ -79,7 +79,7 @@
   <select id="getAllReplyByTopicId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.ReplyPostList">
     SELECT trp.id, trp.content, trp.replyNum,
     trp.userId, trp.createTime, tu.name AS userName,
-    tu.userPic AS userPic, tu.avater AS avater
+    tu.userPic AS userPic, tu.avater AS avater, tu.isjm
     FROM tb_reply_post trp
     JOIN tb_user tu ON trp.userId = tu.id
     WHERE trp.topicId = #{topicId} AND trp.isdel = 0 ORDER BY trp.createTime LIMIT #{page},10

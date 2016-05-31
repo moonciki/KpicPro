@@ -27,7 +27,8 @@
       tu.name AS userName,
       ta.music,
       ta.createTime,
-      tpa.createTime AS publishTime
+      tpa.createTime AS publishTime,
+      tu.isjm
       FROM tb_pbar_album tpa
       JOIN tb_album ta ON tpa.albumId = ta.id
       JOIN tb_user tu ON ta.userId = tu.id

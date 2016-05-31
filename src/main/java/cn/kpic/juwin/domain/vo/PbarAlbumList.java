@@ -31,6 +31,8 @@ public class PbarAlbumList {
 
     private Date publishTime;
 
+    private int isjm;
+
 
     public Long getId() {
         return id;
@@ -126,5 +128,13 @@ public class PbarAlbumList {
 
     public void setPublishTime(Date publishTime) {
         this.publishTime = publishTime;
+    }
+
+    public int getIsjm() {
+        return isjm;
+    }
+
+    public void setIsjm(int isjm) {
+        this.isjm = isjm;
     }
 }

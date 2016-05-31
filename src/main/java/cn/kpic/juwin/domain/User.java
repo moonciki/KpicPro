@@ -20,6 +20,7 @@ public class User implements java.io.Serializable{
     private String address;
     private String tag;
     private String avater;
+    private int isjm;
 
     public Long getId() {
         return id;
@@ -131,5 +132,13 @@ public class User implements java.io.Serializable{
 
     public void setBirth(String birth) {
         this.birth = birth;
+    }
+
+    public int getIsjm() {
+        return isjm;
+    }
+
+    public void setIsjm(int isjm) {
+        this.isjm = isjm;
     }
 }

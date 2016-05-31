@@ -23,6 +23,8 @@ public class ReplyPostList {
 
     private String avater;
 
+    private int isjm;
+
     private Boolean isTip = false;
 
     public Long getId() {
@@ -95,5 +97,13 @@ public class ReplyPostList {
 
     public void setIsTip(Boolean isTip) {
         this.isTip = isTip;
+    }
+
+    public int getIsjm() {
+        return isjm;
+    }
+
+    public void setIsjm(int isjm) {
+        this.isjm = isjm;
     }
 }

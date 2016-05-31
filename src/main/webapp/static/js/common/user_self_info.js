@@ -75,6 +75,11 @@ function sx(userId){
         alert("要先登录哦~");
         return;
     }
+    var jc = $("#jc").val();
+    if(jc <= 14){
+        alert("您目前处于禁言状态，无法私信任何人~");
+        return;
+    }
     $("#sx_userId").val(userId);
     $("#pl_sx").show();
 }

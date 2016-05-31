@@ -35,6 +35,8 @@ public class TopicPostMsg {
 
     private Long userId;
 
+    private int isjm;
+
     private Boolean isTip = false;
 
     public Long getId() {
@@ -155,5 +157,13 @@ public class TopicPostMsg {
 
     public void setIsBlog(Integer isBlog) {
         this.isBlog = isBlog;
+    }
+
+    public int getIsjm() {
+        return isjm;
+    }
+
+    public void setIsjm(int isjm) {
+        this.isjm = isjm;
     }
 }

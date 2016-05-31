@@ -152,7 +152,10 @@
             <img src="${postMSg.userPic}?size=89" class="userpic"/>
           </c:otherwise>
         </c:choose>
-      </div>
+        <c:if test="${postMSg.isjm == 1}">
+          <div class="manager_avater2"><img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/37/h/27/q/95/"/></div>
+        </c:if>
+        </div>
       <c:choose>
         <c:when test="${user.avater != null }">
           <input id="userPic" type="hidden" value="${user.avater}?imageView2/1/w/70/h/70/q/95"/>
@@ -247,6 +250,7 @@
               <img src="${reply.avater}?imageView2/1/w/70/h/70/q/95" class="userpic_hpost"/>
             </c:otherwise>
           </c:choose>
+
         </div><div class="main01_01_user_reply" style = "border-color:#fff #FF79BC #fff #fff;margin-top: 23px"></div><div class="reply_body_main_02" style="border: 1px solid #FF79BC;background-color: #FFECF5">
           <div class="pf3"><span class="glyphicon glyphicon-triangle-left" style="color:#FFECF5"></span></div>
           <div class="reply_body_main_02_01">

@@ -58,7 +58,7 @@
         </div>
     </center>
 </div>
-
+<input type="hidden" id="jc" value="${jc}"/>
 <div class="pic_big" id="pl_sx">
     <div class="pic_big_tip">
         <span style="font-size: 16px;font-family: 微软雅黑"><b>私信发送</b></span>

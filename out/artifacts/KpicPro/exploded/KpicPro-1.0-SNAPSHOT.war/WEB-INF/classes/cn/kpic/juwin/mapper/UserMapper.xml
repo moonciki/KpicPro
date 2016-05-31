@@ -48,6 +48,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 			<if test="sex != null">sex = #{sex},</if>
 			<if test="birth != null">birth = #{birth},</if>
 			<if test="postNum != null">postNum = #{postNum},</if>
+			<if test="isjm != null">isjm = #{isjm},</if>
 		</trim>
 		where id = #{id,jdbcType=BIGINT}
 	</update>
@@ -59,7 +60,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		tu.userPic,
 		tu.avater,
 		tul.level,
-		tul.score
+		tul.score,
+		tu.isjm
 		FROM tb_user_pbar tup
 		JOIN tb_user tu ON tup.userId = tu.id
 		JOIN tb_user_level tul ON tul.userId = tu.id
@@ -83,7 +85,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		tu.avater,
 		tu.userPic,
 		tul.level,
-		tul.score
+		tul.score,
+		tu.isjm
 		FROM
 		tb_pbar_focus tpf
 		JOIN tb_user tu ON tpf.userId = tu.id
@@ -95,6 +98,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 
 	<update id="updPostNum" parameterType="java.lang.Long">
 		update tb_user set postNum = postNum + 1 where id = #{id}
+	</update>
+
+	<update id="jm" parameterType="java.lang.Long">
+		update tb_user set isjm = 1 where id = #{id}
 	</update>
 
 	

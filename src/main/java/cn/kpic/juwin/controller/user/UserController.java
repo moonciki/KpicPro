@@ -28,6 +28,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.DecimalFormat;
 import java.util.*;
 
 /**
@@ -264,6 +265,7 @@ public class UserController {
                     model.addAttribute("user2", curr_user);
                     model.addAttribute("is_login", false);
                 }
+                model.addAttribute("jc", this.userIntegrityService.getByUserId(userId));
             } else {
                 model.addAttribute("is_login", false);
                 curr_user = this.userService.getUserById(userId);
@@ -295,6 +297,7 @@ public class UserController {
                     model.addAttribute("user2", curr_user);
                     model.addAttribute("is_login", false);
                 }
+                model.addAttribute("jc", this.userIntegrityService.getByUserId(userId));
             } else {
                 model.addAttribute("is_login", false);
                 curr_user = this.userService.getUserById(userId);
@@ -314,11 +317,8 @@ public class UserController {
     @ResponseBody
     public List<Pbar> getPbarFocus(Long userId, @RequestParam(value = "page", defaultValue = "0", required = true) int page) {
         try {
-
             List<Pbar> result = this.pbarService.getAllPbarFocus(userId, page * 10);
-
             return result;
-
         } catch (Exception e) {
             e.printStackTrace();
             return null;

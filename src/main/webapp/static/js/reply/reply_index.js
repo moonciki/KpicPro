@@ -50,6 +50,9 @@ $().ready(function(){
                       }else{
                           addHtml+="<img src=\""+data[key].avater+"?imageView2/1/w/70/h/70/q/95\" class=\"userpic_hpost\"/>"
                       }
+                if(data[key].isjm){
+                    addHtml+="<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\" title='节操达人'/></div>"
+                }
                     addHtml+="</div><div class=\"main01_01_user_reply\" style = \"margin-top: 23px\"></div><div class=\"reply_body_main_02\">"+
                     "<div class=\"pf3\"><span class=\"glyphicon glyphicon-triangle-left\"></span></div>"+
                     "<div class=\"reply_body_main_02_01\">"+
@@ -159,6 +162,9 @@ $().ready(function(){
                         }else{
                             addHtml+="<img src=\""+data[key].avater+"?imageView2/1/w/70/h/70/q/95\" class=\"userpic_hpost\"/>"
                         }
+                    if(data[key].isjm){
+                        addHtml+="<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\" title='节操达人'/></div>"
+                    }
                         addHtml+="</div><div class=\"main01_01_user_reply\" style = \"margin-top: 23px\"></div><div class=\"reply_body_main_02\">"+
                         "<div class=\"pf3\"><span class=\"glyphicon glyphicon-triangle-left\"></span></div>"+
                         "<div class=\"reply_body_main_02_01\">"+

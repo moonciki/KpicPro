@@ -47,6 +47,7 @@ body{
 }
 
 .index_pic{
+    position: absolute;
     border-radius: 10px;
     border: solid 2px #FF95CA;
     box-shadow:0px 0px 8px #FF95CA;
@@ -398,7 +399,12 @@ ul.parent li:hover .lines,.topbar li.current .lines {
     border:3px solid #FF9797;
     position: absolute;
     z-index: 1;
-    border-radius: 100px
+    border-radius: 100px;
+}
+.manager_avater2{
+    position: absolute;
+    z-index: 1002;
+    border-radius: 100px;
 }
 
 .main01_01_img_num{
@@ -668,7 +674,6 @@ div{
 }
 
 .userpic_hpost{
-
     border-radius: 10px;
     border: solid 2px #FF95CA;
     box-shadow:0px 0px 8px #FF95CA;
@@ -906,6 +911,7 @@ div{
 }
 
 .pbar_users_pic{
+    position: absolute;
     border-radius: 6px;
     border: solid 1px #FF9797;
     box-shadow:0px 0px 15px #FF9797;

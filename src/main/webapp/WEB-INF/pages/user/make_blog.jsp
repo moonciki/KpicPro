@@ -50,17 +50,23 @@
           </span>
         </div>
 
-        <input type="text" class="form-control" id="title" placeholder="请输入博文标题">
-        <br/>
-        <script type="text/plain" id="myEditor" name="content" style="width:806px;height:340px;"></script>
+        <c:choose>
+          <c:when test="${jc <= 28}">
+            <center>目前您的节操值低于<span style="font-weight: bold;color:red;">28</span>，处于禁言状态，无法写文章</center>
+          </c:when>
+          <c:otherwise>
+            <input type="text" class="form-control" id="title" placeholder="请输入博文标题">
+            <br/>
+            <script type="text/plain" id="myEditor" name="content" style="width:806px;height:340px;"></script>
 
-        <br/>
+            <br/>
 
-        <button type="button" id="tj" class="btn btn-primary">
-          <span class="glyphicon glyphicon-send"></span>
-          提交
-        </button>
-
+            <button type="button" id="tj" class="btn btn-primary">
+              <span class="glyphicon glyphicon-send"></span>
+              提交
+            </button>
+          </c:otherwise>
+        </c:choose>
       </span>
     </div>
   </div>

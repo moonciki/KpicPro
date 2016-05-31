@@ -17,6 +17,8 @@ public class TopicManager {
 
     private int score;
 
+    private int isjm;
+
     public Long getId() {
         return id;
     }
@@ -63,5 +65,13 @@ public class TopicManager {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public int getIsjm() {
+        return isjm;
+    }
+
+    public void setIsjm(int isjm) {
+        this.isjm = isjm;
     }
 }

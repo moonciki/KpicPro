@@ -45,6 +45,8 @@ public class PbarHomeTopicPost {
 
     private String num;
 
+    private int isjm;
+
     public Long getId() {
         return id;
     }
@@ -179,5 +181,13 @@ public class PbarHomeTopicPost {
 
     public void setNum(String num) {
         this.num = num;
+    }
+
+    public int getIsjm() {
+        return isjm;
+    }
+
+    public void setIsjm(int isjm) {
+        this.isjm = isjm;
     }
 }

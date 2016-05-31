@@ -63,6 +63,7 @@ public class AlbumController {
         try{
             model.addAttribute("user", curr_user);
             model.addAttribute("flag",10);
+            model.addAttribute("jc", this.userIntegrityService.getByUserId(curr_user.getId()));
             return "/user/make_album";
         }catch (Exception e){
             e.printStackTrace();

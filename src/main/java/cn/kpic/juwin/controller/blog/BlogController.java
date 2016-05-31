@@ -52,6 +52,7 @@ public class BlogController {
         try{
             model.addAttribute("user", curr_user);
             model.addAttribute("flag",30);
+            model.addAttribute("jc", this.userIntegrityService.getByUserId(curr_user.getId()));
             return "/user/make_blog";
         }catch (Exception e){
             e.printStackTrace();

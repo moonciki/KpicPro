@@ -23,6 +23,7 @@ public class UserVo {
     private String avater;
     private int level;
     private int score;
+    private int isjm;
 
     public Long getId() {
         return id;
@@ -150,5 +151,13 @@ public class UserVo {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public int getIsjm() {
+        return isjm;
+    }
+
+    public void setIsjm(int isjm) {
+        this.isjm = isjm;
     }
 }

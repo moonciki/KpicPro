@@ -3,6 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/album/AlbumController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/replypost/ReplyPostController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/UserIntegrityUpdQueueMessageListener.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PrivateLetterServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/ReplyTipServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/ShortTipServiceImpl.java" charset="UTF-8" />

@@ -41,7 +41,7 @@
     <span id="isgz">
       <button type="button" id="gz" onclick="gz()" class="btn btn-danger"><span class="glyphicon glyphicon-plus-sign"></span> 关注</button>
     </span>
-
+    <input type="hidden" id="jc" value="${jc}"/>
       <button type="button" onclick="sx(${user2.id})" class="btn btn-primary"><span class="glyphicon glyphicon-envelope"></span> 发私信</button>
     </center>
   </c:if>

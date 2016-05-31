@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -27,7 +28,7 @@ public class TopicPostController {
     @Autowired
     private TopicPostService topicPostService;
 
-    @RequestMapping(value = "/tuan/all")
+    @RequestMapping(value = "/tuan/all", method = RequestMethod.POST)
     @ResponseBody
     public List<PbarHomeTopicPost> getAllTopicPost(@RequestParam(value = "pbarId", required = true)Long pbarId,
                                                    @RequestParam(value = "page", required = true, defaultValue = "0")int page,
