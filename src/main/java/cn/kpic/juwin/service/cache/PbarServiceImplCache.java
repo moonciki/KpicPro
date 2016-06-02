@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -44,6 +46,23 @@ public class PbarServiceImplCache extends PbarServiceImpl{
     public void clearCache(String key) {
         if(this.redisTemplate.hasKey(key)){
             this.redisTemplate.delete(key);
+        }
+    }
+
+    /** 累加点击量*/
+    @Override
+    public void updPbarHit(Long pbarId){
+        SimpleDateFormat myTimeFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String nowStr = myTimeFormat.format(new Date());
+        String key = RedisCacheKey.PBAR_HIT+pbarId+"_"+nowStr;
+        if(!redisTemplate.hasKey(key)){
+            /** key不存在的时候创建该key，初始值为1*/
+            redisTemplate.boundValueOps(key).set(1);
+            redisTemplate.expire(key, 2, TimeUnit.DAYS);
+        }else{
+            /** key存在，直接取出累加1即可*/
+            Integer num = (Integer)redisTemplate.boundValueOps(key).get();
+            redisTemplate.boundValueOps(key).set(num + 1);
         }
     }
 }

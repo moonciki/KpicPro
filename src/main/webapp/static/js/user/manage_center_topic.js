@@ -57,6 +57,7 @@ $().ready(function(){
 
 
 function jz(isjz, page, orderBy){
+    $("#jz").attr("disabled", "disabled");
     if(!isjz){
         $("#topic_post_area").empty();
     }else{
@@ -110,6 +111,7 @@ function jz(isjz, page, orderBy){
                     "</div></div>";
                 $("#topic_post_area").append(addhtml);
             }
+            $("#jz").removeAttr("disabled");
             $("#page").val(parseInt(page) + 1);
         }
     });

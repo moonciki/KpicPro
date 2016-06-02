@@ -76,6 +76,24 @@
     </c:otherwise>
   </c:choose>
 
+  <c:choose>
+    <c:when test="${flag == 5}">
+      <div class="cd_dy cd_dy_now"><span class="glyphicon glyphicon-list-alt"></span> 过往文章</div>
+    </c:when>
+    <c:otherwise>
+      <div class="cd_dy wx" onclick="window.location.href = '${pageContext.request.contextPath}/u6514${user2.id}/history/article.html'"><span class="glyphicon glyphicon-list-alt"></span> 过往文章</div>
+    </c:otherwise>
+  </c:choose>
+
+  <c:choose>
+    <c:when test="${flag == 6}">
+      <div class="cd_dy cd_dy_now"><span class="glyphicon glyphicon-picture"></span> 过往云图集</div>
+    </c:when>
+    <c:otherwise>
+      <div class="cd_dy wx" onclick="window.location.href = '${pageContext.request.contextPath}/u6514${user2.id}/history/album.html'"><span class="glyphicon glyphicon-picture"></span> 过往云图集</div>
+    </c:otherwise>
+  </c:choose>
+
   <c:if test="${is_login == true}">
     <div id = "msg_center" class="cd_dy"><span class="glyphicon glyphicon-cog"></span> 进入管理中心>></div>
   </c:if>

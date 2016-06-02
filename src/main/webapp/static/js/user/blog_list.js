@@ -28,7 +28,7 @@ function load(){
             var addhtml = "";
             for(key in data){
                 addhtml += "<div class=\"panel panel-default\"><div class=\"panel-body\">"
-                    +"<a href=\"\"><span style='font-size: 15px'>"+data[key].title+"</span></a><span class=\"badge pull-right\" style='cursor: pointer; background-color: #ff7575;' id=\"sctj\"><span class='glyphicon glyphicon-remove-sign'></span> 删除</span>"
+                    +"<span class='glyphicon glyphicon-book' style='color:#FF82AB'></span>&nbsp;&nbsp;<a href=\"\"><span style='font-size: 15px'>"+data[key].title+"</span></a><span class=\"badge pull-right\" style='cursor: pointer; background-color: #ff7575;' id=\"sctj\"><span class='glyphicon glyphicon-remove-sign'></span> 删除</span>"
                     +"<span class=\"badge pull-right\" style='margin-right:10px;cursor: pointer; background-color: #64A600;' onclick=\"fbtj('"+data[key].title+"', "+data[key].id+")\"><span class='glyphicon glyphicon-send'></span> 发布</span><br/>"
                     +"<span style='font-size: 12px; line-height: 2.0'>"+data[key].shortContent+"</span></div></div>"
             }

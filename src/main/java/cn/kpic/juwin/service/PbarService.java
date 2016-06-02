@@ -29,4 +29,6 @@ public interface PbarService {
 
     List<PbarIndexVo> getSearchResult(String kword, Integer page);
 
+    public void updPbarHit(Long pbarId);
+
 }

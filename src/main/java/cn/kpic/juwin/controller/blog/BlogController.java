@@ -123,6 +123,21 @@ public class BlogController {
         }
     }
 
+    @RequestMapping(value = "/user/list/blog2", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Blog> getAllAlbum3(@RequestParam(value = "page", defaultValue = "0",required = false)int page, Long userId){
+        try{
+            Map params = new HashMap();
+            params.put("page", page*10);
+            params.put("userId", userId);
+            List<Blog> result = this.blogMapper.gatAllBlog(params);
+            return result;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 
     @RequiresPermissions({"user"})
     @RequestMapping(value = "/pbar/blog/save")

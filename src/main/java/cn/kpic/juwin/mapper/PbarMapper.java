@@ -34,4 +34,6 @@ public interface PbarMapper {
 
     List<PbarIndexVo> getSearchResult(Map params);
 
+    List<Long> getAllIds();
+
 }

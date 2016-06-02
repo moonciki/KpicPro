@@ -24,6 +24,7 @@ import org.apache.log4j.Logger;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.jsoup.helper.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -67,23 +68,21 @@ public class PbarController {
         return "/pbar/pbar_add";
     }
 
-    /** 进入话题*/
+    /** 进入话题，这里需要统计话题点击量*/
     @RequestMapping(value = "/post/subjects/sub4615{pbarId}")
     public String pbarIndex(@PathVariable("pbarId") Long pbarId,Model model){
-
         model.addAttribute("user", CurrentUser.getUser());
-
         PbarIndexVo pbarIndexVo = this.pbarService.getPbarIndex(pbarId);
         if(pbarIndexVo == null){
             return "/404";
         }
-
         User curr_user = CurrentUser.getUser();
         if(curr_user != null){
             model.addAttribute("role", this.userService.getRole(curr_user.getId(), pbarId));
             model.addAttribute("jc",this.userIntegrityService.getByUserId(curr_user.getId()));
         }
-
+        /** 更新点击量*/
+        this.pbarService.updPbarHit(pbarId);
         model.addAttribute("pbar", pbarIndexVo);
 
         return "/pbar/pbar_index";

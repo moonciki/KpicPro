@@ -100,6 +100,7 @@
     <!-- 通知 -->
 
     <!-- aop -->
+    <task:annotation-driven/>
     <tx:annotation-driven transaction-manager="transactionManager"/>
     <aop:aspectj-autoproxy/>
 

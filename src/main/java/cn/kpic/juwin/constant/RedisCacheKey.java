@@ -16,5 +16,7 @@ public class RedisCacheKey {
     public final static String PBAR_USER_ROLE = "pbar:manager:role";
     /** 用于缓存用户节操值，每一周失效一次*/
     public final static String USER_JC_NUM = "user:jiecao";
+    /** 用于缓存每个话题的点击量，和定时任务相结合，每天定时更新点击量*/
+    public final static String PBAR_HIT="pbar:pbar_hit";
 
 }

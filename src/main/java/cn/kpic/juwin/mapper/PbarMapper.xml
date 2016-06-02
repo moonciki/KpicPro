@@ -136,5 +136,9 @@
     WHERE tp.ispass = 1 AND isdel = 0 AND (tp.name LIKE #{kword} OR tp.tags LIKE #{kword}) ORDER BY tp.update_time DESC LIMIT #{page}, 10
   </select>
 
+  <select id="getAllIds" resultType="java.lang.Long">
+    SELECT id FROM tb_pbar WHERE ispass = 1 AND isdel = 0
+  </select>
+
 
 </mapper>

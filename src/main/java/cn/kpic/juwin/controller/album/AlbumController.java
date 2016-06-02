@@ -130,6 +130,21 @@ public class AlbumController {
         }
     }
 
+    @RequestMapping(value = "/user/list/album2", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Album> getAllAlbum3(@RequestParam(value = "page", defaultValue = "0",required = false)int page, Long userId){
+        try{
+            Map params = new HashMap();
+            params.put("page", page*10);
+            params.put("userId", userId);
+            List<Album> result = this.albumMapper.gatAllAlbum(params);
+            return result;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 
     @RequestMapping(value = "/album/ab1654{abId}", method = RequestMethod.GET)
     public String readAlbum(@PathVariable("abId") Long abId, Model model){

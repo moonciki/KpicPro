@@ -313,6 +313,68 @@ public class UserController {
         }
     }
 
+    @RequestMapping(value = "/u6514{userId}/history/article.html")
+    public String historyArticle(@PathVariable("userId") Long userId, Model model) {
+        try {
+
+            User curr_user = CurrentUser.getUser();
+            if (curr_user != null) {
+                model.addAttribute("user", curr_user);
+                if (String.valueOf(curr_user.getId()).equals(String.valueOf(userId))) {
+                    model.addAttribute("user2", curr_user);
+                    model.addAttribute("is_login", true);
+                } else {
+                    curr_user = this.userService.getUserById(userId);
+                    model.addAttribute("user2", curr_user);
+                    model.addAttribute("is_login", false);
+                }
+                model.addAttribute("jc", this.userIntegrityService.getByUserId(userId));
+            } else {
+                model.addAttribute("is_login", false);
+                curr_user = this.userService.getUserById(userId);
+                model.addAttribute("user2", curr_user);
+            }
+            model.addAttribute("flag", 5);
+
+            return "/user/user_self_articles";
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "/404";
+        }
+    }
+
+    @RequestMapping(value = "/u6514{userId}/history/album.html")
+    public String historyAlbum(@PathVariable("userId") Long userId, Model model) {
+        try {
+
+            User curr_user = CurrentUser.getUser();
+            if (curr_user != null) {
+                model.addAttribute("user", curr_user);
+                if (String.valueOf(curr_user.getId()).equals(String.valueOf(userId))) {
+                    model.addAttribute("user2", curr_user);
+                    model.addAttribute("is_login", true);
+                } else {
+                    curr_user = this.userService.getUserById(userId);
+                    model.addAttribute("user2", curr_user);
+                    model.addAttribute("is_login", false);
+                }
+                model.addAttribute("jc", this.userIntegrityService.getByUserId(userId));
+            } else {
+                model.addAttribute("is_login", false);
+                curr_user = this.userService.getUserById(userId);
+                model.addAttribute("user2", curr_user);
+            }
+            model.addAttribute("flag", 6);
+
+            return "/user/user_self_albums";
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "/404";
+        }
+    }
+
     @RequestMapping(value = "/user/focus/subjects")
     @ResponseBody
     public List<Pbar> getPbarFocus(Long userId, @RequestParam(value = "page", defaultValue = "0", required = true) int page) {

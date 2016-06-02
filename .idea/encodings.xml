@@ -21,6 +21,8 @@
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/make_album.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/make_emotion.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/make_music.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/manage_center_albums.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/manage_center_articles.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/music_list.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_list.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_self_list.js" charset="UTF-8" />

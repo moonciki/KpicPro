@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.HitMapper">
+    <insert id="save" parameterType="cn.kpic.juwin.domain.Hit">
+        <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into tb_hit
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="pbarId != null">pbarId,</if>
+            <if test="year1 != null">year1,</if>
+            <if test="month1 != null">month1,</if>
+            <if test="day1 != null">day1,</if>
+            <if test="value1 != null">value1,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id,jdbcType=BIGINT},</if>
+            <if test="pbarId != null">#{pbarId,jdbcType=BIGINT},</if>
+            <if test="year1 != null">#{year1,jdbcType=INTEGER},</if>
+            <if test="month1 != null">#{month1,jdbcType=INTEGER},</if>
+            <if test="day1 != null">#{day1,jdbcType=INTEGER},</if>
+            <if test="value1 != null">#{value1,jdbcType=INTEGER},</if>
+        </trim>
+    </insert>
+    
+    <select id="getAllByPbarIdAndYM" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.Hit">
+        SELECT day1, value1 FROM hit WHERE pbarId = #{pbarId} AND year1 = #{year1} AND month1 = #{month1}
+    </select>
+
+</mapper>

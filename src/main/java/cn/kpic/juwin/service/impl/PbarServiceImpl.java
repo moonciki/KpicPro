@@ -1,6 +1,7 @@
 package cn.kpic.juwin.service.impl;
 
 import cn.kpic.juwin.constant.KpicConstant;
+import cn.kpic.juwin.constant.RedisCacheKey;
 import cn.kpic.juwin.domain.Pbar;
 import cn.kpic.juwin.domain.UserPbar;
 import cn.kpic.juwin.domain.vo.PbarIndexVo;
@@ -17,6 +18,7 @@ import org.jsoup.helper.StringUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -127,4 +129,7 @@ public class PbarServiceImpl implements PbarService {
         }
         return result.size() == 0 ? null : result;
     }
+
+    @Override
+    public void updPbarHit(Long pbarId) {}
 }
