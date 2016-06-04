@@ -8,9 +8,11 @@ import cn.kpic.juwin.domain.vo.*;
 import cn.kpic.juwin.jms.sender.SystemMsgQueueMessageSender;
 import cn.kpic.juwin.jms.sender.UpgradeQueueMessageSender;
 import cn.kpic.juwin.jms.sender.UserIntegrityUpdQueueMessageSender;
+import cn.kpic.juwin.mapper.BlogMapper;
 import cn.kpic.juwin.mapper.ReplyPostMapper;
 import cn.kpic.juwin.service.*;
 import cn.kpic.juwin.utils.CurrentUser;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.apache.log4j.Logger;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,6 +50,9 @@ public class ReplyPostController {
 
     @Autowired
     private PbarService pbarService;
+
+    @Autowired
+    private BlogMapper blogMapper;
 
     @Autowired
     private UpgradeQueueMessageSender upgradeQueueMessageSender;
@@ -114,6 +119,7 @@ public class ReplyPostController {
         User curr_user = CurrentUser.getUser();
         if(curr_user != null){
             model.addAttribute("role", this.userService.getRole(curr_user.getId(), topicPostMsg.getPbarId()));
+            model.addAttribute("jc", this.userIntegrityService.getByUserId(curr_user.getId()));
         }
 
         model.addAttribute("user", CurrentUser.getUser());
@@ -123,6 +129,17 @@ public class ReplyPostController {
             return "/reply_index";
         }
         return "/reply/reply_index_blog";
+    }
+
+    @RequestMapping(value = "/post/read/at5416{id}")
+    public String readBlog(@PathVariable("id")Long id, Model model){
+        BlogVo blogVo = this.blogMapper.readBlog(id);
+        if(blogVo == null){
+            return "/404";
+        }
+        model.addAttribute("user", CurrentUser.getUser());
+        model.addAttribute("blog", blogVo);
+        return "/blog/read_blog";
     }
 
     @RequestMapping(value = "/tuan/post/getallreply")

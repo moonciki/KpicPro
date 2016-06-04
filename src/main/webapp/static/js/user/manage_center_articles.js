@@ -45,7 +45,7 @@ function jz(isjz, page){
             var addhtml="";
             for(key in data){
                 addhtml += "<div class=\"panel panel-default\"><div class=\"panel-body\">"
-                    +"<span class='glyphicon glyphicon-book' style='color:#FF82AB'></span>&nbsp;&nbsp;<a href=\"\"><span style='font-size: 15px'>"+data[key].title+"</span></a><span class=\"badge pull-right\" style='cursor: pointer; background-color: #FF8247;' id=\"sctj\"><span class='glyphicon glyphicon-time'></span> "+getLocalTime(data[key].createTime)+"</span>"
+                    +"<span class='glyphicon glyphicon-book' style='color:#FF82AB'></span>&nbsp;&nbsp;<a href=\"/post/read/at5416"+data[key].id+"\" target=\"_blank\"><span style='font-size: 15px'>"+data[key].title+"</span></a><span class=\"badge pull-right\" style='cursor: pointer; background-color: #FF8247;' id=\"sctj\"><span class='glyphicon glyphicon-time'></span> "+getLocalTime(data[key].createTime)+"</span>"
                     +"<br/>"
                     +"<span style='font-size: 12px; line-height: 2.0'>"+data[key].shortContent+"</span></div></div>"
             }

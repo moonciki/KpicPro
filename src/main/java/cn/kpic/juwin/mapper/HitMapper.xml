@@ -28,7 +28,7 @@
     </insert>
     
     <select id="getAllByPbarIdAndYM" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.Hit">
-        SELECT day1, value1 FROM hit WHERE pbarId = #{pbarId} AND year1 = #{year1} AND month1 = #{month1}
+        SELECT day1, value1 FROM tb_hit WHERE pbarId = #{pbarId} AND year1 = #{year1} AND month1 = #{month1}
     </select>
 
 </mapper>

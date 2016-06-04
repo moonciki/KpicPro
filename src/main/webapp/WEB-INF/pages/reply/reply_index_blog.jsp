@@ -265,6 +265,13 @@
 
     <!--发帖子-->
     <div class="main01_01_reply" style="margin-left:70px;padding-bottom:50px;padding-top:50px;padding-left:130px; width: 940px">
+<c:choose>
+  <c:when test="${user != null}">
+    <c:choose>
+      <c:when test="${jc <= 14}">
+        <center>由于您的节操值低于<span style="color:#CD3333;font-weight: bold">14</span>，当前处于<span style="color:#CD3333;font-weight: bold">禁言</span>状态，无法回复</center>
+      </c:when>
+      <c:otherwise>
       <div class="bjq_btn2 music_button" id="music_share"></div>
       <div class="bjq_btn2 video_button" id="video_share"></div>
       <div class="bjq_btn2 eif_button" id="eif_share"></div>
@@ -277,8 +284,15 @@
       <script type="text/plain" id="myEditor" name="content" style="width:722px;height:240px;"></script>
       <br>
       <button type="button" id="saveReply" class="btn btn-info"><span class="glyphicon glyphicon-send"></span>&nbsp;&nbsp;发射~</button>
-    </div>
+      </c:otherwise>
+    </c:choose>
 
+  </c:when>
+  <c:otherwise>
+    <center>您当前还没有登录哦，<a href="${pageContext.request.contextPath}/index" target="_blank">登录</a>后才能发帖~</center>
+  </c:otherwise>
+</c:choose>
+     </div>
   </div>
 </div>
 

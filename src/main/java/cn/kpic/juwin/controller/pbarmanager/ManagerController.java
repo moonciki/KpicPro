@@ -1,9 +1,11 @@
 package cn.kpic.juwin.controller.pbarmanager;
 
 import cn.kpic.juwin.constant.RedisCacheKey;
+import cn.kpic.juwin.domain.Hit;
 import cn.kpic.juwin.domain.Pbar;
 import cn.kpic.juwin.domain.User;
 import cn.kpic.juwin.domain.vo.PbarManagerApplyVo;
+import cn.kpic.juwin.mapper.HitMapper;
 import cn.kpic.juwin.mapper.PbarManagerApplyMapper;
 import cn.kpic.juwin.service.PbarManagerApplyService;
 import cn.kpic.juwin.service.PbarService;
@@ -17,9 +19,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 /**
  * Created by bjsunqinwen on 2016/4/16.
@@ -34,6 +35,9 @@ public class ManagerController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private HitMapper hitMapper;
 
     @Autowired
     private PbarManagerApplyMapper pbarManagerApplyMapper;
@@ -55,6 +59,55 @@ public class ManagerController {
             model.addAttribute("pbar", this.pbarService.getPbarIndex(pbarId));
             model.addAttribute("flag", 1);
             return "/pbar/manager_pbar_info";
+        }catch (Exception e){
+            e.printStackTrace();
+            logger.error("enter pbar manager error !");
+            return "/404";
+        }
+    }
+
+    @RequiresPermissions({"user"})
+    @RequestMapping(value = "/subject/manager/tj4615{pbarId}_{year}_{month}")
+    public String enterPbarTj(@PathVariable("pbarId") Long pbarId,@PathVariable("year") Integer year, @PathVariable("month") Integer month, Model model){
+        try{
+            User curr_user = CurrentUser.getUser();
+            String role = this.userService.getRole(curr_user.getId(), pbarId);
+            if("3".equals(role)){
+                return "/404";
+            }
+
+            if(year == null || month == null){
+                SimpleDateFormat myTimeFormat = new SimpleDateFormat("yyyy-MM");
+                String nowStr = myTimeFormat.format(new Date());
+                String[] dates = nowStr.split("-");
+                year = Integer.parseInt(dates[0]);
+                month = Integer.parseInt(dates[1]);
+            }
+
+            Map params = new HashMap();
+            params.put("pbarId", pbarId);
+            params.put("year1",year);
+            params.put("month1", month);
+            List<Hit> result = this.hitMapper.getAllByPbarIdAndYM(params);
+            String days = "[";
+            String values = "[";
+            for(Hit hit : result){
+                days += "'"+hit.getDay1()+"',";
+                values += hit.getValue1()+",";
+            }
+            days+="]";
+            values+="]";
+            days = days.replace(",]", "]");
+            values = values.replace(",]", "]");
+
+            model.addAttribute("days", days);
+            model.addAttribute("values", values);
+            model.addAttribute("user", curr_user);
+            model.addAttribute("role", role);
+            model.addAttribute("pbar", this.pbarService.getPbarIndex(pbarId));
+            model.addAttribute("flag", 66);
+
+            return "/pbar/manager_pbar_tj";
         }catch (Exception e){
             e.printStackTrace();
             logger.error("enter pbar manager error !");

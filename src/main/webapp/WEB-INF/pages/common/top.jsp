@@ -21,7 +21,7 @@
       <c:choose>
         <c:when test="${user != null}">
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <a href="${pageContext.request.contextPath}/user/u6514${user.id}/index.html" target="_blank" style="text-decoration: none;">
+          <a class="dropdown-toggle" data-toggle="dropdown" style="cursor:pointer; text-decoration: none;">
             <c:choose>
               <c:when test="${user.avater != null}">
                 <img src="${user.avater}?imageView2/2/w/35/h/35/q/95" style="margin-top:-10px;border-radius: 100px;border: 1px solid #ffaad5;box-shadow:0px 0px 15px #ffaad5;">

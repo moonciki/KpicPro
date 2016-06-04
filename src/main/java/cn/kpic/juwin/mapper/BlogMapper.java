@@ -2,6 +2,7 @@ package cn.kpic.juwin.mapper;
 
 import cn.kpic.juwin.domain.Album;
 import cn.kpic.juwin.domain.Blog;
+import cn.kpic.juwin.domain.vo.BlogVo;
 
 import java.util.List;
 import java.util.Map;
@@ -16,5 +17,7 @@ public interface BlogMapper {
     List<Blog> gatAllBlog(Map params);
 
     Blog gatBlog(Long id);
+
+    BlogVo readBlog(Long id);
 
 }

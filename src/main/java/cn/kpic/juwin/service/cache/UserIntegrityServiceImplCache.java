@@ -29,7 +29,7 @@ public class UserIntegrityServiceImplCache extends UserIntegrityServiceImpl {
             Integer num = super.getByUserId(userId);
             if(num != null){
                 redisTemplate.boundValueOps(key).set(num+"");
-                redisTemplate.expire(key, 7, TimeUnit.DAYS);
+                redisTemplate.expire(key, 1, TimeUnit.DAYS);
             }else{
                 return null;
             }

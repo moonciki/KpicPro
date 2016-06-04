@@ -55,7 +55,24 @@
     </c:otherwise>
   </c:choose>
   </c:if>
+  <div class="main_01_title2">
+    <span class="glyphicon glyphicon-signal" style="color:#FF9797"></span>&nbsp;&nbsp;话题统计
+  </div>
 
+  <c:choose>
+    <c:when test="${flag == 66}">
+      <div class="main_01_unit_point">
+        <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
+        访问量统计
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="main_01_unit" onclick="window.location.href='${pageContext.request.contextPath}/subject/manager/tj4615${pbar.id}__'">
+        <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
+        访问量统计
+      </div>
+    </c:otherwise>
+  </c:choose>
 
   <div class="main_01_title2"><span class="glyphicon glyphicon-flag" style="color:#FF9797"></span>&nbsp;&nbsp;举报事务处理</div>
   <c:choose>
@@ -89,10 +106,6 @@
       </div>
     </c:otherwise>
   </c:choose>
-  <div class="main_01_unit">
-    <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
-    帖子恢复申请
-  </div>
   </c:if>
 
   <c:if test="${role == '1'}">

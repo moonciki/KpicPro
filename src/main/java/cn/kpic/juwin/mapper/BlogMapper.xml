@@ -42,4 +42,21 @@
         WHERE id = #{id} AND isdel = 0
     </select>
 
+    <select id="readBlog" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.vo.BlogVo">
+        SELECT
+        tb.id,
+        tb.title,
+        tb.content,
+        tb.userId,
+        tb.createTime,
+        tu.name,
+        tu.tag,
+        tu.sex,
+        tu.userPic,
+        tu.avater
+        FROM tb_blog tb
+        JOIN tb_user tu ON tu.id = tb.userId
+        WHERE tb.id = #{id} AND tb.isdel = 0;
+    </select>
+
 </mapper>

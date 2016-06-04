@@ -57,12 +57,12 @@ public class PbarServiceImplCache extends PbarServiceImpl{
         String key = RedisCacheKey.PBAR_HIT+pbarId+"_"+nowStr;
         if(!redisTemplate.hasKey(key)){
             /** key不存在的时候创建该key，初始值为1*/
-            redisTemplate.boundValueOps(key).set(1);
+            redisTemplate.boundValueOps(key).set(String.valueOf(1));
             redisTemplate.expire(key, 2, TimeUnit.DAYS);
         }else{
             /** key存在，直接取出累加1即可*/
-            Integer num = (Integer)redisTemplate.boundValueOps(key).get();
-            redisTemplate.boundValueOps(key).set(num + 1);
+            Integer num = Integer.parseInt(redisTemplate.boundValueOps(key).get()+"");
+            redisTemplate.boundValueOps(key).set(String.valueOf(num + 1));
         }
     }
 }
