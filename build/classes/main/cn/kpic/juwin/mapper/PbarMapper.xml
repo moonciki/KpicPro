@@ -111,7 +111,7 @@
     JOIN tb_pbar_type tpt ON tp.type = tpt.id
     WHERE tup.userId = #{userId} AND tp.isdel = 0 ORDER BY tup.createTime DESC LIMIT #{page}, 10
   </select>
-
+  
   <update id="addTopicNum" parameterType="java.lang.Long">
     update tb_pbar set topic_num = topic_num + 1 where id = #{id}
   </update>
@@ -134,6 +134,10 @@
     FROM tb_pbar tp
     JOIN tb_pbar_type tpt ON tp.type = tpt.id
     WHERE tp.ispass = 1 AND isdel = 0 AND (tp.name LIKE #{kword} OR tp.tags LIKE #{kword}) ORDER BY tp.update_time DESC LIMIT #{page}, 10
+  </select>
+
+  <select id="getAllIds" resultType="java.lang.Long">
+    SELECT id FROM tb_pbar WHERE ispass = 1 AND isdel = 0
   </select>
 
 

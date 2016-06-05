@@ -24,8 +24,19 @@
       &nbsp;<b>${pbar.name}话题统计</b>
     </div>
     <div class="main_02_content">
-
-        <div id="main" style="height:400px; font-family: 'Microsoft Yahei'"></div>
+      年份：
+      <span id="n_j" class="glyphicon glyphicon-minus-sign" style="cursor: pointer"></span>
+      <input type="text" class="form-control" style="width: 60px;display: inline-block" id="year" value="${year}" disabled="true"/>
+      <span id="n_z" class="glyphicon glyphicon-plus-sign" style="cursor: pointer"></span>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      月份：
+      <span id="y_j" class="glyphicon glyphicon-minus-sign" style="cursor: pointer"></span>
+      <input type="text" class="form-control" style="width: 60px;display: inline-block" id="month"  value="${month}" disabled="true"/>
+      <span id="y_z" class="glyphicon glyphicon-plus-sign" style="cursor: pointer"></span>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="button" id = "js" class="btn btn-default"><span class="glyphicon glyphicon-retweet"></span>&nbsp;&nbsp;检索</button>
+      <input type="hidden" value="${pbar.id}" id="pbarId"/>
+      <div id="main" style="margin-top:30px;height:400px; font-family: 'Microsoft Yahei'"></div>
         <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
         <script type="text/javascript">
           // 路径配置
@@ -45,7 +56,7 @@
 
                     var option = {
                       title : {
-                        text: '话题访问量统计',
+                        text: '${pbar.name}话题${year}年${month}月访问量统计',
                         subtext: ''
                       },
                       tooltip : {
@@ -69,7 +80,10 @@
                         {
                           type : 'category',
                           boundaryGap : false,
-                          data : ${days}
+                          data : ${days},
+                          axisLabel : {
+                            formatter: '{value}日'
+                          }
                         }
                       ],
                       yAxis : [
@@ -114,6 +128,7 @@
                   }
           );
         </script>
+      <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/pbar/manager_pbar_tj.js"></script>
     </div>
   </div>
 </div>

@@ -100,6 +100,8 @@ public class ManagerController {
             days = days.replace(",]", "]");
             values = values.replace(",]", "]");
 
+            model.addAttribute("year", year);
+            model.addAttribute("month", month);
             model.addAttribute("days", days);
             model.addAttribute("values", values);
             model.addAttribute("user", curr_user);
