@@ -110,10 +110,20 @@
 
   <c:if test="${role == '1'}">
   <div class="main_01_title2"><span class="glyphicon glyphicon-user" style="color:#FF9797"></span>&nbsp;&nbsp;小管理猿们</div>
-  <div class="main_01_unit">
-    <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
-    小管理猿信息管理
-  </div>
+    <c:choose>
+      <c:when test="${flag == 41}">
+        <div class="main_01_unit_point">
+          <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
+          小管理猿信息管理
+        </div>
+      </c:when>
+      <c:otherwise>
+        <div class="main_01_unit" onclick="window.location.href='${pageContext.request.contextPath}/subject/manager/small4615${pbar.id}'">
+          <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
+          小管理猿信息管理
+        </div>
+      </c:otherwise>
+    </c:choose>
   </c:if>
 
 

@@ -5,6 +5,7 @@ import cn.kpic.juwin.domain.Hit;
 import cn.kpic.juwin.domain.Pbar;
 import cn.kpic.juwin.domain.User;
 import cn.kpic.juwin.domain.vo.PbarManagerApplyVo;
+import cn.kpic.juwin.domain.vo.UserVo;
 import cn.kpic.juwin.mapper.HitMapper;
 import cn.kpic.juwin.mapper.PbarManagerApplyMapper;
 import cn.kpic.juwin.service.PbarManagerApplyService;
@@ -198,6 +199,49 @@ public class ManagerController {
             e.printStackTrace();
             logger.error("get all apply error ! pbarId = " + pbarId);
             return "/404";
+        }
+    }
+
+    @RequiresPermissions({"user"})
+    @RequestMapping(value = "/subject/manager/small4615{pbarId}")
+    public String showAllSmalls(@PathVariable("pbarId") Long pbarId, Model model){
+        try{
+            User curr_user = CurrentUser.getUser();
+            String role = this.userService.getRole(curr_user.getId(), pbarId);
+            if(!"1".equals(role)){
+                return "/404";
+            }
+            model.addAttribute("user", curr_user);
+            model.addAttribute("role", this.userService.getRole(curr_user.getId(), pbarId));
+            model.addAttribute("pbar", this.pbarService.getPbarIndex(pbarId));
+            model.addAttribute("flag", 41);
+            return "/pbar/manager_pbar_smalls";
+        }catch (Exception e){
+            e.printStackTrace();
+            logger.error("get all small_manager error ! pbarId = " + pbarId);
+            return "/404";
+        }
+    }
+
+    @RequiresPermissions({"user"})
+    @RequestMapping(value = "/subject/manager/smalls", method = RequestMethod.POST)
+    public List<PbarManagerApplyVo> showAllSmalls2(@PathVariable("pbarId") Long pbarId, @RequestParam(value = "page", defaultValue = "0", required = true)Integer page, Model model){
+        try{
+            User curr_user = CurrentUser.getUser();
+            String role = this.userService.getRole(curr_user.getId(), pbarId);
+            if(!"1".equals(role)){
+                return null;
+            }
+            if(pbarId == null || pbarId < 0){
+                return null;
+            }
+            Map params = new HashMap();
+            params.put("pbarId", pbarId);
+            params.put("page", page);
+            List<PbarManagerApplyVo> result = this.pbarManagerApplyMapper.getAllApply(params);
+            return result.size() == 0 ? null : result;
+        }catch (Exception e){
+            return null;
         }
     }
 
