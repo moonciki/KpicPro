@@ -25,4 +25,5 @@ public interface UserMapper {
 	List<UserVo> getAllPbarUsers(Map params);
 	void updPostNum(Long id);
 	void jm(Long id);
+	void delSmallManager(Long id);
 }

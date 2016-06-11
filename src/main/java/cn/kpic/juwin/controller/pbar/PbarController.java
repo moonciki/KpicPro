@@ -1,13 +1,8 @@
 package cn.kpic.juwin.controller.pbar;
 
-import cn.kpic.juwin.domain.Pbar;
-import cn.kpic.juwin.domain.PbarManagerApply;
-import cn.kpic.juwin.domain.Tags;
-import cn.kpic.juwin.domain.User;
-import cn.kpic.juwin.domain.vo.PbarIndexVo;
-import cn.kpic.juwin.domain.vo.TagsVo;
-import cn.kpic.juwin.domain.vo.UploadTokenInfo;
-import cn.kpic.juwin.domain.vo.UserPbarVo;
+import cn.kpic.juwin.domain.*;
+import cn.kpic.juwin.domain.vo.*;
+import cn.kpic.juwin.jms.sender.SystemMsgQueueMessageSender;
 import cn.kpic.juwin.mapper.PbarManagerApplyMapper;
 import cn.kpic.juwin.mapper.PbarTypeMapper;
 import cn.kpic.juwin.mapper.TagsMapper;
@@ -60,6 +55,9 @@ public class PbarController {
 
     @Autowired
     private UserIntegrityService userIntegrityService;
+
+    @Autowired
+    private SystemMsgQueueMessageSender systemMsgQueueMessageSender;
 
     @RequiresPermissions({"user"})
     @RequestMapping(value = "/pbar/pbar_add")
@@ -228,7 +226,7 @@ public class PbarController {
 
     @RequestMapping(value = "/pbar/save/sq")
     @ResponseBody
-    public synchronized Map<String, Object> saveSq(Long userId, Long pbarId, String msg){
+    public synchronized Map<String, Object> saveSq(Long userId, Long pbarId, String msg, Long pbUserId){
         Map<String, Object> result = new HashMap<>();
         result.put("success", false);
         if(userId == null || pbarId == null || StringUtil.isBlank(msg)){
@@ -247,7 +245,6 @@ public class PbarController {
             }
 
             PbarManagerApply pbarManagerApply = new PbarManagerApply();
-
             pbarManagerApply.setUserId(userId);
             pbarManagerApply.setMsg(msg);
             pbarManagerApply.setPbarId(pbarId);
@@ -255,6 +252,11 @@ public class PbarController {
             pbarManagerApply.setStatus(0);
             this.pbarManagerApplyMapper.save(pbarManagerApply);
 
+            JmsSystemMsg jmsSystemMsg = new JmsSystemMsg();
+            jmsSystemMsg.setTitle("您收到了新的管理员申请");
+            jmsSystemMsg.setContent("<a href=\"/subject/manager/apply4615"+pbarId+"\" target=\"_blank\">点击查看详情</a>");
+            jmsSystemMsg.setUserId(pbUserId);
+            this.systemMsgQueueMessageSender.send(jmsSystemMsg);
             result.put("success", true);
 
         }catch (Exception e){

@@ -26,9 +26,10 @@ $().ready(function(){
         $("#tip_close").attr("disabled", "disabled");
         var pbarId = $("#pbarId").val();
         var userId = $("#userId").val();
+        var pbUserId = $("#pbar_user_id").val();
         var msg = $("#tip_msg").val();
 
-        $.post("/pbar/save/sq", {'userId':userId,'msg':msg,'pbarId':pbarId}, function(data){
+        $.post("/pbar/save/sq", {'userId':userId,'msg':msg,'pbarId':pbarId, 'pbUserId':pbUserId}, function(data){
             if(data.success){
                 alert("申请成功！请静待佳音");
             }else{

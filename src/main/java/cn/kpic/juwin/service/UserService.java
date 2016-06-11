@@ -19,4 +19,5 @@ public interface UserService {
     boolean isSmallManager(Long userId, Long pbarId);
     String getRole(Long userId, Long pbarId);
     List<UserVo> getAllPbarUsers(Long pbarId, Integer page);
+    void delSmallManager(Long id,Long userId, Long pbarId);
 }

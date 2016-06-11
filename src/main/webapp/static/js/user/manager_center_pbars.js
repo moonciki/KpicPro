@@ -50,7 +50,7 @@ function jz(isjz){
             }else{
                 addhtml += "<span style='color:#FF5151'>小管理员</span>"
             }
-            addhtml += "</td><td><a href=\"\" target=\"_blank\">进入管理页</a>&nbsp;"
+            addhtml += "</td><td><a href=\"/subject/manager/sub4615"+data[key].pbarId+"\" target=\"_blank\">进入管理页</a>&nbsp;"
             if(data[key].ispass == 1){
                 addhtml+="<span class='glyphicon glyphicon-transfer'></span>&nbsp;<a href=\"/post/subjects/sub4615"+data[key].pbarId+"\" target=\"_blank\">进入话题</a>";
             }

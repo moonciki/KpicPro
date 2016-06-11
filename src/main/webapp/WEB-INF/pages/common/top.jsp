@@ -51,13 +51,37 @@
                   </a>
                   <div class="pulldown user-info">
                     <em class="arrow"></em>
-                    <div class="content">
-                      <span class="li"><a href="">个人资料</a></span>
-                      <span class="li"><a href="">购买容量</a></span>
-                      <span class="li"><a href="">免费扩容</a></span>
-                      <span class="li"><a href="">会员中心</a></span>
-                      <span class="separate-li no-height"></span>
-                      <span class="li"><a href="javascript:;" id="signout">退出</a></span>
+                    <div class="content666">
+                      <center>
+                      <button type="button" style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="btn btn-default btn-sm" onclick="window.open('${pageContext.request.contextPath}/user/u6514${user.id}/index.html')">
+                        <span class="glyphicon glyphicon-home"></span> 我的主页
+                      </button>
+                        <br/>
+                        <button type="button" style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="btn btn-default btn-sm" onclick="window.open('${pageContext.request.contextPath}/user/management/center/topics')">
+                          <span class="glyphicon glyphicon-list"></span> 我的帖子
+                        </button>
+                        <br/>
+                        <button type="button" style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="btn btn-default btn-sm" onclick="window.open('${pageContext.request.contextPath}/user/private/letter')">
+                          <span class="glyphicon glyphicon-envelope"></span> 我的私信
+                        </button>
+                        <br/>
+                        <button type="button" style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="btn btn-default btn-sm" onclick="window.open('${pageContext.request.contextPath}/user/list/blog')">
+                          <span class="glyphicon glyphicon-book"></span> 我的文章
+                        </button>
+                        <br/>
+                        <button type="button" style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="btn btn-default btn-sm" onclick="window.open('${pageContext.request.contextPath}/user/list/album')">
+                          <span class="glyphicon glyphicon-picture"></span> 我的图集
+                        </button>
+                        <br/>
+                        <button type="button" style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="btn btn-default btn-sm" onclick="window.open('${pageContext.request.contextPath}/user/all/user/subject')">
+                          <span class="glyphicon glyphicon-leaf"></span> 我的话题
+                        </button>
+                        <br/>
+                        <button type="button"  style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="unit_btn2 btn btn-default btn-sm">
+                          <span class="glyphicon glyphicon-log-out"></span> 退出账号
+                        </button>
+                        <br/>
+                      </center>
                     </div>
                   </div>
                 </li>
@@ -67,12 +91,17 @@
                   <span style="font-size:16px;color:#3c70ff;font-family:Microsoft Yahei;"><span class="glyphicon glyphicon-bell" style="color:#D9B300"></span>&nbsp;消息 <span id="user_news"></span></span>
                   <div class="pulldown user-info">
                     <em class="arrow"></em>
-                    <div class="content">
-                      <span class="li"><a href="">个人资料</a></span>
-                      <span class="li"><a href="">购买容量</a></span>
-                      <span class="li"><a href="">免费扩容</a></span>
-                      <span class="li"><a href="">会员中心</a></span>
-                      <span class="separate-li no-height"></span>
+                    <div class="content666">
+                      <center>
+                        <button type="button"  style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="unit_btn2 btn btn-default btn-sm" onclick="window.open('${pageContext.request.contextPath}/user/all/user/news')">
+                         <span class="glyphicon glyphicon-comment"></span> 回复消息
+                        </button>
+                        <br/>
+                        <button type="button"  style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="unit_btn2 btn btn-default btn-sm" onclick="window.open('${pageContext.request.contextPath}/user/all/sysmsg')">
+                          <span class="glyphicon glyphicon-info-sign"></span> 系统消息
+                        </button>
+                        <br/>
+                      </center>
                     </div>
                   </div>
                 </li>

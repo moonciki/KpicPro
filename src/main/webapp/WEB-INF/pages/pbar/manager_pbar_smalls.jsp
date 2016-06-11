@@ -23,6 +23,7 @@
   <%@include file="../common/manage_pbar_left.jsp" %>
   <div class="main_02">
     <input type="hidden" id="pbarId" value="${pbar.id}"/>
+    <input type="hidden" id="pbarName" value="${pbar.name}"/>
     <input type="hidden" id="page" value="0"/>
     <div class="main_02_title">
       <span class="glyphicon glyphicon-tags" style="color:#FF60AF"></span>
@@ -30,15 +31,44 @@
     </div>
     <div class="main_02_content">
 
-      <span id="content">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>头像</th>
+          <th>昵称</th>
+          <th>等级</th>
+          <th>经验</th>
+          <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+      
+      <c:forEach items="${managers}" var="item">
+        <span id="bg${item.thisId}">
+          <tr>
+            <td>
+              <c:choose>
+                <c:when test="${item.avater == null || item.avater == ''}">
+                  <img src="${item.userPic}?size=40" style="border-radius: 6px;"/>
+                </c:when>
+                <c:otherwise>
+                  <img src="${item.avater}?imageView2/1/w/40/h/40/q/95" style="border-radius: 6px;"/>
+                </c:otherwise>
+              </c:choose>
+            </td>
+            <td><a href="${pageContext.request.contextPath}/user/u6514${item.id}/index.html" target="_blank">${item.name}</a></td>
+            <td><span style="font-weight: bold; color:#2975ff">${item.level}</span></td>
+            <td><span style="font-weight: bold; color:#ff45b4">${item.score}</span></td>
+            <td><button id="bt_${item.id}" onclick="cxzw(${item.thisId}, ${item.id})" type="button" class="btn btn-default btn-sm" style="border: 1px #ff5dbc solid;color:#ff5dbc"><span class="glyphicon glyphicon-remove-circle"></span> 撤销职位</button></td>
+          </tr>
+        </span>
+      </c:forEach>
+        </tbody>
+      </table>
 
-      </span>
-      <center><button type="button" disabled="true" onclick="jz()" class="btn btn-info" id="btn_jz"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
-        <br/><span id="jzz" style="display: none">加载中..</span><span id="my" style="display: none">没有更多了</span>
-      </center>
     </div>
   </div>
 </div>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/js/pbar/manager_pbar_applys.js"></script>
+<script type="text/javascript" src = ${pageContext.request.contextPath}/static/js/pbar/manager_pbar_smalls.js></script>
 </body>
 </html>

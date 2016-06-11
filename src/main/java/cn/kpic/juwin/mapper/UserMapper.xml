@@ -55,6 +55,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 
 	<select id="getAllSmallManagerByPbarId" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.vo.TopicManager">
 		SELECT
+		tup.id AS thisId,
 		tu.id,
 		tu.name,
 		tu.userPic,
@@ -67,6 +68,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		JOIN tb_user_level tul ON tul.userId = tu.id
 		WHERE tup.pbarId = #{id} AND tup.type = 2
 	</select>
+
+	<delete id="delSmallManager" parameterType="java.lang.Long">
+		DELETE FROM tb_user_pbar WHERE id = #{id}
+	</delete>
 
 	<select id="isSmallManager" parameterType="java.util.Map" resultType="java.lang.Long">
 		SELECT

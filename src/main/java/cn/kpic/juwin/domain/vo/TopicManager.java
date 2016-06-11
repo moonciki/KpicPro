@@ -19,6 +19,8 @@ public class TopicManager {
 
     private int isjm;
 
+    private Long thisId;
+
     public Long getId() {
         return id;
     }
@@ -73,5 +75,13 @@ public class TopicManager {
 
     public void setIsjm(int isjm) {
         this.isjm = isjm;
+    }
+
+    public Long getThisId() {
+        return thisId;
+    }
+
+    public void setThisId(Long thisId) {
+        this.thisId = thisId;
     }
 }

@@ -126,13 +126,6 @@
     </c:choose>
   </c:if>
 
-
-  <div class="main_01_title2"><span class="glyphicon glyphicon-info-sign" style="color:#FF9797"></span>&nbsp;&nbsp;关注</div>
-  <div class="main_01_unit">
-    <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
-    关注话题成员
-  </div>
-
   <c:if test="${role == '1'}">
   <div class="main_01_title2"><span class="glyphicon glyphicon-fire" style="color:#FF9797"></span>&nbsp;&nbsp;推广&活动</div>
   <div class="main_01_unit">

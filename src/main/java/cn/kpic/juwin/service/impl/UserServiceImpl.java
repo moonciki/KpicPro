@@ -119,4 +119,11 @@ public class UserServiceImpl implements UserService {
         List<UserVo> result = this.userMapper.getAllPbarUsers(params);
         return result.size() == 0 ? null : result;
     }
+
+    @Override
+    public void delSmallManager(Long id, Long userId, Long pbarId) {
+        this.userMapper.delSmallManager(id);
+        String key = RedisCacheKey.PBAR_USER_ROLE + "_p" + pbarId + "_u" + userId;
+        this.redisTemplate.delete(key);
+    }
 }

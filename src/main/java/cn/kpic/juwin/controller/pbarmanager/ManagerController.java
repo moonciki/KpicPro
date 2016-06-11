@@ -4,8 +4,11 @@ import cn.kpic.juwin.constant.RedisCacheKey;
 import cn.kpic.juwin.domain.Hit;
 import cn.kpic.juwin.domain.Pbar;
 import cn.kpic.juwin.domain.User;
+import cn.kpic.juwin.domain.vo.JmsSystemMsg;
 import cn.kpic.juwin.domain.vo.PbarManagerApplyVo;
+import cn.kpic.juwin.domain.vo.TopicManager;
 import cn.kpic.juwin.domain.vo.UserVo;
+import cn.kpic.juwin.jms.sender.SystemMsgQueueMessageSender;
 import cn.kpic.juwin.mapper.HitMapper;
 import cn.kpic.juwin.mapper.PbarManagerApplyMapper;
 import cn.kpic.juwin.service.PbarManagerApplyService;
@@ -45,6 +48,9 @@ public class ManagerController {
 
     @Autowired
     private PbarManagerApplyService pbarManagerApplyService;
+
+    @Autowired
+    private SystemMsgQueueMessageSender systemMsgQueueMessageSender;
 
     @RequiresPermissions({"user"})
     @RequestMapping(value = "/subject/manager/sub4615{pbarId}")
@@ -215,11 +221,57 @@ public class ManagerController {
             model.addAttribute("role", this.userService.getRole(curr_user.getId(), pbarId));
             model.addAttribute("pbar", this.pbarService.getPbarIndex(pbarId));
             model.addAttribute("flag", 41);
+            List<TopicManager> list = this.userService.getAllSmallManagerByPbarId(pbarId);
+            model.addAttribute("managers", list);
             return "/pbar/manager_pbar_smalls";
         }catch (Exception e){
             e.printStackTrace();
             logger.error("get all small_manager error ! pbarId = " + pbarId);
             return "/404";
+        }
+    }
+
+    @RequiresPermissions({"user"})
+    @RequestMapping(value = "/subject/manager/focus4615{pbarId}")
+    public String showAllFocus(@PathVariable("pbarId") Long pbarId, Model model){
+        try{
+            User curr_user = CurrentUser.getUser();
+            String role = this.userService.getRole(curr_user.getId(), pbarId);
+            if(!"1".equals(role)){
+                return "/404";
+            }
+            model.addAttribute("user", curr_user);
+            model.addAttribute("role", this.userService.getRole(curr_user.getId(), pbarId));
+            model.addAttribute("pbar", this.pbarService.getPbarIndex(pbarId));
+            model.addAttribute("flag", 42);
+            List<TopicManager> list = this.userService.getAllSmallManagerByPbarId(pbarId);
+            model.addAttribute("managers", list);
+            return "/pbar/manager_pbar_focus";
+        }catch (Exception e){
+            e.printStackTrace();
+            logger.error("get all pbar focus error ! pbarId = " + pbarId);
+            return "/404";
+        }
+    }
+
+    @RequiresPermissions({"user"})
+    @RequestMapping(value = "/pbar/manager/small/del")
+    @ResponseBody
+    public boolean delSmallManager(Long id, Long userId, Long pbarId, String pbName){
+        try{
+            if(id == null || userId == null || pbarId == null){
+                return false;
+            }
+            this.userService.delSmallManager(id, userId, pbarId);
+            JmsSystemMsg jmsSystemMsg = new JmsSystemMsg();
+            jmsSystemMsg.setTitle("撤职信");
+            jmsSystemMsg.setContent("您目前在<a href=\"/post/subjects/sub4615"+pbarId+"\">"+pbName+"</a>话题下的小管理猿权限已被话题管理猿撤销");
+            jmsSystemMsg.setUserId(userId);
+            this.systemMsgQueueMessageSender.send(jmsSystemMsg);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
         }
     }
 
