@@ -50,7 +50,7 @@ ${}：表示拼接符，可能会引起sql注入
     </update>
 
     <select id="getAllSelfSystemMsg" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.SystemMsg">
-        SELECT * FROM tb_system_msg WHERE userId = #{userId} AND isdel = 0 ORDER BY createTime DESC;
+        SELECT * FROM tb_system_msg WHERE userId = #{userId} AND isdel = 0 ORDER BY createTime DESC LIMIT #{page}, 10
     </select>
 
 </mapper>

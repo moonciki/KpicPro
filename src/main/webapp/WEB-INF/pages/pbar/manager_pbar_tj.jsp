@@ -26,15 +26,15 @@
     <div class="main_02_content">
       年份：
       <span id="n_j" class="glyphicon glyphicon-minus-sign" style="cursor: pointer"></span>
-      <input type="text" class="form-control" style="width: 60px;display: inline-block" id="year" value="${year}" disabled="true"/>
+      <input type="text" class="form-control" style="color:#ff7ea9; border: solid 1px #ff7ea9;width: 60px;display: inline-block" id="year" value="${year}" disabled="true"/>
       <span id="n_z" class="glyphicon glyphicon-plus-sign" style="cursor: pointer"></span>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       月份：
       <span id="y_j" class="glyphicon glyphicon-minus-sign" style="cursor: pointer"></span>
-      <input type="text" class="form-control" style="width: 60px;display: inline-block" id="month"  value="${month}" disabled="true"/>
+      <input type="text" class="form-control" style="color:#ff7ea9; border: solid 1px #ff7ea9;width: 60px;display: inline-block" id="month"  value="${month}" disabled="true"/>
       <span id="y_z" class="glyphicon glyphicon-plus-sign" style="cursor: pointer"></span>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <button type="button" id = "js" class="btn btn-default"><span class="glyphicon glyphicon-retweet"></span>&nbsp;&nbsp;检索</button>
+      <button type="button" id = "js" class="btn btn-default" style="color:#ff7ea9; border: solid 1px #ff7ea9"><span class="glyphicon glyphicon-retweet"></span>&nbsp;&nbsp;检索</button>
       <input type="hidden" value="${pbar.id}" id="pbarId"/>
       <div id="main" style="margin-top:30px;height:400px; font-family: 'Microsoft Yahei'"></div>
         <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>

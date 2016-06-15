@@ -14,7 +14,7 @@ body{
 .clj_blog:link{
     font-size: 15px;
     font-family: "Microsoft Yahei";
-    color:#64A600;
+    color: #ff71ad;
     text-decoration: none;
 }
 
@@ -28,7 +28,7 @@ body{
 .clj_blog:visited{
     font-size: 15px;
     font-family: "Microsoft Yahei";
-    color:#64A600;
+    color:#ff71ad;
     text-decoration: none;
 }
 
@@ -41,9 +41,9 @@ body{
 
 .bo{
     background-color:#FFF;
-    color:#A6A600;
+    color: #ff8498;
     font-size: 12px;
-    border: 1px solid #A6A600;
+    border: 1px solid #ff8498;
 }
 
 .index_pic{
