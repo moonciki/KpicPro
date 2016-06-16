@@ -21,7 +21,7 @@
   <div class="main_02">
     <div class="main_02_title">
       <span class="glyphicon glyphicon-tags" style="color:#FF60AF"></span>
-      &nbsp;<b>${pbar.name}话题统计</b>
+      &nbsp;<b>${pbar.name}圈子统计</b>
     </div>
     <div class="main_02_content">
       年份：
@@ -56,7 +56,7 @@
 
                     var option = {
                       title : {
-                        text: '${pbar.name}话题${year}年${month}月访问量统计',
+                        text: '${pbar.name}圈子${year}年${month}月访问量统计',
                         subtext: ''
                       },
                       tooltip : {

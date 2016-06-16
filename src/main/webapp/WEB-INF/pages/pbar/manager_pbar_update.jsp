@@ -21,34 +21,34 @@
   <div class="main_02">
     <div class="main_02_title">
       <span class="glyphicon glyphicon-tags" style="color:#FF60AF"></span>
-      &nbsp;<b>${pbar.name}话题信息管理</b>
+      &nbsp;<b>${pbar.name}圈子信息管理</b>
     </div>
     <div class="main_02_content">
 
       <span class="glyphicon glyphicon-tag" style="color:#FF95CA"></span>
-      &nbsp;话题基本资料<br/><br/>
+      &nbsp;圈子基本资料<br/><br/>
       <ul class="list-group" style="color:#9D9D9D">
-        <li class="list-group-item">话题名称：
+        <li class="list-group-item">圈子名称：
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="text" class="form-control" id="name" name="name" disabled="disabled" value="${pbar.name}" placeholder="请输入话题名称">
+          <input type="text" class="form-control" id="name" name="name" disabled="disabled" value="${pbar.name}" placeholder="请输入圈子名称">
           </li>
-        <li class="list-group-item">话题签名：
+        <li class="list-group-item">圈子签名：
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="text" class="form-control" id="msg" name="msg" value="${pbar.msg}" placeholder="请输入话题签名">
+          <input type="text" class="form-control" id="msg" name="msg" value="${pbar.msg}" placeholder="请输入圈子签名">
           </li>
 
         </ul>
 
       <span class="glyphicon glyphicon-tag" style="color:#FF95CA"></span>
-      &nbsp;话题皮肤<br/><br/>
+      &nbsp;圈子皮肤<br/><br/>
       <ul class="list-group" style="color:#9D9D9D">
-        <li class="list-group-item">话题logo:
+        <li class="list-group-item">圈子logo:
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <span id="logo_img"><img src="${pbar.logo}?imageView2/1/w/89/h/89/q/95"/></span>
         </li>
         <input type="hidden" name="logo" id="logo" value="${pbar.logo}"/>
 
-        <li class="list-group-item">修改话题logo:
+        <li class="list-group-item">修改圈子logo:
           <center>
             <button type="button" id="sclogo" class="btn btn-info">上传新的logo图片</button>
             <br/>

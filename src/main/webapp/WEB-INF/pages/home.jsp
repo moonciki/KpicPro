@@ -10,7 +10,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>咔哔社区 - 兴趣使然</title>
+    <title>咔哔圈子 - 兴趣使然</title>
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
   <link href="${pageContext.request.contextPath}/static/css/home.css" rel="stylesheet"/>
   <link href="${pageContext.request.contextPath}/static/css/home/style.css" rel="stylesheet"/>
@@ -71,9 +71,9 @@
 
   <div class="hot_subject">
     <div class="hot_subject_01">
-      <span class="glyphicon glyphicon-leaf" style="color:#FF95CA"></span>&nbsp;&nbsp;&nbsp;热门话题
+      <span class="glyphicon glyphicon-leaf" style="color:#FF95CA"></span>&nbsp;&nbsp;&nbsp;热门圈子
     </div>
-    <!--在这里放置热门话题信息-->
+    <!--在这里放置热门圈子信息-->
     <div class="pbar_con">
       <div class="pbar_con_1">
         <div class="pbar_con_1_1">
@@ -115,7 +115,7 @@
     <div class="hot_subject_01">
       <span class="glyphicon glyphicon-user" style="color:#FF95CA"></span>&nbsp;&nbsp;&nbsp;牛人榜
     </div>
-    <!--在这里放置热门话题信息-->
+    <!--在这里放置热门圈子信息-->
   </div>
 
 

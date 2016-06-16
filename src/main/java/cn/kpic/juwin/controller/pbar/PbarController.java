@@ -66,7 +66,7 @@ public class PbarController {
         return "/pbar/pbar_add";
     }
 
-    /** 进入话题，这里需要统计话题点击量*/
+    /** 进入圈子，这里需要统计圈子点击量*/
     @RequestMapping(value = "/post/subjects/sub4615{pbarId}")
     public String pbarIndex(@PathVariable("pbarId") Long pbarId,Model model){
         model.addAttribute("user", CurrentUser.getUser());
@@ -171,7 +171,7 @@ public class PbarController {
         return map;
     }
 
-    /** 个人话题管理*/
+    /** 个人圈子管理*/
     @RequiresPermissions({"user"})
     @RequestMapping(value = "/user/all/user/subject")
     public String getAllSubject(Model model){
@@ -181,7 +181,7 @@ public class PbarController {
         return "/user/manager_center_pbars";
     }
 
-    /** 获取个人话题列表接口*/
+    /** 获取个人圈子列表接口*/
     @RequiresPermissions({"user"})
     @RequestMapping(value = "/user/all/user/subjects")
     @ResponseBody
@@ -190,7 +190,7 @@ public class PbarController {
         return this.pbarService.getAllSelfPbar(userId, page * 10);
     }
 
-    /** 话题申请*/
+    /** 圈子申请*/
     @RequiresPermissions({"user"})
     @RequestMapping(value = "/user/subject/apply")
     public String subjectApply(Model model){
@@ -202,7 +202,7 @@ public class PbarController {
         return "/user/manager_center_pbars_apply";
     }
 
-    /** 申请话题递交*/
+    /** 申请圈子递交*/
     @RequiresPermissions({"user"})
     @RequestMapping(value = "/user/pbar/save")
     @ResponseBody

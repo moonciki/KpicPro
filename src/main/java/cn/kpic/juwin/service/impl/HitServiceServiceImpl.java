@@ -30,7 +30,7 @@ public class HitServiceServiceImpl implements HitService {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    /** 更新每个话题昨日的点击量，每天的凌晨1点触发该任务*/
+    /** 更新每个圈子昨日的点击量，每天的凌晨1点触发该任务*/
     @Scheduled(cron = "0 0 1 * * ?")
     @Override
     public void updHitTask() {
@@ -41,7 +41,7 @@ public class HitServiceServiceImpl implements HitService {
         calendar.add(Calendar.DAY_OF_MONTH, -1);
         String nowStr = myTimeFormat.format(calendar.getTime());
 
-        List<Long> ids = this.pbarMapper.getAllIds();//取出所有话题id
+        List<Long> ids = this.pbarMapper.getAllIds();//取出所有圈子id
         for(Long pbarId : ids){
             String key = RedisCacheKey.PBAR_HIT+pbarId+"_"+nowStr;
             String[] dates = nowStr.split("-");

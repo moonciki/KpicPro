@@ -290,19 +290,19 @@
 
   <div class="cd_title2">
     <span style="color:#FF95CA" class="glyphicon glyphicon-leaf"></span>
-    我的话题
+    我的圈子
   </div>
   <c:choose>
     <c:when test="${flag == 11}">
       <div class="cd_unit_now">
         <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
-        话题管理
+        圈子管理
       </div>
     </c:when>
     <c:otherwise>
       <div class="cd_unit" onclick="window.location.href='${pageContext.request.contextPath}/user/all/user/subject'">
         <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
-        话题管理
+        圈子管理
       </div>
     </c:otherwise>
   </c:choose>
@@ -310,13 +310,13 @@
     <c:when test="${flag == 12}">
       <div class="cd_unit_now">
         <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
-        话题申请
+        申请圈子
       </div>
     </c:when>
     <c:otherwise>
       <div class="cd_unit" onclick="window.location.href='${pageContext.request.contextPath}/user/subject/apply'">
         <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
-        话题申请
+        申请圈子
       </div>
     </c:otherwise>
   </c:choose>

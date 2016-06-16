@@ -11,6 +11,8 @@ public class PbarType {
 
     private String name;
 
+    private String picUrl;
+
     private Date createTime;
 
     public Long getId() {
@@ -35,5 +37,13 @@ public class PbarType {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
+    }
+
+    public String getPicUrl() {
+        return picUrl;
+    }
+
+    public void setPicUrl(String picUrl) {
+        this.picUrl = picUrl;
     }
 }

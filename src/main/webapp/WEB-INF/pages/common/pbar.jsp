@@ -50,10 +50,10 @@
       <c:choose>
           <c:when test="${user != null}">
             <c:if test="${user.id == pbar. userId}">
-              <button type="button" onclick="window.open('${pageContext.request.contextPath}/subject/manager/sub4615${pbar.id}')" style="font-family: 微软雅黑" class="btn btn-primary">进入话题管理页&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span></button>
+              <button type="button" onclick="window.open('${pageContext.request.contextPath}/subject/manager/sub4615${pbar.id}')" style="font-family: 微软雅黑" class="btn btn-primary">进入圈子管理页&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span></button>
             </c:if>
             <c:if test="${role != null and role == 2}">
-                <button type="button" onclick="window.open('${pageContext.request.contextPath}/subject/manager/sub4615${pbar.id}')" style="font-family: 微软雅黑" class="btn btn-primary">进入话题管理页&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span></button>
+                <button type="button" onclick="window.open('${pageContext.request.contextPath}/subject/manager/sub4615${pbar.id}')" style="font-family: 微软雅黑" class="btn btn-primary">进入话圈子管理页&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-right"></span></button>
             </c:if>
           </c:when>
           <c:otherwise>

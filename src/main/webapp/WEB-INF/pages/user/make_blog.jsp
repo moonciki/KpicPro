@@ -46,7 +46,7 @@
         <div class="well">
           <span style="color:#00AEAE;font-size:14px">
           <span class="glyphicon glyphicon-info-sign" style="color:#FF60AF"></span>
-          说明：可以在此写个人文章，写好的文章自己可以按需要发布到已关注的话题下
+          说明：可以在此写个人文章，写好的文章自己可以按需要发布到已关注的圈子下
           </span>
         </div>
 

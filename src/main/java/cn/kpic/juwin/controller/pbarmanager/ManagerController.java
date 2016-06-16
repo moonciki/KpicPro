@@ -265,7 +265,7 @@ public class ManagerController {
             this.userService.delSmallManager(id, userId, pbarId);
             JmsSystemMsg jmsSystemMsg = new JmsSystemMsg();
             jmsSystemMsg.setTitle("撤职信");
-            jmsSystemMsg.setContent("您目前在<a href=\"/post/subjects/sub4615"+pbarId+"\">"+pbName+"</a>话题下的小管理猿权限已被话题管理猿撤销");
+            jmsSystemMsg.setContent("您目前在<a href=\"/post/subjects/sub4615"+pbarId+"\">"+pbName+"</a>圈子下的小管理猿权限已被圈子管理猿撤销");
             jmsSystemMsg.setUserId(userId);
             this.systemMsgQueueMessageSender.send(jmsSystemMsg);
             return true;

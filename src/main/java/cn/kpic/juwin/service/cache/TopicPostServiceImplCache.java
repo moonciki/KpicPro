@@ -61,7 +61,7 @@ public class TopicPostServiceImplCache extends TopicPostServiceImpl{
 
     @Override
     public TopicPost addTopicPost(String title, String content, String shortContent, Long pbarId, Long userId) {
-        /** 清除某话题前十页缓存*/
+        /** 清除某圈子前十页缓存*/
         redisTemplate.delete(RedisCacheKey.PBAR_PAGE + pbarId);
         return super.addTopicPost(title, content, shortContent, pbarId, userId);
     }

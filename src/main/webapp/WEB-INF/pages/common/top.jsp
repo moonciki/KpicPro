@@ -23,11 +23,11 @@
 <ol class="breadcrumb" style="padding-top:10px; width: 100%; font-size: 16px; font-family: 微软雅黑; border-bottom: 1px solid #F0F0F0; box-shadow:0px 0px 8px #FFD9EC; height: 70px; background-color: #FFF">
   <div class="top_main">
 
-    <div class="logo" onclick="window.location.href='/'" title="咔哔社区"></div>
+    <div class="logo" onclick="window.location.href='/'" title="咔哔圈子"></div>
 
 
     <input type="text" class="form-control" id="top_kw"
-           placeholder="输入你感兴趣的话题" style="margin-left:30px;margin-top:8px;border:2px #ffaad5 solid;width:460px;display:inline;">
+           placeholder="输入你感兴趣的圈子" style="margin-left:30px;margin-top:8px;border:2px #ffaad5 solid;width:460px;display:inline;">
     <button type="button" id="top_s" class="btn btn-info" style="margin-top:-3px;background-color:#ffaad5;border:1px solid #ffaad5;display: inline"><span class="glyphicon glyphicon-search"></span>&nbsp;搜索</button>
 
     <div class="top_content">
@@ -74,7 +74,7 @@
                         </button>
                         <br/>
                         <button type="button" style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="btn btn-default btn-sm" onclick="window.open('${pageContext.request.contextPath}/user/all/user/subject')">
-                          <span class="glyphicon glyphicon-leaf"></span> 我的话题
+                          <span class="glyphicon glyphicon-leaf"></span> 我的圈子
                         </button>
                         <br/>
                         <button type="button"  style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="unit_btn2 btn btn-default btn-sm">

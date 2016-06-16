@@ -10,7 +10,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>话题--${pbar.name}</title>
+    <title>圈子--${pbar.name}</title>
     <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
     <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
     <link href="${pageContext.request.contextPath}/static/css/pbar/pbar_index.css" rel="stylesheet">
@@ -112,7 +112,7 @@
                     </li>
                     <li style="cursor:pointer;" id = "tcy">
                         <span class="glyphicon glyphicon-tags" style="color: #AD5A5A"></span>
-                        &nbsp;&nbsp;话题成员
+                        &nbsp;&nbsp;圈子成员
                         <span class="lines"></span>
                     </li>
                 </ul>
@@ -276,7 +276,7 @@
             <div class="main02_02">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <span style="color:#8E8E8E; font-size: 14px;font-weight:bold;font-family: 微软雅黑"><span class="glyphicon glyphicon-user" style="color:${pbar.color};"></span>&nbsp;本话题所属人（大管理猿）</span>
+                        <span style="color:#8E8E8E; font-size: 14px;font-weight:bold;font-family: 微软雅黑"><span class="glyphicon glyphicon-user" style="color:${pbar.color};"></span>&nbsp;本圈子所属人（大管理猿）</span>
                         <span></span>
                     </div>
                 </div>
@@ -289,7 +289,7 @@
             <div class="main02_02">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <span style="color:#8E8E8E; font-size: 14px;font-weight:bold;font-family: 微软雅黑"><span class="glyphicon glyphicon-user" style="color:${pbar.color};"></span>&nbsp;本话题下的的小管理猿们</span>
+                        <span style="color:#8E8E8E; font-size: 14px;font-weight:bold;font-family: 微软雅黑"><span class="glyphicon glyphicon-user" style="color:${pbar.color};"></span>&nbsp;本圈子下的的小管理猿们</span>
                         <span></span>
                     </div>
                 </div>
@@ -297,7 +297,7 @@
                 <span id="manager_small_area">
                     <div class="panel panel-default" id="no-manager" style="display: none">
                         <div class="panel-body">
-                            <span style="color:#FF79BC; font-size: 10px;font-family: 微软雅黑"><span class="glyphicon glyphicon-info-sign" style="color:${pbar.color};"></span>&nbsp;本话题下还没有小管理猿 ￣ε￣</span>
+                            <span style="color:#FF79BC; font-size: 10px;font-family: 微软雅黑"><span class="glyphicon glyphicon-info-sign" style="color:${pbar.color};"></span>&nbsp;本圈子下还没有小管理猿 ￣ε￣</span>
                         </div>
                     </div>
                 </span>

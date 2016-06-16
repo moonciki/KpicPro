@@ -21,22 +21,22 @@
   <div class="main_02">
     <div class="main_02_title">
       <span class="glyphicon glyphicon-tags" style="color:#FF60AF"></span>
-      &nbsp;<b>${pbar.name}话题信息管理</b>
+      &nbsp;<b>${pbar.name}圈子信息管理</b>
     </div>
     <div class="main_02_content">
       <span class="glyphicon glyphicon-tag" style="color:#FF95CA"></span>
-      &nbsp;话题基本资料<br/><br/>
+      &nbsp;圈子基本资料<br/><br/>
       <ul class="list-group" style="color:#9D9D9D">
-        <li class="list-group-item">话题名称：
+        <li class="list-group-item">圈子名称：
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           ${pbar.name}</li>
-        <li class="list-group-item">话题签名：
+        <li class="list-group-item">圈子签名：
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         ${pbar.msg}</li>
         <li class="list-group-item">所属分类：
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         ${pbar.type}</li>
-        <li class="list-group-item">话题标签：
+        <li class="list-group-item">圈子标签：
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <c:forEach items="${pbar.tags}" var="tag">
             <span class="glyphicon glyphicon-tag" style="color: ${tag.color}"><span style="font-family: 微软雅黑">${tag.name}</span></span>
@@ -55,9 +55,9 @@
       </ul>
 
       <span class="glyphicon glyphicon-tag" style="color:#FF95CA"></span>
-      &nbsp;话题皮肤<br/><br/>
+      &nbsp;圈子皮肤<br/><br/>
       <ul class="list-group" style="color:#9D9D9D">
-        <li class="list-group-item">话题logo:
+        <li class="list-group-item">圈子logo:
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <img src="${pbar.logo}?imageView2/1/w/89/h/89/q/95"/>
         </li>

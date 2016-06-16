@@ -62,7 +62,7 @@ function jz(isjz){
             }else{
                 isEmpty == true;
                 $("#jzz1").hide();
-                $("#gzht").append("<div class=\"panel panel-default\"><div class=\"panel-body\"><center><span style='color:#FF95CA;font-family: 微软雅黑; font-size: 20px'>您还没有关注过任何话题哦~</span></center></div></div>")
+                $("#gzht").append("<div class=\"panel panel-default\"><div class=\"panel-body\"><center><span style='color:#FF95CA;font-family: 微软雅黑; font-size: 20px'>您还没有关注过任何圈子哦~</span></center></div></div>")
             }
 
             return;
@@ -77,7 +77,7 @@ function jz(isjz){
                 "<img src=\""+data[key].logo+"?imageView2/1/w/50/h/50/q/90\" style=\"border:solid "+data[key].color+" 2px;box-shadow:0px 0px 15px "+data[key].color+";border-radius: 8px;\"/>"+
                 "<span style='margin-left: 50px;color:"+data[key].color+"; font-size:18px'><b>"+data[key].name+"</b></span>"+
                 "<span style='margin-left: 50px;color:#8E8E8E;font-size:18px'><b>主题帖数："+data[key].topic_num+"</b></span>"+
-                "<span class=\"badge pull-right\" style = \"margin-top:15px;font-size:18px;cursor:pointer; background-color:"+data[key].color+"\" onclick='fb("+data[key].id+")'><b>发布到该话题</b></span>"+
+                "<span class=\"badge pull-right\" style = \"margin-top:15px;font-size:18px;cursor:pointer; background-color:"+data[key].color+"\" onclick='fb("+data[key].id+")'><b>发布到该圈子</b></span>"+
                 "</div></div>"
             $("#self_pbar").append(addhtml);
 

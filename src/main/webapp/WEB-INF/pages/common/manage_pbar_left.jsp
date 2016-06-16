@@ -22,19 +22,19 @@
   <div class="main_01_title"><span class="glyphicon glyphicon-leaf" style="color:#FF95CA"></span>&nbsp;&nbsp;${pbar.name}</div>
 
   <div class="main_01_title2">
-    <span class="glyphicon glyphicon-cog" style="color:#FF9797"></span>&nbsp;&nbsp;话题基本信息管理
+    <span class="glyphicon glyphicon-cog" style="color:#FF9797"></span>&nbsp;&nbsp;圈子基本信息管理
   </div>
   <c:choose>
     <c:when test="${flag == 1}">
       <div class="main_01_unit_point">
         <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
-        话题基本信息
+        圈子基本信息
       </div>
     </c:when>
     <c:otherwise>
       <div class="main_01_unit" onclick="window.location.href='${pageContext.request.contextPath}/subject/manager/sub4615${pbar.id}'">
         <span class="glyphicon glyphicon-tag" style="color:#73BF00"></span>
-        话题基本信息
+        圈子基本信息
       </div>
     </c:otherwise>
   </c:choose>
@@ -56,7 +56,7 @@
   </c:choose>
   </c:if>
   <div class="main_01_title2">
-    <span class="glyphicon glyphicon-signal" style="color:#FF9797"></span>&nbsp;&nbsp;话题统计
+    <span class="glyphicon glyphicon-signal" style="color:#FF9797"></span>&nbsp;&nbsp;圈子统计
   </div>
 
   <c:choose>

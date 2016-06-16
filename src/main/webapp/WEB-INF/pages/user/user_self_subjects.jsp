@@ -21,7 +21,7 @@
     <input type="hidden" id="userId" value="${user2.id}"/>
     <ul id="myTab" class="nav nav-tabs">
       <li class="active"><a href="#home" data-toggle="tab">
-        <span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;关注的话题</a>
+        <span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;关注的圈子</a>
       </li>
       <li><a href="#ios" data-toggle="tab"><span class="glyphicon glyphicon-tag"></span>&nbsp;&nbsp;关注的人</a></li>
 
