@@ -13,6 +13,10 @@ public class PbarType {
 
     private String picUrl;
 
+    private Integer weight;
+
+    private Integer isIndex;
+
     private Date createTime;
 
     public Long getId() {
@@ -45,5 +49,21 @@ public class PbarType {
 
     public void setPicUrl(String picUrl) {
         this.picUrl = picUrl;
+    }
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
+
+    public Integer getIsIndex() {
+        return isIndex;
+    }
+
+    public void setIsIndex(Integer isIndex) {
+        this.isIndex = isIndex;
     }
 }

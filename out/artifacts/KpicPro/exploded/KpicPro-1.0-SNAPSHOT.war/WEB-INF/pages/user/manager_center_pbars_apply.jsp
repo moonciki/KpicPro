@@ -24,10 +24,10 @@
         用户管理中心
         &nbsp;&nbsp;<span style="color:#8C8C00" class="glyphicon glyphicon-share-alt"></span>&nbsp;&nbsp;
         <span style="color:#FF95CA" class="glyphicon glyphicon-leaf"></span>
-        我的话题
+        我的圈子
         &nbsp;&nbsp;<span style="color:#8C8C00" class="glyphicon glyphicon-share-alt"></span>&nbsp;&nbsp;
         <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
-        话题申请
+        圈子申请
       </span>
     </div>
 
@@ -38,7 +38,7 @@
         <c:choose>
           <c:when test="${jc <= 28}">
             <br/><br/><br/>
-            <center>由于您的节操值低于<span style="color:#CD3333;font-weight: bold">28</span>，当前处于<span style="color:#CD3333;font-weight: bold">禁言</span>状态，无法申请话题</center>
+            <center>由于您的节操值低于<span style="color:#CD3333;font-weight: bold">28</span>，当前处于<span style="color:#CD3333;font-weight: bold">禁言</span>状态，无法申请圈子</center>
           </c:when>
           <c:otherwise>
             <div class="loading3" style="display:none"></div><br/>
@@ -46,7 +46,7 @@
           <span id="pbar_add_success" style="display: none;">
             <center>
               <button type="button" class="btn btn-success" onclick="window.location.href='${pageContext.request.contextPath}/user/all/user/subject'">
-                恭喜您，您所申请的话题已成功递交至kpic管理员，我们会在两个工作日内审核完毕，点击查看&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
+                恭喜您，您所申请的圈子已成功递交至kpic管理员，我们会在两个工作日内审核完毕，点击查看&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
               </button>
             </center>
           </span>
@@ -54,11 +54,11 @@
               <span class="glyphicon glyphicon-align-center" style="color: #00AEAE"></span>&nbsp;&nbsp;<span style="color:#FF8F59; line-height: 2.5">基本信息</span>
               <ul class="list-group">
                 <li class="list-group-item">
-                  话题名称：<br/><br/>
-                  <input type="text" style="width: 500px" id="name" class="form-control" placeholder="请输入话题名称"/>
+                  圈子名称：<br/><br/>
+                  <input type="text" style="width: 500px" id="name" class="form-control" placeholder="请输入圈子名称"/>
                 </li>
                 <li class="list-group-item">
-                  话题主题色：<br/><br/>
+                  圈子主题色：<br/><br/>
                   <input type="radio" name="color" class="color" value="#FF9797" checked="checked"/>
                   <span class="label" style="background-color: #FF9797">#FF9797</span>
                   &nbsp;&nbsp;&nbsp;
@@ -126,7 +126,7 @@
 
                 </li>
                 <li class="list-group-item">
-                  请简单描述一下本话题：<br/><br/>
+                  请简单描述一下本圈子：<br/><br/>
                   <textarea class="form-control" id="msg" rows="3"></textarea>
                 </li>
 
@@ -146,8 +146,8 @@
               </div>
 
 
-              <span class="glyphicon glyphicon-tags" style="color: #00AEAE"></span>&nbsp;&nbsp;<span style="color:#FF8F59; line-height: 2.5">请为该话题加一些标签</span>
-              <span style="color:#BEBEBE;font-size: 12px"><b> * 每个话题最多能加4个标签</b></span>
+              <span class="glyphicon glyphicon-tags" style="color: #00AEAE"></span>&nbsp;&nbsp;<span style="color:#FF8F59; line-height: 2.5">请为该圈子加一些标签</span>
+              <span style="color:#BEBEBE;font-size: 12px"><b> * 每个圈子最多能加4个标签</b></span>
               <div class="panel panel-default">
 
                 <input type="hidden" value="" id="tag_value"/>

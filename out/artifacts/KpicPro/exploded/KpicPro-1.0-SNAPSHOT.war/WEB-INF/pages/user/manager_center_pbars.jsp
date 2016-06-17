@@ -24,10 +24,10 @@
         用户管理中心
         &nbsp;&nbsp;<span style="color:#8C8C00" class="glyphicon glyphicon-share-alt"></span>&nbsp;&nbsp;
         <span style="color:#FF95CA" class="glyphicon glyphicon-leaf"></span>
-        我的话题
+        我的圈子
         &nbsp;&nbsp;<span style="color:#8C8C00" class="glyphicon glyphicon-share-alt"></span>&nbsp;&nbsp;
         <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
-        话题管理
+        圈子管理
       </span>
     </div>
 
