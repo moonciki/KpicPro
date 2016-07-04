@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.IndexMapper">
+
+    <select id="getAllTypes" resultType="cn.kpic.juwin.domain.PbarType">
+        SELECT id, name, picUrl FROM tb_pbar_type WHERE isIndex = 1
+    </select>
+
+    <select id="getAllAlbums" resultType="cn.kpic.juwin.domain.vo.AlbumVo">
+        SELECT ta.id, ta.title, ta.imageUrl, ta.picNum,
+        tu.avater, tu.userPic, tu.name AS userName
+        FROM tb_album ta
+        JOIN tb_user tu ON ta.userId = tu.id
+        WHERE ta.isIndex = 1
+    </select>
+
+    <select id="getAllUsers" resultType="cn.kpic.juwin.domain.vo.UserVo">
+        SELECT tu.id, tu.name, tu.sex, tu.tag, tu.userPic, tu.avater,
+        tui.num AS jc, tul.level
+        FROM tb_user tu
+        JOIN tb_user_level tul ON tul.userId = tu.id
+        JOIN tb_user_integrity tui ON tui.userId = tu.id
+        WHERE tu.isIndex = 1 AND isdel = 0 ORDER BY tui.num DESC
+    </select>
+
+    <select id="getAllPost" parameterType="java.lang.Integer" resultType="cn.kpic.juwin.domain.vo.PbarHomeTopicPost">
+        SELECT ttp.id AS id, ttp.title AS title, ttp.shortText AS shortText, ttp.replyNum AS replyNum,
+        ttp.isTop AS isTop, ttp.isBoutique AS isBoutique, tu.name AS userName, ttp.createTime AS createTime,
+        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater, ttp.num, tu.isjm,
+        tp.name AS pbarName, tp.color,tu.id AS userId, tp.id AS pbarId
+        FROM tb_topic_post ttp
+        JOIN tb_user tu ON ttp.userId = tu.id
+        JOIN tb_pbar tp ON ttp.pbarId = tp.id
+        WHERE ttp.num1 = 1 AND ttp.isdel = 0 ORDER BY ttp.istop DESC,ttp.updateTime DESC LIMIT #{page}, 10
+    </select>
+
+    <select id="getAllImg" resultType="cn.kpic.juwin.domain.Home">
+        SELECT title, url, picUrl, msg FROM tb_home WHERE isIndex = 1 ORDER BY weight DESC
+    </select>
+
+    <select id="getAllWarnUsers" resultType="cn.kpic.juwin.domain.vo.UserVo">
+        SELECT tu.id, tu.name, tu.sex, tu.tag, tu.userPic, tu.avater,
+        tui.num AS jc, tul.level
+        FROM tb_user tu
+        JOIN tb_user_level tul ON tul.userId = tu.id
+        JOIN tb_user_integrity tui ON tui.userId = tu.id
+        <![CDATA[WHERE tui.num < 38]]> ORDER BY tui.updateTime DESC, tui.num ASC LIMIT 0,10
+    </select>
+
+    <select id="getAllPbars" resultType="cn.kpic.juwin.domain.Pbar">
+      SELECT
+      tp.id,
+      tp.name,
+      tp.topic_num,
+      tp.msg,
+      tp.focus_num,
+      tp.logo,
+      tp.color
+      FROM tb_pbar tp
+      WHERE tp.is_index = 1 AND tp.ispass = 1 AND isdel = 0
+    </select>
+</mapper>

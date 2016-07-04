@@ -20,4 +20,6 @@ public interface BlogMapper {
 
     BlogVo readBlog(Long id);
 
+    void del(Long id);
+
 }

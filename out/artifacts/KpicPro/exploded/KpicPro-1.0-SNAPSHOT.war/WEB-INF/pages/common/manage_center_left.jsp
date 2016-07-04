@@ -171,6 +171,40 @@
   </c:choose>
 
   <div class="cd_title2">
+    <span style="color:#FF95CA" class="glyphicon glyphicon-home"></span>
+    申请上首页
+  </div>
+
+  <c:choose>
+    <c:when test="${flag == 666}">
+      <div class="cd_unit_now">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        我的申请
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="cd_unit" onclick="window.location.href='${pageContext.request.contextPath}/user/home/list'">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        我的申请
+      </div>
+    </c:otherwise>
+  </c:choose>
+  <c:choose>
+    <c:when test="${flag == 101}">
+      <div class="cd_unit_now">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        写申请
+      </div>
+    </c:when>
+    <c:otherwise>
+      <div class="cd_unit" onclick="window.location.href='${pageContext.request.contextPath}/user/home/request'">
+        <span style="color:#84C1FF" class="glyphicon glyphicon-tag"></span>
+        写申请
+      </div>
+    </c:otherwise>
+  </c:choose>
+
+  <div class="cd_title2">
     <span style="color:#FF95CA" class="glyphicon glyphicon-list-alt"></span>
     文章管理
   </div>

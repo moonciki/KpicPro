@@ -10,4 +10,6 @@ public interface BlogService {
 
     void saveBlog(Blog blog);
 
+    void delBlog(Long id);
+
 }

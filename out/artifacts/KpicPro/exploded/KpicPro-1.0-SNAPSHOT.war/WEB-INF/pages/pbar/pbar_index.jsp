@@ -64,7 +64,7 @@
         <span style="font-size: 16px;font-family: 微软雅黑"><b>私信发送</b></span>
         <br/><br/>
         <span style="color:#0055aa;font-weight: bold">想对TA说点什么？</span>
-        <textarea id="sx_msg" class="form-control" rows="5"></textarea>
+        <textarea id="sx_msg" class="form-control" placeholder="请输入私信内容，不能为空，且不超过100个字符~" rows="5"></textarea>
         <br/>
         <button type="button" class="btn btn-primary" id="sx_submit">发送</button>
         <button type="button" class="btn btn-primary" id="sx_close">取消</button>
@@ -182,7 +182,7 @@
                                 <div class="reply_loading"><div class="loading" style="margin-top:50px;padding-top: 120px;font-family: 微软雅黑;">发送中...</div></div>
                                 <span style="font-size: 15px;font-family: 微软雅黑"><span class="glyphicon glyphicon-pencil" style="color:#FF79BC"></span>&nbsp;&nbsp;发表主题帖</span>
                                 <br/><br/>
-                                <input type="text" class="form-control" style="width: 722px" id="title" placeholder="请输入标题">
+                                <input type="text" class="form-control" style="width: 722px" id="title" placeholder="请输入标题，不能为空，且不少于5个字符，不超过36个字符">
                                 <br/>
                                 <!--style给定宽度可以影响编辑器的最终宽度-->
                                 <script type="text/plain" id="myEditor" name="content" style="width:722px;height:240px;"></script>
@@ -229,18 +229,12 @@
 
                                 <span class="glyphicon glyphicon-user" style="color:#00CACA"></span>
                                 昵称：<b>${user.name}</b>
+                                &nbsp;&nbsp;&nbsp;
+                                <span class="glyphicon glyphicon-check" style="color:#FF8000"></span>
+                                级别：<b><span id="user_level_add"></span> 级</b>
 
                             </div>
                             <div class="main02_01_02_02">
-                                <span style="color:#FFC1E0">————————————————</span><br/>
-                        <span >
-
-                            <span class="glyphicon glyphicon-check" style="color:#FF8000"></span>
-                                级别：<b><span id="user_level_add"></span> 级</b>
-                            &nbsp;&nbsp;&nbsp;
-                            <span class="glyphicon glyphicon-heart" style="color:#ff7575"></span>
-                                粉丝：<b>200000</b>
-                        </span>
                                 <span style="color:#FFC1E0">————————————————</span><br/>
                                 <c:choose>
                                     <c:when test="${role != null and role == 1}">
@@ -256,6 +250,9 @@
                                         身份：<span class="badge">非管理猿</span>
                                     </c:otherwise>
                                 </c:choose>
+                                &nbsp;&nbsp;
+                                <button type="button" onclick="window.open('/user/u6514${user.id}/index.html')" class="btn btn-default btn-xs" style="border: 1px solid #ff81b1; color:#ff81b1"><span class="glyphicon glyphicon-home"></span> 个人首页</button>
+
                                 <br/><br/>
                                 <span class="glyphicon glyphicon-signal" style="color:#FF79BC"></span>&nbsp;<b>升级信息</b>
                                 <br/>
@@ -265,8 +262,7 @@
                                         <span id="user_level"></span>
                                     </div>
                                 </div>
-
-                            </div>
+                                </div>
 
                         </div>
                     </c:otherwise>
@@ -326,7 +322,7 @@
                             <span style="font-size: 16px;font-family: 微软雅黑"><b>管理猿申请</b></span>
                             <br/><br/>
                             <span style="color:#0055aa;font-weight: bold">说点什么：</span>
-                            <textarea id="tip_msg" class="form-control" rows="5"></textarea>
+                            <textarea id="tip_msg" class="form-control" placeholder="请输入申请内容，说说自己为什么想当这个圈子的管理员，内容不能为空，且不超过100个字符~" rows="5"></textarea>
                             <br/>
                             <button type="button" class="btn btn-primary" id="tip_submit">发送</button>
                             <button type="button" class="btn btn-primary" id="tip_close">取消</button>
@@ -347,6 +343,7 @@
     </div>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/music/music.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/video/video.js"></script>
+    <%@include file="../common/foot.jsp" %>
 </div>
 </body>
 </html>

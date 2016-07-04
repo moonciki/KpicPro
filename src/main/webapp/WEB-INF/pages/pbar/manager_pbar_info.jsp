@@ -69,6 +69,6 @@
     </div>
   </div>
 </div>
-
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

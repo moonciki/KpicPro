@@ -13,8 +13,8 @@ ${}：表示拼接符，可能会引起sql注入
 <mapper namespace="cn.kpic.juwin.mapper.UserIntegrityMapper">
 
     <insert id="save" parameterType="cn.kpic.juwin.domain.UserIntegrity">
-        insert into tb_user_integrity (userId, num)
-        values (#{userId}, #{num})
+        insert into tb_user_integrity (userId, num, updateTime)
+        values (#{userId}, #{num}, #{updateTime})
     </insert>
 
     <select id="getByUserId" parameterType="java.lang.Long" resultType="java.lang.Integer">

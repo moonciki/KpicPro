@@ -1,0 +1,30 @@
+body{
+    font-family: "Microsoft Yahei";
+    background-image: url("http://7xtmxr.com1.z0.glb.clouddn.com/static/login_bg.jpg");
+}
+.main{
+    margin: 0 auto;
+    width: 700px;
+    min-height: 450px;
+    height: auto;
+    padding: 30px;
+    border: 2px solid #E0E0E0;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    background-image: url("http://7xtmxr.com1.z0.glb.clouddn.com/static/ss.png");
+    border-radius: 8px;
+    box-shadow:0px 0px 8px #FFD9EC;
+}
+
+.code{
+    width: 170px;
+    height: 45px;
+    border: 1px solid #ff4f89;
+    margin-left: 18px;
+    display:inline-block;
+    font-size: 20px;
+    letter-spacing:8px;
+    color: #cd0f0b;
+    font-weight: bold;
+    border-radius: 6px;
+}

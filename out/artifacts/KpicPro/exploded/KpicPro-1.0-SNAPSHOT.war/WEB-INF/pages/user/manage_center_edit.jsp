@@ -31,22 +31,25 @@
         个人信息修改
       </span>
     </div>
+    <input type="hidden" value="${user.name}" id="userName"/>
     <div class="main_02_content">
       <span class="glyphicon glyphicon-folder-open" style="color: #00AEAE"></span>&nbsp;&nbsp;<span style="color:#FF8F59; line-height: 2.5">个人资料</span>
       <div class="panel panel-default">
         <ul class="list-group">
           <input type="hidden" style="width: 500px" id="id" value="${user.id}"/>
           <li class="list-group-item">用户昵称：
-            <input type="text" style="width: 500px" id="name" class="form-control" value="${user.name}" placeholder="请输入昵称"/>
+            <span class="yz" id="yz_name_1">*输入内容不合法</span>
+            <span class="yz" id="yz_name_2">*该昵称已被占用，请更换其他昵称</span>
+            <input type="text" style="width: 500px" id="name" class="form-control" value="${user.name}" placeholder="请输入您的昵称(必填，请不要超过6个字符)"/>
             </li>
-          <li class="list-group-item">用户年龄：
-            <input type="text" style="width: 500px" id="age" class="form-control" value="${user.age}" placeholder="请输入年龄"/>
+          <li class="list-group-item">出生年月：<span class="yz" id="yz_birth">*输入内容不合法</span>
+            <input type="text" style="width: 500px" id="birth" class="form-control" value="${user.birth}" placeholder="请输入出生年月，格式：2000-01-01"/>
             </li>
-          <li class="list-group-item">密码：
-            <input type="password" style="width: 500px" id="password" class="form-control" value="${user.password}" placeholder="请输入密码"/>
+          <li class="list-group-item">密码：<span class="yz" id="yz_pwd">*输入的新密码不合法</span>
+            <input type="password" style="width: 500px" id="password" class="form-control" value="${user.password}" placeholder="必填，请输入您的密码(不少于6个字符，不超过20个字符)"/>
             </li>
-          <li class="list-group-item">现居坐标：
-            <input type="text" style="width: 500px" id="address" class="form-control" value="${user.address}" placeholder="请输入坐标"/>
+          <li class="list-group-item">现居坐标：<span class="yz" id="yz_address">*输入内容不合法</span>
+            <input type="text" style="width: 500px" id="address" class="form-control" value="${user.address}" placeholder="请输入您的所在地区，格式：省-市"/>
             </li>
         </ul>
 
@@ -84,7 +87,8 @@
       <span class="glyphicon glyphicon-pencil" style="color: #00AEAE"></span>&nbsp;&nbsp;<span style="color:#FF8F59; line-height: 2.5">个人签名</span>
       <div class="panel panel-default">
         <div class="panel-body">
-          <input type="text" style="width: 770px" id="tag" class="form-control" value="${user.tag}" placeholder="请输入签名">
+          <span class="yz" id="yz_tag">*输入内容不合法</span>
+          <input type="text" style="width: 770px" id="tag" class="form-control" value="${user.tag}" placeholder="非必填，请输入个性签名，字数不少于5个字，不超过20字">
         </div>
       </div>
 
@@ -116,6 +120,6 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/plupload/plupload.full.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/qiniu.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/user/manager_center_edit.js"></script>
-
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

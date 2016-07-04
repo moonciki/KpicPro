@@ -6,6 +6,7 @@ import cn.kpic.juwin.domain.UserLevel;
 import cn.kpic.juwin.domain.vo.PrivateLetterVo;
 import cn.kpic.juwin.service.PrivateLetterService;
 import cn.kpic.juwin.utils.CurrentUser;
+import cn.kpic.juwin.utils.StringDeal;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -60,6 +61,7 @@ public class PrivateLetterController {
     public boolean addLetter(String content, Long userId, Model model){
         User curr_user = CurrentUser.getUser();
         try{
+            content = StringDeal.getText(content);
             PrivateLetter privateLetter = new PrivateLetter();
             privateLetter.setCreateTime(new Date());
             privateLetter.setUserId(userId);

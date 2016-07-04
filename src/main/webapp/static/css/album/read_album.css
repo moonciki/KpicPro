@@ -128,18 +128,6 @@ body{
     border: 10px #FFF solid;
 }
 
-.boy{
-    color: #22a3ff;
-    font-size:20px;
-    font-weight:bold;
-}
-
-.girl{
-    color: #ff5ab7;
-    font-size:20px;
-    font-weight:bold;
-}
-
 .reply_body_main_content{
     background-color: #FFF;
     margin: 0 auto;
@@ -147,4 +135,13 @@ body{
     width: 722px;
     height:30px;
     height: auto;
+}
+
+.btm{
+    width: 570px;
+    margin-left: -50px;
+    border-radius: 100px;
+    min-height: 1px;
+    height: auto;
+    background-image: url("http://7xtmxr.com1.z0.glb.clouddn.com/static/numbg.png");
 }

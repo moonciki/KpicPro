@@ -71,13 +71,13 @@
           <element id="library" level="project" name="Gradle: mysql:mysql-connector-java:5.1.12" />
           <element id="library" level="project" name="Gradle: com.alibaba:druid:1.0.0" />
           <element id="library" level="project" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.5" />
-          <element id="library" level="project" name="Gradle: com.qiniu:qiniu-java-sdk:7.0.9" />
           <element id="library" level="project" name="Gradle: commons-codec:commons-codec:1.6" />
           <element id="library" level="project" name="Gradle: commons-logging:commons-logging:1.1.1" />
           <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpclient:4.2" />
           <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpcore:4.2.1" />
           <element id="library" level="project" name="Gradle: org.apache.httpcomponents:httpmime:4.2" />
           <element id="library" level="project" name="Gradle: org.slf4j:slf4j-api:1.7.5" />
+          <element id="library" level="project" name="Gradle: com.qiniu:qiniu-java-sdk:7.0.10" />
         </element>
       </element>
       <element id="directory" name="META-INF">

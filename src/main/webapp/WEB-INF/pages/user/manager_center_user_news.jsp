@@ -118,5 +118,6 @@
   </div>
 </div>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/user/manager_center_user_news.js"></script>
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

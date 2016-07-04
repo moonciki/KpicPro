@@ -2,6 +2,7 @@ package cn.kpic.juwin.mapper;
 
 import cn.kpic.juwin.domain.Msg;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Map;
  */
 public interface MsgMapper {
 
-    void addMsg(Msg msg);
+    void addMsg(List<Msg> msg);
 
     Integer notRead(Msg msg);
 

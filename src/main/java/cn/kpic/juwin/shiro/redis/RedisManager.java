@@ -17,7 +17,7 @@ public class RedisManager {
 	private int expire = 24*60*60;
 	
 	//timeout for jedis try to connect to redis server, not expire time! In milliseconds
-	private int timeout = 0;
+	private int timeout = 100000;
 	
 	private String password = "";
 	

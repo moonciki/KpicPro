@@ -21,4 +21,9 @@ public class BlogServiceImpl implements BlogService {
     public void saveBlog(Blog blog) {
         this.blogMapper.save(blog);
     }
+
+    @Override
+    public void delBlog(Long id) {
+        this.blogMapper.del(id);
+    }
 }

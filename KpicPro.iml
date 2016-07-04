@@ -93,7 +93,6 @@
     <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: mysql:mysql-connector-java:5.1.12" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: com.alibaba:druid:1.0.0" level="project" />
     <orderEntry type="library" exported="" scope="RUNTIME" name="Gradle: org.slf4j:jcl-over-slf4j:1.7.5" level="project" />
-    <orderEntry type="library" exported="" name="Gradle: com.qiniu:qiniu-java-sdk:7.0.9" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.slf4j:jcl-over-slf4j:1.6.6" level="project" />
     <orderEntry type="library" exported="" name="Gradle: commons-codec:commons-codec:1.6" level="project" />
     <orderEntry type="library" exported="" name="Gradle: commons-logging:commons-logging:1.1.1" level="project" />
@@ -101,5 +100,6 @@
     <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpcore:4.2.1" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.apache.httpcomponents:httpmime:4.2" level="project" />
     <orderEntry type="library" exported="" name="Gradle: org.slf4j:slf4j-api:1.7.5" level="project" />
+    <orderEntry type="library" exported="" name="Gradle: com.qiniu:qiniu-java-sdk:7.0.10" level="project" />
   </component>
 </module>

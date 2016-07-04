@@ -23,6 +23,8 @@ public class Album {
 
     private String music;
 
+    private Integer isIndex;
+
     private Date createTime;
 
     public Long getId() {
@@ -95,5 +97,13 @@ public class Album {
 
     public void setMusic(String music) {
         this.music = music;
+    }
+
+    public Integer getIsIndex() {
+        return isIndex;
+    }
+
+    public void setIsIndex(Integer isIndex) {
+        this.isIndex = isIndex;
     }
 }

@@ -7,6 +7,7 @@ import java.util.Date;
  */
 public class User implements java.io.Serializable{
     private Long id;
+    private Long num;
     private String name;
     private String email;
     private String password;
@@ -21,6 +22,7 @@ public class User implements java.io.Serializable{
     private String tag;
     private String avater;
     private int isjm;
+    private int isIndex;
 
     public Long getId() {
         return id;
@@ -140,5 +142,21 @@ public class User implements java.io.Serializable{
 
     public void setIsjm(int isjm) {
         this.isjm = isjm;
+    }
+
+    public int getIsIndex() {
+        return isIndex;
+    }
+
+    public void setIsIndex(int isIndex) {
+        this.isIndex = isIndex;
+    }
+
+    public Long getNum() {
+        return num;
+    }
+
+    public void setNum(Long num) {
+        this.num = num;
     }
 }

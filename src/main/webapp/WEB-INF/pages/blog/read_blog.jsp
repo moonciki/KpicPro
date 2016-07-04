@@ -49,10 +49,10 @@
             <a href="${pageContext.request.contextPath}/user/u6514${blog.userId}/index.html" target="_blank">${blog.name}</a>
             <c:choose>
               <c:when test="${blog.sex == 0}">
-                <span class="boy">♂</span>
+                <div class="boy"></div>
               </c:when>
               <c:otherwise>
-                <span class="girl">♀</span>
+                <div class="girl"></div>
               </c:otherwise>
             </c:choose>
           </span>
@@ -68,5 +68,7 @@
     </div>
   </div>
 </div>
+
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

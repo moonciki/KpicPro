@@ -41,13 +41,10 @@ $().ready(function(){
 
         var picContent_num = $("#picContent_1").val();
 
-        var name = $("#name").val();
-
-        if(picContent_num.trim().length == 0 || picUrl_num_content.trim().length == 0 || name.trim().length == 0){
+        if(picContent_num.length == 0 || picUrl_num_content.length == 0){
             alert("请将必填信息填写完整");
             return;
         }
-        $(".loading").show();
         var num1 = $("#already_numt").val();
 
         var jsons = "[";
@@ -61,7 +58,15 @@ $().ready(function(){
 
         jsons +="]";
 
-        var album_msg = $("#msg").val();
+        var name = $("#name").val().trim();
+        var album_msg = $("#msg").val().trim();
+        if(name.length < 5 || name.length > 36 || album_msg.length < 5 || album_msg.length > 200){
+            alert("输入图集信息不合法：图集标题或者描述没有按照要求填写");
+            return;
+        }
+        $(".loading").show();
+
+        $("#done").attr("disabled", "disabled");
 
         var imageUrl = $("#imageUrl").val();
 
@@ -78,6 +83,7 @@ $().ready(function(){
                alert("发生未知错误！请重试");
                $(".loading").hide();
                $("#html").show();
+               $("#done").removeAttr("disabled");
            }
         });
 

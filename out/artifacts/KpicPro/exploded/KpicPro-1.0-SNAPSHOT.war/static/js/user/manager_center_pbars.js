@@ -40,7 +40,7 @@ function jz(isjz){
             }else if(data[key].ispass == 1){
                 addhtml += "<span class=\"label label-success\">审核通过</span>"
             }else if(data[key].ispass == 2){
-                addhtml += "<span class=\"label label-default\">已关闭</span>"
+                addhtml += "<span class=\"label label-default\">审核不通过</span>"
             }else{
                 addhtml += "<span class=\"label label-danger\">封禁</span>"
             }
@@ -56,10 +56,10 @@ function jz(isjz){
             }
             addhtml+="</td></tr></table>";
             $("#topic_post_area").append(addhtml);
-            $("#load_more").removeAttr("disabled");
-            $("#pager").val(parseInt(page) + 1);
-
         }
+
+        $("#load_more").removeAttr("disabled");
+        $("#pager").val(parseInt(page) + 1);
 
 
 

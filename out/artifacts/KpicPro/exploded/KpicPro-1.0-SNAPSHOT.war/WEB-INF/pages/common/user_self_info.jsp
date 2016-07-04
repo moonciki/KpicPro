@@ -18,7 +18,7 @@
     <span style="font-size: 16px;font-family: 微软雅黑"><b>私信发送</b></span>
     <br/><br/>
     <span style="color:#0055aa;font-weight: bold">想对TA说点什么？</span>
-    <textarea id="sx_msg" class="form-control" rows="5"></textarea>
+    <textarea id="sx_msg" class="form-control" placeholder="请输入私信内容，不能为空，且不超过100个字符~" rows="5"></textarea>
     <br/>
     <button type="button" class="btn btn-primary" id="sx_submit">发送</button>
     <button type="button" class="btn btn-primary" id="sx_close">取消</button>

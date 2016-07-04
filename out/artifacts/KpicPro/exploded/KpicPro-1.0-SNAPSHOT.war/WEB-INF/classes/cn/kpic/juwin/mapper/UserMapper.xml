@@ -1,23 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!DOCTYPE mapper
-PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- namespace的作用在于对sql进行分类化管理，理解sql隔离
 这里注意：如果使用Mapper代理开发的话，那么namespace将会有特殊重要的作用
  -->
- <!-- 知识点：
+<!-- 知识点：
  #{}：表示占位符，预编译，不会引起sql注入
  ${}：表示拼接符，可能会引起sql注入
   -->
 <mapper namespace="cn.kpic.juwin.mapper.UserMapper">
+	<insert id="save" parameterType="cn.kpic.juwin.domain.User">
+		<selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into tb_user
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">id,</if>
+			<if test="num != null">num,</if>
+			<if test="name != null">name,</if>
+			<if test="email != null">email,</if>
+			<if test="password != null">password,</if>
+			<if test="age != null">age,</if>
+			<if test="sex != null">sex,</if>
+			<if test="birth != null">birth,</if>
+			<if test="userPic != null">userPic,</if>
+			<if test="postNum != null">postNum,</if>
+			<if test="isdel != null">isdel,</if>
+			<if test="address != null">address,</if>
+			<if test="tag != null">tag,</if>
+			<if test="avater != null">avater,</if>
+			<if test="isjm != null">isjm,</if>
+			<if test="isIndex != null">isIndex,</if>
+			<if test="createTime != null">createTime,</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">#{id,jdbcType=BIGINT},</if>
+			<if test="num != null">#{num,jdbcType=BIGINT},</if>
+			<if test="name != null">#{name,jdbcType=VARCHAR},</if>
+			<if test="email != null">#{email,jdbcType=VARCHAR},</if>
+			<if test="password != null">#{password,jdbcType=VARCHAR},</if>
+			<if test="age != null">#{age,jdbcType=INTEGER},</if>
+			<if test="sex != null">#{sex,jdbcType=INTEGER},</if>
+			<if test="birth != null">#{birth,jdbcType=VARCHAR},</if>
+			<if test="userPic != null">#{userPic,jdbcType=VARCHAR},</if>
+			<if test="postNum != null">#{postNum,jdbcType=INTEGER},</if>
+			<if test="isdel != null">#{isdel,jdbcType=INTEGER},</if>
+			<if test="address != null">#{address,jdbcType=VARCHAR},</if>
+			<if test="tag != null">#{tag,jdbcType=VARCHAR},</if>
+			<if test="avater != null">#{avater,jdbcType=VARCHAR},</if>
+			<if test="isjm != null">#{isjm,jdbcType=INTEGER},</if>
+			<if test="isIndex != null">#{isIndex,jdbcType=INTEGER},</if>
+			<if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},</if>
+		</trim>
+	</insert>
 
 	<select id="findUserById" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.User">
 		SELECT * FROM tb_user WHERE id=#{id} AND isdel = 0
 	</select>
 
-	<select id="findUserByName" parameterType="java.lang.String" resultType="cn.kpic.juwin.domain.User">
-		SELECT * FROM tb_user WHERE name=#{name} AND isdel = 0
+	<select id="findUserByName" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.User">
+		SELECT * FROM tb_user WHERE num=#{num} AND isdel = 0
 	</select>
 
 	<select id="getAllUser" resultType="cn.kpic.juwin.domain.User">
@@ -33,7 +77,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 	</insert>
 
 	<select id="jugeUser" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.User">
-		SELECT * FROM tb_user WHERE name = #{name} AND password = #{password} AND isdel = 0
+		SELECT * FROM tb_user WHERE num = #{num} AND password = #{password} AND isdel = 0
 	</select>
 
 	<update id="update" parameterType="cn.kpic.juwin.domain.User">
@@ -49,6 +93,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 			<if test="birth != null">birth = #{birth},</if>
 			<if test="postNum != null">postNum = #{postNum},</if>
 			<if test="isjm != null">isjm = #{isjm},</if>
+			<if test="isIndex != null">isIndex = #{isIndex},</if>
 		</trim>
 		where id = #{id,jdbcType=BIGINT}
 	</update>
@@ -109,5 +154,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-ma
 		update tb_user set isjm = 1 where id = #{id}
 	</update>
 
-	
+	<select id="checkName" parameterType="java.lang.String" resultType="java.lang.Long">
+		SELECT id FROM tb_user WHERE name = #{name}
+	</select>
+
+	<select id="checkNum" parameterType="java.lang.Long" resultType="java.lang.Long">
+		SELECT id FROM tb_user WHERE num = #{num}
+	</select>
+
+
 </mapper>

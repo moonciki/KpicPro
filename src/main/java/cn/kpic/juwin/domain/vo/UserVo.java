@@ -24,6 +24,7 @@ public class UserVo {
     private int level;
     private int score;
     private int isjm;
+    private int jc;
 
     public Long getId() {
         return id;
@@ -159,5 +160,13 @@ public class UserVo {
 
     public void setIsjm(int isjm) {
         this.isjm = isjm;
+    }
+
+    public int getJc() {
+        return jc;
+    }
+
+    public void setJc(int jc) {
+        this.jc = jc;
     }
 }

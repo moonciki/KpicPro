@@ -11,6 +11,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -42,6 +43,7 @@ public class HitServiceServiceImpl implements HitService {
         String nowStr = myTimeFormat.format(calendar.getTime());
 
         List<Long> ids = this.pbarMapper.getAllIds();//取出所有圈子id
+        List<Hit> final_result = new ArrayList<>();
         for(Long pbarId : ids){
             String key = RedisCacheKey.PBAR_HIT+pbarId+"_"+nowStr;
             String[] dates = nowStr.split("-");
@@ -55,7 +57,10 @@ public class HitServiceServiceImpl implements HitService {
             }else{
                 hit.setValue1(0);
             }
-            hitMapper.save(hit);
+            final_result.add(hit);
         }
+
+        /** 批量持久化*/
+        this.hitMapper.saves(final_result);
     }
 }

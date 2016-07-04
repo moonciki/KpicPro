@@ -47,6 +47,10 @@ public class PbarHomeTopicPost {
 
     private int isjm;
 
+    private Long userId;
+
+    private Long pbarId;
+
     public Long getId() {
         return id;
     }
@@ -189,5 +193,21 @@ public class PbarHomeTopicPost {
 
     public void setIsjm(int isjm) {
         this.isjm = isjm;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public Long getPbarId() {
+        return pbarId;
+    }
+
+    public void setPbarId(Long pbarId) {
+        this.pbarId = pbarId;
     }
 }

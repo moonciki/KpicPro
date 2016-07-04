@@ -14,4 +14,6 @@ public interface HitMapper {
 
     List<Hit> getAllByPbarIdAndYM(Map params);
 
+    void saves(List<Hit> hits);
+
 }

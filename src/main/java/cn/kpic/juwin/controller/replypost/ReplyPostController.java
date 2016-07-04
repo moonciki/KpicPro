@@ -240,4 +240,55 @@ public class ReplyPostController {
         }
     }
 
+
+    @RequiresPermissions({"user"})
+    @RequestMapping(value = "/user/m/qxzd")
+    @ResponseBody
+    public boolean qxzd(Long id){
+        if(id == null){
+            return false;
+        }
+        try{
+            TopicPost topicPost = new TopicPost();
+            topicPost.setId(id);
+            topicPost.setIsTop(0);
+            this.topicPostService.update(topicPost);
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @RequiresPermissions({"user"})
+    @RequestMapping(value = "/user/m/zd")
+    @ResponseBody
+    public boolean zd(Long id, Long userId){
+        if(id == null || userId == null){
+            return false;
+        }
+        try{
+            TopicPost topicPost = new TopicPost();
+            topicPost.setId(id);
+            topicPost.setIsTop(100);
+            this.topicPostService.update(topicPost);
+
+            if(!String.valueOf(userId).equals(String.valueOf(CurrentUser.getUser().getId()))){
+                /** 帖子置顶，经验值 +10*/
+                upgradeQueueMessageSender.send(new JmsUpgrade(userId, 5));//经验+10
+                JmsSystemMsg jmsSystemMsg = new JmsSystemMsg();
+                jmsSystemMsg.setTitle("您发表的帖子被置顶，经验+5，节操值+1");
+                jmsSystemMsg.setContent("<a href=\"/post/reply/tp5416"+id+"\" target=\"_blank\">点击查看详情</a>");
+                jmsSystemMsg.setUserId(userId);
+                this.systemMsgQueueMessageSender.send(jmsSystemMsg);
+
+                JmsUserIntegrityUpd jmsUserIntegrityUpd = new JmsUserIntegrityUpd(userId, 1, 1);
+                this.userIntegrityUpdQueueMessageSender.send(jmsUserIntegrityUpd);
+            }
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 }

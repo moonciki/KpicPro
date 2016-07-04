@@ -27,8 +27,10 @@
 
 
     <input type="text" class="form-control" id="top_kw"
-           placeholder="输入你感兴趣的圈子" style="margin-left:30px;margin-top:8px;border:2px #ffaad5 solid;width:460px;display:inline;">
-    <button type="button" id="top_s" class="btn btn-info" style="margin-top:-3px;background-color:#ffaad5;border:1px solid #ffaad5;display: inline"><span class="glyphicon glyphicon-search"></span>&nbsp;搜索</button>
+           placeholder="输入你感兴趣的圈子" style="margin-left:30px;margin-top:8px;border:2px #ffaad5 solid;width:430px;display:inline;">
+    <button type="button" id="top_s" class="btn top_btn top_btn_1" style="color:#FFF;"><span class="glyphicon glyphicon-search"></span>&nbsp;搜索</button>
+    <button type="button" onclick="window.open('/feedback')" class="btn top_btn top_btn_2" style="color:#FFF;"><span class="glyphicon glyphicon-send"></span>&nbsp;反馈</button>
+    <button type="button" onclick="window.open('/about_us')" class="btn top_btn top_btn_3" style="color:#FFF;"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;关于咔哔</button>
 
     <div class="top_content">
       <c:choose>
@@ -77,7 +79,7 @@
                           <span class="glyphicon glyphicon-leaf"></span> 我的圈子
                         </button>
                         <br/>
-                        <button type="button"  style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="unit_btn2 btn btn-default btn-sm">
+                        <button type="button" onclick="logout()"  style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="unit_btn2 btn btn-default btn-sm">
                           <span class="glyphicon glyphicon-log-out"></span> 退出账号
                         </button>
                         <br/>
@@ -87,7 +89,7 @@
                 </li>
 
                 <li class="info-i user-name has-pulldown">
-                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;
                   <span style="font-size:16px;color:#3c70ff;font-family:Microsoft Yahei;"><span class="glyphicon glyphicon-bell" style="color:#D9B300"></span>&nbsp;消息 <span id="user_news"></span></span>
                   <div class="pulldown user-info">
                     <em class="arrow"></em>
@@ -107,7 +109,7 @@
                 </li>
                 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/common/top.js"></script>
 
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;
                 <span class="glyphicon glyphicon-cog" style="color:#ff7066"></span>&nbsp;<a href="${pageContext.request.contextPath}/user/management/center" title="我的管理中心" target="_blank">管理中心</a>
 
               </ul>
@@ -115,10 +117,10 @@
           </div>
         </c:when>
         <c:otherwise>
-          <button type="button" class="btn btn-info btn-sm">
+          <button type="button" class="btn btn-info btn-sm" onclick="window.open('/index')">
             登录
           </button>
-          <button type="button" class="btn btn-warning btn-sm">
+          <button type="button" class="btn btn-warning btn-sm" onclick="window.open('/register')">
             注册
           </button>
         </c:otherwise>
@@ -133,6 +135,15 @@
     }
     window.open("/kabi/search/kw_"+kw);
   });
+  function logout(){
+    $.post("/logout",function(data){
+      if(data){
+        location.reload();
+      }else{
+        alert("退出过程中出现迷之错误，请刷新重试~");
+      }
+    });
+  }
 </script>
   </div>
 <%--</ol>--%>

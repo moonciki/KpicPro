@@ -11,18 +11,12 @@
 ${}：表示拼接符，可能会引起sql注入
  -->
 <mapper namespace="cn.kpic.juwin.mapper.MsgMapper">
-<!--
-private Long id;
-    private Long userId;
-    private int num;
-    private int type;
--->
     <insert id="addMsg" parameterType="cn.kpic.juwin.domain.Msg">
         insert into tb_msg (userId, num, type)
-        values (#{userId}, #{num}, #{type})
-        <selectKey resultType="java.lang.Long" keyProperty="id" >
-            SELECT LAST_INSERT_ID()
-        </selectKey>
+        values
+        <foreach item="msg" index="index" collection="list" separator=",">
+            (#{msg.userId}, #{msg.num}, #{msg.type})
+        </foreach>
     </insert>
 
     <select id="notRead" parameterType="cn.kpic.juwin.domain.Msg" resultType="java.lang.Integer">

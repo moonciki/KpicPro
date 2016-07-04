@@ -65,7 +65,7 @@
     update tb_reply_post
     <trim prefix="set" suffixOverrides=",">
       <if test="isdel != null">isdel = #{isdel},</if>
-      <if test="replyNum != null">replyNum = #{replyNum},</if>
+      <if test="replyNum != null">replyNum = replyNum+1,</if>
       <if test="num1 != null">num1 = #{num1},</if>
       <if test="num2 != null">num2 = #{num2},</if>
       <if test="num != null">num = num+1,</if>

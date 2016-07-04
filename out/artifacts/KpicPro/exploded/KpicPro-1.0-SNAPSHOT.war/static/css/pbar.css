@@ -11,6 +11,41 @@ body{
 	height: 70px;
 }
 
+.top_btn{
+	margin-top:-3px;
+	font-weight: bold;
+	display: inline
+}
+
+.top_btn_1{
+	background-color:#ffaad5;
+	border:1px solid #ffaad5;
+}
+
+.top_btn_2{
+	background-color: #57b6ff;
+	border:1px solid #57b6ff;
+}
+
+.top_btn_3{
+	background-color: #ffc560;
+	border:1px solid #ffc560;
+}
+
+.boy{
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	background-image: url("male7.png");
+}
+
+.girl{
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	background-image: url("female.png");
+}
+
 .logo{
 	width: 95px;
 	height: 50px;

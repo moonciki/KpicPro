@@ -38,28 +38,31 @@ ${}：表示拼接符，可能会引起sql注入
     <select id="getTopicPostByPbarId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PbarHomeTopicPost">
         SELECT ttp.id AS id, ttp.title AS title, ttp.shortText AS shortText, ttp.replyNum AS replyNum,
         ttp.isTop AS isTop, ttp.isBoutique AS isBoutique, tu.name AS userName, ttp.createTime AS createTime,
-        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater, ttp.num, tu.isjm
+        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater, ttp.num, tu.isjm,
+        tu.id AS userId
         FROM tb_topic_post ttp
         JOIN tb_user tu ON ttp.userId = tu.id
-        WHERE ttp.pbarId = #{pbarId} AND ttp.isdel = 0 ORDER BY ttp.updateTime DESC LIMIT #{page}, 10
+        WHERE ttp.pbarId = #{pbarId} AND ttp.isdel = 0 ORDER BY ttp.istop DESC, ttp.updateTime DESC LIMIT #{page}, 10
     </select>
 
     <select id="getTopicBlogOrPostByPbarId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PbarHomeTopicPost">
         SELECT ttp.id AS id, ttp.title AS title, ttp.shortText AS shortText, ttp.replyNum AS replyNum,
         ttp.isTop AS isTop, ttp.isBoutique AS isBoutique, tu.name AS userName, ttp.createTime AS createTime,
-        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater, ttp.num, tu.isjm
+        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater, ttp.num, tu.isjm,
+        tu.id AS userId
         FROM tb_topic_post ttp
         JOIN tb_user tu ON ttp.userId = tu.id
-        WHERE ttp.pbarId = #{pbarId} AND ttp.isdel = 0 AND ttp.isBlog = #{isBlog} ORDER BY ttp.updateTime DESC LIMIT #{page}, 10
+        WHERE ttp.pbarId = #{pbarId} AND ttp.isdel = 0 AND ttp.isBlog = #{isBlog} ORDER BY ttp.istop DESC,ttp.updateTime DESC LIMIT #{page}, 10
     </select>
 
     <select id="getJpTopicByPbarId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.PbarHomeTopicPost">
         SELECT ttp.id AS id, ttp.title AS title, ttp.shortText AS shortText, ttp.replyNum AS replyNum,
         ttp.isTop AS isTop, ttp.isBoutique AS isBoutique, tu.name AS userName, ttp.createTime AS createTime,
-        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater, ttp.num, tu.isjm
+        ttp.updateTime AS updateTime, tu.userPic AS userPic, ttp.isBlog AS isBlog, tu.avater AS avater, ttp.num, tu.isjm,
+        tu.id AS userId
         FROM tb_topic_post ttp
         JOIN tb_user tu ON ttp.userId = tu.id
-        WHERE ttp.pbarId = #{pbarId} AND ttp.isdel = 0 AND ttp.isBoutique = #{isBoutique} ORDER BY ttp.updateTime DESC LIMIT #{page}, 10
+        WHERE ttp.pbarId = #{pbarId} AND ttp.isdel = 0 AND ttp.isBoutique = #{isBoutique} ORDER BY ttp.istop DESC,ttp.updateTime DESC LIMIT #{page}, 10
     </select>
 
     <select id="getByUid" parameterType="java.lang.Long" resultType="cn.kpic.juwin.domain.vo.TopicPostMsg">
@@ -87,6 +90,7 @@ ${}：表示拼接符，可能会引起sql注入
             <if test="userId != null">userId = #{userId},</if>
             <if test="num != null">num = #{num},</if>
             <if test="isBoutique != null">isBoutique = #{isBoutique}#,</if>
+            <if test="isTop != null">isTop = #{isTop}#,</if>
             <if test="createTime != null">createTime = #{createTime},</if>
             <if test="updateTime != null">updateTime = #{updateTime},</if>
             <if test="replyNum != null">replyNum = replyNum + 1,</if>

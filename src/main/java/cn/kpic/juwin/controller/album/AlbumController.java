@@ -76,6 +76,9 @@ public class AlbumController {
     @ResponseBody
     public boolean saveAlbum(Album album, String pics){
         try{
+            album.setTitle(StringDeal.getText(album.getTitle()));
+            album.setMsg(StringDeal.getText(album.getMsg()));
+            pics = StringDeal.getText(pics);
             List<Pic> result = JSON.parseArray(pics, Pic.class);
             this.albumService.saveAlbum(album, result);
             return true;

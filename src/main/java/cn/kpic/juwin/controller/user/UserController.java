@@ -8,12 +8,12 @@ import cn.kpic.juwin.jms.sender.UpgradeQueueMessageSender;
 import cn.kpic.juwin.mapper.PbarFocusMapper;
 import cn.kpic.juwin.mapper.PbarManagerApplyMapper;
 import cn.kpic.juwin.mapper.UserFocusMapper;
-import cn.kpic.juwin.mapper.UserIntegrityMapper;
 import cn.kpic.juwin.service.PbarService;
 import cn.kpic.juwin.service.UserIntegrityService;
 import cn.kpic.juwin.service.UserLevelService;
 import cn.kpic.juwin.service.UserService;
 import cn.kpic.juwin.utils.CurrentUser;
+import cn.kpic.juwin.utils.StringDeal;
 import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -28,7 +28,6 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.text.DecimalFormat;
 import java.util.*;
 
 /**
@@ -119,25 +118,72 @@ public class UserController {
         return "sd";
     }
 
-    @RequestMapping(value = "/login")
-    public String login() {
-        Subject subject = SecurityUtils.getSubject();
-        if (subject != null) {
-            Object object = subject.getPrincipal();
-            if (object != null && object instanceof User) {
-                User currentUser = (User) object;
-            }
+    @RequestMapping(value = "/index")
+    public String login(Model model) {
+        User user = CurrentUser.getUser();
+        model.addAttribute("user",user);
+        if (user != null) {
+            return "redirect:/";
         }
-        return "/login";
+        return "/index";
+    }
+
+    @RequestMapping(value = "/register")
+    public String register(Model model) {
+        User user = CurrentUser.getUser();
+        model.addAttribute("user",user);
+        if (user != null) {
+            return "redirect:/";
+        }
+        return "/register";
+    }
+
+    @RequestMapping(value = "/login/code")
+    @ResponseBody
+    public Map login() {
+        Map result = new HashMap();
+        try{
+            result.put("num",(new Random().nextInt(9999999)%(9999999-1000000+1) + 1000000));
+            result.put("success", true);
+            return result;
+        }catch (Exception e){
+            e.printStackTrace();
+            result.put("num",null);
+            result.put("success", false);
+            return result;
+        }
+    }
+
+    @RequestMapping(value = "/register/pic")
+    @ResponseBody
+    public Map pic(){
+        Map result = new HashMap();
+        try{
+            result.put("pic", UUID.randomUUID().toString().replace("-", ""));
+            result.put("success", true);
+            return result;
+        }catch (Exception e){
+            e.printStackTrace();
+            result.put("pic", null);
+            result.put("success", false);
+            return result;
+        }
     }
 
     @RequestMapping(value = "/logout")
-    public String logout() {
-        Subject subject = SecurityUtils.getSubject();
-        if (subject != null) {
-            subject.logout();
+    @ResponseBody
+    public Boolean logout() {
+        try{
+            Subject subject = SecurityUtils.getSubject();
+            if (subject != null) {
+                subject.logout();
+            }
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
         }
-        return "/index";
+
     }
 
     @RequestMapping(value = "/logout2")
@@ -157,17 +203,12 @@ public class UserController {
         return map;
     }
 
-    @RequestMapping(value = "/index")
-    public String index() {
-        return "/index";
-    }
-
     @RequestMapping(value = "/jugelogin")
     @ResponseBody
-    public Map<String, Object> jugeLogin(String name, String password, Model model) {
+    public Map<String, Object> jugeLogin(Long num, String pwd, Model model) {
         Map<String, Object> map = new HashMap<>();
         try {
-            map.put("success", userService.jugeLogin(name, password));
+            map.put("success", userService.jugeLogin(num, pwd));
         } catch (Exception e) {
             map.put("success", false);
             e.printStackTrace();
@@ -176,17 +217,18 @@ public class UserController {
     }
 
     @RequestMapping(value = "/realogin")
-    public String realogin(String name, String password) {
+    @ResponseBody
+    public Boolean realogin(Long num, String pwd) {
         try {
-            UsernamePasswordToken token = new UsernamePasswordToken(name, password);
+            UsernamePasswordToken token = new UsernamePasswordToken(num+"", pwd);
             token.setRememberMe(true);
             Subject subject = SecurityUtils.getSubject();
             subject.login(token);
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
-            return "/404";
+            return false;
         }
-        return "redirect:/operate/qx";
     }
 
     @RequiresPermissions({"user", "add"})
@@ -448,15 +490,20 @@ public class UserController {
     @RequiresPermissions({"user"})
     @RequestMapping(value = "/user/management/center/edit")
     public String managerCenterEdit(Model model) {
-        User curr_user = CurrentUser.getUser();
-        if (curr_user == null) {
+        try{
+            User curr_user = CurrentUser.getUser();
+            if (curr_user == null) {
+                return "/404";
+            } else {
+                UserLevel userLevel = userLevelService.getUserLevelByUserId(curr_user.getId());
+                model.addAttribute("user", this.userService.getUserById(curr_user.getId()));
+                model.addAttribute("level", userLevel);
+                model.addAttribute("flag", 2);
+                return "/user/manage_center_edit";
+            }
+        }catch (Exception e){
+            e.printStackTrace();
             return "/404";
-        } else {
-            UserLevel userLevel = userLevelService.getUserLevelByUserId(curr_user.getId());
-            model.addAttribute("user", curr_user);
-            model.addAttribute("level", userLevel);
-            model.addAttribute("flag", 2);
-            return "/user/manage_center_edit";
         }
     }
 
@@ -464,9 +511,13 @@ public class UserController {
     @RequestMapping(value = "/user/management/center/update")
     @ResponseBody
     public Map<String, Object> managerCenterUpdate(User user) {
+        user.setName(StringDeal.getText(user.getName()));
+        user.setBirth(StringDeal.getText(user.getBirth()));
+        user.setAddress(StringDeal.getText(user.getAddress()));
+        user.setTag(StringDeal.getText(user.getTag()));
         Map<String, Object> map = new HashMap<>();
         try {
-            user.setAvater("".equals(user.getAvater().trim()) ? null : user.getAvater());
+            user.setAvater("".equals(user.getAvater()) ? null : user.getAvater());
             this.userService.update(user);
             map.put("success", true);
         } catch (Exception e) {

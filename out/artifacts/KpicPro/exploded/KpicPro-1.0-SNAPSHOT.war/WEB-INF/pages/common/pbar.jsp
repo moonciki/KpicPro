@@ -19,7 +19,9 @@
     <div class="head_01_center_01">
       <br/><br/>
       <center>
-        <img src="${pbar.logo}?imageView2/1/w/100/h/100/q/95" style="border:solid ${pbar.color} 2px;box-shadow:0px 0px 30px ${pbar.color};border-radius: 8px;" alt=""/>
+        <a href="${pageContext.request.contextPath}/post/subjects/sub4615${pbar.id}">
+            <img src="${pbar.logo}?imageView2/1/w/100/h/100/q/95" style="border:solid ${pbar.color} 2px;box-shadow:0px 0px 30px ${pbar.color};border-radius: 8px;" alt=""/>
+        </a>
       </center>
     </div>
     <div class="head_01_center_02" style="line-height: 1.5">
@@ -28,7 +30,7 @@
       <br/>
       <p style="font-family: 微软雅黑">
         <span class="glyphicon glyphicon-bookmark" style="color: #FF60AF;font-size: 10px"></span>
-            <span style="font-size: 10px">分类：<span style="color: #008200">${pbar.type}</span>
+            <span style="font-size: 10px">分类：<a href="${pageContext.request.contextPath}/kabi/type/tp${pbar.typeId}" target="_blank">${pbar.type}</a>
                 &nbsp;&nbsp;
                 <span class="glyphicon glyphicon-duplicate" style="color: #FF60AF"></span>
                 <span style="font-size: 10px">帖子数：<span style="color:orange">${pbar.topicNum}</span></span>

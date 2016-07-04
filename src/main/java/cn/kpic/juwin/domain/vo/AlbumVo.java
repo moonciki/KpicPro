@@ -35,6 +35,8 @@ public class AlbumVo {
 
     private String tag;
 
+    private Integer isIndex;
+
     public Long getId() {
         return id;
     }
@@ -145,5 +147,13 @@ public class AlbumVo {
 
     public void setTag(String tag) {
         this.tag = tag;
+    }
+
+    public Integer getIsIndex() {
+        return isIndex;
+    }
+
+    public void setIsIndex(Integer isIndex) {
+        this.isIndex = isIndex;
     }
 }

@@ -88,13 +88,17 @@ $().ready(function(){
 
     $("#saveReply").click(function(){
         //String content, Long topicId, Long userId
+        var shortText = ue.getContentTxt();
+        if(shortText.trim().length == 0 || shortText.trim().length >2000){
+            alert("输入内容不合法：实际内容（不包含图片、音视频）为空或者超过2000个字符");
+            return;
+        }
         $("#saveReply").attr('disabled',"true");
         var content = ue.getContent();
         var topicId = $("#topicId").val();
         var userId = $("#userId").val();
         var userName = $("#userName").val();
         var userPic = $("#userPic").val();
-        var shortText = ue.getContentTxt();
         var pbarId = $("#pbarId").val();
         var topicUserId = $("#topicUserId").val();
         if(shortText.length > 100){
@@ -284,7 +288,7 @@ function shortReply(is_load, reply_id){
 
 
                     addhtml+="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='javascript:void(0);' onclick=\"transfer('"+data.data[key].replyId+"','"+data.data[key].userId+"','"+data.data[key].userName+"')\"><span class=\"glyphicon glyphicon-share-alt\"></span>"+
-                    " 回复TA</a><span class=\"badge pull-right\" style=\"background-color: #FF9797\"># 1</span></div>"+
+                    " 回复TA</a></div>"+
                     "<div class=\"pl_text_02\">"+data.data[key].content+"</div></div></div></div>"
             }
 
@@ -318,8 +322,8 @@ function saveShort(){
     var content = $("#short_content").val();
     var replyId = $("#reply_id").val();
     var pbarId = $("#pbarId").val();
-    if(content.trim().length == 0){
-        alert("内容不能为空！");
+    if(content.trim().length == 0 || content.trim().length > 100){
+        alert("内容为空或者输入内容过长！");
         $("#tj").removeAttr("disabled");
         $("#short_fs_loading").hide();
         return;
@@ -594,6 +598,35 @@ function jp_click(id){
         }else{
             $("#jp").empty();
             $("#jp").append("设置失败，请刷新重试");
+        }
+    });
+}
+
+function qxzd_click(id){
+    $("#qxzd").empty();
+    $("#qxzd").append("取消中..");
+    $.post("/user/m/qxzd", {'id' : id}, function(data){
+        if(data){
+            $("#qxzd").empty();
+            $("#qxzd").append("设置成功");
+        }else{
+            $("#qxzd").empty();
+            $("#qxzd").append("设置失败，请刷新重试");
+        }
+    });
+}
+
+function zd_click(id){
+    $("#zd").empty();
+    $("#zd").append("置顶中..");
+    var userId = $("#topicUserId").val();
+    $.post("/user/m/zd", {'id' : id, 'userId' : userId}, function(data){
+        if(data){
+            $("#zd").empty();
+            $("#zd").append("置顶成功");
+        }else{
+            $("#zd").empty();
+            $("#zd").append("设置失败，请刷新重试");
         }
     });
 }

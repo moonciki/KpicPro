@@ -104,10 +104,10 @@
             &nbsp;&nbsp;性别：
             <c:choose>
               <c:when test="${user2.sex == 0}">
-                <span class="boy">♂</span>
+                <div class="boy"></div>
               </c:when>
               <c:otherwise>
-                <span class="girl">♀</span>
+                <div class="girl"></div>
               </c:otherwise>
             </c:choose>
           </div>
@@ -147,5 +147,6 @@
 </div>
 
 <script type="text/javascript" charset="UTF-8" src="${pageContext.request.contextPath}/static/js/user/user_info.js"></script>
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

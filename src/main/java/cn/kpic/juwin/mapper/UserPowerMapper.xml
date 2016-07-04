@@ -15,6 +15,11 @@ ${}：表示拼接符，可能会引起sql注入
     <!-- 这里的id：表示文件中的sql
     将sql语句封装到mappedStatement对象中，所以讲id称为statement的id
      -->
+    <insert id="save" parameterType="cn.kpic.juwin.domain.UserPower">
+        insert into tb_user_power (user_id, power_id)
+        values (#{userId}, #{powerId})
+    </insert>
+
     <select id="getAllPowerByUserId" parameterType="java.lang.Long" resultType="java.lang.String">
         SELECT tp.name FROM tb_user_power tup
         JOIN tb_power tp ON tup.power_id = tp.id

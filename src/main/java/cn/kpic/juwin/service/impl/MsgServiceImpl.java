@@ -8,11 +8,9 @@ import cn.kpic.juwin.service.MsgService;
 import cn.kpic.juwin.utils.CurrentUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 /**
  * Created by bjsunqinwen on 2016/2/23.
@@ -27,7 +25,7 @@ public class MsgServiceImpl implements MsgService{
 
     @Override
     @Transactional
-    public void addMsg(Msg msg) {
+    public void addMsg(List<Msg> msg) {
         this.msgMapper.addMsg(msg);
     }
 

@@ -106,18 +106,28 @@ $().ready(function(){
 
 
     $("#save_pbar").click(function(){
+
+        var name = $("#name").val().trim();
+        var msg = $("#msg").val().trim();
+        var type = jQuery("#type  option:selected").val();
+        var logo = $("#logo").val();
+        var color = $("input[name='color']:checked").val();
+        var tags = $("#tag_value").val().trim();
+
+        if(name.length == 0 || name.length > 12 || msg.length == 0 || msg.length > 50 || tags.length == 0){
+            alert("信息输入不合法，请严格按照文本框内提示的规则进行填写");
+            return;
+        }
+
+        if(logo.length == 0){
+            alert("请上传该圈子logo");
+            return;
+        }
+
         $("#save_pbar").attr("disabled", "disabled");
         $("#zt").hide();
         $(".loading3").show();
         $("#loading4").show();
-        var name = $("#name").val();
-        var msg = $("#msg").val();
-        var type = jQuery("#type  option:selected").val();
-        var logo = $("#logo").val();
-        var color = $("input[name='color']:checked").val();
-        var tags = $("#tag_value").val();
-
-        alert(type +"______"+color);
 
         $.post("/user/pbar/save", {'name' : name, 'msg' : msg, 'type' : type, 'logo' : logo, 'color' : color, 'tags' : tags}, function(data){
             $(".loading3").hide();

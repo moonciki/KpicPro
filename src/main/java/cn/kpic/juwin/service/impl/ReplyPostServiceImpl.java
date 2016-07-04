@@ -15,6 +15,7 @@ import cn.kpic.juwin.mapper.ReplyPostMapper;
 import cn.kpic.juwin.mapper.ReplyTipMapper;
 import cn.kpic.juwin.service.ReplyPostService;
 import cn.kpic.juwin.utils.CurrentUser;
+import cn.kpic.juwin.utils.StringDeal;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -92,6 +93,7 @@ public class ReplyPostServiceImpl implements ReplyPostService {
         User user = CurrentUser.getUser();
         if(user != null){
             replyPost.setCreateTime(new Date());
+            replyPost.setShortText(StringDeal.getText(replyPost.getShortText()));
             this.replyPostMapper.insert(replyPost);
 
             /** 持久化回复贴图片*/

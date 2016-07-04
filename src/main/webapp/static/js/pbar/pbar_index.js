@@ -21,13 +21,17 @@ $().ready(function(){
     });
 
     $("#tip_submit").click(function(){
+        var msg = $("#tip_msg").val().trim();
+        if(msg.length == 0 || msg.length > 100){
+            alert("输入内容不合法：内容为空或者内容过长");
+            return;
+        }
         $("#jb_load").show();
         $("#tip_submit").attr("disabled", "disabled");
         $("#tip_close").attr("disabled", "disabled");
         var pbarId = $("#pbarId").val();
         var userId = $("#userId").val();
         var pbUserId = $("#pbar_user_id").val();
-        var msg = $("#tip_msg").val();
 
         $.post("/pbar/save/sq", {'userId':userId,'msg':msg,'pbarId':pbarId, 'pbUserId':pbUserId}, function(data){
             if(data.success){
@@ -157,13 +161,17 @@ $().ready(function(){
     }
 
     $("#savePost").click(function(){
+        var title = $("#title").val().trim();
+        var content = ue.getContent();
+        var shortContent = ue.getContentTxt();
+        if(title.length == 0 || title.length > 36 || shortContent.length == 0 || shortContent.length > 5000){
+            alert("输入内容不合法：标题和实际内容（不包含图片、音视频）不能为空，标题不超过36个字符，内容不能超出5000个字符（过大）");
+            return;
+        }
         $("#savePost").attr('disabled',"true");
         $(".reply_loading").show();
         var userName = $("#userName").val();
         var userPic = $("#userPic").val();
-        var title = $("#title").val();
-        var content = ue.getContent();
-        var shortContent = ue.getContentTxt();
         if(shortContent.length > 210){
             shortContent = shortContent.substring(0, 210)+"...";
         }
@@ -185,9 +193,8 @@ $().ready(function(){
             }
             var addhtml = "<div class='main01_bw'><div class='pf'><span class=\"glyphicon glyphicon-triangle-left\"></span></div><div class='main01_01_user'><img src=\""+userPic+"\" class='index_pic'/>" +
                 "</div><div class='main01_01_user_reply'></div><div class=\"main01_01\"><div class=\"main01_01_01\"><span class=\"label label-default tie\">帖</span>&nbsp;<a href=\"http-equiv\" style=\"font-size: 15px;font-family:微软雅黑\">"
-                +data.title+
-                "</a><span class=\"badge pull-right\" style=\"font-size:14px;background-color: #FF95CA\">"
-                +data.replyNum+
+                +"<a href='/post/reply/tp5416"+data.id+"' target=\"_blank\">"+data.title+
+                "</a><span class=\"badge pull-right\" style=\"font-size:14px;background-color: #FF95CA\">0"+
                 "</span><br/><span style=\"line-height: 1.8;font-size: 12px;color: #9D9D9D\">"
                 +data.shortText+
                 "</span></div>"
@@ -227,25 +234,30 @@ $().ready(function(){
                 for(key in data){
                     var addhtml = "<div class='main01_bw'><div class='pf'><span class=\"glyphicon glyphicon-triangle-left\"></span></div><div class='main01_01_user'>";
 
+                    addhtml += "<a href=\"/user/u6514"+data[key].userId+"/index.html\" target=\"_blank\">"
                     if(data[key].avater == "" || data[key].avater == null){
                         addhtml += "<img src='" + data[key].userPic + "?size=70' class='index_pic'/>";
                     }else{
                         addhtml += "<img src='" + data[key].avater + "?imageView2/1/w/70/h/70/q/95' class='index_pic'/>";
                     }
+                    addhtml+="</a>"
                     if(data[key].isjm == 1) {
                         addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
                     }
 
                     addhtml += "</div><div class='main01_01_user_reply'></div><div class=\"main01_01\"><div class=\"main01_01_01\">"
+                    if(data[key].isBoutique == 1){
+                        addhtml+="<span class=\"label label-warning jing\">精</span>&nbsp;"
+                    }
+                    if(data[key].isTop == 100){
+                        addhtml+="<span class=\"label label-warning ding\">顶</span>&nbsp;"
+                    }
                     if(data[key].isBlog == 1){
                         addhtml+="<span class=\"label label-default bo\">文</span>&nbsp;<a class=\"clj_blog\" href=\"/post/reply/at5416" + data[key].id + "\" target=\"_blank\">"
                     }else{
                         addhtml+="<span class=\"label label-default tie\">帖</span>&nbsp;<a href=\"/post/reply/tp5416" + data[key].id + "\" target=\"_blank\" style=\"font-size: 15px;font-family:微软雅黑\">"
                     }
                     addhtml += data[key].title + "</a>"
-                    if(data[key].isBoutique == 1){
-                        addhtml+="&nbsp;&nbsp;<span class=\"label label-warning jing\">精</span>"
-                    }
                     addhtml+= "<span class=\"badge pull-right\" style=\"font-size:14px;background-color: #FF95CA\">"
                         +data[key].replyNum+
                         "</span><br/><span style=\"line-height: 1.8;font-size: 12px;color: #9D9D9D\">"
@@ -301,25 +313,29 @@ $().ready(function(){
             }else{
                 for(key in data){
                     var addhtml = "<div class='main01_bw'><div class='pf'><span class=\"glyphicon glyphicon-triangle-left\"></span></div><div class='main01_01_user'>";
-
+                    addhtml += "<a href=\"/user/u6514"+data[key].userId+"/index.html\" target=\"_blank\">"
                     if(data[key].avater == "" || data[key].avater == null){
                         addhtml += "<img src='" + data[key].userPic + "?size=70' class='index_pic'/>";
                     }else{
                         addhtml += "<img src='" + data[key].avater + "?imageView2/1/w/70/h/70/q/95' class='index_pic'/>";
                     }
+                    addhtml+="</a>";
                     if(data[key].isjm == 1) {
                         addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
                     }
                     addhtml += "</div><div class='main01_01_user_reply'></div><div class=\"main01_01\"><div class=\"main01_01_01\">"
+                    if(data[key].isBoutique == 1){
+                        addhtml+="<span class=\"label label-warning jing\">精</span>&nbsp;"
+                    }
+                    if(data[key].isTop == 100){
+                        addhtml+="<span class=\"label label-warning ding\">顶</span>&nbsp;"
+                    }
                     if(data[key].isBlog == 1){
                         addhtml+="<span class=\"label label-default bo\">文</span>&nbsp;<a class=\"clj_blog\" href=\"/post/reply/at5416" + data[key].id + "\" target=\"_blank\">"
                     }else{
                         addhtml+="<span class=\"label label-default tie\">帖</span>&nbsp;<a href=\"/post/reply/tp5416" + data[key].id + "\" target=\"_blank\" style=\"font-size: 15px;font-family:微软雅黑\">"
                     }
                     addhtml += data[key].title + "</a>"
-                    if(data[key].isBoutique == 1){
-                        addhtml+="&nbsp;&nbsp;<span class=\"label label-warning jing\">精</span>"
-                    }
                     addhtml+= "<span class=\"badge pull-right\" style=\"font-size:14px;background-color: #FF95CA\">"
                         +data[key].replyNum+
                         "</span><br/><span style=\"line-height: 1.8;font-size: 12px;color: #9D9D9D\">"
@@ -497,12 +513,13 @@ $().ready(function(){
             }else{
                 for(key in data){
                     var addhtml = "<div class='main01_bw'><div class='pf'><span class=\"glyphicon glyphicon-triangle-left\"></span></div><div class='main01_01_user'>";
-
+                    addhtml += "<a href=\"/user/u6514"+data[key].userId+"/index.html\" target=\"_blank\">"
                     if(data[key].avater == "" || data[key].avater == null){
                         addhtml += "<img src='" + data[key].userPic + "?size=70' class='index_pic'/>";
                     }else{
                         addhtml += "<img src='" + data[key].avater + "?imageView2/1/w/70/h/70/q/95' class='index_pic'/>";
                     }
+                    addhtml+="</a>";
                     if(data[key].isjm == 1) {
                         addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
                     }
@@ -583,9 +600,9 @@ $().ready(function(){
                     addhtml+="</div><div class='pbar_users_02'>昵称：<a href=\"/user/u6514"+data[key].id+"/index.html\" target = \"_blank\">"+data[key].name+"</a>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"badge\" onclick=\"sx("+data[key].id+")\" style=\"cursor:pointer;background-color: #46A3FF;margin-bottom: 5px\">私信</span><br/>"+
 						"性别："
 						if(data[key].sex == 0){
-							addhtml+="<span class=\"boy\">♂</span>";
+							addhtml+="<div class=\"boy\"></div>";
 						}else{
-							addhtml+="<span class=\"girl\">♀</span>";
+							addhtml+="<div class=\"girl\"></div>";
 						}
 						addhtml+="<br/>签名：<span style=\"font-size:12px;font-color:#FF79BC\">"
 						if(data[key].tag == "" || data[key].tag == null){
@@ -715,11 +732,15 @@ $("#sx_close").click(function(){
 });
 
 $("#sx_submit").click(function(){
+    var content = $("#sx_msg").val();
+    if(content.trim().length == 0 || content.trim().length > 100){
+        alert("输入内容为空或者字符过长");
+        return;
+    }
     $("#sx_submit").attr("disabled", "disabled");
     $("#sx_close").attr("disabled", "disabled");
     $("#sx_load").show();
     var userId = $("#sx_userId").val();
-    var content = $("#sx_msg").val();
     $.post("/user/private/save", {'userId':userId, 'content':content}, function(data){
         if(data){
             alert("发送成功！");

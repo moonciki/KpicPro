@@ -3,22 +3,15 @@ $().ready(function(){
         var name = $("#name").val().trim();
         var songer = $("#songer").val().trim();
         var musicUrl = $("#musicUrl").val().trim();
-        if(name == "" || name == null){
-            alert("音乐名称不能为空！");
+        if(name.length == 0 || name.length >100 || songer.length > 100 ||musicUrl.length ==0){
+            alert("信息提交不合法！");
             return;
         }
-
-        if(musicUrl == "" || musicUrl == null){
-            alert("请上传MP3文件！");
-            return;
+        if(songer.length == 0){
+            songer = "未知";
         }
-        if(songer == "" || songer == null){
-            $("#songer").val("佚名");
-        }
-        var name2 = $("#name").val();
-        var songer2 = $("#songer").val();
         $("#tj").attr("disabled", "disabled");
-        $.post("/user/make/music",{'name':name2,'songer':songer2,'musicUrl':musicUrl}, function(data){
+        $.post("/user/make/music",{'name':name,'songer':songer,'musicUrl':musicUrl}, function(data){
            if(data){
                $("#html2").hide();
                $("#html").show();

@@ -65,6 +65,6 @@
 </div>
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/user/manage_center_albums.js"></script>
-
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

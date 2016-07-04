@@ -14,7 +14,8 @@
   <title>${album.title}</title>
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
   <link href="${pageContext.request.contextPath}/static/css/album/read_album.css" rel="stylesheet"/>
-  <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-1.6.js"></script>
+  <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
   </head>
 <body>
 <%@include file="../common/top.jsp" %>
@@ -67,10 +68,10 @@
             <a href="${pageContext.request.contextPath}/user/u6514${album.userId}/index.html" target="_blank">${album.userName}</a>
             <c:choose>
               <c:when test="${album.sex == 0}">
-                <span class="boy">♂</span>
+                <div class="boy"></div>
               </c:when>
               <c:otherwise>
-                <span class="girl">♀</span>
+                <div class="girl"></div>
               </c:otherwise>
             </c:choose>
           </span>
@@ -91,26 +92,41 @@
           <audio style="margin-bottom:10px;width: 795px;background-color: #FFD9EC;border-radius: 6px" controls=true>
           <source src="${album.music}"/></audio>
         </c:if>
-      <img src="${album.imageUrl}?imageView2/2/w/775/q/75" class="img"/></center>
+      </center>
+
+      <div id="myCarousel" class="carousel slide" style="width: 795px; margin: 0 auto;">
+
+<c:if test="${pics != null}">
+  <ol class="carousel-indicators" style="width: 575px;">
+    <li data-target="#myCarousel" data-slide-to="0" style="margin-left: -111px"></li>
+  <c:forEach items="${pics}" var="pic" varStatus="status">
+      <li data-target="#myCarousel" data-slide-to="${status.count}"></li>
+  </c:forEach>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="${album.imageUrl}?imageView2/2/w/795/q/95"/>
+      <div class="carousel-caption btm">图集封面</div>
+    </div>
+  <c:forEach items="${pics}" var="pic" varStatus="status">
+        <!-- 轮播（Carousel）项目 -->
 
 
-      <div class="main_content_msg">
-        <span style="font-size: 38px;">———————-—-</span>
-        <span class="glyphicon glyphicon-star" style="font-size: 20px"></span>
-        <span style="font-size: 28px; color: #E0E0E0">正文</span>
-        <span class="glyphicon glyphicon-star" style="font-size: 20px"></span>
-        <span style="font-size: 38px">-—-——————</span>
-      </div>
-
-      <c:if test="${pics != null}">
-        <c:forEach items="${pics}" var="pic">
-          <div class="main_content_msg">
-            <span class="glyphicon glyphicon-leaf" style="color:yellowgreen"></span>&nbsp;&nbsp;${pic.msg}
+          <div class="item">
+            <img src="${pic.imgUrl}?imageView2/2/w/795/q/95"/>
+            <div class="carousel-caption btm">${pic.msg}</div>
           </div>
-          <center><img class="img" src="${pic.imgUrl}?imageView2/2/w/775/q/75"/></center>
-        </c:forEach>
-      </c:if>
 
+  </c:forEach>
+  </div>
+</c:if>
+        <!-- 轮播（Carousel）导航 -->
+        <a class="carousel-control left" href="#myCarousel"
+           data-slide="prev" title="前翻">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel"
+           data-slide="next" title="后翻">&rsaquo;</a>
+
+      </div>
 
       <div class="main_content_msg">
         <span style="font-size: 38px;">———————-—-</span>
@@ -144,5 +160,6 @@
     </div>
   </div>
   <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/album/read_album.js"></script>
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

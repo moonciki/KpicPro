@@ -20,6 +20,18 @@
     float: left;
 }
 
+.yz{
+    color:red;
+    font-size: 14px;
+    display: none;
+}
+
+.request_font{
+    line-height: 2.5;
+    color: #5887ff;
+    font-size: 15px;
+}
+
 .main_02_title{
     width: 886px;
     height: 50px;
@@ -156,6 +168,19 @@
     box-shadow:0px 0px 18px #9D9D9D;
     border-radius: 8px;
     overflow-y: auto;
+}
+
+.tck{
+    display: none;
+    margin: 0 auto;
+    padding: 20px;
+    width: 500px;
+    min-height: 1px;
+    height: auto;
+    border: solid 4px #9D9D9D;
+    background-color: #FFF;
+    box-shadow:0px 0px 18px #fff71f;
+    border-radius: 8px;
 }
 
 .ckxq_reply{

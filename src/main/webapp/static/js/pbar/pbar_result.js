@@ -36,7 +36,7 @@ function jz(isreload){
                 addhtml+="<div class=\"pbar_con\"><div class=\"pbar_con_1\"><div class=\"pbar_con_1_1\">"+
                     "<img src=\""+data[key].logo+"?imageView2/1/w/100/h/100/q/95\" style=\"border-radius: 6px;border: solid 2px "+data[key].color+";box-shadow:0px 0px 26px "+data[key].color+";\"/>"+
                     "</div><div class=\"pbar_con_1_2\"><span style=\"font-size: 21px; font-weight: bold\">"+data[key].name+"</span>&nbsp;&nbsp;<a href=\"/post/subjects/sub4615"+data[key].id+"\" target=\"_blank\"><span class='glyphicon glyphicon-arrow-right'></span>&nbsp;进入圈子</a><br/>"+
-                    "<span class=\"glyphicon glyphicon-barcode\"></span>&nbsp;分类：<a href=\"\">"+data[key].type+"</a>&nbsp;&nbsp;&nbsp;&nbsp;"+
+                    "<span class=\"glyphicon glyphicon-barcode\"></span>&nbsp;分类：<a href=\"/kabi/type/tp"+data[key].typeId+"\" target=\"_blank\">"+data[key].type+"</a>&nbsp;&nbsp;&nbsp;&nbsp;"+
                     "<span class=\"glyphicon glyphicon-file\"></span>&nbsp;帖子：<span style=\"color:orange;font-weight: bold\">"+data[key].topicNum+"</span><br/>"+
                     "<span class=\"glyphicon glyphicon-star-empty\"></span>&nbsp;关注：<span style=\"color:#00AEAE;font-weight: bold\">"+data[key].focusNum+"</span><br/>"+
                     "<span class=\"glyphicon glyphicon-tags\"></span>&nbsp;标签："

@@ -31,4 +31,12 @@
         SELECT day1, value1 FROM tb_hit WHERE pbarId = #{pbarId} AND year1 = #{year1} AND month1 = #{month1}
     </select>
 
+    <insert id="saves">
+        insert into tb_hit (pbarId, year1, month1, day1, value1)
+        values
+        <foreach item="hits" index="index" collection="list" separator=",">
+            (#{hits.pbarId}, #{hits.year1}, #{hits.month1}, #{hits.day1}, #{hits.value1})
+        </foreach>
+    </insert>
+
 </mapper>

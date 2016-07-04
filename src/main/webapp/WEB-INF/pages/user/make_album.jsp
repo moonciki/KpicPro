@@ -33,7 +33,7 @@
     </div>
     <div class="main_02_content">
       <span id="html2" style="display: none">
-        <button type="button" class="btn btn-danger btn-lg btn-block">
+        <button type="button" class="btn btn-danger btn-lg btn-block" onclick="window.location.href='/user/list/album'">
         <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;恭喜您，您的图集已生成，请点击查看
         </button>
       </span>
@@ -48,12 +48,12 @@
         </c:when>
         <c:otherwise>
           <ul class="list-group">
-            <input type="hidden" style="width: 500px" id="id" value="${user.id}"/>
+            <input type="hidden" id="id" value="${user.id}"/>
             <li class="list-group-item">图集名称
-              <input type="text" style="width: 500px" id="name" class="form-control"/>
+              <input type="text" id="name" placeholder="请输入图集标题，不能为空，最少5个字符，最多36个字符" class="form-control"/>
             </li>
             <li class="list-group-item">图集描述
-              <textarea id="msg" class="form-control" rows="3"></textarea>
+              <textarea id="msg" class="form-control" placeholder="请输入图集描述，不能为空，最少5个字符，最多200个字符" rows="3"></textarea>
             </li>
             <li class="list-group-item">封面：
               <input type="hidden" id="imageUrl" value=""/>
@@ -140,6 +140,6 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/plupload/plupload.full.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/qiniu.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/user/make_album.js"></script>
-
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

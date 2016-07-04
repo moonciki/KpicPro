@@ -54,6 +54,6 @@
 </div>
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/user/private_letter_list.js"></script>
-
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

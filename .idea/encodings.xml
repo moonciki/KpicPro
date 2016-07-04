@@ -11,20 +11,30 @@
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/TopicTipServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/css/home/imgs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/css/home/style.css" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/ShareLook.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/album/read_album.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/bg/app.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/bg/particles.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/common/top.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/common/user_self_info.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/feedback.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/home.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/login.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/music/music.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/pbar/manager_pbar_applys.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/pbar/manager_pbar_smalls.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/pbar/manager_pbar_tips.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/pbar/pbar_result.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/pbar/type_result.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/register.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/script.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/album_list.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/all_sys_msg.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/blog_list.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/make_album.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/make_blog.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/make_emotion.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/make_home_request.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/make_music.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/manage_center_albums.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/manage_center_articles.js" charset="UTF-8" />
@@ -32,5 +42,9 @@
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_list.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_self_list.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/music/music.js" charset="UTF-8" />
+    <file url="file://E:/KpicBase/build/classes/main/cn/kpic/base/mapper/HomeMapper.xml" charset="UTF-8" />
+    <file url="file://E:/KpicBase/build/classes/main/cn/kpic/base/mapper/HomeMapper.xml" charset="UTF-8" />
+    <file url="file://E:/KpicBase/build/classes/main/cn/kpic/base/mapper/MaterialMapper.xml" charset="UTF-8" />
+    <file url="file://E:/KpicBase/build/classes/main/cn/kpic/base/mapper/PbarTypeMapper.xml" charset="UTF-8" />
   </component>
 </project>

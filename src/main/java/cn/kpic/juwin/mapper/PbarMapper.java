@@ -36,4 +36,8 @@ public interface PbarMapper {
 
     List<Long> getAllIds();
 
+    List<Pbar> getAllNewPbars();
+
+    List<Pbar> getAllPbarsByType(Map params);
+
 }

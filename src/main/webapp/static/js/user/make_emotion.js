@@ -119,6 +119,10 @@ function tj(){
         return;
     }
 
+    if(title.trim().length == 0){
+        title="无描述";
+    }
+
     $.post("/user/emotion/save", {'title' : title, 'url' : url}, function(data){
         if(data){
             var addhtml = "<table class=\"table table-bordered\"><tr>"+

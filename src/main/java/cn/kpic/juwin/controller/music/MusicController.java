@@ -10,6 +10,7 @@ import cn.kpic.juwin.service.MusicService;
 import cn.kpic.juwin.service.UserLevelService;
 import cn.kpic.juwin.utils.CurrentUser;
 import cn.kpic.juwin.utils.NetEaseMusicUtils;
+import cn.kpic.juwin.utils.StringDeal;
 import com.alibaba.fastjson.JSON;
 import org.apache.log4j.Logger;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -86,6 +87,8 @@ public class MusicController {
     @ResponseBody
     public boolean saveMusic(Music music){
         try{
+            music.setName(StringDeal.getText(music.getName()));
+            music.setSonger(StringDeal.getText(music.getSonger()));
             this.musicService.saveMusic(music);
             return true;
         }catch (Exception e){

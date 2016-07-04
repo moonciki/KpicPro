@@ -84,5 +84,6 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/plupload/plupload.full.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/qiniu.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/pbar/manager_pbar_update.js"></script>
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

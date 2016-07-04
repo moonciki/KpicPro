@@ -19,4 +19,21 @@ public class RedisCacheKey {
     /** 用于缓存每个圈子的点击量，和定时任务相结合，每天定时更新点击量*/
     public final static String PBAR_HIT="pbar:pbar_hit";
 
+
+    /** 首页缓存开始，首页各部分缓存失效时间均为1天*/
+    /** 用于缓存首页圈子类型*/
+    public final static String PBAR_TYPE_INDEX = "home:type_index";
+    /** 用于缓存首页精彩图集*/
+    public final static String ALBUM_INDEX = "home:albums";
+    /** 用于缓存首页精彩圈子*/
+    public final static String PBAR_INDEX_HOME = "home:pbars";
+    /** 用于缓存首页热门文章、帖子*/
+    public final static String POST_INDEX_HOME = "home:post";
+    /** 用于缓存首页轮播图*/
+    public final static String IMG_INDEX_HOME = "home:img";
+    /** 用于缓存首页牛人榜*/
+    public final static String USER_INDEX_HOME = "home:users";
+    /** 警告榜*/
+    public final static String USER_WARN_HOME = "home:warns";
+
 }

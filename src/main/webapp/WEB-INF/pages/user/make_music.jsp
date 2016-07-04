@@ -33,7 +33,7 @@
     </div>
     <div class="main_02_content">
       <span id="html" style="display: none">
-        <button type="button" class="btn btn-danger btn-lg btn-block">
+        <button type="button" class="btn btn-danger btn-lg btn-block" onclick="window.location.href='/user/list/music'">
           <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;&nbsp;恭喜您，音乐已经上传成功，请点击查看
         </button>
       </span>
@@ -50,10 +50,10 @@
       <ul class="list-group">
         <input type="hidden" style="width: 500px" id="id" value="${user.id}"/>
         <li class="list-group-item">音乐名称
-          <input type="text" style="width: 500px" id="name" class="form-control"/>
+          <input type="text" style="width: 500px" id="name" placeholder="请输入音乐名称，不能为空！" class="form-control"/>
         </li>
         <li class="list-group-item">音乐作者：
-          <input type="text" style="width: 500px" id="songer" class="form-control"/>
+          <input type="text" style="width: 500px" id="songer" placeholder="请输入作者名字，选填" class="form-control"/>
         </li>
         <li class="list-group-item">上传音乐：
 
@@ -84,6 +84,6 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/plupload/plupload.full.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/qiniu.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/user/make_music.js"></script>
-
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

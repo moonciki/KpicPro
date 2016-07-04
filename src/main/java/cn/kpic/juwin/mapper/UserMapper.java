@@ -18,7 +18,7 @@ public interface UserMapper {
 	List<User> getAllUser() throws Exception;
 	void addUser(User user);
 	User jugeUser(Map<String, Object> params);
-	User findUserByName(String name);
+	User findUserByName(Long num);
 	void update(User user);
 	List<TopicManager> getAllSmallManagerByPbarId(Long id);
 	List<Long> isSmallManager(Map params);
@@ -26,4 +26,8 @@ public interface UserMapper {
 	void updPostNum(Long id);
 	void jm(Long id);
 	void delSmallManager(Long id);
+	Long checkName(String name);
+	Long checkNum(Long num);
+
+	void save(User user);
 }

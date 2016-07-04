@@ -55,7 +55,7 @@
             <center>目前您的节操值低于<span style="font-weight: bold;color:red;">28</span>，处于禁言状态，无法写文章</center>
           </c:when>
           <c:otherwise>
-            <input type="text" class="form-control" id="title" placeholder="请输入博文标题">
+            <input type="text" class="form-control" id="title" placeholder="请输入文章标题，不能为空，最少5个字符，最多36个字符">
             <br/>
             <script type="text/plain" id="myEditor" name="content" style="width:806px;height:340px;"></script>
 
@@ -73,6 +73,6 @@
 </div>
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/user/make_blog.js"></script>
-
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

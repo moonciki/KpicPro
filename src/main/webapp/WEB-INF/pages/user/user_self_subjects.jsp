@@ -91,6 +91,6 @@
 </div>
 
 <script type="text/javascript" charset="UTF-8" src="${pageContext.request.contextPath}/static/js/user/user_self_subjects.js"></script>
-
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

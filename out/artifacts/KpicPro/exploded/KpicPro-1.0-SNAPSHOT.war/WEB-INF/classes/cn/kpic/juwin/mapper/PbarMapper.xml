@@ -18,6 +18,7 @@
     tp.name,
     tp.topic_num AS topicNum,
     tpt.name AS type,
+    tpt.id AS typeId,
     tp.msg,
     tp.focus_num AS focusNum,
     tp.userId,
@@ -140,5 +141,34 @@
     SELECT id FROM tb_pbar WHERE ispass = 1 AND isdel = 0
   </select>
 
+  <select id="getAllNewPbars" resultType="cn.kpic.juwin.domain.Pbar">
+      SELECT
+      tp.id,
+      tp.name,
+      tp.topic_num,
+      tp.msg,
+      tp.focus_num,
+      tp.logo,
+      tp.color
+      FROM tb_pbar tp
+      WHERE tp.ispass = 1 AND isdel = 0 ORDER BY tp.create_time DESC LIMIT 0,10
+  </select>
 
+  <select id="getAllPbarsByType" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.Pbar">
+    SELECT
+    tp.id,
+    tp.name,
+    tp.topic_num,
+    tp.msg,
+    tp.focus_num,
+    tp.logo,
+    tp.color
+    FROM tb_pbar tp
+    WHERE
+    1=1
+    <if test="typeId != null">
+      AND tp.type = #{typeId}
+    </if>
+    AND tp.ispass = 1 AND isdel = 0 ORDER BY tp.create_time DESC LIMIT #{page}, 10
+  </select>
 </mapper>

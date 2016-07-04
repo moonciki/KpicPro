@@ -75,7 +75,7 @@ public class BlogController {
             blog.setContent(content);
             blog.setIsdel(0);
             blog.setUpdateTime(new Date());
-            blog.setTitle(title);
+            blog.setTitle(StringDeal.getText(title));
             blog.setShortContent(StringDeal.getText(shortContent));
 
             this.blogService.saveBlog(blog);
@@ -154,6 +154,23 @@ public class BlogController {
             return true;
         }catch (Exception e){
             logger.error("blog published error! pbarId = "+pbarId +"&blogId = "+blogId);
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    @RequiresPermissions({"user"})
+    @RequestMapping(value = "/pbar/blog/del")
+    @ResponseBody
+    public boolean delBlog(Long id){
+        try{
+            if(id == null){
+                return false;
+            }
+            this.blogService.delBlog(id);
+            return true;
+        }catch (Exception e){
+            logger.error("blog del error! blogId = "+id);
             e.printStackTrace();
             return false;
         }

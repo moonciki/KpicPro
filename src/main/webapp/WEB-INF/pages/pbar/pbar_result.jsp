@@ -43,5 +43,6 @@
     </center>
   </div>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/pbar/pbar_result.js"></script>
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

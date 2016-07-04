@@ -13,11 +13,13 @@ public interface UserService {
     User getUserById(Long id) throws Exception;
     List<User> getAllUser()throws Exception;
     void addUser(User user) throws Exception;
-    boolean jugeLogin(String name, String password)throws Exception;
+    boolean jugeLogin(Long num, String password)throws Exception;
     void update(User user);
     List<TopicManager> getAllSmallManagerByPbarId(Long id);
     boolean isSmallManager(Long userId, Long pbarId);
     String getRole(Long userId, Long pbarId);
     List<UserVo> getAllPbarUsers(Long pbarId, Integer page);
     void delSmallManager(Long id,Long userId, Long pbarId);
+
+    void save(User user);
 }

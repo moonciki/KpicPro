@@ -90,12 +90,16 @@ $("#sx_close").click(function(){
 });
 
 $("#sx_submit").click(function(){
+    var content = $("#sx_msg").val();
+    if(content.trim().length == 0 || content.trim().length > 100){
+        alert("输入内容为空或者字符过长");
+        return;
+    }
     $("#sx_submit").attr("disabled", "disabled");
     $("#sx_close").attr("disabled", "disabled");
     $("#sx_load").show();
     var userId = $("#sx_userId").val();
     alert(userId);
-    var content = $("#sx_msg").val();
     $.post("/user/private/save", {'userId':userId, 'content':content}, function(data){
         if(data){
             alert("发送成功！");

@@ -59,4 +59,8 @@
         WHERE tb.id = #{id} AND tb.isdel = 0;
     </select>
 
+    <update id="del" parameterType="java.lang.Long">
+        UPDATE tb_blog SET isdel = 1 WHERE id = #{id}
+    </update>
+
 </mapper>

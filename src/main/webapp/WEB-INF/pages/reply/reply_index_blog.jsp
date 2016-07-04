@@ -198,6 +198,16 @@
                     <span class="glyphicon glyphicon-pushpin"></span>&nbsp;<span id="jp"><span style="cursor: pointer" onclick="jp_click(${postMSg.id})">加精</span></span></span>
                   </c:otherwise>
                 </c:choose>
+                <span style="color: #BEBEBE; font-size: 12px">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <c:choose>
+                  <c:when test="${postMSg.isTop == 100}">
+                    <span class="glyphicon glyphicon-eject"></span>&nbsp;<span id="qxzd"><span style="cursor: pointer" onclick="qxzd_click(${postMSg.id})">取消置顶</span></span></span>
+                  </c:when>
+                  <c:otherwise>
+                    <span class="glyphicon glyphicon-eject"></span>&nbsp;<span id="zd"><span style="cursor: pointer" onclick="zd_click(${postMSg.id})">置顶</span></span></span>
+                  </c:otherwise>
+                </c:choose>
               </c:if>
               <c:if test="${role != null and role == 2}">
                 <span style="color: #BEBEBE; font-size: 12px">
@@ -208,6 +218,16 @@
                   </c:when>
                   <c:otherwise>
                     <span class="glyphicon glyphicon-pushpin"></span>&nbsp;<span id="jp"><span style="cursor: pointer" onclick="jp_click(${postMSg.id})">加精</span></span></span>
+                  </c:otherwise>
+                </c:choose>
+                <span style="color: #BEBEBE; font-size: 12px">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <c:choose>
+                  <c:when test="${postMSg.isTop == 100}">
+                    <span class="glyphicon glyphicon-eject"></span>&nbsp;<span id="qxzd"><span style="cursor: pointer" onclick="qxzd_click(${postMSg.id})">取消置顶</span></span></span>
+                  </c:when>
+                  <c:otherwise>
+                    <span class="glyphicon glyphicon-eject"></span>&nbsp;<span id="zd"><span style="cursor: pointer" onclick="zd_click(${postMSg.id})">置顶</span></span></span>
                   </c:otherwise>
                 </c:choose>
               </c:if>
@@ -299,5 +319,6 @@
 <script type="text/javascript" charset="UTF-8" src="${pageContext.request.contextPath}/static/js/reply/reply_index.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/music/music.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/video/video.js"></script>
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

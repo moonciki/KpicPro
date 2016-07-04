@@ -68,21 +68,85 @@ $().ready(function(){
 
     $("#submit").click(function(){
         var name = $("#name").val();
-        var age = $("#age").val();
+        var birth = $("#birth").val();
         var password = $("#password").val();
         var address = $("#address").val();
-        var avater = $("#avater").html().trim();
+        var avater = $("#avater").html();
         var tag = $("#tag").val();
         var id = $("#id").val();
-        $.post("/user/management/center/update", {'id' : id, 'name' : name, 'age' : age, 'password' : password, 'address' : address, 'avater' : avater, 'tag' : tag}, function(data){
-           alert(data);
-            if(data.success){
-               $(".loading2").show();
-           }else{
-               alert("修改失败！");
-               window.location.href = "/user/management/center/edit";
-           }
-        });
+        var flag = true;
+        if(password == null || password == "" || password.length < 6 || password.length > 20){
+            $("#yz_pwd").show();
+            flag = false;
+        }
+
+        if(name.trim().length > 6 || name.trim().length <= 0){
+            $("#yz_name_1").show();
+            flag = false;
+        }
+
+        if(birth != null && birth != ""){
+            if(birth.trim().length > 10 || birth.trim().length <= 0){
+                $("#yz_birth").show();
+                flag = false;
+            }
+        }else{
+            birth = "未填写";
+        }
+
+        if(tag != null && tag != ""){
+            if(tag.trim().length > 20 || tag.trim().length < 5){
+                $("#yz_tag").show();
+                flag = false;
+            }
+        }else{
+            tag = "这家伙很懒，什么也没留下";
+        }
+
+        if(address != null && address != ""){
+            if(address.trim().length > 20 || address.trim().length <= 0){
+                $("#yz_address").show();
+                flag = false;
+            }
+        }else{
+            address = "地球";
+        }
+
+        if(flag){
+            $("#submit").attr("disabled", "disabled");
+            var old_name = $("#userName").val();
+            if(name.trim() == old_name){
+                $.post("/user/management/center/update", {'id' : id, 'name' : name, 'birth' : birth, 'password' : password, 'address' : address, 'avater' : avater, 'tag' : tag}, function(data){
+                    if(data.success){
+                        $(".loading2").show();
+                    }else{
+                        alert("修改失败！");
+                        window.location.href = "/user/management/center/edit";
+                    }
+                });
+            }else{
+                $.post("/rg/check_name",{'name':name},function(data){
+                    if(data){
+                        $.post("/user/management/center/update", {'id' : id, 'name' : name, 'birth' : birth, 'password' : password, 'address' : address, 'avater' : avater, 'tag' : tag}, function(data){
+                            alert(data);
+                            if(data.success){
+                                $(".loading2").show();
+                            }else{
+                                alert("修改失败！");
+                                window.location.href = "/user/management/center/edit";
+                            }
+                        });
+                    } else{
+                        $("#yz_name_2").show();
+                        $("#submit").removeAttr("disabled");
+                    }
+                });
+            }
+
+
+        }else{
+            $("#submit").removeAttr("disabled");
+        }
 
     });
     $("#submit3").click(function(){

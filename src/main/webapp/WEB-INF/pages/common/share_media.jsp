@@ -74,8 +74,8 @@
         <br/>
         <center><button type="button" onclick="share_video()" class="btn btn-primary"><span class="glyphicon glyphicon-share"></span>&nbsp;分享</button></center>
         <br/>
-        <span class="glyphicon glyphicon-tag" style="color: #FF79BC"></span>&nbsp;说明：下面的视频网站分享有教程参考哦~<a href="" target="_blank">点我查看</a>
-        <div class="video_logo"></div>
+        <span class="glyphicon glyphicon-tag" style="color: #FF79BC"></span>&nbsp;说明：下面的视频网站分享有教程参考哦~<a href="${pageContext.request.contextPath}/video_info" target="_blank">点我查看</a>
+        <div class="video_logo" style="cursor: pointer;" onclick="window.open('/video_info')"></div>
 
 
     </div>

@@ -64,7 +64,7 @@ public class ShortReplyController {
     @ResponseBody
     public ShortReply save(ShortReply shortReply, Long pbarId){
         try{
-
+            shortReply.setContent(StringDeal.getText(shortReply.getContent()));
             User curr_user = CurrentUser.getUser();
             if(curr_user == null){
                 throw new RuntimeException();

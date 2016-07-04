@@ -99,6 +99,8 @@
     </div>
   </div>
 </div>
+
+<%@include file="../common/foot.jsp" %>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/pbar/manager_pbar_tips.js"></script>
 </body>
 </html>

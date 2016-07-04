@@ -42,10 +42,11 @@
 
           <div class="loading3" id="load"></div>
           <div class="no_data" id="nodata" style="display: none"></div>
+
+
           <span id="topic_post_area">
 
           </span>
-
 
 
         </div>
@@ -61,5 +62,6 @@
   </div>
 </div>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/user/manager_center_pbars.js"></script>
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

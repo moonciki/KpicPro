@@ -4,6 +4,7 @@ import cn.kpic.juwin.domain.*;
 import cn.kpic.juwin.domain.vo.*;
 import cn.kpic.juwin.jms.sender.SystemMsgQueueMessageSender;
 import cn.kpic.juwin.mapper.PbarManagerApplyMapper;
+import cn.kpic.juwin.mapper.PbarMapper;
 import cn.kpic.juwin.mapper.PbarTypeMapper;
 import cn.kpic.juwin.mapper.TagsMapper;
 import cn.kpic.juwin.qiniu.kpic2.QiniuService;
@@ -52,6 +53,9 @@ public class PbarController {
 
     @Autowired
     private TagsMapper tagsMapper;
+
+    @Autowired
+    private PbarMapper pbarMapper;
 
     @Autowired
     private UserIntegrityService userIntegrityService;
@@ -210,6 +214,8 @@ public class PbarController {
         User user = CurrentUser.getUser();
         Map<String, Object> result = new HashMap<>();
         try{
+            pbar.setName(StringDeal.getText(pbar.getName()));
+            pbar.setMsg(StringDeal.getText(pbar.getMsg()));
             pbar.setTags(this.tagsJson(pbar.getTags()));
             pbar.setUserId(user.getId());
             pbar.setCreate_time(new Date());
@@ -246,7 +252,7 @@ public class PbarController {
 
             PbarManagerApply pbarManagerApply = new PbarManagerApply();
             pbarManagerApply.setUserId(userId);
-            pbarManagerApply.setMsg(msg);
+            pbarManagerApply.setMsg(StringDeal.getText(msg));
             pbarManagerApply.setPbarId(pbarId);
             pbarManagerApply.setCreateTime(new Date());
             pbarManagerApply.setStatus(0);
@@ -295,5 +301,30 @@ public class PbarController {
             return null;
         }
         return this.pbarService.getSearchResult(kw, page*10);
+    }
+
+    /** 按照类型查询*/
+    @RequestMapping(value = "/kabi/type/tp{typeId}")
+    public String typeSearch(@PathVariable("typeId")Long id, Model model){
+        List<PbarType> result = this.pbarTypeMapper.getAllType();
+        model.addAttribute("types", result);
+        model.addAttribute("user", CurrentUser.getUser());
+        model.addAttribute("typeId", id);
+        return "/pbar/type_result";
+    }
+
+    @RequestMapping(value = "/kabi/type/result", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Pbar> getAllPbarByType(@RequestParam(value = "page", defaultValue = "0", required = false)Integer page, Long typeId){
+        try{
+            Map params = new HashMap();
+            params.put("page",page * 10);
+            params.put("typeId", typeId);
+            List<Pbar> result = this.pbarMapper.getAllPbarsByType(params);
+            return result.size() == 0 ? null : result;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
     }
 }

@@ -46,7 +46,7 @@
           <span id="pbar_add_success" style="display: none;">
             <center>
               <button type="button" class="btn btn-success" onclick="window.location.href='${pageContext.request.contextPath}/user/all/user/subject'">
-                恭喜您，您所申请的圈子已成功递交至kpic管理员，我们会在两个工作日内审核完毕，点击查看&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
+                恭喜您，您所申请的圈子已成功递交至咔哔站长，站长会在两个工作日内审核完毕，点击查看&nbsp;<span class="glyphicon glyphicon-chevron-right"></span>
               </button>
             </center>
           </span>
@@ -55,7 +55,7 @@
               <ul class="list-group">
                 <li class="list-group-item">
                   圈子名称：<br/><br/>
-                  <input type="text" style="width: 500px" id="name" class="form-control" placeholder="请输入圈子名称"/>
+                  <input type="text" style="width: 500px" id="name" class="form-control" placeholder="请输入圈子名称，不能为空，尽不写特殊字符，最大长度不超过12个字符"/>
                 </li>
                 <li class="list-group-item">
                   圈子主题色：<br/><br/>
@@ -127,7 +127,7 @@
                 </li>
                 <li class="list-group-item">
                   请简单描述一下本圈子：<br/><br/>
-                  <textarea class="form-control" id="msg" rows="3"></textarea>
+                  <textarea class="form-control" placeholder="请输入对该圈子的基本描述，不能为空，最大不能超过50个字符" id="msg" rows="3"></textarea>
                 </li>
 
               </ul>
@@ -155,7 +155,7 @@
                 <div class="panel-body">
                   <span id="tags_show"></span><span class="label" id="tag_close" style="display:none; background-color: #ffaad5; cursor: pointer">重新设置</span><br/>
                   <br/>
-                  <input type="text" class="form-control" id="tags" placeholder="请输入标签名" style="width: 300px; float: left;">
+                  <input type="text" class="form-control" id="tags" placeholder="请输入标签名，标签不能超出5个字符" style="width: 300px; float: left;">
                   &nbsp;&nbsp;
                   <button type="button" id="add_tags" class="btn btn-success">添加</button>
                   <br/>
@@ -203,5 +203,6 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/plupload/plupload.full.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/qiniu.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/user/manager_center_pbars_apply.js"></script>
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

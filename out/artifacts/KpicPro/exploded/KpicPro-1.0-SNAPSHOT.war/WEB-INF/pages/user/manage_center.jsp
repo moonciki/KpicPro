@@ -51,9 +51,9 @@
 
 
           </li>
-          <li class="list-group-item">用户年龄：
+          <li class="list-group-item">出生年月：
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            ${user.age} 岁</li>
+            ${user.birth}</li>
           <li class="list-group-item">用户级别：
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             ${level.level} 级</li>
@@ -112,6 +112,6 @@
     </div>
   </div>
 </div>
-
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

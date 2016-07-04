@@ -8,6 +8,7 @@ body{
     background-color:#FFF;
     color:#64A600;
     font-size: 12px;
+    background-color: #d6ffc8;
     border: 1px solid #64A600;
 }
 
@@ -41,9 +42,10 @@ body{
 
 .bo{
     background-color:#FFF;
-    color: #ff8498;
+    color: #ffa621;
     font-size: 12px;
-    border: 1px solid #ff8498;
+    background-color: #fff8d2;
+    border: 1px solid #ffa621;
 }
 
 .index_pic{
@@ -435,8 +437,19 @@ ul.parent li:hover .lines,.topbar li.current .lines {
 }
 
 .jing{
-    background-color: #ff7575;
-    font-family: "Microsoft Yahei";
+    background-color:#FFF;
+    color: #ff45b4;
+    font-size: 12px;
+    background-color: #ffd4f9;
+    border: 1px solid #ff45b4;
+}
+
+.ding{
+    background-color:#FFF;
+    color: #4a6dff;
+    font-size: 12px;
+    background-color: #e2d6ff;
+    border: 1px solid #4a6dff;
 }
 
 .xiu{
@@ -895,19 +908,6 @@ div{
     float: left;
     width: 238px;
     height: 140px;
-}
-
-
-.boy{
-    color: #22a3ff;
-    font-size:20px;
-    font-weight:bold;
-}
-
-.girl{
-    color: #ff5ab7;
-    font-size:20px;
-    font-weight:bold;
 }
 
 .pbar_users_pic{

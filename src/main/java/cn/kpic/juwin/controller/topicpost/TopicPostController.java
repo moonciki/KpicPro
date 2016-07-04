@@ -62,7 +62,7 @@ public class TopicPostController {
             if(StringUtils.isBlank(title) || StringUtils.isBlank(content)){
                 return null;
             }
-            return topicPostService.addTopicPost(title, content, StringDeal.getText(shortContent), pbarId, userId);
+            return topicPostService.addTopicPost(StringDeal.getText(title), content, StringDeal.getText(shortContent), pbarId, userId);
         }catch (Exception e){
             e.printStackTrace();
             return null;

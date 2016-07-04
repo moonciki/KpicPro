@@ -59,6 +59,6 @@
 </div>
 
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/user/all_sys_msg.js"></script>
-
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

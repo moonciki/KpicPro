@@ -27,8 +27,8 @@ function load(){
 
             var addhtml = "";
             for(key in data){
-                addhtml += "<div class=\"panel panel-default\"><div class=\"panel-body\">"
-                    +"<span class='glyphicon glyphicon-book' style='color:#FF82AB'></span>&nbsp;&nbsp;<a href=\"/post/read/at5416"+data[key].id+"\" target=\"_blank\"><span style='font-size: 15px'>"+data[key].title+"</span></a><span class=\"badge pull-right\" style='cursor: pointer; background-color: #ff7575;' id=\"sctj\"><span class='glyphicon glyphicon-remove-sign'></span> 删除</span>"
+                addhtml += "<div class=\"panel panel-default\" id=\"b_"+data[key].id+"\"><div class=\"panel-body\">"
+                    +"<span class='glyphicon glyphicon-book' style='color:#FF82AB'></span>&nbsp;&nbsp;<a href=\"/post/read/at5416"+data[key].id+"\" target=\"_blank\"><span style='font-size: 15px'>"+data[key].title+"</span></a><span id = \"an_"+data[key].id+"\" class=\"badge pull-right\" style='cursor: pointer; background-color: #ff7575;' onclick=\"del("+data[key].id+")\"><span class='glyphicon glyphicon-remove-sign'></span> 删除</span>"
                     +"<span class=\"badge pull-right\" style='margin-right:10px;cursor: pointer; background-color: #64A600;' onclick=\"fbtj('"+data[key].title+"', "+data[key].id+")\"><span class='glyphicon glyphicon-send'></span> 发布</span><br/>"
                     +"<span style='font-size: 12px; line-height: 2.0'>"+data[key].shortContent+"</span></div></div>"
             }
@@ -115,4 +115,16 @@ function fb(id){
             alert("程序出错，请重新操作");
         }
     })
+}
+
+function del(id){
+    $("#an_"+id).hide();
+    $.post("/pbar/blog/del",{'id':id}, function(data){
+       if(data){
+           $("#b_"+id).fadeOut(400);
+       }else{
+           alert("删除出错，请重试")
+           $("#an_"+id).show();
+       }
+    });
 }

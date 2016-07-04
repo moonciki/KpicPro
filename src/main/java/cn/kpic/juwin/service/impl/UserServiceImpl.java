@@ -1,23 +1,17 @@
 package cn.kpic.juwin.service.impl;
 
 import cn.kpic.juwin.constant.RedisCacheKey;
-import cn.kpic.juwin.domain.Msg;
-import cn.kpic.juwin.domain.Pbar;
-import cn.kpic.juwin.domain.User;
+import cn.kpic.juwin.domain.*;
 import cn.kpic.juwin.domain.vo.TopicManager;
 import cn.kpic.juwin.domain.vo.UserVo;
-import cn.kpic.juwin.mapper.MsgMapper;
-import cn.kpic.juwin.mapper.PbarMapper;
-import cn.kpic.juwin.mapper.UserMapper;
+import cn.kpic.juwin.mapper.*;
 import cn.kpic.juwin.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by bjsunqinwen on 2016/2/23.
@@ -28,10 +22,19 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 
     @Autowired
+    private UserLevelMapper userLevelMapper;
+
+    @Autowired
+    private UserIntegrityMapper userIntegrityMapper;
+
+    @Autowired
     private MsgMapper msgMapper;
 
     @Autowired
     private PbarMapper pbarMapper;
+
+    @Autowired
+    private UserPowerMapper userPowerMapper;
 
     @Autowired
     private RedisTemplate redisTemplate;
@@ -58,9 +61,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean jugeLogin(String name, String password) throws Exception {
+    public boolean jugeLogin(Long num, String password) throws Exception {
         Map<String, Object> params = new HashMap<>();
-        params.put("name", name);
+        params.put("num", num);
         params.put("password", password);
         User user = userMapper.jugeUser(params);
         return user == null ? false : true;
@@ -125,5 +128,41 @@ public class UserServiceImpl implements UserService {
         this.userMapper.delSmallManager(id);
         String key = RedisCacheKey.PBAR_USER_ROLE + "_p" + pbarId + "_u" + userId;
         this.redisTemplate.delete(key);
+    }
+
+    @Override
+    @Transactional
+    public void save(User user) {
+        this.userMapper.save(user);
+        Long id = user.getId();
+        List<Msg> msgs = new ArrayList<>();
+        Msg msg = new Msg();
+        msg.setUserId(id);
+        msg.setNum(0);
+        msg.setType(0);
+        msgs.add(msg);
+        Msg msg2 = new Msg();
+        msg2.setUserId(id);
+        msg2.setNum(0);
+        msg2.setType(1);
+        msgs.add(msg2);
+        this.msgMapper.addMsg(msgs);
+
+        UserLevel userLevel = new UserLevel();
+        userLevel.setUserId(id);
+        userLevel.setLevel(0);
+        userLevel.setScore(0);
+        this.userLevelMapper.save(userLevel);
+
+        UserIntegrity userIntegrity = new UserIntegrity();
+        userIntegrity.setUserId(id);
+        userIntegrity.setNum(70);
+        userIntegrity.setUpdateTime(new Date());
+        this.userIntegrityMapper.save(userIntegrity);
+
+        UserPower userPower = new UserPower();
+        userPower.setUserId(id);
+        userPower.setPowerId(1L);
+        this.userPowerMapper.save(userPower);
     }
 }

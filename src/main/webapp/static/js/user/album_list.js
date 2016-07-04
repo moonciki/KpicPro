@@ -35,7 +35,7 @@ function load(){
                     "<br/><br/>" +
                     data[key].msg+
                     "<br/><br/>"+
-                    "<span style='font-size: 12px;line-height: 2.0'><span class='glyphicon glyphicon-time'></span>&nbsp;发布时间：<span style='color:#FF8000'>"+data[key].createTime+"</span>"+
+                    "<span style='font-size: 12px;line-height: 2.0'><span class='glyphicon glyphicon-time'></span>&nbsp;发布时间：<span style='color:#FF8000'>"+getLocalTime(data[key].createTime)+"</span>"+
                     "&nbsp;&nbsp;&nbsp;&nbsp;<span class='glyphicon glyphicon-music'></span>&nbsp;是否包含背景音乐："
                 if(data[key].music == null || data[key].music == ""){
                     addhtml+="<span style='color:#FF95CA' id=\"music_"+data[key].id+"\">否</span>"
@@ -235,4 +235,13 @@ function self_music(){
     $("#music_"+albumId).append("是");
     music_share_close();
     $.post("/album/make/music", {'url':mp3wl, 'albumId':album_id}, function(data){});
+}
+
+function getLocalTime(timer) {
+    var d = new Date(timer);
+    return (d.getFullYear()) + "-" +
+        (d.getMonth() + 1) + "-" +
+        (d.getDate()) + " " +
+        (d.getHours()) + ":" +
+        (d.getMinutes());
 }
