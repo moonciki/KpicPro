@@ -47,7 +47,7 @@ public class UserNewsQueueMessageListener implements MessageListener{
             msg.setType(0);
             msg.setUserId(userNews.getUserId());
             this.msgMapper.update(msg);
-            /** Çå³ý»º´æ*/
+            /** æ¸…é™¤ç¼“å­˜*/
             this.redisTemplate.delete(RedisCacheKey.USER_NEWS+userNews.getUserId());
             this.userNewsMapper.save(userNews);
         }catch (JMSException e){

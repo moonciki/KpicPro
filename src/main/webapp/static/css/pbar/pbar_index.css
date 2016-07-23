@@ -63,7 +63,7 @@ body{
     left: 0%;
     width: 100%;
     height: 100%;
-    background-image:url("http://7xtmxr.com1.z0.glb.clouddn.com/static/numbg.png");
+    background-image:url("http://7xwibn.com1.z0.glb.clouddn.com/static/numbg.png");
     z-index:1001;
 }
 
@@ -104,7 +104,7 @@ body{
 .pic_big_03_1{
     float: left;
     width: 194px;
-    background-image: url("http://7xtmxr.com1.z0.glb.clouddn.com/static/music.jpg");
+    background-image: url("http://7xwibn.com1.z0.glb.clouddn.com/static/music.jpg");
     border-radius: 100px;
     height: 194px;
 }
@@ -139,7 +139,7 @@ body{
     float: left;
     border-radius: 8px;
     z-index: 1002;
-    background-image:url("http://7xtmxr.com1.z0.glb.clouddn.com/static/cw.png");
+    background-image:url("http://7xwibn.com1.z0.glb.clouddn.com/static/cw.png");
 }
 
 .pic_big_01_pl{
@@ -151,7 +151,7 @@ body{
     position: absolute;
     float: left;
     z-index: 1002;
-    background-image:url("http://7xtmxr.com1.z0.glb.clouddn.com/static/cw.png");
+    background-image:url("http://7xwibn.com1.z0.glb.clouddn.com/static/cw.png");
 }
 
 .main{
@@ -176,7 +176,7 @@ body{
     height: 242px;
     position:absolute;
     border-radius: 4px;
-    background-image:url("http://7xtmxr.com1.z0.glb.clouddn.com/static/ss.png");
+    background-image:url("http://7xwibn.com1.z0.glb.clouddn.com/static/ss.png");
     float: left;
 }
 
@@ -363,13 +363,13 @@ ul.parent li:hover .lines,.topbar li.current .lines {
     margin:0 auto;
     width: 293px;
     min-height: 184px;
-    background-image:url("http://7xtmxr.com1.z0.glb.clouddn.com/static/nodata.png");
+    background-image:url("http://7xwibn.com1.z0.glb.clouddn.com/static/nodata.png");
 }
 .loading{
     margin:0 auto;
     width: 280px;
     min-height: 210px;
-    background-image:url("http://7xtmxr.com1.z0.glb.clouddn.com/static/load.gif");
+    background-image:url("http://7xwibn.com1.z0.glb.clouddn.com/static/load.gif");
 }
 
 .main01_01_01{
@@ -419,7 +419,7 @@ ul.parent li:hover .lines,.topbar li.current .lines {
     color: #E0E0E0;
     height: 30px;
     position:absolute;
-    background-image:url("http://7xtmxr.com1.z0.glb.clouddn.com/static/numbg.png");
+    background-image:url("http://7xwibn.com1.z0.glb.clouddn.com/static/numbg.png");
     float: left;
  }
 
@@ -432,7 +432,7 @@ ul.parent li:hover .lines,.topbar li.current .lines {
     color: #E0E0E0;
     height: 60px;
     position:absolute;
-    background-image:url("http://7xtmxr.com1.z0.glb.clouddn.com/static/numbg.png");
+    background-image:url("http://7xwibn.com1.z0.glb.clouddn.com/static/numbg.png");
     float: left;
 }
 
@@ -477,7 +477,7 @@ ul.parent li:hover .lines,.topbar li.current .lines {
     width: 85px;
     height: 70px;
     cursor: pointer;
-    background-image: url("http://7xtmxr.com1.z0.glb.clouddn.com/static/edit6.png");
+    background-image: url("http://7xwibn.com1.z0.glb.clouddn.com/static/edit6.png");
     border: solid 1px #E0E0E0;
     position:absolute;
     z-index: 1000;
@@ -488,7 +488,7 @@ ul.parent li:hover .lines,.topbar li.current .lines {
     width: 85px;
     height: 70px;
     cursor: pointer;
-    background-image: url("http://7xtmxr.com1.z0.glb.clouddn.com/static/edit7.png");
+    background-image: url("http://7xwibn.com1.z0.glb.clouddn.com/static/edit7.png");
     border: solid 1px #E0E0E0;
     position:absolute;
     z-index: 1000;
@@ -500,7 +500,7 @@ ul.parent li:hover .lines,.topbar li.current .lines {
     width: 85px;
     height: 70px;
     cursor: pointer;
-    background-image: url("http://7xtmxr.com1.z0.glb.clouddn.com/static/edit8.png");
+    background-image: url("http://7xwibn.com1.z0.glb.clouddn.com/static/edit8.png");
     border: solid 1px #E0E0E0;
     position:absolute;
     z-index: 1000;
@@ -668,7 +668,7 @@ div{
 }
 
 .jp{
-    background: url("http://7xtmxr.com1.z0.glb.clouddn.com/static/jpbg.png") top right  no-repeat #FFF;
+    background: url("http://7xwibn.com1.z0.glb.clouddn.com/static/jpbg.png") top right  no-repeat #FFF;
 }
 
 .reply_body_main_01{
@@ -824,7 +824,7 @@ div{
     width: 444px;
     height: 326px;
     margin: auto 0;
-    background-image: url("http://7xtmxr.com1.z0.glb.clouddn.com/static/video_logos.png");
+    background-image: url("http://7xwibn.com1.z0.glb.clouddn.com/static/video_logos.png");
 }
 
 .fxs{

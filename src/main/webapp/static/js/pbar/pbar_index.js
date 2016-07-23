@@ -104,7 +104,7 @@ $().ready(function(){
                         addhtml+="<img src=\""+data.list[key].avater+"?imageView2/1/w/50/h/50/q/95\" class=\"manager_avater\"/>"
                     }
                     if(data.isjm == 1){
-                        addhtml+="<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
+                        addhtml+="<div class=\"manager_avater2\"><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
                     }
                     addhtml+="<div style=\"margin-left: 50px;margin-top: -1px\"><span style=\"margin-left: 10px; font-size: 10px;line-height: 1.8;font-family: 微软雅黑\"><a href=\"/user/u6514"+data.list[key].id+"/index.html\" target = \"_blank\">"+
                         data.list[key].name+"</a>&nbsp;&nbsp;<span class=\"badge\" onclick=\"sx("+data.list[key].id+")\" style=\"cursor:pointer;background-color: #46A3FF;margin-bottom: 5px\">私信</span></span>"+
@@ -238,11 +238,11 @@ $().ready(function(){
                     if(data[key].avater == "" || data[key].avater == null){
                         addhtml += "<img src='" + data[key].userPic + "?size=70' class='index_pic'/>";
                     }else{
-                        addhtml += "<img src='" + data[key].avater + "?imageView2/1/w/70/h/70/q/95' class='index_pic'/>";
+                        addhtml += "<img src='" + data[key].avater + "?imageView2/1/w/70/h/70/interlace/0/q/95' class='index_pic'/>";
                     }
                     addhtml+="</a>"
                     if(data[key].isjm == 1) {
-                        addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
+                        addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
                     }
 
                     addhtml += "</div><div class='main01_01_user_reply'></div><div class=\"main01_01\"><div class=\"main01_01_01\">"
@@ -267,15 +267,15 @@ $().ready(function(){
                         addhtml += "<div class=\"main01_01_img\"><div class=\"main01_01_img_num\"><span style=\"font-family:微软雅黑;font-size: 12px\"><span class='glyphicon glyphicon-share-alt'></span> 共<span class='fxs'>&nbsp;&nbsp;"+data[key].num+"&nbsp;&nbsp;</span>个分享</div>"
                         for(key2 in data[key].img){
                             if(data[key].img[key2].imgKey == "2"){
-                                addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95\"" +
-                                    " onmouseover = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo2.png?imageView2/1/w/156/h/90/q/95'\"" +
-                                    " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 2)\" title=\"点击播放该视频\"/>&nbsp;&nbsp;&nbsp;";
+                                addhtml += "<img src = \"http://7xwibn.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/interlace/0/q/95\"" +
+                                    " onmouseover = \"this.src='http://7xwibn.com1.z0.glb.clouddn.com/staticvideo2.png?imageView2/1/w/156/h/90/interlace/0/q/95'\"" +
+                                    " onmouseout = \"this.src='http://7xwibn.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/interlace/0/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 2)\" title=\"点击播放该视频\"/>&nbsp;&nbsp;&nbsp;";
                             }else if(data[key].img[key2].imgKey == "3"){
-                                addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95\"" +
-                                    " onmouseover = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic2.jpg?imageView2/1/w/156/h/90/q/95'\"" +
-                                    " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 3)\" title=\"点击播放该音频\"/>&nbsp;&nbsp;&nbsp;";
+                                addhtml += "<img src = \"http://7xwibn.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/interlace/0/q/95\"" +
+                                    " onmouseover = \"this.src='http://7xwibn.com1.z0.glb.clouddn.com/staticmusic2.jpg?imageView2/1/w/156/h/90/interlace/0/q/95'\"" +
+                                    " onmouseout = \"this.src='http://7xwibn.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/interlace/0/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 3)\" title=\"点击播放该音频\"/>&nbsp;&nbsp;&nbsp;";
                             }else{
-                                addhtml +="<img src=\""+data[key].img[key2].imagePath+"?imageView2/1/w/156/h/90/q/95\" class='post_pic' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 1)\" title=\"查看大图\"/>&nbsp;&nbsp;&nbsp;"
+                                addhtml +="<img src=\""+data[key].img[key2].imagePath+"?imageView2/1/w/156/h/90/interlace/0/q/95\" class='post_pic' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 1)\" title=\"查看大图\"/>&nbsp;&nbsp;&nbsp;"
                             }
                         }
                     }
@@ -317,11 +317,11 @@ $().ready(function(){
                     if(data[key].avater == "" || data[key].avater == null){
                         addhtml += "<img src='" + data[key].userPic + "?size=70' class='index_pic'/>";
                     }else{
-                        addhtml += "<img src='" + data[key].avater + "?imageView2/1/w/70/h/70/q/95' class='index_pic'/>";
+                        addhtml += "<img src='" + data[key].avater + "?imageView2/1/w/70/h/70/interlace/0/q/95' class='index_pic'/>";
                     }
                     addhtml+="</a>";
                     if(data[key].isjm == 1) {
-                        addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
+                        addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
                     }
                     addhtml += "</div><div class='main01_01_user_reply'></div><div class=\"main01_01\"><div class=\"main01_01_01\">"
                     if(data[key].isBoutique == 1){
@@ -345,15 +345,15 @@ $().ready(function(){
                         addhtml += "<div class=\"main01_01_img\"><div class=\"main01_01_img_num\"><span style=\"font-family:微软雅黑;font-size: 12px\"><span class='glyphicon glyphicon-share-alt'></span> 共<span class='fxs'>&nbsp;&nbsp;"+data[key].num+"&nbsp;&nbsp;</span>个分享</div>"
                         for(key2 in data[key].img){
                             if(data[key].img[key2].imgKey == "2"){
-                                addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95\"" +
-                                    " onmouseover = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo2.png?imageView2/1/w/156/h/90/q/95'\"" +
-                                    " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 2)\" title=\"点击播放该视频\"/>&nbsp;&nbsp;&nbsp;";
+                                addhtml += "<img src = \"http://7xwibn.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/interlace/0/q/95\"" +
+                                    " onmouseover = \"this.src='http://7xwibn.com1.z0.glb.clouddn.com/staticvideo2.png?imageView2/1/w/156/h/90/interlace/0/q/95'\"" +
+                                    " onmouseout = \"this.src='http://7xwibn.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/interlace/0/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 2)\" title=\"点击播放该视频\"/>&nbsp;&nbsp;&nbsp;";
                             }else if(data[key].img[key2].imgKey == "3"){
-                                addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95\"" +
-                                    " onmouseover = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic2.jpg?imageView2/1/w/156/h/90/q/95'\"" +
-                                    " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 3)\" title=\"点击播放该音频\"/>&nbsp;&nbsp;&nbsp;";
+                                addhtml += "<img src = \"http://7xwibn.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/interlace/0/q/95\"" +
+                                    " onmouseover = \"this.src='http://7xwibn.com1.z0.glb.clouddn.com/staticmusic2.jpg?imageView2/1/w/156/h/90/interlace/0/q/95'\"" +
+                                    " onmouseout = \"this.src='http://7xwibn.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/interlace/0/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 3)\" title=\"点击播放该音频\"/>&nbsp;&nbsp;&nbsp;";
                             }else{
-                                addhtml +="<img src=\""+data[key].img[key2].imagePath+"?imageView2/1/w/156/h/90/q/95\" class='post_pic' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 1)\" title=\"查看大图\"/>&nbsp;&nbsp;&nbsp;"
+                                addhtml +="<img src=\""+data[key].img[key2].imagePath+"?imageView2/1/w/156/h/90/interlace/0/q/95\" class='post_pic' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 1)\" title=\"查看大图\"/>&nbsp;&nbsp;&nbsp;"
                             }
                         }
                     }
@@ -517,11 +517,11 @@ $().ready(function(){
                     if(data[key].avater == "" || data[key].avater == null){
                         addhtml += "<img src='" + data[key].userPic + "?size=70' class='index_pic'/>";
                     }else{
-                        addhtml += "<img src='" + data[key].avater + "?imageView2/1/w/70/h/70/q/95' class='index_pic'/>";
+                        addhtml += "<img src='" + data[key].avater + "?imageView2/1/w/70/h/70/interlace/0/q/95' class='index_pic'/>";
                     }
                     addhtml+="</a>";
                     if(data[key].isjm == 1) {
-                        addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
+                        addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
                     }
                     addhtml += "</div><div class='main01_01_user_reply'></div><div class=\"main01_01\"><div class=\"main01_01_01\">"
 
@@ -533,7 +533,7 @@ $().ready(function(){
                         +data[key].msg+
                         "</span></div>"
                     addhtml += "<div class=\"main01_01_img\"><div class=\"main01_01_img_num2\"><span class='glyphicon glyphicon-camera'></span> 共<span class='fxs2'> "+data[key].picNum+" </span>张图片</div>"
-                    addhtml += "<img src=\""+data[key].imageUrl+"?imageView2/1/w/673/q/75\"/>"
+                    addhtml += "<img src=\""+data[key].imageUrl+"?imageView2/1/w/673/interlace/0/q/75\"/>"
 
                     addhtml += "<div class=\"main01_01_02\"><span class=\"glyphicon glyphicon-user\" style=\"color: #84C1FF\"></span><span style=\"color: #9D9D9D;font-size: 12px;\">&nbsp;&nbsp;图集制作人："
                         +data[key].userName+
@@ -592,10 +592,10 @@ $().ready(function(){
                         if(data[key].avater == "" || data[key].avater == null){
                             addhtml+="<img src=\""+data[key].userPic+"?size=100\" class=\"pbar_users_pic\"/>";
                         }else{
-                            addhtml+="<img src=\""+data[key].avater+"?imageView2/1/w/100/h/100/q/95\" class=\"pbar_users_pic\"/>";
+                            addhtml+="<img src=\""+data[key].avater+"?imageView2/1/w/100/h/100/interlace/0/q/95\" class=\"pbar_users_pic\"/>";
                         }
                     if(data[key].isjm == 1) {
-                        addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
+                        addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
                     }
                     addhtml+="</div><div class='pbar_users_02'>昵称：<a href=\"/user/u6514"+data[key].id+"/index.html\" target = \"_blank\">"+data[key].name+"</a>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"badge\" onclick=\"sx("+data[key].id+")\" style=\"cursor:pointer;background-color: #46A3FF;margin-bottom: 5px\">私信</span><br/>"+
 						"性别："
@@ -777,7 +777,7 @@ function jz(){
         if(data == null || data == ""){
             $("#load").hide();
             if(i==1){
-                $("#eif_content").append("<center><br/><br/><br/><br/><a href='/user/emotion/save' target='_blank'>当前您的表情包空空如也，点击添加</a></center>");
+                $("#eif_content").append("<center><br/><br/><br/><br/><a href='/user/emotion/save' target='_blank'>当前您的表情包空空如也，点击添加</a>或者去<a href=\"/emotion/pool\">表情池</a>直接勾选</center>");
             }
             $("#no_data").fadeIn(400);
             setTimeout(function(){$("#no_data").fadeOut(1000);},2000);
@@ -816,7 +816,7 @@ $.post("/user/pbar/manager", {'userId':pbar_userId}, function(data){
             if(data.avater == "" || data.avater == null){
                 addhtml+="<img src=\""+data.userPic+"?size=100\" class=\"userbigpic\"/>";
             }else{
-                addhtml+="<img src=\""+data.avater+"?imageView2/1/w/100/h/100/q/95\" class=\"userbigpic\"/>";
+                addhtml+="<img src=\""+data.avater+"?imageView2/1/w/100/h/100/interlace/0/q/95\" class=\"userbigpic\"/>";
             }
     addhtml+="</center><br/><br/><center>昵称：<a href=\"/user/u6514"+data.id+"/index.html\" target = \"_blank\">"+data.name+"</a>&nbsp;&nbsp;&nbsp;&nbsp;<span class=\"badge\" onclick=\"sx("+data.id+")\" style=\"cursor:pointer;background-color: #46A3FF;margin-bottom: 5px\">私信</span></center>";
     $("#big_manager").append(addhtml);

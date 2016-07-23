@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>pass</title>
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
 </head>
 <body>
 <h1>Pass!!</h1>

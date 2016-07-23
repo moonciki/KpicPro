@@ -74,20 +74,20 @@ public class ShortReplyServiceImpl implements ShortReplyService{
 
     @Override
     public List<ShortReplyVo> getShortByReplyId(Long replyId, int page) {
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("replyId", replyId);
         params.put("page", page * 10);
         List<ShortReplyVo> result = this.shortReplyMapper.getShortByReplyId(params);
         User user = CurrentUser.getUser();
         if(user != null){
             if(result != null && result.size() != 0){
-                List<Long> storeIds = new ArrayList<>();
+                List<Long> storeIds = new ArrayList<Long>();
 
                 for(ShortReplyVo shortReplyVo : result){
                     storeIds.add(shortReplyVo.getShortId());
                 }
 
-                Map<String, Object> params2 = new HashMap<>();
+                Map<String, Object> params2 = new HashMap<String, Object>();
                 params2.put("storeIds",storeIds);
                 params2.put("userId", user.getId());
                 List<Long> store_result = this.shortTipMapper.getIdsByStoreIds(params2);
@@ -106,7 +106,7 @@ public class ShortReplyServiceImpl implements ShortReplyService{
 
     @Override
     public List<ShortReplyVo2> getShortByUserId(Long userId, int page) {
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("userId", userId);
         params.put("page", page);
         List<ShortReplyVo2> result = this.shortReplyMapper.getShortByUserId(params);
@@ -116,7 +116,7 @@ public class ShortReplyServiceImpl implements ShortReplyService{
     @Override
     public List<TopicOrReplyInfoVo> getShortByReplyIdOfNews(Long replyId, int page) {
 
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("replyId", replyId);
         params.put("page", page);
         List<TopicOrReplyInfoVo> result = this.shortReplyMapper.getShortByReplyIdOfNews(params);

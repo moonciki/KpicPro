@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>${pbar.name}-管理中心</title>
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/pbar/pbar_manager.css" rel="stylesheet">
 </head>
 <body>
@@ -59,7 +60,7 @@
       <ul class="list-group" style="color:#9D9D9D">
         <li class="list-group-item">圈子logo:
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <img src="${pbar.logo}?imageView2/1/w/89/h/89/q/95"/>
+          <img src="${pbar.logo}?imageView2/1/w/89/h/89/interlace/0/q/95"/>
         </li>
         <li class="list-group-item">背景图片：
           &nbsp;&nbsp;&nbsp;

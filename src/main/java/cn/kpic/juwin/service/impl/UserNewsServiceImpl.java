@@ -29,7 +29,7 @@ public class UserNewsServiceImpl implements UserNewsService {
 
     @Override
     public List<UserNewsVo> getAllUserNews(Long userId, int page) {
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("userId", userId);
         params.put("page", page);
         List<UserNewsVo> result = this.userNewsMapper.getAllUserNews(params);

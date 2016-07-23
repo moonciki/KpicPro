@@ -36,7 +36,7 @@ public class PbarManagerApplyServiceImpl implements PbarManagerApplyService {
         userPbar.setType(2);
         userPbar.setUserId(userId);
         String key = RedisCacheKey.PBAR_USER_ROLE + "_p" + pbarId + "_u" + userId;
-        this.redisTemplate.delete(key);//ÇåÀí»º´æ
+        this.redisTemplate.delete(key);//æ¸…ç†ç¼“å­˜
         this.userPbarMapper.save(userPbar);
         this.pbarManagerApplyMapper.pass(id);
     }

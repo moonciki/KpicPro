@@ -57,7 +57,7 @@ public class PbarServiceImpl implements PbarService {
     @Override
     public List<UserPbarVo> getAllSelfPbar(Long userId, int page) {
         try{
-            Map<String, Object> params = new HashMap<>();
+            Map<String, Object> params = new HashMap<String, Object>();
 
             params.put("userId", userId);
             params.put("page", page);
@@ -99,7 +99,7 @@ public class PbarServiceImpl implements PbarService {
 
     @Override
     public List<Pbar> getAllPbarFocus(Long userId, int page){
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("page", page);
         params.put("userId", userId);
         List<Pbar> result = this.pbarFocusMapper.getAllPbarFocus(params);

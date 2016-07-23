@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * Created by bjsunqinwen on 2016/3/18.
- * »Ø¸´Ìû
+ * å›å¤å¸–
  */
 public class ReplyPost {
 

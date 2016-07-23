@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>403</title>
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
 </head>
 <body>
 <h1>403-权限不足</h1>

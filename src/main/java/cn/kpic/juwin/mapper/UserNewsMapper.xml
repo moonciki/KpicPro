@@ -11,27 +11,7 @@
 ${}：表示拼接符，可能会引起sql注入
  -->
 <mapper namespace="cn.kpic.juwin.mapper.UserNewsMapper">
-    <!--
-    private Long id;
 
-    private String title;
-
-    private String shortContent;
-
-    private int type;
-
-    private Long userId;
-
-    private Long fromUserId;
-
-    private String fromUserName;
-
-    private Long topicId;
-
-    private Long replyId;
-
-    private Date createTime;
-    -->
     <insert id="save" parameterType="cn.kpic.juwin.domain.UserNews">
         insert into tb_user_news (title, shortContent, type, userId, fromUserId, fromUserName, topicId, replyId, pbarId, createTime)
         values (#{title}, #{shortContent}, #{type}, #{userId}, #{fromUserId}, #{fromUserName}, #{topicId}, #{replyId}, #{pbarId}, #{createTime})

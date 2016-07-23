@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean jugeLogin(Long num, String password) throws Exception {
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("num", num);
         params.put("password", password);
         User user = userMapper.jugeUser(params);
@@ -83,7 +83,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean isSmallManager(Long userId, Long pbarId) {
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("userId", userId);
         params.put("pbarId", pbarId);
         List<Long> result = this.userMapper.isSmallManager(params);
@@ -98,11 +98,11 @@ public class UserServiceImpl implements UserService {
     public String getRole(Long userId, Long pbarId) {
         Pbar pbar = this.pbarMapper.getById(pbarId);
         if(pbar != null && pbar.getIspass() == 1){
-            /** ´ó¹ÜÀíÔ±µÄÇé¿ö*/
+            /** å¤§ç®¡ç†å‘˜çš„æƒ…å†µ*/
             if(String.valueOf(pbar.getUserId()).equals(String.valueOf(userId))){
                 return "1";
             }else{
-                /** Ğ¡¹ÜÀíÔ±µÄÇé¿ö*/
+                /** å°ç®¡ç†å‘˜çš„æƒ…å†µ*/
                 if(this.isSmallManager(userId, pbarId)){
                     return "2";
                 }else{
@@ -135,7 +135,7 @@ public class UserServiceImpl implements UserService {
     public void save(User user) {
         this.userMapper.save(user);
         Long id = user.getId();
-        List<Msg> msgs = new ArrayList<>();
+        List<Msg> msgs = new ArrayList<Msg>();
         Msg msg = new Msg();
         msg.setUserId(id);
         msg.setNum(0);

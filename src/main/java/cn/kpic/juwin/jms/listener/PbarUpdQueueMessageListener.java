@@ -41,15 +41,15 @@ public class PbarUpdQueueMessageListener implements MessageListener{
         try{
             JmsUpdPbar jmsUpdPbar = (JmsUpdPbar)objectMessage.getObject();
             if(jmsUpdPbar != null){
-                if(jmsUpdPbar.getType() == 0){//ĞŞ¸ÄÌû×ÓÊı
+                if(jmsUpdPbar.getType() == 0){//ä¿®æ”¹å¸–å­æ•°
                     this.pbarMapper.addTopicNum(jmsUpdPbar.getPbarId());
-                }else if(jmsUpdPbar.getType() == 1){//ĞŞ¸Ä¹Ø×¢Êı
+                }else if(jmsUpdPbar.getType() == 1){//ä¿®æ”¹å…³æ³¨æ•°
                     this.pbarMapper.addFocusNum(jmsUpdPbar.getPbarId());
-                }else if (jmsUpdPbar.getType() == 2){//¼õĞ¡¹Ø×¢Êı
+                }else if (jmsUpdPbar.getType() == 2){//å‡å°å…³æ³¨æ•°
                     this.pbarMapper.delFocusNum(jmsUpdPbar.getPbarId());
                 }else{}
 
-                /** Çå»º´æ*/
+                /** æ¸…ç¼“å­˜*/
                 String key = RedisCacheKey.PBAR_INDEX + jmsUpdPbar.getPbarId();
                 redisTemplate.delete(key);
 

@@ -12,9 +12,9 @@ public class Config {
 	 * You can get your accesskey from <a href="https://dev.qiniutek.com"
 	 * target="blank"> https://dev.qiniutek.com </a>
 	 */
-	public static String ACCESS_KEY = "QG_0b-IP3i1Tod_Atgxeu3lnSUW7NSG5a_m2DJMr";
+	public static String ACCESS_KEY = "rn2S0GSkrwpGNEj0H9kYOOr1CZNfP1LcexB2JFSi";
 
-	public static String SECRET_KEY = "Ga7jpq69Gug-3z3diC8Ex9vqGR07SyTp2LX6HrFf";
+	public static String SECRET_KEY = "uI__nhsF37rP21pKQmUj8fC8Dpand_8cL9IRwW5D";
 
 	public static String RS_HOST = "http://rs.qbox.me";
 

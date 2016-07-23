@@ -13,7 +13,7 @@ public class ListPrefix {
 		Config.SECRET_KEY = "cIOm4gyYuwlQNpqBMOv2nCTQvR3bQ0gKGUvo-8at";
 		Mac mac = new Mac(Config.ACCESS_KEY, Config.SECRET_KEY);
 		RSFClient client = new RSFClient(mac);
-		ListPrefixRet list = client.listPrifix("sun1", "", "", 10);
+		ListPrefixRet list = client.listPrifix("kabi1", "", "", 10);
 		System.out.println(list.results.size());
 		for (ListItem item : list.results) {
 			System.out.println(item.key);

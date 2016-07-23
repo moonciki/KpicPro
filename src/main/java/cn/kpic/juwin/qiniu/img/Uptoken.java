@@ -13,7 +13,7 @@ public class Uptoken {
 			JSONException {
 
 		Mac mac = new Mac(Config.ACCESS_KEY, Config.SECRET_KEY);
-		String bucketName = "sun1";
+		String bucketName = "kabi1";
 		PutPolicy putPolicy = new PutPolicy(bucketName);
 		// 可以根据自己需要设置过期时间,sdk默认有设置，具体看源码
 		// putPolicy.expires = getDeadLine();

@@ -29,7 +29,7 @@ $().ready(function() {
         runtimes: 'html5,flash,html4',
         browse_button: 'music_upload',
         uptoken_url: '/music/upload',
-        domain: 'http://7xt8jn.com1.z0.glb.clouddn.com/',
+        domain: 'http://7xwibn.com1.z0.glb.clouddn.com/',
         max_file_size: '10mb',
         flash_swf_url: 'static/js/plupload/Moxie.swf',
         multi_selection:false,

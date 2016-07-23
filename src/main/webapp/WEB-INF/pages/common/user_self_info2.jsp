@@ -11,10 +11,10 @@
   <title></title>
 </head>
 <body>
-<div class="head" style="background-image: url('http://7xs5lv.com1.z0.glb.clouddn.com/static/spring.png')">
+<div class="head" style="background-image: url('http://7xwibn.com1.z0.glb.clouddn.com/static/spring.png')">
   <c:choose>
     <c:when test="${user2.avater != null}">
-      <div class="user_pic" style="background-image: url('${user2.avater}?imageView2/1/w/89/h/89/q/95')"></div>
+      <div class="user_pic" style="background-image: url('${user2.avater}?imageView2/1/w/89/h/89/interlace/0/q/95')"></div>
     </c:when>
     <c:otherwise>
       <div class="user_pic" style="background-image: url('${user2.userPic}?size=89')"></div>

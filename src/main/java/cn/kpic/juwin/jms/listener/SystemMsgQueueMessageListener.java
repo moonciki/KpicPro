@@ -56,7 +56,7 @@ public class SystemMsgQueueMessageListener implements MessageListener {
             msg.setUserId(jmsSystemMsg.getUserId());
             this.msgMapper.update(msg);
 
-            /** Çå³ý»º´æ*/
+            /** æ¸…é™¤ç¼“å­˜*/
             this.redisTemplate.delete(RedisCacheKey.USER_NEWS + jmsSystemMsg.getUserId());
 
         }catch (JMSException e){

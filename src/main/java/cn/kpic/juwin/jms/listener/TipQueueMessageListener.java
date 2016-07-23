@@ -42,11 +42,11 @@ public class TipQueueMessageListener implements MessageListener {
         try{
             JmsTip jmsTip = (JmsTip)objectMessage.getObject();
             if(jmsTip != null){
-                if(jmsTip.getType() == 1){//Çå³ıÖ÷ÌâÌû¾Ù±¨
+                if(jmsTip.getType() == 1){//æ¸…é™¤ä¸»é¢˜å¸–ä¸¾æŠ¥
                     this.topicTipMapper.delAllTips(jmsTip.getId());
-                }else if(jmsTip.getType() == 2){//Çå³ı»Ø¸´Ìû¾Ù±¨
+                }else if(jmsTip.getType() == 2){//æ¸…é™¤å›å¤å¸–ä¸¾æŠ¥
                     this.replyTipMapper.delAllReplyTips(jmsTip.getId());
-                }else{//Çå³ı¶ÌÆÀ¾Ù±¨
+                }else{//æ¸…é™¤çŸ­è¯„ä¸¾æŠ¥
                     this.shortTipMapper.delAllShortTips(jmsTip.getId());
                 }
             }

@@ -13,7 +13,7 @@ public class UserPbar {
 
     private Long pbarId;
 
-    /** 1：顶级管理员   2：次级管理员*/
+    /** 1锛氶《绾х鐞嗗憳   2锛氭绾х鐞嗗憳*/
     private int type;
 
     private Date createTime;

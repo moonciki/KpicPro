@@ -100,7 +100,7 @@ public class IndexServiceImplCache extends IndexServiceImpl {
             pbarHomeTopicPosts = super.getAllPost(page);
             return pbarHomeTopicPosts;
         }
-        /** ËµÃ÷»º´æ²»´æÔÚ*/
+        /** è¯´æ˜ç¼“å­˜ä¸å­˜åœ¨*/
         if(!redisTemplate.hasKey(key)){
             if(!redisTemplate.boundHashOps(key).hasKey(hashKey)){
                 return this.saveKey(key, hashKey, page);
@@ -185,7 +185,7 @@ public class IndexServiceImplCache extends IndexServiceImpl {
         Xlh xlh = new Xlh();
         xlh.setList(pbarHomeTopicPosts);
         String json = JSON.toJSONString(xlh);
-        /** ´æÈë¹şÏ£½á¹¹»º´æ*/
+        /** å­˜å…¥å“ˆå¸Œç»“æ„ç¼“å­˜*/
         redisTemplate.boundHashOps(key).put(hashKey, json);
         return pbarHomeTopicPosts;
     }

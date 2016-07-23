@@ -9,11 +9,11 @@ import java.util.Map;
 import java.util.Objects;
 
 /*
- * mapper½Ó¿Ú£¬Ïàµ±ÓÚdao½Ó¿Ú
- * mybatisµÄmapper´úÀí¿ª·¢Ä£Ê½
+ * mapperæ¥å£ï¼Œç›¸å½“äºdaoæ¥å£
+ * mybatisçš„mapperä»£ç†å¼€å‘æ¨¡å¼
  * */
 public interface UserMapper {
-	//¸ù¾İid²é¶ÔÏó
+	//æ ¹æ®idæŸ¥å¯¹è±¡
 	User findUserById(Long id) throws Exception;
 	List<User> getAllUser() throws Exception;
 	void addUser(User user);

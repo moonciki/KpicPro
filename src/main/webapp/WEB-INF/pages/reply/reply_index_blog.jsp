@@ -12,6 +12,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>${postMSg.title}</title>
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
   <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
   <link href="${pageContext.request.contextPath}/static/css/pbar/pbar_index_blog.css" rel="stylesheet">
@@ -143,7 +144,7 @@
       <div class="reply_body_main_01" style="padding-left: 0px">
         <c:choose>
           <c:when test="${postMSg.avater != null}">
-            <img src="${postMSg.avater}?imageView2/1/w/89/h/89/q/95" class="userpic"/>
+            <img src="${postMSg.avater}?imageView2/1/w/89/h/89/interlace/0/q/95" class="userpic"/>
           </c:when>
           <c:otherwise>
             <img src="${postMSg.userPic}?size=89" class="userpic"/>
@@ -152,7 +153,7 @@
       </div>
       <c:choose>
         <c:when test="${user.avater != null }">
-          <input id="userPic" type="hidden" value="${user.avater}?imageView2/1/w/70/h/70/q/95"/>
+          <input id="userPic" type="hidden" value="${user.avater}?imageView2/1/w/70/h/70/interlace/0/q/95"/>
           <input id="userPic2" type="hidden" value="${user.avater}?imageView2/1/w/48/h/48/q/95"/>
         </c:when>
         <c:otherwise>
@@ -266,7 +267,7 @@
     <div class="reply_body_main" style="text-align: center">
 
       <button type="button" id="xl" class="btn btn-success"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
-      <div style="display: none" id="pageloading"><br/><img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/page_loading.gif"/></div>
+      <div style="display: none" id="pageloading"><br/><img src="http://7xwibn.com1.z0.glb.clouddn.com/static/page_loading.gif"/></div>
       <div style="display: none" id="pageloading2" style="font-size: 14px;"><br/>没有更多了</div>
 
     </div>

@@ -45,8 +45,9 @@ public class ShortTipServiceImpl implements ShortTipService {
     @Override
     @Transactional
     public void delshort(Long id) {
-        this.shortReplyMapper.del(id);
+
         ShortReply shortReply = this.shortReplyMapper.getObj(id);
+        this.shortReplyMapper.del(id);
         JmsUserIntegrityUpd jmsUserIntegrityUpd = new JmsUserIntegrityUpd(shortReply.getUserId(), 1, 2);
         this.userIntegrityUpdQueueMessageSender.send(jmsUserIntegrityUpd);
         JmsTip jmsTip = new JmsTip(id, 3);

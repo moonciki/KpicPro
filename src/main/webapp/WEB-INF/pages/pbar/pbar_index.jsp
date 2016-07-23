@@ -11,6 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>圈子--${pbar.name}</title>
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
     <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
     <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
     <link href="${pageContext.request.contextPath}/static/css/pbar/pbar_index.css" rel="stylesheet">
@@ -68,7 +69,7 @@
         <br/>
         <button type="button" class="btn btn-primary" id="sx_submit">发送</button>
         <button type="button" class="btn btn-primary" id="sx_close">取消</button>
-        &nbsp;&nbsp;<span id="sx_load" style="display: none; color:#9D9D9D; font-size: 14px"><img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg" style="width: 30px; height: 30px"/>&nbsp;提交中..</span>
+        &nbsp;&nbsp;<span id="sx_load" style="display: none; color:#9D9D9D; font-size: 14px"><img src="http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg" style="width: 30px; height: 30px"/>&nbsp;提交中..</span>
     </div>
 </div>
 <%@include file="../common/top.jsp" %>
@@ -145,7 +146,7 @@
                 <button type="button" style="display: none" id="ytj_xl" class="btn btn-danger"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
                 <button type="button" style="display: none" id="tcy_xl" class="btn btn-danger"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button>
 
-            <div style="display: none" id="pageloading"><br/><img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/page_loading.gif"/></div>
+            <div style="display: none" id="pageloading"><br/><img src="http://7xwibn.com1.z0.glb.clouddn.com/static/page_loading.gif"/></div>
             <div style="display: none" id="pageloading2" style="font-size: 14px;"><br/>没有更多了</div></div>
             <div style="display: none">
                 <input id="pbarId" type="hidden" value="${pbar.id}"/>
@@ -154,7 +155,7 @@
                 <input id="userName" type="hidden" value="${user.name}"/>
                 <c:choose>
                     <c:when test="${user.avater != null }">
-                        <input id="userPic" type="hidden" value="${user.avater}?imageView2/1/w/70/h/70/q/95"/>
+                        <input id="userPic" type="hidden" value="${user.avater}?imageView2/1/w/70/h/70/interlace/0/q/95"/>
                     </c:when>
                     <c:otherwise>
                         <input id="userPic" type="hidden" value="${user.userPic}?size=70"/>
@@ -217,7 +218,7 @@
                         <div class="main02_01_01">
                             <c:choose>
                                 <c:when test="${user.avater != null }">
-                                    <img src="${user.avater}?imageView2/1/w/100/h/100/q/95" class="userbigpic"/>
+                                    <img src="${user.avater}?imageView2/1/w/100/h/100/interlace/0/q/95" class="userbigpic"/>
                                 </c:when>
                                 <c:otherwise>
                                     <img src="${user.userPic}?size=100" class="userbigpic"/>
@@ -326,7 +327,7 @@
                             <br/>
                             <button type="button" class="btn btn-primary" id="tip_submit">发送</button>
                             <button type="button" class="btn btn-primary" id="tip_close">取消</button>
-                            &nbsp;&nbsp;<span id="jb_load" style="display: none; color:#9D9D9D; font-size: 14px"><img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg" style="width: 30px; height: 30px"/>&nbsp;申请提交中..</span>
+                            &nbsp;&nbsp;<span id="jb_load" style="display: none; color:#9D9D9D; font-size: 14px"><img src="http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg" style="width: 30px; height: 30px"/>&nbsp;申请提交中..</span>
                         </div>
                     </div>
 
@@ -343,7 +344,7 @@
     </div>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/music/music.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/video/video.js"></script>
-    <%@include file="../common/foot.jsp" %>
 </div>
+<%@include file="../common/foot.jsp" %>
 </body>
 </html>

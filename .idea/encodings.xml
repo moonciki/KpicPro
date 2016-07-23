@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/constant/KpicConstant.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/constant/RedisCacheKey.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/album/AlbumController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/blog/BlogController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/emotion/EmotionController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/home/HomeController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/homerequest/HomeRequestController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/index/IndexController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/music/MusicController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/news/NewsController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/others/OthersController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/pbar/QiniuCallBackFormBean.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/pbaralbum/PbarAlbumController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/pbarmanager/ManagerController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/privateletter/PrivateLetterController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/qiniu/QiNiuCallback.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/register/RegisterController.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/replypost/ReplyPostController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/shortreply/ShortReplyNewsController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/systemmsg/SystemMsgController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/tip/TipController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/controller/topicpost/TopicPostController.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/Album.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/Blog.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/Home.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/ReplyPost.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/TopicImg.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/TopicPost.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/UserFocus.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/UserIntegrity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/UserPbar.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/vo/JmsUpdPbar.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/vo/JmsUserIntegrityUpd.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/domain/vo/Xlh.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/http/HttpRequest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/PbarUpdQueueMessageListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/PublishBlogQueueMessageListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/ReplyPostImgQueueMessageListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/SystemMsgQueueMessageListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/TipQueueMessageListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/TopicPostImgQueueMessageListener.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/UserIntegrityUpdQueueMessageListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/jms/listener/UserNewsQueueMessageListener.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/mapper/UserMapper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/cache/IndexServiceImplCache.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/cache/PbarServiceImplCache.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/HitServiceServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/IndexServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PbarManagerApplyServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/PrivateLetterServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/ReplyTipServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/ShortTipServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/TopicPostServiceImpl.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/TopicTipServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/service/impl/UserServiceImpl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/shiro/realm/ShiroDbRealm.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cn/kpic/juwin/utils/NetEaseMusicUtils.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/css/home/imgs" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/css/home/style.css" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/ShareLook.js" charset="UTF-8" />
@@ -42,9 +91,6 @@
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_list.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/static/js/user/private_letter_self_list.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/ueditor/dialogs/music/music.js" charset="UTF-8" />
-    <file url="file://E:/KpicBase/build/classes/main/cn/kpic/base/mapper/HomeMapper.xml" charset="UTF-8" />
-    <file url="file://E:/KpicBase/build/classes/main/cn/kpic/base/mapper/HomeMapper.xml" charset="UTF-8" />
-    <file url="file://E:/KpicBase/build/classes/main/cn/kpic/base/mapper/MaterialMapper.xml" charset="UTF-8" />
-    <file url="file://E:/KpicBase/build/classes/main/cn/kpic/base/mapper/PbarTypeMapper.xml" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

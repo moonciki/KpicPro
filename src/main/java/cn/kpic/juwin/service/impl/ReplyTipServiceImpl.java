@@ -45,8 +45,9 @@ public class ReplyTipServiceImpl implements ReplyTipService {
     @Override
     @Transactional
     public void delReply(Long id) {
-        this.replyPostMapper.del(id);
+
         ReplyPost replyPost = this.replyPostMapper.getById(id);
+        this.replyPostMapper.del(id);
         JmsUserIntegrityUpd jmsUserIntegrityUpd = new JmsUserIntegrityUpd(replyPost.getUserId(), 2, 2);
         this.userIntegrityUpdQueueMessageSender.send(jmsUserIntegrityUpd);
         JmsTip jmsTip = new JmsTip(id, 2);

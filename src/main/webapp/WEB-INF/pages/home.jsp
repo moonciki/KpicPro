@@ -10,7 +10,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>咔哔圈子-每个人的梦想乡</title>
+    <title>咔哔圈子-每个人的兴趣乡</title>
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
   <link href="${pageContext.request.contextPath}/static/css/home.css" rel="stylesheet"/>
   <link href="${pageContext.request.contextPath}/static/css/home/style.css" rel="stylesheet"/>

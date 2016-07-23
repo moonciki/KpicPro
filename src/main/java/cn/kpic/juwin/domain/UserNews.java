@@ -13,7 +13,7 @@ public class UserNews implements java.io.Serializable{
 
     private String shortContent;
 
-    private int type;//1：表示主题帖被回复；2：表示短评消息
+    private int type;
 
     private Long userId;
 

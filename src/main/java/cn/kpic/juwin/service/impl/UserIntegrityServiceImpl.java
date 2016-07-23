@@ -30,7 +30,7 @@ public class UserIntegrityServiceImpl implements UserIntegrityService {
 
     @Override
     public void reduceNum(Long userId, Integer num) {
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("userId", userId);
         params.put("num", num);
         this.userIntegrityMapper.reduceNum(params);
@@ -38,7 +38,7 @@ public class UserIntegrityServiceImpl implements UserIntegrityService {
 
     @Override
     public void addNum(Long userId, Integer num) {
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("userId", userId);
         params.put("num", num);
         this.userIntegrityMapper.addNum(params);

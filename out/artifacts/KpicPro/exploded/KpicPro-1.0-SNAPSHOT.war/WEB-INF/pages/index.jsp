@@ -6,6 +6,7 @@
   <title>用户登录</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <script src="${pageContext.request.contextPath}/static/js/jquery-1.10.2.min.js"></script>
   <link href="${pageContext.request.contextPath}/static/css/pbar.css" rel="stylesheet">
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet"/>

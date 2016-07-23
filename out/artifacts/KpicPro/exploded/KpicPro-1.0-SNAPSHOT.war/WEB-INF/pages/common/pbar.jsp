@@ -20,7 +20,7 @@
       <br/><br/>
       <center>
         <a href="${pageContext.request.contextPath}/post/subjects/sub4615${pbar.id}">
-            <img src="${pbar.logo}?imageView2/1/w/100/h/100/q/95" style="border:solid ${pbar.color} 2px;box-shadow:0px 0px 30px ${pbar.color};border-radius: 8px;" alt=""/>
+            <img src="${pbar.logo}?imageView2/1/w/100/h/100/interlace/0/q/95" style="border:solid ${pbar.color} 2px;box-shadow:0px 0px 30px ${pbar.color};border-radius: 8px;" alt=""/>
         </a>
       </center>
     </div>
@@ -42,7 +42,7 @@
               </c:forEach>
             </span>
       </p>
-      <p style="font-family: 微软雅黑">${pbar.msg}</p>
+      <span style="font-size:13px;font-family: 微软雅黑">${pbar.msg}</span>
     </div>
     <center>
 

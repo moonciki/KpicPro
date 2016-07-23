@@ -49,7 +49,7 @@ public class QiNiuCallback {
     @RequestMapping("/qiniuimgcallback2")
     @ResponseBody
     public Map<String, Object> qiNiuCallback2(HttpServletRequest request){
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<String, Object>();
         map.put("ss", "hh");
         map.put("bb", "ll");
         return map;

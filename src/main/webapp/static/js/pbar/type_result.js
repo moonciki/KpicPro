@@ -32,7 +32,7 @@ function jz(flag){
         }else{
             for(key in data){
                 $("#pbars").append("<div class=\"pbar_box\" onclick=\"openLink('/post/subjects/sub4615"+data[key].id+"')\">"+
-                    "<div class=\"pbar_box_01\"><img src=\""+data[key].logo+"?imageView2/1/w/100/h/100/q/95\" style=\"border-radius:8px;border:2px solid "+data[key].color+"\"/></div>"+
+                    "<div class=\"pbar_box_01\"><img src=\""+data[key].logo+"?imageView2/1/w/100/h/100/interlace/0/q/95\" style=\"border-radius:8px;border:2px solid "+data[key].color+"\"/></div>"+
                     "<div class=\"pbar_box_02\"><span style='font-size: 20px'>"+data[key].name+"</span><br/>" +
                     "<span style='font-size: 13px; line-height: 1.5;color:#8f8e9a;'>"+data[key].msg+"</span><br/>"+
                     "<button type=\"button\" class=\"btn btn-default btn-xs\" style='border: 1px solid #ff4f72;color:#ff4f72;margin-top: 10px'><span class='glyphicon glyphicon-fire'></span> 关注数："+data[key].focus_num+"</button>"+

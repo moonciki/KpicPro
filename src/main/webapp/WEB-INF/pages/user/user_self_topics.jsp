@@ -5,6 +5,7 @@
 <html>
 <head>
   <title>${user2.name}的过往发帖</title>
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
   <script src="${pageContext.request.contextPath}/static/js/jquery-1.10.2.min.js"></script>
   <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
@@ -39,7 +40,7 @@
     <center><button type="button" class="btn btn-info" id="jz"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button></center>
     <br/>
       <span style="display: none" id="jz_load">
-        <center><img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/page_loading.gif"/></center>
+        <center><img src="http://7xwibn.com1.z0.glb.clouddn.com/static/page_loading.gif"/></center>
       </span>
     <span id="pageloading2" style="display:none"><center>没有更多了</center></span>
 

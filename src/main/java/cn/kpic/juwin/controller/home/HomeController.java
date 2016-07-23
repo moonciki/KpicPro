@@ -31,12 +31,15 @@ public class HomeController {
             model.addAttribute("user", curr_user);
         }
         List<Home> result = this.indexService.getAllImg();
-        List<Integer> js = new ArrayList<>();
-        for(int i = 1; i<= result.size(); i++){
-            js.add(i);
+        if(result != null){
+            List<Integer> js = new ArrayList<Integer>();
+            for(int i = 1; i<= result.size(); i++){
+                js.add(i);
+            }
+            model.addAttribute("js", js);
         }
+
         model.addAttribute("imgs", result);
-        model.addAttribute("js", js);
         model.addAttribute("size", result == null ? 0 : result.size());
         return "/home";
     }

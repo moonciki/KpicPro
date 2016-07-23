@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * Created by Administrator on 2016/3/19 0019.
- * ¸ÃÀà½ö½öÎªÁËfastjsonµÄĞòÁĞ»¯¶øĞ´£¨Õæ¡¤ÄáÂêµ°ÌÛ£©
+ * è¯¥ç±»ä»…ä»…ä¸ºäº†fastjsonçš„åºåˆ—åŒ–è€Œå†™ï¼ˆçœŸÂ·å°¼ç›è›‹ç–¼ï¼‰
  */
 public class Xlh implements java.io.Serializable{
 

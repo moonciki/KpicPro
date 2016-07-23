@@ -28,7 +28,7 @@ public class PbarServiceImplCache extends PbarServiceImpl{
     public PbarIndexVo getPbarIndex(Long id) {
         String key = RedisCacheKey.PBAR_INDEX + id;
 
-        /** »º´æ²»´æÔÚ*/
+        /** ç¼“å­˜ä¸å­˜åœ¨*/
         if(!redisTemplate.hasKey(key)){
             PbarIndexVo pbarIndexVo = super.getPbarIndex(id);
             if(pbarIndexVo == null){
@@ -36,7 +36,7 @@ public class PbarServiceImplCache extends PbarServiceImpl{
             }
             String json = JSON.toJSONString(pbarIndexVo);
             redisTemplate.boundValueOps(key).set(json);
-            redisTemplate.expire(key, 2, TimeUnit.DAYS);//»º´æÃ¿Á½Ìì¹ıÆÚÒ»´Î
+            redisTemplate.expire(key, 2, TimeUnit.DAYS);//ç¼“å­˜æ¯ä¸¤å¤©è¿‡æœŸä¸€æ¬¡
         }
 
         return JSON.parseObject((String)redisTemplate.boundValueOps(key).get(), PbarIndexVo.class);
@@ -49,18 +49,18 @@ public class PbarServiceImplCache extends PbarServiceImpl{
         }
     }
 
-    /** ÀÛ¼Óµã»÷Á¿*/
+    /** ç´¯åŠ ç‚¹å‡»é‡*/
     @Override
     public void updPbarHit(Long pbarId){
         SimpleDateFormat myTimeFormat = new SimpleDateFormat("yyyy-MM-dd");
         String nowStr = myTimeFormat.format(new Date());
         String key = RedisCacheKey.PBAR_HIT+pbarId+"_"+nowStr;
         if(!redisTemplate.hasKey(key)){
-            /** key²»´æÔÚµÄÊ±ºò´´½¨¸Ãkey£¬³õÊ¼ÖµÎª1*/
+            /** keyä¸å­˜åœ¨çš„æ—¶å€™åˆ›å»ºè¯¥keyï¼Œåˆå§‹å€¼ä¸º1*/
             redisTemplate.boundValueOps(key).set(String.valueOf(1));
             redisTemplate.expire(key, 2, TimeUnit.DAYS);
         }else{
-            /** key´æÔÚ£¬Ö±½ÓÈ¡³öÀÛ¼Ó1¼´¿É*/
+            /** keyå­˜åœ¨ï¼Œç›´æ¥å–å‡ºç´¯åŠ 1å³å¯*/
             Integer num = Integer.parseInt(redisTemplate.boundValueOps(key).get()+"");
             redisTemplate.boundValueOps(key).set(String.valueOf(num + 1));
         }

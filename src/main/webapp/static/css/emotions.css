@@ -1,0 +1,27 @@
+.main{
+    margin: 0 auto;
+    width: 1100px;
+    padding-top: 20px;
+    min-height: 244px;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 30px;
+}
+
+.bq{
+    margin-right: 18px;
+    margin-bottom: 18px;
+    padding: 10px;
+    background-color: #FFF;
+    width: 200px;
+    height: 300px;
+    border: 1px solid #bfbfbf;
+    border-radius: 6px;
+    box-shadow:0px 0px 8px #bfbfbf;
+    float: left;
+}
+
+.img{
+    border-radius: 6px;
+    border: 1px solid #ff7276;
+}

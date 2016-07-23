@@ -45,7 +45,7 @@ public class IndexServiceImpl implements IndexService {
         List<PbarHomeTopicPost> result = this.indexMapper.getAllPost(page);
         if(result != null && result.size() != 0){
             for(PbarHomeTopicPost pbarHomeTopicPost : result){
-                /** Í¨¹ıÏÂÃæÕâ¸öº¯Êı²éÕÒµ½Ç°4ÕÅÍ¼Æ¬*/
+                /** é€šè¿‡ä¸‹é¢è¿™ä¸ªå‡½æ•°æŸ¥æ‰¾åˆ°å‰4å¼ å›¾ç‰‡*/
                 List<TopicImg> listImg = topicImgMapper.getByTopicId(pbarHomeTopicPost.getId());
                 pbarHomeTopicPost.setImg(listImg.size() == 0 ? null : listImg);
             }

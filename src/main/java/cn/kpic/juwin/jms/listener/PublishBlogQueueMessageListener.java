@@ -60,7 +60,7 @@ public class PublishBlogQueueMessageListener implements MessageListener{
                     topicPost.setIsBoutique(0);
                     topicPostMapper.save(topicPost);
 
-                    /** Çå»º´æ*/
+                    /** æ¸…ç¼“å­˜*/
                     String key = RedisCacheKey.PBAR_PAGE + jmsPublishBlog.getPbarId();
                     redisTemplate.delete(key);
 

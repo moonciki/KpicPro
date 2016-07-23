@@ -3,7 +3,7 @@ package cn.kpic.juwin.domain;
 import java.util.Date;
 
 /**
- * Ê×Ò³
+ * é¦–é¡µ
  * Created by bjsunqinwen on 2016/4/28.
  */
 public class Home {

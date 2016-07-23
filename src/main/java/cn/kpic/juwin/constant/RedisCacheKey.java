@@ -1,39 +1,39 @@
 package cn.kpic.juwin.constant;
 
 /**
- * »º´æµÄkey³£Á¿
+ * ç¼“å­˜çš„keyå¸¸é‡
  * Created by bjsunqinwen on 2016/3/15.
  */
 public class RedisCacheKey {
 
-    /** ÓÃÓÚ»º´æÃ¿¸öÈ¦×ÓÏÂµÄÇ°Ê®Ò³Ìû×ÓĞÅÏ¢»º´æ£¬ÓÃ»§·¢ÌûÒ»´ÎÊ§Ğ§Ò»´Î*/
+    /** ç”¨äºç¼“å­˜æ¯ä¸ªåœˆå­ä¸‹çš„å‰åé¡µå¸–å­ä¿¡æ¯ç¼“å­˜ï¼Œç”¨æˆ·å‘å¸–ä¸€æ¬¡å¤±æ•ˆä¸€æ¬¡*/
     public final static String PBAR_PAGE = "pbar:pbar_page";
-    /** ÓÃÓÚ»º´æÓÃ»§Î´¶ÁĞÅÏ¢*/
+    /** ç”¨äºç¼“å­˜ç”¨æˆ·æœªè¯»ä¿¡æ¯*/
     public final static String USER_NEWS = "user:news";
-    /** ÓÃÓÚ»º´æÈ¦×ÓÊ×Ò³È¦×ÓĞÅÏ¢£¬Ã¿¸ô 2 ÌìÊ§Ğ§Ò»´Î*/
+    /** ç”¨äºç¼“å­˜åœˆå­é¦–é¡µåœˆå­ä¿¡æ¯ï¼Œæ¯éš” 2 å¤©å¤±æ•ˆä¸€æ¬¡*/
     public final static String PBAR_INDEX = "pbar:index";
-    /** ÓÃÓÚ»º´æÈ¦×Ó¹ÜÀíÒ³Ãæ¶Ôµ±Ç°ÓÃ»§Éí·İµÄ»º´æ£º´ó¹ÜÀíÔ±&Ğ¡¹ÜÀíÔ±,Ã¿ 1 ÌìÊ§Ğ§Ò»´Î*/
+    /** ç”¨äºç¼“å­˜åœˆå­ç®¡ç†é¡µé¢å¯¹å½“å‰ç”¨æˆ·èº«ä»½çš„ç¼“å­˜ï¼šå¤§ç®¡ç†å‘˜&å°ç®¡ç†å‘˜,æ¯ 1 å¤©å¤±æ•ˆä¸€æ¬¡*/
     public final static String PBAR_USER_ROLE = "pbar:manager:role";
-    /** ÓÃÓÚ»º´æÓÃ»§½Ú²ÙÖµ£¬Ã¿Ò»ÖÜÊ§Ğ§Ò»´Î*/
+    /** ç”¨äºç¼“å­˜ç”¨æˆ·èŠ‚æ“å€¼ï¼Œæ¯ä¸€å‘¨å¤±æ•ˆä¸€æ¬¡*/
     public final static String USER_JC_NUM = "user:jiecao";
-    /** ÓÃÓÚ»º´æÃ¿¸öÈ¦×ÓµÄµã»÷Á¿£¬ºÍ¶¨Ê±ÈÎÎñÏà½áºÏ£¬Ã¿Ìì¶¨Ê±¸üĞÂµã»÷Á¿*/
+    /** ç”¨äºç¼“å­˜æ¯ä¸ªåœˆå­çš„ç‚¹å‡»é‡ï¼Œå’Œå®šæ—¶ä»»åŠ¡ç›¸ç»“åˆï¼Œæ¯å¤©å®šæ—¶æ›´æ–°ç‚¹å‡»é‡*/
     public final static String PBAR_HIT="pbar:pbar_hit";
 
 
-    /** Ê×Ò³»º´æ¿ªÊ¼£¬Ê×Ò³¸÷²¿·Ö»º´æÊ§Ğ§Ê±¼ä¾ùÎª1Ìì*/
-    /** ÓÃÓÚ»º´æÊ×Ò³È¦×ÓÀàĞÍ*/
+    /** é¦–é¡µç¼“å­˜å¼€å§‹ï¼Œé¦–é¡µå„éƒ¨åˆ†ç¼“å­˜å¤±æ•ˆæ—¶é—´å‡ä¸º1å¤©*/
+    /** ç”¨äºç¼“å­˜é¦–é¡µåœˆå­ç±»å‹*/
     public final static String PBAR_TYPE_INDEX = "home:type_index";
-    /** ÓÃÓÚ»º´æÊ×Ò³¾«²ÊÍ¼¼¯*/
+    /** ç”¨äºç¼“å­˜é¦–é¡µç²¾å½©å›¾é›†*/
     public final static String ALBUM_INDEX = "home:albums";
-    /** ÓÃÓÚ»º´æÊ×Ò³¾«²ÊÈ¦×Ó*/
+    /** ç”¨äºç¼“å­˜é¦–é¡µç²¾å½©åœˆå­*/
     public final static String PBAR_INDEX_HOME = "home:pbars";
-    /** ÓÃÓÚ»º´æÊ×Ò³ÈÈÃÅÎÄÕÂ¡¢Ìû×Ó*/
+    /** ç”¨äºç¼“å­˜é¦–é¡µçƒ­é—¨æ–‡ç« ã€å¸–å­*/
     public final static String POST_INDEX_HOME = "home:post";
-    /** ÓÃÓÚ»º´æÊ×Ò³ÂÖ²¥Í¼*/
+    /** ç”¨äºç¼“å­˜é¦–é¡µè½®æ’­å›¾*/
     public final static String IMG_INDEX_HOME = "home:img";
-    /** ÓÃÓÚ»º´æÊ×Ò³Å£ÈË°ñ*/
+    /** ç”¨äºç¼“å­˜é¦–é¡µç‰›äººæ¦œ*/
     public final static String USER_INDEX_HOME = "home:users";
-    /** ¾¯¸æ°ñ*/
+    /** è­¦å‘Šæ¦œ*/
     public final static String USER_WARN_HOME = "home:warns";
 
 }

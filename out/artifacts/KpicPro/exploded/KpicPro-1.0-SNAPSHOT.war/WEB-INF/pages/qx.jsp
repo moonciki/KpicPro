@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>hh</title>
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
 </head>
 <body>
 <shiro:hasPermission name="user">

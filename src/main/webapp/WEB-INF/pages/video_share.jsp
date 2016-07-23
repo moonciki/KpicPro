@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>如何分享视频到咔哔？</title>
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <script src="${pageContext.request.contextPath}/static/js/jquery-1.10.2.min.js"></script>
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet"/>
   <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
@@ -70,39 +71,39 @@
     <div class="col-xs-9">
       <h2 id="section-1">哔哩哔哩弹幕视频分享方式</h2>
       <p>每个播放器下面的分享按钮，点开复制其flash播放器地址粘贴到本站指定位置即可，如下图所示：
-        <br/><img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/blibli.jpg"/>
+        <br/><img src="http://7xwibn.com1.z0.glb.clouddn.com/static/blibli.jpg"/>
       </p>
       <hr>
       <h2 id="section-2">AcFun弹幕视频分享方式</h2>
       <p>点开播放器下面的分享按钮，会弹出一个分享框，然后复制flash地址即可
         <br/>
-        <img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/ac1.jpg"/>
+        <img src="http://7xwibn.com1.z0.glb.clouddn.com/static/ac1.jpg"/>
         <br/>
-        <img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/ac2.jpg"/>
+        <img src="http://7xwibn.com1.z0.glb.clouddn.com/static/ac2.jpg"/>
 
       </p>
       <hr/>
       <h2 id="section-3">优酷视频分享方式</h2>
       <p>点开播放器下发分享按钮，复制flash地址即可，如下图：<br/>
-        <img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/youku.jpg"/>
+        <img src="http://7xwibn.com1.z0.glb.clouddn.com/static/youku.jpg"/>
 
       </p>
       <hr/>
       <h2 id="section-4">爱奇艺视频分享方式</h2>
       <p>分享方法同上，直接上图：<br/>
-        <img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/271.jpg"/>
+        <img src="http://7xwibn.com1.z0.glb.clouddn.com/static/271.jpg"/>
 
       </p>
       <hr/>
       <h2 id="section-5">腾讯视频分享方式</h2>
       <p>分享方式同上，如图所示：<br/>
-        <img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/tx.jpg"/>
+        <img src="http://7xwibn.com1.z0.glb.clouddn.com/static/tx.jpg"/>
 
       </p>
       <hr/>
       <h2 id="section-6">土豆视频分享方式</h2>
       <p>分享方式同上，如图所示：<br/>
-        <img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/tudou.jpg"/>
+        <img src="http://7xwibn.com1.z0.glb.clouddn.com/static/tudou.jpg"/>
 
       </p>
 

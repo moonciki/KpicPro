@@ -3,22 +3,22 @@ package cn.kpic.juwin.domain;
 import java.util.Date;
 
 /**
- * Ö÷ÌâÌû
+ * ä¸»é¢˜å¸–
  * Created by bjsunqinwen on 2016/3/9.
  */
 public class TopicPost implements java.io.Serializable{
 
-    /** Ö÷ÌâÌû»Ö¸´*/
+    /** ä¸»é¢˜å¸–æ¢å¤*/
     public static final int TOPIC_POST_DEL_CANCEL = 0;
-    /** Ö÷ÌâÌûÉ¾³ı*/
+    /** ä¸»é¢˜å¸–åˆ é™¤*/
     public static final int TOPIC_POST_DEL = 1;
-    /** È¡ÏûÖÃ¶¥*/
+    /** å–æ¶ˆç½®é¡¶*/
     public static final int TOPIC_POST_ISTOP_CANCEL = 0;
-    /** ÉèÎªÖÃ¶¥Ìù*/
+    /** è®¾ä¸ºç½®é¡¶è´´*/
     public static final int TOPIC_POST_ISTOP = 1;
-    /** È¡Ïû¼Ó¾«*/
+    /** å–æ¶ˆåŠ ç²¾*/
     public static final int TOPIC_POST_ISBOUTIQUE_CANCEL = 0;
-    /** ÉèÎª¾«Æ·Ìù*/
+    /** è®¾ä¸ºç²¾å“è´´*/
     public static final int TOPIC_POST_ISBOUTIQUE = 1;
 
     private Long id;

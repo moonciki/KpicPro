@@ -19,9 +19,9 @@ function jz(){
         }else{
             var addhtml = "";
             for(key in data){
-                addhtml+="<table class=\"table table-bordered\"><tr>"+
+                addhtml+="<span id=\"em_"+data[key].id+"\"><table class=\"table table-bordered\"><tr>"+
                     "<td><img src=\""+data[key].url+"?imageView2/1/w/80/h/80/q/95\"/></td><td>"+data[key].title+"</td>"+
-                    "</tr><tr></table>";
+                    "<td><button id=\"btn_"+data[key].id+"\" type=\"button\" onclick='del("+data[key].id+")' class=\"btn btn-default\"><span class='glyphicon glyphicon-remove-circle'></span> 删除</button></td></tr></table></span>";
             }
             $("#emotion_list").append(addhtml);
             $("#load").hide();
@@ -31,6 +31,17 @@ function jz(){
     });
 }
 
+function del(id){
+    $("#btn_"+id).attr("disabled", "disabled");
+    $.post("/user/emotion/del", {'id':id}, function(data){
+       if(data){
+           $("#em_"+id).hide(600);
+       }else{
+           alert("删除出错！请重试~");
+           $("#btn_"+id).removeAttr("disabled");
+       }
+    });
+}
 
 function getLocalTime(timer) {
     var d = new Date(timer);
@@ -49,7 +60,7 @@ $().ready(function() {
         runtimes: 'html5,flash,html4',
         browse_button: 'emotion_upload',
         uptoken_url: '/pbar/upload',
-        domain: 'http://7xs5lv.com1.z0.glb.clouddn.com/',
+        domain: 'http://7xwibn.com1.z0.glb.clouddn.com/',
         max_file_size: '0.7mb',
         flash_swf_url: 'static/js/plupload/Moxie.swf',
         multi_selection:false,
@@ -87,8 +98,8 @@ $().ready(function() {
                 console.log(info);
                 info = JSON.parse(info);
                 $("#upload_loading").hide();
-                $("#url").val("http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key);
-                $("#img_url").append("<img src=\"http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key+"?imageView2/1/w/600/q/95\"/>");
+                $("#url").val("http://7xwibn.com1.z0.glb.clouddn.com/"+info.key);
+                $("#img_url").append("<img src=\"http://7xwibn.com1.z0.glb.clouddn.com/"+info.key+"?imageView2/1/w/600/q/95\"/>");
                 $("#an").append("<button type=\"button\" onclick=\"tj()\" class=\"btn btn-success\">添加</button>")
             },
             'Key': function (up, file) {

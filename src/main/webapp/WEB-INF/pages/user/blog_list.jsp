@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>${user.name}的管理中心</title>
-
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/user/manage_center.css" rel="stylesheet">
   <link href="${pageContext.request.contextPath}/static/css/user/album_list.css" rel="stylesheet">
 </head>

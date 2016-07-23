@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>${user.name}的管理中心</title>
-
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/user/manage_center.css" rel="stylesheet">
 </head>
 <body>
@@ -42,7 +42,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <c:choose>
               <c:when test="${user.avater != null}">
-                <img src="${user.avater}?imageView2/1/w/30/h/30/q/95"/>
+                <img src="${user.avater}?imageView2/1/w/30/h/30/interlace/0/q/95"/>
               </c:when>
               <c:otherwise>
                 <img src="${user.userPic}?size=30"/>

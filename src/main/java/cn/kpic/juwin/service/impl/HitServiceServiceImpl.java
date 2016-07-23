@@ -31,19 +31,19 @@ public class HitServiceServiceImpl implements HitService {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    /** ¸üĞÂÃ¿¸öÈ¦×Ó×òÈÕµÄµã»÷Á¿£¬Ã¿ÌìµÄÁè³¿1µã´¥·¢¸ÃÈÎÎñ*/
+    /** æ›´æ–°æ¯ä¸ªåœˆå­æ˜¨æ—¥çš„ç‚¹å‡»é‡ï¼Œæ¯å¤©çš„å‡Œæ™¨1ç‚¹è§¦å‘è¯¥ä»»åŠ¡*/
     @Scheduled(cron = "0 0 1 * * ?")
     @Override
     public void updHitTask() {
         SimpleDateFormat myTimeFormat = new SimpleDateFormat("yyyy-MM-dd");
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
-        /** »ñÈ¡×òÌìÈÕÆÚ*/
+        /** è·å–æ˜¨å¤©æ—¥æœŸ*/
         calendar.add(Calendar.DAY_OF_MONTH, -1);
         String nowStr = myTimeFormat.format(calendar.getTime());
 
-        List<Long> ids = this.pbarMapper.getAllIds();//È¡³öËùÓĞÈ¦×Óid
-        List<Hit> final_result = new ArrayList<>();
+        List<Long> ids = this.pbarMapper.getAllIds();//å–å‡ºæ‰€æœ‰åœˆå­id
+        List<Hit> final_result = new ArrayList<Hit>();
         for(Long pbarId : ids){
             String key = RedisCacheKey.PBAR_HIT+pbarId+"_"+nowStr;
             String[] dates = nowStr.split("-");
@@ -60,7 +60,7 @@ public class HitServiceServiceImpl implements HitService {
             final_result.add(hit);
         }
 
-        /** ÅúÁ¿³Ö¾Ã»¯*/
+        /** æ‰¹é‡æŒä¹…åŒ–*/
         this.hitMapper.saves(final_result);
     }
 }

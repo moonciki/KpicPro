@@ -52,7 +52,7 @@ public class ReplyPostServiceImpl implements ReplyPostService {
 
     @Override
     public List<ReplyPostList> getAllReplyByTopicId(Long topicId, int page) {
-        List<ReplyPostList> lists = new ArrayList<>();
+        List<ReplyPostList> lists = new ArrayList<ReplyPostList>();
         try {
             Map<String, Object> params = new HashMap<String, Object>();
             params.put("topicId", topicId);
@@ -61,13 +61,13 @@ public class ReplyPostServiceImpl implements ReplyPostService {
             User user = CurrentUser.getUser();
             if(user != null){
                 if(lists != null && lists.size() != 0){
-                    List<Long> storeIds = new ArrayList<>();
+                    List<Long> storeIds = new ArrayList<Long>();
 
                     for(ReplyPostList replyPostList : lists){
                         storeIds.add(replyPostList.getId());
                     }
 
-                    Map<String, Object> params2 = new HashMap<>();
+                    Map<String, Object> params2 = new HashMap<String, Object>();
                     params2.put("storeIds",storeIds);
                     params2.put("userId", user.getId());
                     List<Long> store_result = this.replyTipMapper.getIdsByStoreIds(params2);
@@ -132,7 +132,7 @@ public class ReplyPostServiceImpl implements ReplyPostService {
     @Override
     public List<SelfReply> getAllSelfReply(Long userId, int page, String orderBy) {
 
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("userId", userId);
         params.put("page", page);
         params.put("orderBy", orderBy);

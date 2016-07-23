@@ -29,8 +29,18 @@
     </insert>
 
     <select id="getAllByUserId" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.Emotion">
-        SELECT id, title, url FROM tb_emotion
-        WHERE userId = #{userId} AND isdel = 0 ORDER BY createTime DESC LIMIT #{page}, 10
+        SELECT tue.id, te.title, te.url
+        FROM tb_user_emotion tue
+        JOIN tb_emotion te ON te.id = tue.emotionId
+        WHERE tue.userId = #{userId} ORDER BY tue.createTime DESC LIMIT #{page}, 10
+    </select>
+
+    <select id="getAllEmotions" parameterType="java.util.Map" resultType="cn.kpic.juwin.domain.vo.EmotionVo">
+        SELECT
+        te.id, te.title, te.url, te.createTime, te.userId, tu.name AS userName
+        FROM tb_emotion te
+        JOIN tb_user tu ON tu.id = te.userId
+        ORDER BY te.createTime DESC LIMIT #{page}, 10
     </select>
 
 </mapper>

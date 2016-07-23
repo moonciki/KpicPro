@@ -84,7 +84,7 @@ public class UserController {
     @ResponseBody
     public List<User> getAllUser(HttpServletRequest request, HttpServletResponse response,
                                  @RequestParam(value = "page", defaultValue = "1", required = false) int page, Model model) {
-        List<User> list = new ArrayList<>();
+        List<User> list = new ArrayList<User>();
         try {
             list = userService.getAllUser();
         } catch (Exception e) {
@@ -189,7 +189,7 @@ public class UserController {
     @RequestMapping(value = "/logout2")
     @ResponseBody
     public Map<String, Object> logout2() {
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<String, Object>();
         try {
             Subject subject = SecurityUtils.getSubject();
             if (subject != null) {
@@ -206,7 +206,7 @@ public class UserController {
     @RequestMapping(value = "/jugelogin")
     @ResponseBody
     public Map<String, Object> jugeLogin(Long num, String pwd, Model model) {
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<String, Object>();
         try {
             map.put("success", userService.jugeLogin(num, pwd));
         } catch (Exception e) {
@@ -434,7 +434,7 @@ public class UserController {
     public List<User> getUserFocus(Long userId, @RequestParam(value = "page", defaultValue = "0", required = true) int page) {
         try {
 
-            Map<String, Object> params = new HashMap<>();
+            Map<String, Object> params = new HashMap<String, Object>();
             params.put("page", page);
             params.put("userId", userId);
 
@@ -454,7 +454,7 @@ public class UserController {
         try {
 
 
-            Map<String, Object> params = new HashMap<>();
+            Map<String, Object> params = new HashMap<String, Object>();
             params.put("page", page);
             params.put("userId", userId);
 
@@ -515,7 +515,7 @@ public class UserController {
         user.setBirth(StringDeal.getText(user.getBirth()));
         user.setAddress(StringDeal.getText(user.getAddress()));
         user.setTag(StringDeal.getText(user.getTag()));
-        Map<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<String, Object>();
         try {
             user.setAvater("".equals(user.getAvater()) ? null : user.getAvater());
             this.userService.update(user);
@@ -531,7 +531,7 @@ public class UserController {
     @RequestMapping(value = "/user/pbar/focus")
     @ResponseBody
     public Map<String, Object> pbarFocus(@RequestParam(value = "pbarId", required = true) Long pbarId) {
-        Map<String, Object> result = new HashMap<>();
+        Map<String, Object> result = new HashMap<String, Object>();
         result.put("success", true);
         try {
             User user = CurrentUser.getUser();
@@ -560,7 +560,7 @@ public class UserController {
             if (user == null) {
                 return false;
             }
-            Map<String, Object> params = new HashMap<>();
+            Map<String, Object> params = new HashMap<String, Object>();
             params.put("userId", user.getId());
             params.put("pbarId", pbarId);
             PbarFocus pbarFocus = this.pbarFocusMapper.getPbarFocusByPbarIdAndUserId(params);
@@ -617,13 +617,13 @@ public class UserController {
     @RequestMapping(value = "/user/all_small_manager")
     @ResponseBody
     public Map<String, Object> getAllSmallManager(@RequestParam(value = "pbarId", required = true) Long pbarId) {
-        Map<String, Object> result = new HashMap<>();
+        Map<String, Object> result = new HashMap<String, Object>();
         if (pbarId == null) {
             return null;
         }
         User user = CurrentUser.getUser();
         if (user != null) {
-            Map<String, Object> params = new HashMap<>();
+            Map<String, Object> params = new HashMap<String, Object>();
             params.put("pbarId", pbarId);
             params.put("userId", user.getId());
             Integer status = this.pbarManagerApplyMapper.isApply(params);

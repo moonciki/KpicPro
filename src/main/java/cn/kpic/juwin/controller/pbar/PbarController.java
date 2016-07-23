@@ -212,7 +212,7 @@ public class PbarController {
     @ResponseBody
     public Map<String, Object> savePbar(Pbar pbar){
         User user = CurrentUser.getUser();
-        Map<String, Object> result = new HashMap<>();
+        Map<String, Object> result = new HashMap<String, Object>();
         try{
             pbar.setName(StringDeal.getText(pbar.getName()));
             pbar.setMsg(StringDeal.getText(pbar.getMsg()));
@@ -233,14 +233,14 @@ public class PbarController {
     @RequestMapping(value = "/pbar/save/sq")
     @ResponseBody
     public synchronized Map<String, Object> saveSq(Long userId, Long pbarId, String msg, Long pbUserId){
-        Map<String, Object> result = new HashMap<>();
+        Map<String, Object> result = new HashMap<String, Object>();
         result.put("success", false);
         if(userId == null || pbarId == null || StringUtil.isBlank(msg)){
             result.put("msg", "参数错误！");
             return result;
         }
         try{
-            Map<String, Object> params = new HashMap<>();
+            Map<String, Object> params = new HashMap<String, Object>();
             params.put("userId", userId);
             params.put("pbarId", pbarId);
             Integer status = this.pbarManagerApplyMapper.isApply(params);
@@ -274,7 +274,7 @@ public class PbarController {
 
     private String tagsJson(String tags){
         String[] str = tags.split("&");
-        List<TagsVo> result = new ArrayList<>();
+        List<TagsVo> result = new ArrayList<TagsVo>();
         for(int i = 0; i < str.length; i++){
             String[] str2 = str[i].split(":");
             TagsVo tagsVo = new TagsVo();

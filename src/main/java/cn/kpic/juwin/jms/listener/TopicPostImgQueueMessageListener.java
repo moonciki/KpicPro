@@ -39,7 +39,7 @@ public class TopicPostImgQueueMessageListener implements MessageListener {
     public void onMessage(Message message) {
 
         ObjectMessage objMsg = (ObjectMessage)message;
-        /** ÎªÁË¾¡¿ÉÄÜ¼õÉÙ·ÃÎÊÊı¾İ¿âµÄio·ÃÎÊ£¬ÕâÀïµÄÌí¼Ó²ÉÓÃÅúÁ¿²Ù×÷*/
+        /** ä¸ºäº†å°½å¯èƒ½å‡å°‘è®¿é—®æ•°æ®åº“çš„ioè®¿é—®ï¼Œè¿™é‡Œçš„æ·»åŠ é‡‡ç”¨æ‰¹é‡æ“ä½œ*/
         try{
             List<TopicImg> list = new ArrayList();
             JmsTopicImg jmsTopicImg = (JmsTopicImg)objMsg.getObject();
@@ -47,7 +47,7 @@ public class TopicPostImgQueueMessageListener implements MessageListener {
             Elements media = doc.select("[src]");
             for (Element src : media) {
                 if (src.tagName().equals("img")){
-                    /** ÕâÀïÄÃµ½ÓÃ»§ÉÏ´«µÄÍ¼Æ¬£¬¸ù¾İÆßÅ£url»ñÈ¡£¬·ÀÖ¹ÁË±íÇéÍ¼Æ¬µÄÂÒÈë*/
+                    /** è¿™é‡Œæ‹¿åˆ°ç”¨æˆ·ä¸Šä¼ çš„å›¾ç‰‡ï¼Œæ ¹æ®ä¸ƒç‰›urlè·å–ï¼Œé˜²æ­¢äº†è¡¨æƒ…å›¾ç‰‡çš„ä¹±å…¥*/
                     String url = src.attr("src").substring(0, 37);
                     if(url.equals(KpicConstant.QINIU_IMG_URL1) || url.equals(KpicConstant.QINIU_IMG_URL2)){
                         TopicImg topicImg = new TopicImg();

@@ -1,5 +1,5 @@
 $().ready(function(){
-    $("#types").append("<span class='loading'><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
+    $("#types").append("<span class='loading'><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
     $.post("/home/type",function(data){
         $("#types").empty();
         if(data == "" || data == null){
@@ -7,7 +7,7 @@ $().ready(function(){
         }else{
             for(key in data){
                 $("#types").append("<div class=\"hot_type_unit\" style='cursor: pointer' onclick=\"openLink('/kabi/type/tp"+data[key].id+"')\">"+
-                    "<img src=\""+data[key].picUrl+"?imageView2/1/w/100/h/100/q/95\" class=\"type_img\"/>"+
+                    "<img src=\""+data[key].picUrl+"?imageView2/1/w/100/h/100/interlace/0/q/95\" class=\"type_img\"/>"+
                     "<br/><span style=\"font-size: 18px; line-height: 2.5;padding-left: 35px\">"+
                     data[key].name+
                     "</span></div>");
@@ -18,7 +18,7 @@ $().ready(function(){
     all_pbars();
 
 
-    $("#albums").append("<span class='loading'><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
+    $("#albums").append("<span class='loading'><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
     $.post("/home/album", function(data){
         $("#albums").empty();
         if(data == "" || data == null){
@@ -26,17 +26,17 @@ $().ready(function(){
         }else{
             for(key in data){
                 $("#albums").append("<div class=\"album_unit\">"+
-                    "<a href=\"/album/ab1654"+data[key].id+"\" target=\"_blank\"><img src=\""+data[key].imageUrl+"?imageView2/2/w/243/h/250/q/85\" class=\"album_img\" width=\"243px\" height=\"250px\"/></a>"+
+                    "<a href=\"/album/ab1654"+data[key].id+"\" target=\"_blank\"><img src=\""+data[key].imageUrl+"?imageView2/1/w/243/h/250/interlace/0/q/90\" class=\"album_img\"/></a>"+
                     "<br/><a href=\"/album/ab1654"+data[key].id+"\" target=\"_blank\">"+data[key].title+"</a><br/><span class=\"glyphicon glyphicon-user\"></span>"+
                     "&nbsp;<a href=\"/user/u6514"+data[key].userId+"/index.html\" target=\"_blank\">"+data[key].userName+"</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
-                    "<span class=\"glyphicon glyphicon-picture\"></span> &nbsp; <span style=\"font-size: 21px; color:#ff7287;font-style: italic\"><b>"+data[key].picNum+"</b></span> 张"+
+                    "<span class=\"glyphicon glyphicon-picture\"></span> &nbsp; <span style=\"font-size: 21px; color:#ff7287;\"><b>"+data[key].picNum+"</b></span> 张"+
                     "</div>")
             }
         }
     });
 
 
-    $("#users").append("<span class='loading'><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
+    $("#users").append("<span class='loading'><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
     $.post("/home/user", function(data){
         $("#users").empty();
         if(data == "" || data == null){
@@ -86,7 +86,7 @@ $().ready(function(){
     });
 
 
-    $("#warns").append("<span class='loading'><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
+    $("#warns").append("<span class='loading'><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
     $.post("/home/warn", function(data){
         $("#warns").empty();
         if(data == "" || data == null){
@@ -137,7 +137,7 @@ $().ready(function(){
 
 
 
-    $("#posts").append("<span class='loading'><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
+    $("#posts").append("<span class='loading'><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
     jz(true);
 });
 
@@ -163,10 +163,10 @@ function jz(flag){
                 if(data[key].avater == "" || data[key].avater == null){
                     addhtml += "<img src='" + data[key].userPic + "?size=70' class='index_pic'/>";
                 }else{
-                    addhtml += "<img src='" + data[key].avater + "?imageView2/1/w/70/h/70/q/95' class='index_pic'/>";
+                    addhtml += "<img src='" + data[key].avater + "?imageView2/1/w/70/h/70/interlace/0/q/95' class='index_pic'/>";
                 }
                 if(data[key].isjm == 1) {
-                    addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
+                    addhtml += "<div class=\"manager_avater2\"><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\"></div>"
                 }
                 addhtml += "</div><div class='main01_01_user_reply'></div><div class=\"main01_01\"><div class=\"main01_01_01\">"
                 if(data[key].isBoutique == 1){
@@ -190,15 +190,15 @@ function jz(flag){
                     addhtml += "<div class=\"main01_01_img\"><div class=\"main01_01_img_num\"><span style=\"font-family:微软雅黑;font-size: 12px\"><span class='glyphicon glyphicon-share-alt'></span> 共<span class='fxs'>&nbsp;&nbsp;"+data[key].num+"&nbsp;&nbsp;</span>个分享</div>"
                     for(key2 in data[key].img){
                         if(data[key].img[key2].imgKey == "2"){
-                            addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95\"" +
-                                " onmouseover = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo2.png?imageView2/1/w/156/h/90/q/95'\"" +
-                                " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 2)\" title=\"点击播放该视频\"/>&nbsp;&nbsp;&nbsp;";
+                            addhtml += "<img src = \"http://7xwibn.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/interlace/0/q/95\"" +
+                                " onmouseover = \"this.src='http://7xwibn.com1.z0.glb.clouddn.com/staticvideo2.png?imageView2/1/w/156/h/90/interlace/0/q/95'\"" +
+                                " onmouseout = \"this.src='http://7xwibn.com1.z0.glb.clouddn.com/staticvideo1.png?imageView2/1/w/156/h/90/interlace/0/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 2)\" title=\"点击播放该视频\"/>&nbsp;&nbsp;&nbsp;";
                         }else if(data[key].img[key2].imgKey == "3"){
-                            addhtml += "<img src = \"http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95\"" +
-                                " onmouseover = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic2.jpg?imageView2/1/w/156/h/90/q/95'\"" +
-                                " onmouseout = \"this.src='http://7xnud1.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 3)\" title=\"点击播放该音频\"/>&nbsp;&nbsp;&nbsp;";
+                            addhtml += "<img src = \"http://7xwibn.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/interlace/0/q/95\"" +
+                                " onmouseover = \"this.src='http://7xwibn.com1.z0.glb.clouddn.com/staticmusic2.jpg?imageView2/1/w/156/h/90/interlace/0/q/95'\"" +
+                                " onmouseout = \"this.src='http://7xwibn.com1.z0.glb.clouddn.com/staticmusic1.jpg?imageView2/1/w/156/h/90/interlace/0/q/95'\" class='post_pic' style='cursor:pointer' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 3)\" title=\"点击播放该音频\"/>&nbsp;&nbsp;&nbsp;";
                         }else{
-                            addhtml +="<img src=\""+data[key].img[key2].imagePath+"?imageView2/1/w/156/h/90/q/95\" class='post_pic' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 1)\" title=\"查看大图\"/>&nbsp;&nbsp;&nbsp;"
+                            addhtml +="<img src=\""+data[key].img[key2].imagePath+"?imageView2/1/w/156/h/90/interlace/0/q/95\" class='post_pic' onclick=\"bigPic('"+data[key].img[key2].imagePath+"', 1)\" title=\"查看大图\"/>&nbsp;&nbsp;&nbsp;"
                         }
                     }
                     addhtml+="<div class=\"main01_01_02\">";
@@ -226,7 +226,7 @@ function all_pbars(){
     $("#zx").removeClass("curr");
     $("#rm").addClass("curr");
     $("#pbars").empty();
-    $("#pbars").append("<span class='loading'><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
+    $("#pbars").append("<span class='loading'><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
     $.post("/home/pbar",function(data){
         $("#pbars").empty();
         if(data == "" || data == null){
@@ -234,7 +234,7 @@ function all_pbars(){
         }else{
             for(key in data){
                 $("#pbars").append("<div class=\"pbar_box\" onclick=\"openLink('/post/subjects/sub4615"+data[key].id+"')\">"+
-                    "<div class=\"pbar_box_01\"><img src=\""+data[key].logo+"?imageView2/1/w/100/h/100/q/95\" style=\"border-radius:8px;border:2px solid "+data[key].color+"\"/></div>"+
+                    "<div class=\"pbar_box_01\"><img src=\""+data[key].logo+"?imageView2/1/w/100/h/100/interlace/0/q/95\" style=\"border-radius:8px;border:2px solid "+data[key].color+"\"/></div>"+
                     "<div class=\"pbar_box_02\"><span style='font-size: 20px'>"+data[key].name+"</span><br/>" +
                     "<span style='font-size: 13px; line-height: 1.5;color:#8f8e9a;'>"+data[key].msg+"</span><br/>"+
                     "<button type=\"button\" class=\"btn btn-default btn-xs\" style='border: 1px solid #ff4f72;color:#ff4f72;margin-top: 10px'><span class='glyphicon glyphicon-fire'></span> 关注数："+data[key].focus_num+"</button>"+
@@ -258,7 +258,7 @@ function all_new_pbars(){
     $("#rm").removeClass("curr");
     $("#zx").addClass("curr");
     $("#pbars").empty();
-    $("#pbars").append("<span class='loading'><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
+    $("#pbars").append("<span class='loading'><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
     $.post("/home/new_pbar",function(data){
         $("#pbars").empty();
         if(data == "" || data == null){
@@ -266,7 +266,7 @@ function all_new_pbars(){
         }else{
             for(key in data){
                 $("#pbars").append("<div class=\"pbar_box\" onclick=\"openLink('/post/subjects/sub4615"+data[key].id+"')\">"+
-                    "<div class=\"pbar_box_01\"><img src=\""+data[key].logo+"?imageView2/1/w/100/h/100/q/95\" style=\"border-radius:8px;border:2px solid "+data[key].color+"\"/></div>"+
+                    "<div class=\"pbar_box_01\"><img src=\""+data[key].logo+"?imageView2/1/w/100/h/100/interlace/0/q/95\" style=\"border-radius:8px;border:2px solid "+data[key].color+"\"/></div>"+
                     "<div class=\"pbar_box_02\"><span style='font-size: 20px'>"+data[key].name+"</span><br/>" +
                     "<span style='font-size: 13px; line-height: 1.5;color:#8f8e9a;'>"+data[key].msg+"</span><br/>"+
                     "<button type=\"button\" class=\"btn btn-default btn-xs\" style='border: 1px solid #ff4f72;color:#ff4f72;margin-top: 10px'><span class='glyphicon glyphicon-fire'></span> 关注数："+data[key].focus_num+"</button>"+

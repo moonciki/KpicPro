@@ -6,9 +6,9 @@ package cn.kpic.juwin.domain;
 public class UserFocus {
 
     private Long id;
-    /** ±»¹Ø×¢Õß*/
+    /** è¢«å…³æ³¨è€…*/
     private Long userId1;
-    /** ¹Ø×¢Õß*/
+    /** å…³æ³¨è€…*/
     private Long userId2;
 
     public void setId(Long id) {

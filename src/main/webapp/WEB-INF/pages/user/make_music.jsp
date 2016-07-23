@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>${user.name}的管理中心</title>
-
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/user/manage_center.css" rel="stylesheet">
 </head>
 <body>
@@ -46,36 +46,43 @@
           </span>
         </div>
 
+<c:choose>
+  <c:when test="${jc <= 28}">
+    <center>目前您的节操值低于<span style="font-weight: bold;color:red">28</span>，处于禁言状态，无法上传音频</center>
+  </c:when>
+  <c:otherwise>
+    <ul class="list-group">
+      <input type="hidden" style="width: 500px" id="id" value="${user.id}"/>
+      <li class="list-group-item">音乐名称
+        <input type="text" style="width: 500px" id="name" placeholder="请输入音乐名称，不能为空！" class="form-control"/>
+      </li>
+      <li class="list-group-item">音乐作者：
+        <input type="text" style="width: 500px" id="songer" placeholder="请输入作者名字，选填" class="form-control"/>
+      </li>
+      <li class="list-group-item">上传音乐：
 
-      <ul class="list-group">
-        <input type="hidden" style="width: 500px" id="id" value="${user.id}"/>
-        <li class="list-group-item">音乐名称
-          <input type="text" style="width: 500px" id="name" placeholder="请输入音乐名称，不能为空！" class="form-control"/>
-        </li>
-        <li class="list-group-item">音乐作者：
-          <input type="text" style="width: 500px" id="songer" placeholder="请输入作者名字，选填" class="form-control"/>
-        </li>
-        <li class="list-group-item">上传音乐：
-
-          <button type="button" id="music_upload" class="btn btn-info">
-            <span class="glyphicon glyphicon-cloud-upload"></span>
-            请上传MP3文件
-          </button>
-          <br/>
+        <button type="button" id="music_upload" class="btn btn-info">
+          <span class="glyphicon glyphicon-cloud-upload"></span>
+          请上传MP3文件
+        </button>
+        <br/>
           <span id="upload_loading" style="display:none;padding-left: 100px">
-            <img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg" style="width: 30px"/>
+            <img src="http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg" style="width: 30px"/>
             &nbsp;上传中...
           </span>
-          <br/>
-          <input type="text" value="" style="width: 500px" id="musicUrl" disabled="disabled" class="form-control"/>
-        </li>
-        <li class="list-group-item">
-          <button type="button" id="tj" class="btn btn-primary">
-            <span class="glyphicon glyphicon-send"></span>
-            提交
-          </button>
-        </li>
-      </ul>
+        <br/>
+        <input type="text" value="" style="width: 500px" id="musicUrl" disabled="disabled" class="form-control"/>
+      </li>
+      <li class="list-group-item">
+        <button type="button" id="tj" class="btn btn-primary">
+          <span class="glyphicon glyphicon-send"></span>
+          提交
+        </button>
+      </li>
+    </ul>
+  </c:otherwise>
+</c:choose>
+
       </span>
     </div>
   </div>

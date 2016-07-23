@@ -42,7 +42,7 @@ public class ShortReplyController {
     @RequestMapping(value = "/all/short/reply")
     @ResponseBody
     public Map<String, Object> getAllShortByReplyId(Long replyId, int page){
-        Map<String, Object> result = new HashMap<>();
+        Map<String, Object> result = new HashMap<String, Object>();
         try{
             List<ShortReplyVo> list = shortReplyService.getShortByReplyId(replyId, page);
             ReplyPost replyPost = this.replyPostService.getShortTextById(replyId);

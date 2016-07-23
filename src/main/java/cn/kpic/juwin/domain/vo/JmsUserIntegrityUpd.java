@@ -9,7 +9,7 @@ public class JmsUserIntegrityUpd implements java.io.Serializable {
 
     private Integer num;
 
-    private Integer type;//1:增加节操  2:减少节操
+    private Integer type;//1:澧炲姞鑺傛搷  2:鍑忓皯鑺傛搷
 
     public JmsUserIntegrityUpd(Long userId, Integer num, Integer type){
         this.userId = userId;

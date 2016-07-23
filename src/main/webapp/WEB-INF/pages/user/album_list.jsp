@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>${user.name}的管理中心</title>
-
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/user/manage_center.css" rel="stylesheet">
   <link href="${pageContext.request.contextPath}/static/css/user/album_list.css" rel="stylesheet">
 </head>
@@ -42,7 +42,7 @@
   <div class="pic_big" id="tp_share_music">
     <div class="share_music_main">
       <span class="badge pull-right" title="关闭" onclick="music_share_close()" style="font-weight:bold; cursor: pointer;background-color: #FF5151"><span class="glyphicon glyphicon-remove"></span></span>
-      <br/><center><b>音源：</b><img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/wyy.png?imageView2/1/w/20/h/20/q/100">&nbsp;<a href="http://music.163.com/" target="_blank">网易云音乐</a></center><br/>
+      <br/><center><b>音源：</b><img src="http://7xwibn.com1.z0.glb.clouddn.com/static/wyy.png?imageView2/1/w/20/h/20/q/100">&nbsp;<a href="http://music.163.com/" target="_blank">网易云音乐</a></center><br/>
       <div class="input-group" id="haha" style="margin: 0 auto;width: 350px">
         <input type="text" id="musicName" style="border: solid 2px #FF5151;" class="form-control">
         <span class="input-group-btn">
@@ -59,7 +59,7 @@
 
 <span style="color:#FF60AF;display: none" id="loading">
     <center>
-      <img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/page_loading.gif">
+      <img src="http://7xwibn.com1.z0.glb.clouddn.com/static/page_loading.gif">
     </center>
 </span>
 

@@ -12,6 +12,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>${blog.title}</title>
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
   <link href="${pageContext.request.contextPath}/static/css/album/read_album.css" rel="stylesheet"/>
   <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/jquery-1.6.js"></script>

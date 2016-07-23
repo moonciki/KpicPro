@@ -4,7 +4,7 @@ import java.util.Date;
 
 /**
  * Created by bjsunqinwen on 2016/3/22.
- * 团子实体类
+ * 圈子实体类
  */
 public class Pbar {
 

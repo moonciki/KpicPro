@@ -709,7 +709,7 @@
 
 <span id="upload_loading" style="display: none">
 <center>
-    <img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg">
+    <img src="http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg">
     <br/>
     <span style="font-weight: bold;color:#FF60AF">上传中...</span>
     <br/><br/>

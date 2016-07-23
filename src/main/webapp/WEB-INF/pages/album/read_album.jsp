@@ -12,6 +12,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>${album.title}</title>
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
   <link href="${pageContext.request.contextPath}/static/css/album/read_album.css" rel="stylesheet"/>
   <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
@@ -48,15 +49,20 @@
           <c:choose>
             <c:when test="${album.avater == null || album.avater == ''}">
               <img src="${album.userPic}?size=50" class="tx"/>
-              <input type="hidden" name="avater" id="avater" value="${album.userPic}?size=70"/>
-            </c:when>
+              </c:when>
             <c:otherwise>
               <img src="${album.avater}?imageView2/2/w/70/h/50/q/95" class="tx"/>
-              <input type="hidden" name="avater" id="avater" value="${album.avater}?imageView2/2/w/70/h/70/q/95"/>
-            </c:otherwise>
+             </c:otherwise>
           </c:choose>
         </div>
-
+        <c:choose>
+          <c:when test="${user.avater == null || user.avater == ''}">
+            <input type="hidden" name="avater" id="avater" value="${user.userPic}?size=70"/>
+          </c:when>
+          <c:otherwise>
+           <input type="hidden" name="avater" id="avater" value="${user.avater}?imageView2/2/w/70/h/70/q/95"/>
+          </c:otherwise>
+        </c:choose>
         <input type="hidden" name="toUserId" id="toUserId" value="${album.userId}"/>
         <input type="hidden" name="albumId" id="albumId" value="${album.id}"/>
         <input type="hidden" name="userId" id="userId" value="${user.id}"/>

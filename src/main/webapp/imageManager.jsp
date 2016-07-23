@@ -6,7 +6,7 @@
 <%
 	Mac mac = new Mac(Config.ACCESS_KEY, Config.SECRET_KEY);
 	RSFClient client = new RSFClient(mac);
-	ListPrefixRet list = client.listPrifix("sun1", "", "", 10);
+	ListPrefixRet list = client.listPrifix("kabi1", "", "", 10);
 	StringBuffer sb = new StringBuffer();
 	for (ListItem item : list.results) {
 		sb.append("/");

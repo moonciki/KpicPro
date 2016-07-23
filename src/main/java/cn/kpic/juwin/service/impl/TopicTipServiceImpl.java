@@ -45,8 +45,9 @@ public class TopicTipServiceImpl implements TopicTipService {
     @Override
     @Transactional
     public void delTopic(Long id) {
-        this.topicPostMapper.del(id);
+
         TopicPost topicPost = this.topicPostMapper.getById(id);
+        this.topicPostMapper.del(id);
         JmsUserIntegrityUpd jmsUserIntegrityUpd = new JmsUserIntegrityUpd(topicPost.getUserId(), 3, 2);
         this.userIntegrityUpdQueueMessageSender.send(jmsUserIntegrityUpd);
         JmsTip jmsTip = new JmsTip(id, 1);

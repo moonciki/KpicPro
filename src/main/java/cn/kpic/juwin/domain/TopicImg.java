@@ -1,14 +1,14 @@
 package cn.kpic.juwin.domain;
 
 /**
- * Ö÷ÌâÌû¶ÔÓ¦Í¼Æ¬
+ * ä¸»é¢˜å¸–å¯¹åº”å›¾ç‰‡
  * Created by bjsunqinwen on 2016/3/9.
  */
 public class TopicImg implements java.io.Serializable{
 
     private Long id;
     private String imagePath;
-    private String imgKey;//1£ºÍ¼Æ¬  2£ºÊÓÆµ   3£ºÒôÆµ
+    private String imgKey;//1ï¼šå›¾ç‰‡  2ï¼šè§†é¢‘   3ï¼šéŸ³é¢‘
     private Long topicId;
 
     public Long getId() {

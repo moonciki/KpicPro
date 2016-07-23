@@ -1,6 +1,7 @@
 package cn.kpic.juwin.service;
 
 import cn.kpic.juwin.domain.Emotion;
+import cn.kpic.juwin.domain.vo.EmotionVo;
 
 import java.util.List;
 
@@ -12,5 +13,7 @@ public interface EmotionService {
     void save(Emotion emotion);
 
     List<Emotion> getAllByUserId(Long userId, Integer page);
+
+    List<EmotionVo> getAllEms(Integer page);
 
 }

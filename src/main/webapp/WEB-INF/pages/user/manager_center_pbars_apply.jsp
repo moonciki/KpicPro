@@ -10,6 +10,7 @@
 <html>
 <head>
   <title>${user.name}的管理中心</title>
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/user/manage_center.css" rel="stylesheet">
 </head>
 <body>

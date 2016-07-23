@@ -8,7 +8,7 @@ $().ready(function(){
         runtimes: 'html5,flash,html4',
         browse_button: 'touxiang',
         uptoken_url: '/pbar/upload',
-        domain: 'http://7xs5lv.com1.z0.glb.clouddn.com/',
+        domain: 'http://7xwibn.com1.z0.glb.clouddn.com/',
         max_file_size: '0.025mb',
         multi_selection: false,
         flash_swf_url: 'static/js/plupload/Moxie.swf',
@@ -45,8 +45,8 @@ $().ready(function(){
                 info = JSON.parse(info);
                 $("#touxiang_xs").empty();
                 $("#avater").empty();
-                $("#touxiang_xs").append("<img src=\"http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key+"?imageView2/1/w/100/h/100/q/95\"/>")
-                $("#avater").append("http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key);
+                $("#touxiang_xs").append("<img src=\"http://7xwibn.com1.z0.glb.clouddn.com/"+info.key+"?imageView2/1/w/100/h/100/interlace/0/q/95\"/>")
+                $("#avater").val("http://7xwibn.com1.z0.glb.clouddn.com/"+info.key);
             },
             'Key': function (up, file) {
                 var key = "";
@@ -71,7 +71,7 @@ $().ready(function(){
         var birth = $("#birth").val();
         var password = $("#password").val();
         var address = $("#address").val();
-        var avater = $("#avater").html();
+        var avater = $("#avater").val();
         var tag = $("#tag").val();
         var id = $("#id").val();
         var flag = true;

@@ -22,7 +22,7 @@ $().ready(function(){
         runtimes: 'html5,flash,html4',
         browse_button: 'sclogo',
         uptoken_url: '/pbar/upload',
-        domain: 'http://7xs5lv.com1.z0.glb.clouddn.com/',
+        domain: 'http://7xwibn.com1.z0.glb.clouddn.com/',
         max_file_size: '0.025mb',
         multi_selection:false,
         flash_swf_url: 'static/js/plupload/Moxie.swf',
@@ -58,9 +58,9 @@ $().ready(function(){
             'FileUploaded': function (up, file, info) {
                 console.log(info);
                 info = JSON.parse(info);
-                $("#logo").val("http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key);
+                $("#logo").val("http://7xwibn.com1.z0.glb.clouddn.com/"+info.key);
                 $("#logo_img").empty();
-                $("#logo_img").append("<img src=\"http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key+"?imageView2/1/w/89/h/89/q/95\"/>")
+                $("#logo_img").append("<img src=\"http://7xwibn.com1.z0.glb.clouddn.com/"+info.key+"?imageView2/1/w/89/h/89/interlace/0/q/95\"/>")
             },
             'Key': function (up, file) {
                 var key = "";
@@ -85,7 +85,7 @@ $().ready(function(){
         runtimes: 'html5,flash,html4',
         browse_button: 'scblogo',
         uptoken_url: '/pbar/upload',
-        domain: 'http://7xs5lv.com1.z0.glb.clouddn.com/',
+        domain: 'http://7xwibn.com1.z0.glb.clouddn.com/',
         max_file_size: '0.3mb',
         multi_selection:false,
         flash_swf_url: 'static/js/plupload/Moxie.swf',
@@ -121,9 +121,9 @@ $().ready(function(){
             'FileUploaded': function (up, file, info) {
                 console.log(info);
                 info = JSON.parse(info);
-                $("#background_logo").val("http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key);
+                $("#background_logo").val("http://7xwibn.com1.z0.glb.clouddn.com/"+info.key);
                 $("#logo_bimg").empty();
-                $("#logo_bimg").append("<img src=\"http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key+"?imageView2/1/w/670/h/144/q/95\"/>")
+                $("#logo_bimg").append("<img src=\"http://7xwibn.com1.z0.glb.clouddn.com/"+info.key+"?imageView2/1/w/670/h/144/q/95\"/>")
             },
             'Key': function (up, file) {
                 var key = "";

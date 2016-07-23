@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>${user.name}的管理中心</title>
-
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/user/manage_center.css" rel="stylesheet">
 </head>
 <body>
@@ -67,17 +67,14 @@
             <span id="touxiang_xs">
               <c:choose>
                 <c:when test="${user.avater != null}">
-                  <img src="${user.avater}?imageView2/1/w/100/h/100/q/95"/>
+                  <img src="${user.avater}?imageView2/1/w/100/h/100/interlace/0/q/95"/>
                 </c:when>
                 <c:otherwise>
                   <img src="${user.userPic}?size=100"/>
                 </c:otherwise>
               </c:choose>
             </span>
-
-            <span id="avater" style="display: none">
-                ${user.avater}
-            </span>
+            <input type="hidden" id="avater" value="${user.avater}"/>
 
           </div>
         </div>

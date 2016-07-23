@@ -45,13 +45,15 @@ $().ready(function(){
             for(key in data){
                 lou = (parseInt(lou) + 1)
                 var addHtml = "<div class=\"reply_body_main\"><div class = \"reply_body_main_01\">"
-                      if(data[key].avater==""||data[key].avater == null){
+                addHtml += "<a href=\"/user/u6514"+data[key].userId+"/index.html\" target=\"_blank\">"
+                if(data[key].avater==""||data[key].avater == null){
                           addHtml+="<img src=\""+data[key].userPic+"?size=70\" class=\"userpic_hpost\"/>"
                       }else{
-                          addHtml+="<img src=\""+data[key].avater+"?imageView2/1/w/70/h/70/q/95\" class=\"userpic_hpost\"/>"
+                          addHtml+="<img src=\""+data[key].avater+"?imageView2/1/w/70/h/70/interlace/0/q/95\" class=\"userpic_hpost\"/>"
                       }
+                addHtml+="</a>";
                 if(data[key].isjm){
-                    addHtml+="<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\" title='节操达人'/></div>"
+                    addHtml+="<div class=\"manager_avater2\"><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\" title='节操达人'/></div>"
                 }
                     addHtml+="</div><div class=\"main01_01_user_reply\" style = \"margin-top: 23px\"></div><div class=\"reply_body_main_02\">"+
                     "<div class=\"pf3\"><span class=\"glyphicon glyphicon-triangle-left\"></span></div>"+
@@ -161,13 +163,15 @@ $().ready(function(){
                 for(key in data){
                     lou = (parseInt(lou) + 1);
                     var addHtml = "<div class=\"reply_body_main\"><div class = \"reply_body_main_01\">"
-                        if(data[key].avater==""||data[key].avater == null){
+                    addHtml += "<a href=\"/user/u6514"+data[key].userId+"/index.html\" target=\"_blank\">"
+                    if(data[key].avater==""||data[key].avater == null){
                             addHtml+="<img src=\""+data[key].userPic+"?size=70\" class=\"userpic_hpost\"/>"
                         }else{
-                            addHtml+="<img src=\""+data[key].avater+"?imageView2/1/w/70/h/70/q/95\" class=\"userpic_hpost\"/>"
+                            addHtml+="<img src=\""+data[key].avater+"?imageView2/1/w/70/h/70/interlace/0/q/95\" class=\"userpic_hpost\"/>"
                         }
+                    addHtml+="</a>";
                     if(data[key].isjm){
-                        addHtml+="<div class=\"manager_avater2\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\" title='节操达人'/></div>"
+                        addHtml+="<div class=\"manager_avater2\"><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/wangguan.png?imageView2/1/w/30/h/20/q/95/\" title='节操达人'/></div>"
                     }
                         addHtml+="</div><div class=\"main01_01_user_reply\" style = \"margin-top: 23px\"></div><div class=\"reply_body_main_02\">"+
                         "<div class=\"pf3\"><span class=\"glyphicon glyphicon-triangle-left\"></span></div>"+
@@ -270,14 +274,16 @@ function shortReply(is_load, reply_id){
             for(key in data.data){
                 addhtml+= "<div class=\"panel panel-default\" style=\"border: solid 1px #FFF\">"+
                     "<div class=\"panel-body\"><div class=\"pl_user\">"
+                    addhtml += "<a href=\"/user/u6514"+data.data[key].userId+"/index.html\" target=\"_blank\">"
                         if(data.data[key].avater =="" || data.data[key].avater==null){
                             addhtml+="<img src=\"" + data.data[key].userPic +"?size=48\" style=\"border-radius:100px\"/>"
                         }else{
                             addhtml+="<img src=\"" + data.data[key].avater +"?imageView2/1/w/48/h/48/q/95\" style=\"border-radius:100px\"/>"
 
                         }
+                    addhtml+="</a>"
                     addhtml+="</div><div class=\"pl_pf\"><div class=\"pl_dpf\"><span class=\"glyphicon glyphicon-triangle-left\"></span></div></div>"+
-                    "<div class=\"pl_text\"><div class=\"pl_text_01\"><span class=\"glyphicon glyphicon-user\"></span> 发帖人：<a href=\"\">"+data.data[key].userName+"</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
+                    "<div class=\"pl_text\"><div class=\"pl_text_01\"><span class=\"glyphicon glyphicon-user\"></span> 发帖人：<a href=\"/user/u6514"+data.data[key].userId+"/index.html\" target=\"_blank\">"+data.data[key].userName+"</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+
                     "<span class=\"glyphicon glyphicon-time\"></span> 发帖时间："+getLocalTime(data.data[key].createTime)+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
                     if(data.data[key].isTip){
                         addhtml+="<span style = \"color: #BEBEBE; font-size: 13px\"><span class=\"glyphicon glyphicon-flag\"></span> 已举报</span></span>"
@@ -386,7 +392,7 @@ function jubao3(id){
 }
 
 $("#tip_submmit").click(function(){
-    $("#load_area").append("&nbsp;&nbsp;<span style=\"color:#9D9D9D; font-size: 14px\"><img src=\"http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg\" style=\"width: 30px; height: 30px\"/>&nbsp;举报提交中..</span>");
+    $("#load_area").append("&nbsp;&nbsp;<span style=\"color:#9D9D9D; font-size: 14px\"><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg\" style=\"width: 30px; height: 30px\"/>&nbsp;举报提交中..</span>");
     $("#tip_submmit").attr("disabled", "disabled");
     $("#tip_close").attr("disabled", "disabled");
     var pbarId = $("#pbarId").val();
@@ -542,7 +548,7 @@ function jz(){
         if(data == null || data == ""){
             $("#load").hide();
             if(i==1){
-                $("#eif_content").append("<center><br/><br/><br/><br/><a href='/user/emotion/save' target='_blank'>当前您的表情包空空如也，点击添加</a></center>");
+                $("#eif_content").append("<center><br/><br/><br/><br/><a href='/user/emotion/save' target='_blank'>当前您的表情包空空如也，点击添加</a>或者去<a href=\"/emotion/pool\">表情池</a>直接勾选</center>");
             }
             $("#no_data").fadeIn(400);
             setTimeout(function(){$("#no_data").fadeOut(1000);},2000);

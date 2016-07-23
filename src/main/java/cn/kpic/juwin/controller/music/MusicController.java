@@ -7,6 +7,7 @@ import cn.kpic.juwin.http.HttpRequest;
 import cn.kpic.juwin.mapper.MusicMapper;
 import cn.kpic.juwin.qiniu.kpic2.QiniuService;
 import cn.kpic.juwin.service.MusicService;
+import cn.kpic.juwin.service.UserIntegrityService;
 import cn.kpic.juwin.service.UserLevelService;
 import cn.kpic.juwin.utils.CurrentUser;
 import cn.kpic.juwin.utils.NetEaseMusicUtils;
@@ -48,7 +49,10 @@ public class MusicController {
     @Autowired
     private QiniuService qiniuService;
 
-    /** »ñÈ¡uptoken*/
+    @Autowired
+    private UserIntegrityService userIntegrityService;
+
+    /** è·å–uptoken*/
     @RequiresPermissions({"user"})
     @RequestMapping(value = "/music/upload")
     @ResponseBody
@@ -75,6 +79,7 @@ public class MusicController {
         try{
             model.addAttribute("user", curr_user);
             model.addAttribute("flag",14);
+            model.addAttribute("jc", this.userIntegrityService.getByUserId(curr_user.getId()));
             return "/user/make_music";
         }catch (Exception e){
             e.printStackTrace();
@@ -147,7 +152,7 @@ public class MusicController {
         return map;
     }
 
-    /** ÍøÒ×ÔÆÒôÀÖ--ËÑË÷½Ó¿Ú*/
+    /** ç½‘æ˜“äº‘éŸ³ä¹--æœç´¢æ¥å£*/
     @RequiresPermissions({"user"})
     @RequestMapping(value = "/netease/music/search")
     @ResponseBody

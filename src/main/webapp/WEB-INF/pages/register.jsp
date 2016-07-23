@@ -4,6 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>用户注册</title>
+    <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -97,7 +98,7 @@
     </button>
       <span id="loading" style="display: none">
           <br/>
-           <img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg" height="35px"/>&nbsp;&nbsp;提交中，请耐心等待处理结果~
+           <img src="http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg" height="35px"/>&nbsp;&nbsp;提交中，请耐心等待处理结果~
       </span>
     <br/>
   </center>

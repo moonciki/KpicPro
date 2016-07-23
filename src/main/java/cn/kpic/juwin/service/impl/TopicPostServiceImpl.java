@@ -50,7 +50,7 @@ public class TopicPostServiceImpl implements TopicPostService {
     @Override
     public List<PbarHomeTopicPost> getAllTopicByPbarId(Long pbarId, int page) {
 
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("pbarId", pbarId);
         params.put("page", page);
         List<PbarHomeTopicPost> list = topicPostMapper.getTopicPostByPbarId(params);
@@ -58,7 +58,7 @@ public class TopicPostServiceImpl implements TopicPostService {
         if(list != null && list.size() != 0){
 
             for(PbarHomeTopicPost pbarHomeTopicPost : list){
-                /** Í¨¹ıÏÂÃæÕâ¸öº¯Êı²éÕÒµ½Ç°4ÕÅÍ¼Æ¬*/
+                /** é€šè¿‡ä¸‹é¢è¿™ä¸ªå‡½æ•°æŸ¥æ‰¾åˆ°å‰4å¼ å›¾ç‰‡*/
                 List<TopicImg> listImg = topicImgMapper.getByTopicId(pbarHomeTopicPost.getId());
                 pbarHomeTopicPost.setImg(listImg.size() == 0 ? null : listImg);
             }
@@ -85,12 +85,12 @@ public class TopicPostServiceImpl implements TopicPostService {
             topicPost.setIsBlog(0);
             topicPost.setIsBoutique(0);
             topicPostMapper.save(topicPost);
-            /** ³Ö¾Ã»¯Í¼Æ¬ĞÅÏ¢½»ÓÉ¶ÓÁĞ´¦Àí*/
+            /** æŒä¹…åŒ–å›¾ç‰‡ä¿¡æ¯äº¤ç”±é˜Ÿåˆ—å¤„ç†*/
             JmsTopicImg jmsTopicImg = new JmsTopicImg(content, topicPost.getId());
             topicPostImgQueueMessageSender.send(jmsTopicImg);
-            /** Éı¼¶Ïà¹ØÏûÏ¢*/
-            upgradeQueueMessageSender.send(new JmsUpgrade(user.getId(), 5));//¾­Ñé+5
-            /** ĞŞ¸ÄÖ÷ÌâµÄÖ÷ÌâÌûÊıÁ¿*/
+            /** å‡çº§ç›¸å…³æ¶ˆæ¯*/
+            upgradeQueueMessageSender.send(new JmsUpgrade(user.getId(), 5));//ç»éªŒ+5
+            /** ä¿®æ”¹ä¸»é¢˜çš„ä¸»é¢˜å¸–æ•°é‡*/
             JmsUpdPbar jmsUpdPbar = new JmsUpdPbar(0, pbarId, userId);
             pbarUpdQueueMessageSender.send(jmsUpdPbar);
             return topicPost;
@@ -101,7 +101,7 @@ public class TopicPostServiceImpl implements TopicPostService {
 
     @Override
     public List<PbarHomeTopicPost> getAllTopicOrBlogByPbarId(Long pbarId, int page, int isBlog) {
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("pbarId", pbarId);
         params.put("page", page);
         params.put("isBlog", isBlog);
@@ -110,7 +110,7 @@ public class TopicPostServiceImpl implements TopicPostService {
         if(list != null && list.size() != 0){
 
             for(PbarHomeTopicPost pbarHomeTopicPost : list){
-                /** Í¨¹ıÏÂÃæÕâ¸öº¯Êı²éÕÒµ½Ç°4ÕÅÍ¼Æ¬*/
+                /** é€šè¿‡ä¸‹é¢è¿™ä¸ªå‡½æ•°æŸ¥æ‰¾åˆ°å‰4å¼ å›¾ç‰‡*/
                 List<TopicImg> listImg = topicImgMapper.getByTopicId(pbarHomeTopicPost.getId());
                 pbarHomeTopicPost.setImg(listImg.size() == 0 ? null : listImg);
             }
@@ -122,7 +122,7 @@ public class TopicPostServiceImpl implements TopicPostService {
 
     @Override
     public List<PbarHomeTopicPost> getAllJpTopicByPbarId(Long pbarId, int page, int isBoutique) {
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("pbarId", pbarId);
         params.put("page", page);
         params.put("isBoutique", isBoutique);
@@ -131,7 +131,7 @@ public class TopicPostServiceImpl implements TopicPostService {
         if(list != null && list.size() != 0){
 
             for(PbarHomeTopicPost pbarHomeTopicPost : list){
-                /** Í¨¹ıÏÂÃæÕâ¸öº¯Êı²éÕÒµ½Ç°4ÕÅÍ¼Æ¬*/
+                /** é€šè¿‡ä¸‹é¢è¿™ä¸ªå‡½æ•°æŸ¥æ‰¾åˆ°å‰4å¼ å›¾ç‰‡*/
                 List<TopicImg> listImg = topicImgMapper.getByTopicId(pbarHomeTopicPost.getId());
                 pbarHomeTopicPost.setImg(listImg.size() == 0 ? null : listImg);
             }
@@ -147,7 +147,7 @@ public class TopicPostServiceImpl implements TopicPostService {
         User user = CurrentUser.getUser();
         if(user != null){
             if(topicPostMsg != null){
-                Map<String, Object> params = new HashMap<>();
+                Map<String, Object> params = new HashMap<String, Object>();
                 params.put("userId", user.getId());
                 params.put("topicId", topicPostMsg.getId());
                 Long id = this.topicTipMapper.isTip(params);
@@ -162,7 +162,7 @@ public class TopicPostServiceImpl implements TopicPostService {
 
     @Override
     public List<PbarHomeTopicPost> getAllTopicPostByUid(Long userId, int page, int isBlog, String orderBy) {
-        Map<String, Object> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<String, Object>();
         params.put("userId", userId);
         params.put("page", page);
         params.put("isBlog", isBlog);
@@ -172,7 +172,7 @@ public class TopicPostServiceImpl implements TopicPostService {
         if(list != null && list.size() != 0){
 
             for(PbarHomeTopicPost pbarHomeTopicPost : list){
-                /** Í¨¹ıÏÂÃæÕâ¸öº¯Êı²éÕÒµ½Ç°4ÕÅÍ¼Æ¬*/
+                /** é€šè¿‡ä¸‹é¢è¿™ä¸ªå‡½æ•°æŸ¥æ‰¾åˆ°å‰4å¼ å›¾ç‰‡*/
                 List<TopicImg> listImg = topicImgMapper.getByTopicId(pbarHomeTopicPost.getId());
                 pbarHomeTopicPost.setImg(listImg.size() == 0 ? null : listImg);
             }

@@ -29,7 +29,7 @@ public class ShiroDbRealm extends AuthorizingRealm{
     private UserPowerMapper userPowerMapper;
 
     /***
-     * »ñÈ¡ÊÚÈ¨ĞÅÏ¢
+     * è·å–æˆæƒä¿¡æ¯
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection pc) {
@@ -39,7 +39,7 @@ public class ShiroDbRealm extends AuthorizingRealm{
             if (pers != null && !pers.isEmpty()) {
                 SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
                 for (String each : pers) {
-                    //½«È¨ÏŞ×ÊÔ´Ìí¼Óµ½ÓÃ»§ĞÅÏ¢ÖĞ
+                    //å°†æƒé™èµ„æºæ·»åŠ åˆ°ç”¨æˆ·ä¿¡æ¯ä¸­
                     info.addStringPermission(each);
                 }
                 return info;
@@ -48,12 +48,12 @@ public class ShiroDbRealm extends AuthorizingRealm{
         return null;
     }
     /***
-     * »ñÈ¡ÈÏÖ¤ĞÅÏ¢
+     * è·å–è®¤è¯ä¿¡æ¯
      */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken at) throws AuthenticationException {
         UsernamePasswordToken token = (UsernamePasswordToken) at;
-        // Í¨¹ı±íµ¥½ÓÊÕµÄÓÃ»§Ãû
+        // é€šè¿‡è¡¨å•æ¥æ”¶çš„ç”¨æˆ·å
         String username = token.getUsername();
         if (username != null && !"".equals(username)) {
             User user = userMapper.findUserByName(Long.parseLong(username));

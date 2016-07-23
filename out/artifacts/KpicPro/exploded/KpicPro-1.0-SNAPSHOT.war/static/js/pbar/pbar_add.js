@@ -6,7 +6,7 @@ $().ready(function() {
             runtimes: 'html5,flash,html4',
             browse_button: 'upload_logo',
             uptoken_url: '/pbar/upload',
-            domain: 'http://7xs5lv.com1.z0.glb.clouddn.com/',
+            domain: 'http://7xwibn.com1.z0.glb.clouddn.com/',
             max_file_size: '0.025mb',
             multi_selection:false,
             flash_swf_url: 'static/js/plupload/Moxie.swf',
@@ -40,7 +40,7 @@ $().ready(function() {
                 'FileUploaded': function (up, file, info) {
                     console.log(info);
                     info = JSON.parse(info);
-                    $("#upload_result").append("<img src=\"http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key+"?imageView2/1/w/100/h/100/q/95\"/>")
+                    $("#upload_result").append("<img src=\"http://7xwibn.com1.z0.glb.clouddn.com/"+info.key+"?imageView2/1/w/100/h/100/interlace/0/q/95\"/>")
                 },
                 'Key': function (up, file) {
                     var key = "";

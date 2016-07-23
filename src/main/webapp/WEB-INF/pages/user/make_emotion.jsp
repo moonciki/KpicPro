@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>${user.name}的管理中心</title>
-
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/user/manage_center.css" rel="stylesheet">
 </head>
 <body>
@@ -58,9 +58,14 @@
           <span class="glyphicon glyphicon-cloud-upload"></span>
           上传表情包图片
         </button>
+
+        <button type="button" onclick="window.location.href='/emotion/pool'" class="btn btn-danger">
+          <span class="glyphicon glyphicon-ok"></span>
+          直接从表情池中勾选
+        </button>
         <br/>
         <span id="upload_loading" style="display:none;padding-left: 100px">
-            <img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg" style="width: 30px"/>
+            <img src="http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg" style="width: 30px"/>
             &nbsp;上传中...
           </span>
         <span id="img_url">

@@ -45,7 +45,7 @@ public class ReplyPostImgQueueMessageListener implements MessageListener {
             Elements media = doc.select("[src]");
             for (Element src : media) {
                 if (src.tagName().equals("img")){
-                    /** ÕâÀïÄÃµ½ÓÃ»§ÉÏ´«µÄÍ¼Æ¬£¬¸ù¾İÆßÅ£url»ñÈ¡£¬·ÀÖ¹ÁË±íÇéÍ¼Æ¬µÄÂÒÈë*/
+                    /** è¿™é‡Œæ‹¿åˆ°ç”¨æˆ·ä¸Šä¼ çš„å›¾ç‰‡ï¼Œæ ¹æ®ä¸ƒç‰›urlè·å–ï¼Œé˜²æ­¢äº†è¡¨æƒ…å›¾ç‰‡çš„ä¹±å…¥*/
                     if(src.attr("src").substring(0, 37).equals(KpicConstant.QINIU_IMG_URL1)){
 
                         ReplyImg replyImg = new ReplyImg();

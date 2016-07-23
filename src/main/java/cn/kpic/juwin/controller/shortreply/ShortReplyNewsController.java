@@ -48,7 +48,7 @@ public class ShortReplyNewsController {
             topicOrReplyInfoVo2 = topicPostMapper.getByPbarIdOfNews(topicOrReplyInfoVo1.getTopicId());
         }
 
-        Map<String, Object> result = new HashMap<>();
+        Map<String, Object> result = new HashMap<String, Object>();
 
         result.put("topic", topicOrReplyInfoVo2);
         result.put("reply", topicOrReplyInfoVo1);

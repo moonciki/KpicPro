@@ -62,7 +62,7 @@ public class TipController {
     @RequestMapping(value = "/topic/tip")
     @ResponseBody
     public Map<String, Object> saveTopicTip(Long id, String title, String msg, Long pbarId){
-        Map<String, Object> result = new HashMap<>();
+        Map<String, Object> result = new HashMap<String, Object>();
         try{
             TopicTip topicTip = new TopicTip();
             topicTip.setCreateTime(new Date());
@@ -85,7 +85,7 @@ public class TipController {
     @RequestMapping(value = "/reply/tip")
     @ResponseBody
     public Map<String, Object> saveReplyTip(Long id, String title, String msg, Long pbarId){
-        Map<String, Object> result = new HashMap<>();
+        Map<String, Object> result = new HashMap<String, Object>();
         try{
             ReplyTip replyTip = new ReplyTip();
             replyTip.setCreateTime(new Date());
@@ -109,7 +109,7 @@ public class TipController {
     @RequestMapping(value = "/short/tip")
     @ResponseBody
     public Map<String, Object> saveShortTip(Long id, String title, String msg, Long pbarId){
-        Map<String, Object> result = new HashMap<>();
+        Map<String, Object> result = new HashMap<String, Object>();
         try{
             ShortTip shortTip = new ShortTip();
             shortTip.setCreateTime(new Date());
@@ -153,6 +153,7 @@ public class TipController {
                 this.topicTipService.delTopic(topicId);
                 return true;
             }catch (Exception e){
+                e.printStackTrace();
                 return false;
             }
         }

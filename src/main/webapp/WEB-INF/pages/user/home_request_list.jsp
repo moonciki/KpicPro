@@ -10,6 +10,7 @@
 <html>
 <head>
   <title>${user.name}的管理中心</title>
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/user/manage_center.css" rel="stylesheet">
 </head>
 <body>
@@ -70,7 +71,7 @@
       <center><button type="button" class="btn btn-info" id="load_more" onclick="more()"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;&nbsp;加载更多</button></center>
       <br/>
       <span style="display: none" id="jz_load">
-        <center><img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/page_loading.gif"/></center>
+        <center><img src="http://7xwibn.com1.z0.glb.clouddn.com/static/page_loading.gif"/></center>
       </span>
       <span id="pageloading2" style="display:none"><center>没有更多了</center></span>
     </div>

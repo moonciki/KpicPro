@@ -104,7 +104,7 @@ $().ready(function(){
                     'picBtn22','picBtn23','picBtn24','picBtn25','picBtn26','picBtn27',
                     'picBtn28','picBtn29','picBtn30'],
             uptoken_url: '/pbar/upload',
-            domain: 'http://7xs5lv.com1.z0.glb.clouddn.com/',
+            domain: 'http://7xwibn.com1.z0.glb.clouddn.com/',
             max_file_size: '1mb',
             flash_swf_url: 'static/js/plupload/Moxie.swf',
             multi_selection:false,
@@ -140,10 +140,10 @@ $().ready(function(){
                     info = JSON.parse(info);
                     var num = $("#already_numt").val();
                     $("#picBtn_"+num).empty();
-                    var img_url = "<img src=\"http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key+"?imageView2/2/w/775/q/75\"/>";
+                    var img_url = "<img src=\"http://7xwibn.com1.z0.glb.clouddn.com/"+info.key+"?imageView2/1/w/775/interlace/0/q/75\"/>";
                     $("#upload_loading").hide();
                     $("#picUrl_"+num).append(img_url)
-                    $("#picUrl_"+num+"_content").val("http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key)
+                    $("#picUrl_"+num+"_content").val("http://7xwibn.com1.z0.glb.clouddn.com/"+info.key)
                 },
                 'Key': function (up, file) {
                     var key = "";
@@ -172,7 +172,7 @@ $().ready(function(){
             runtimes: 'html5,flash,html4',
             browse_button:'fm_upload',
             uptoken_url: '/pbar/upload',
-            domain: 'http://7xs5lv.com1.z0.glb.clouddn.com/',
+            domain: 'http://7xwibn.com1.z0.glb.clouddn.com/',
             max_file_size: '1mb',
             flash_swf_url: 'static/js/plupload/Moxie.swf',
             multi_selection:false,
@@ -186,6 +186,7 @@ $().ready(function(){
             },
             init: {
                 'BeforeUpload': function (up, file) {
+                    $("#fm_upload").attr("disabled","disabled");
                     $("#upload_loading1").show();
                     var filename = file.name;
                     var extStart = filename.lastIndexOf(".");
@@ -194,6 +195,7 @@ $().ready(function(){
                     if (ext != ".JPG" && ext != ".PNG" && ext != ".GIF") {
                         alert("上传文件只支持jpg、png、gif格式的图片！");
                         up.destroy();
+                        $("#fm_upload").removeAttr("disabled");
                     } else {}
                 },
                 'UploadProgress': function (up, file) {
@@ -202,14 +204,15 @@ $().ready(function(){
                     console.log(err);
                     console.log(errTip);
                     alert("上传出错 -_-# 可能出现以下错误：\n①网络连接失效\n②上传文件过大\n③后台程序出现未知错误");
+                    $("#fm_upload").removeAttr("disabled");
                 },
                 'FileUploaded': function (up, file, info) {
                     console.log(info);
                     info = JSON.parse(info);
-                    var img_url = "<img src=\"http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key+"?imageView2/2/w/775/q/75\"/>";
+                    var img_url = "<img src=\"http://7xwibn.com1.z0.glb.clouddn.com/"+info.key+"?imageView2/1/w/775/interlace/0/q/75\"/>";
                     $("#upload_loading1").hide();
                     $("#fm_url").append(img_url)
-                    $("#imageUrl").val("http://7xs5lv.com1.z0.glb.clouddn.com/"+info.key)
+                    $("#imageUrl").val("http://7xwibn.com1.z0.glb.clouddn.com/"+info.key)
                 },
                 'Key': function (up, file) {
                     var key = "";

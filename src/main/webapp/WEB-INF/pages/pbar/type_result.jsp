@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>咔哔圈子</title>
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
   <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>
   <link href="${pageContext.request.contextPath}/static/css/pbar/type_result.css" rel="stylesheet">

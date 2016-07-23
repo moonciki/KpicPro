@@ -18,14 +18,14 @@ public class NetEaseMusicUtils {
             return null;
         }
         String new_word = URLEncoder.encode(key_word,"utf8");
-        //∑¢ÀÕ POST «Î«Û
+        //ÂèëÈÄÅ POST ËØ∑Ê±Ç
         String sr= HttpRequest.sendPost("http://music.163.com/api/search/pc", "s=" + new_word + "&offset=0&limit=5&type=1");
 
         String code = sr.substring(sr.indexOf("\"code\":") + 7, sr.length() - 1);
         if("200".equals(code)){
             String songCount = sr.substring(sr.indexOf("\"songCount\":")+12, sr.length()-13);
 
-            List<Songs> lists = new ArrayList<>();
+            List<Songs> lists = new ArrayList<Songs>();
 
             if(Integer.parseInt(songCount) > 0){
                 String[] jp = sr.split("\"mp3Url\":\"");

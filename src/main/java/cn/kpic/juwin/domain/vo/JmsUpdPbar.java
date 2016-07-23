@@ -4,7 +4,7 @@ package cn.kpic.juwin.domain.vo;
  * Created by bjsunqinwen on 2016/4/8.
  */
 public class JmsUpdPbar implements java.io.Serializable {
-    /** 0£ºĞŞ¸ÄÌû×ÓÊı£»1£ºĞŞ¸Ä¹Ø×¢Êı*/
+    /** 0ï¼šä¿®æ”¹å¸–å­æ•°ï¼›1ï¼šä¿®æ”¹å…³æ³¨æ•°*/
     private int type;
     private Long pbarId;
     private Long userId;

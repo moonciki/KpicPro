@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>${user.name}的管理中心</title>
-
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/user/manage_center.css" rel="stylesheet">
 </head>
 <body>
@@ -70,7 +70,7 @@
 
           <span id="upload_loading1" style="display: none">
           <center>
-            <img src="http://7xtmxr.com1.z0.glb.clouddn.com/static/loading.jpg">
+            <img src="http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg">
             <br/>
             <span style="font-weight: bold;color:#FF60AF">上传中...</span>
           </center></span>

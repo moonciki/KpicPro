@@ -10,6 +10,7 @@
 <html>
 <head>
   <title>${pbar.name}-管理中心</title>
+  <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/pbar/pbar_manager.css" rel="stylesheet">
 </head>
 <body>

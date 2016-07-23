@@ -3,7 +3,7 @@ package cn.kpic.juwin.domain;
 import java.util.Date;
 
 /**
- * �û��ڲ�ֵ
+ * 用户节操值
  * Created by bjsunqinwen on 2016/5/27.
  */
 public class UserIntegrity {
