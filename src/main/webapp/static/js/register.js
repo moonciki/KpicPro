@@ -1,5 +1,4 @@
 $().ready(function(){
-    huoqu_code();
     huoqu_pic();
 });
 
@@ -13,7 +12,6 @@ $("#register").click(function(){
     var birth = $("#birth").val();
     var tag = $("#tag").val();
     var address = $("#address").val();
-    var code_c = $("#code_c").val();
     var flag = true;
     if(num == null || num == "" || isNaN(num) || num.length < 6 || num.length > 20){
         $("#num_load").fadeIn(800);
@@ -75,7 +73,7 @@ $("#register").click(function(){
         address = "地球";
     }
 
-    if(code == null || code == "" || code != code_c){
+    if(code == null || code == ""){
         $("#code_load").fadeIn(800);
         setTimeout(function(){$("#code_load").fadeOut(800);},2000);
         flag = false;
@@ -84,32 +82,35 @@ $("#register").click(function(){
     var userPic = $("#userPic_c").val();
 
     if(flag){
-        $.post("/rg/check_num",{'num':num}, function(data){
-            if(data){
-                $.post("/rg/check_name",{'name':name},function(data){
-                    if(data){
-                        $("#loading").show();
-                        var sex = $("input[name='sex']:checked").val();
-                        $.post("/rg/save", {'num':num,'password':pwd,'name':name,'sex':sex,'age':0,'birth':birth,'address':address,'userPic':userPic,'tag':tag},function(data){
-                            if(data){
-                                location.reload();
-                            }else{
-                                $("#loading").hide();
-                                alert("注册过程中出现迷之错误，非常抱歉，建议您刷新重试~");
-                            }
-                        });
-                    } else{
-                        $("#name_load2").fadeIn(800);
-                        setTimeout(function(){$("#name_load2").fadeOut(800);},2000);
-                        $("#register").removeAttr("disabled");
-                    }
-                });
-            }else{
-                $("#num_load2").fadeIn(800);
-                setTimeout(function(){$("#num_load2").fadeOut(800);},2000);
-                $("#register").removeAttr("disabled");
-            }
-        });
+
+               $.post("/rg/check_num",{'num':num}, function(data){
+                   if(data){
+                       $.post("/rg/check_name",{'name':name},function(data){
+                           if(data){
+                               $("#loading").show();
+                               var sex = $("input[name='sex']:checked").val();
+                               $.post("/rg/save", {'num':num,'password':pwd,'name':name,'sex':sex,'age':0,'birth':birth,'address':address,'userPic':userPic,'tag':tag,'code':code},function(data){
+                                   if(data){
+                                       location.reload();
+                                   }else{
+                                       $("#loading").hide();
+                                       alert("注册出错，请检查输入信息是否合格，验证码填写是否错误");
+                                       $("#register").removeAttr("disabled");
+                                   }
+                               });
+                           } else{
+                               $("#name_load2").fadeIn(800);
+                               setTimeout(function(){$("#name_load2").fadeOut(800);},2000);
+                               $("#register").removeAttr("disabled");
+                           }
+                       });
+                   }else{
+                       $("#num_load2").fadeIn(800);
+                       setTimeout(function(){$("#num_load2").fadeOut(800);},2000);
+                       $("#register").removeAttr("disabled");
+                   }
+               });
+
 
     }else{
         $("#register").removeAttr("disabled");
@@ -117,15 +118,6 @@ $("#register").click(function(){
 
 });
 
-function huoqu_code(){
-    $.post("/login/code",function(data){
-        if(data.success){
-            $("#code_c").val(data.num);
-        }else{
-            alert("获取验证码的时候发生迷之错误，请刷新重试~");
-        }
-    })
-}
 
 function huoqu_pic(){
     $.post("/register/pic",function(data){

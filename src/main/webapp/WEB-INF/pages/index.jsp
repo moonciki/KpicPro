@@ -30,14 +30,13 @@
           </div>
         </span>
     <br/>
-    <input type="text" class="form-control" style="display:inline;height:45px;width: 200px" id="code" placeholder="请输入验证码">
-    <input type="text" class="form-control code" value="" disabled="disabled" style="cursor:pointer;display:inline;" id="code_c"/>
-    <button type="button" onclick="huoqu_code()" class="btn btn-success btn-lg btn-block" style="display:inline;margin-left:5px;width: 92px">
-      换一换
-    </button>
+    <input type="text" class="form-control" style="display:inline;height:45px;width: 290px" id="code" placeholder="请输入验证码">
+   <span disabled="disabled" style="display:inline;">
+        <img src="${pageContext.request.contextPath}/images/captcha.jpeg" width="200px" height="40px" style="border-radius: 6px" alt=""/>
+    </span>
       <span id="code_load" style="display: none">
           <div class="alert alert-warning" style="width: 500px">
-            <strong>警告！</strong>验证码为空或者输入不正确。
+            <strong>警告！</strong>验证码不能为空！
           </div>
         </span>
     <br/><br/>
@@ -48,7 +47,12 @@
     <center>
       <span id="err" style="display: none">
           <div class="alert alert-warning">
-            <strong>错误！</strong>密码不正确或者账号不存在。
+            <strong>错误！</strong>密码不正确或者账号不存在！
+          </div>
+        </span>
+      <span id="c_err" style="display: none">
+          <div class="alert alert-warning">
+            <strong>错误！</strong>验证码错误！
           </div>
         </span>
     </center>

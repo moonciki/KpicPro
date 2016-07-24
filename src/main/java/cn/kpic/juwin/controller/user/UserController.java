@@ -1,5 +1,6 @@
 package cn.kpic.juwin.controller.user;
 
+import cn.kpic.juwin.controller.code.CodeController;
 import cn.kpic.juwin.domain.*;
 import cn.kpic.juwin.domain.vo.*;
 import cn.kpic.juwin.jms.sender.PbarUpdQueueMessageSender;
@@ -28,6 +29,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.*;
 
 /**
@@ -218,16 +220,21 @@ public class UserController {
 
     @RequestMapping(value = "/realogin")
     @ResponseBody
-    public Boolean realogin(Long num, String pwd) {
+    public int realogin(HttpSession httpSession, Long num, String pwd, String code) {
         try {
+            String real_code = (String)httpSession.getAttribute(CodeController.CAPTCHA_SESSION_ATTR_NAME);
+            if(!real_code.equalsIgnoreCase(code)){
+                return 3;
+            }
+            httpSession.invalidate();
             UsernamePasswordToken token = new UsernamePasswordToken(num+"", pwd);
             token.setRememberMe(true);
             Subject subject = SecurityUtils.getSubject();
             subject.login(token);
-            return true;
+            return 1;
         } catch (Exception e) {
             e.printStackTrace();
-            return false;
+            return 2;
         }
     }
 

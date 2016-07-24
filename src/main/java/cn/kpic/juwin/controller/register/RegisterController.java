@@ -1,5 +1,6 @@
 package cn.kpic.juwin.controller.register;
 
+import cn.kpic.juwin.controller.code.CodeController;
 import cn.kpic.juwin.domain.User;
 import cn.kpic.juwin.mapper.UserMapper;
 import cn.kpic.juwin.service.UserService;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.Date;
 
 /**
@@ -52,8 +54,13 @@ public class RegisterController {
 
     @RequestMapping(value = "/rg/save")
     @ResponseBody
-    public Boolean save(User user){
+    public Boolean save(HttpSession httpSession, User user, String code){
         try{
+            String real_code = (String)httpSession.getAttribute(CodeController.CAPTCHA_SESSION_ATTR_NAME);
+            if(!real_code.equalsIgnoreCase(code)){
+                return false;
+            }
+            httpSession.invalidate();
             user.setName(StringDeal.getText(user.getName()));
             user.setBirth(StringDeal.getText(user.getBirth()));
             user.setAddress(StringDeal.getText(user.getAddress()));
