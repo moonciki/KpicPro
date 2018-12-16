@@ -4,15 +4,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>用户注册</title>
+    <meta name="keywords" content="注册,咔哔,咔哔社区" />
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="${pageContext.request.contextPath}/static/js/jquery-1.10.2.min.js"></script>
+  <script src="${pageContext.request.contextPath}/static/js/jquery-1.10.2.min.js"></script>
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet"/>
   <link href="${pageContext.request.contextPath}/static/css/login.css" rel="stylesheet"/>
 </head>
 <body>
+<!-- 引入封装了failback的接口--initGeetest -->
+<script src="http://static.geetest.com/static/tools/gt.js"></script>
 <div class="main">
   <center><span style="font-size: 30px;">注&nbsp;&nbsp;&nbsp;&nbsp;册</span>
     <br/>
@@ -82,21 +84,11 @@
     <div onclick="huoqu_pic()" title="这个不好看，点击更换" style="cursor:pointer;margin-top:20px;margin-bottom:20px;width: 102px; height: 102px; border: 1px solid #ff68ae;" id="userPic"></div>
     <input type="hidden" value="" id="userPic_c"/>
 
-    <input type="text" class="form-control" style="display:inline;height:45px;width: 200px" id="code" placeholder="请输入验证码">
-    <span disabled="disabled" style="display:inline;">
-        <img src="${pageContext.request.contextPath}/images/captcha.jpeg" width="200px" height="40px" style="border-radius: 6px" alt=""/>
-    </span>
-      <span id="code_load" style="display: none">
-          <div class="alert alert-warning" style="width: 500px">
-            <strong>警告！</strong>验证码不能为空。
-          </div>
-        </span>
-      <span id="code_load_2" style="display: none">
-          <div class="alert alert-warning" style="width: 500px">
-              <strong>错误！</strong>验证码错误！
-          </div>
-        </span>
-    <br/><br/>
+    <div class="yzm">
+        <div id="embed-captcha"></div>
+        <p id="wait" class="show" style="color:red">* 正在加载验证码......</p>
+        <p id="notice" class="hide" style="color:red">* 请先拖动验证码到相应位置</p>
+    </div>
     <button type="button" id="register" class="btn btn-info btn-lg btn-block" style="margin-left:-5px;width: 505px">
       注册
     </button>
@@ -107,7 +99,6 @@
     <br/>
   </center>
 </div>
-<%@include file="./common/foot.jsp" %>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/register.js"></script>
 </body>
 </html>

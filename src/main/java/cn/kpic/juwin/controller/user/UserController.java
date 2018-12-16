@@ -3,6 +3,7 @@ package cn.kpic.juwin.controller.user;
 import cn.kpic.juwin.controller.code.CodeController;
 import cn.kpic.juwin.domain.*;
 import cn.kpic.juwin.domain.vo.*;
+import cn.kpic.juwin.geetest.GeetestLib;
 import cn.kpic.juwin.jms.sender.PbarUpdQueueMessageSender;
 import cn.kpic.juwin.jms.sender.SystemMsgQueueMessageSender;
 import cn.kpic.juwin.jms.sender.UpgradeQueueMessageSender;
@@ -15,6 +16,7 @@ import cn.kpic.juwin.service.UserLevelService;
 import cn.kpic.juwin.service.UserService;
 import cn.kpic.juwin.utils.CurrentUser;
 import cn.kpic.juwin.utils.StringDeal;
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -22,6 +24,7 @@ import org.apache.shiro.authz.UnauthorizedException;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -67,6 +70,9 @@ public class UserController {
 
     @Autowired
     private UserIntegrityService userIntegrityService;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     private Logger logger = Logger.getLogger(UserController.class);
 
@@ -235,6 +241,58 @@ public class UserController {
         } catch (Exception e) {
             e.printStackTrace();
             return 2;
+        }
+    }
+
+    //初始化极验验证，用于初始化极验，获取极验服务器状态等
+    @RequestMapping(value = "/start_captcha", method = RequestMethod.GET)
+    @ResponseBody
+    public String startCaptcha(){
+        try{
+            GeetestLib gtSdk = GeetestLib.getGeetestLib();
+            String resStr = "{}";
+            //进行验证预处理
+            int gtServerStatus = gtSdk.preProcess();
+            //将服务器状态设置到session中
+            redisTemplate.boundValueOps(gtSdk.gtServerStatusSessionKey).set(gtServerStatus+"");
+            resStr = gtSdk.getResponseStr();
+            return resStr;
+        }catch (Exception e){
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+    /*
+    data.challenge = challenge;
+            data.validate = validate;
+            data.seccode = seccode;
+            data.username = username;
+            data.password = password;
+     */
+    //极验验证
+    @RequestMapping(value = "/verify_login", method = RequestMethod.POST)
+    @ResponseBody
+    public int verifyLogin(String challenge, String validate, String seccode, Long num, String pwd){
+        try{
+            Boolean flag = userService.jugeLogin(num, pwd);
+            if(flag){
+                //登录信息验证通过后，再次对验证码进行验证
+                if(this.userService.geetestVerify(challenge, validate, seccode)){
+                    UsernamePasswordToken token = new UsernamePasswordToken(num+"", pwd);
+                    token.setRememberMe(true);
+                    Subject subject = SecurityUtils.getSubject();
+                    subject.login(token);
+                    return 1;
+                }else{
+                    return 3;
+                }
+            }else{
+               return 2;
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+            return 4;
         }
     }
 

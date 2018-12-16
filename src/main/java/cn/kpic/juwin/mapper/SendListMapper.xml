@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.SendListMapper">
+
+    <insert id="save" parameterType="cn.kpic.juwin.domain.SendList">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into tb_send_list
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="title != null">title,</if>
+            <if test="cover != null">cover,</if>
+            <if test="decri != null">decri,</if>
+            <if test="damaku != null">damaku,</if>
+            <if test="fav != null">fav,</if>
+            <if test="play != null">play,</if>
+            <if test="damakuPool != null">damakuPool,</if>
+            <if test="userId != null">userId,</if>
+            <if test="isdel != null">isdel,</if>
+            <if test="createTime != null">createTime,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="title != null">#{title},</if>
+            <if test="cover != null">#{cover},</if>
+            <if test="decri != null">#{decri},</if>
+            <if test="damaku != null">#{damaku},</if>
+            <if test="fav != null">#{fav},</if>
+            <if test="play != null">#{play},</if>
+            <if test="damakuPool != null">#{damakuPool},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="isdel != null">#{isdel},</if>
+            <if test="createTime != null">#{createTime},</if>
+        </trim>
+    </insert>
+    
+    <select id="getSendListInfo" resultType="cn.kpic.juwin.domain.vo.SendListVo">
+        SELECT tsl.*,
+        tu.sex,tu.userPic, tu.avater, tu.name, tu.tag
+        FROM tb_send_list tsl
+        JOIN tb_user tu ON tu.id = tsl.userId
+        WHERE tsl.id = #{id} AND tsl.isdel = 0
+    </select>
+
+    <select id="getAllMvsBySlId" resultType="cn.kpic.juwin.domain.Mv">
+        SELECT * FROM tb_mv WHERE sendlistId = #{id} AND isdel = 0
+    </select>
+
+    <update id="plusCount">
+      UPDATE tb_send_list
+      <if test="type == 1">
+          SET play = play+#{count}
+      </if>
+      <if test="type == 2">
+          SET fav = fav+#{count}
+      </if>
+      <if test="type == 3">
+          SET damaku = damaku+#{count}
+      </if>
+        WHERE id=#{slId}
+    </update>
+
+    <select id="getMySendList" resultType="cn.kpic.juwin.domain.SendList">
+        SELECT * FROM
+        tb_send_list WHERE userId = #{userId} AND isdel = 0 ORDER BY createTime DESC
+    </select>
+
+    <select id="getNewest" resultType="cn.kpic.juwin.domain.SendList">
+        SELECT
+        id, cover, title
+        FROM tb_send_list WHERE isdel = 0 ORDER BY createTime DESC LIMIT 0, 5
+    </select>
+
+</mapper>

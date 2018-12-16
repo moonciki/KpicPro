@@ -22,7 +22,7 @@
     <center>
       <span style="font-size: 30px; color:#46A3FF;font-weight: bold">圈子搜索</span>
       <input type="text" class="form-control" id="ym_kw"
-             placeholder="输入你感兴趣的圈子" value="${kw}" style="margin-left:20px;border:2px #ADADAD solid;width:460px;height:35px;display:inline;">
+             placeholder="搜一搜属于你的小圈子~" value="${kw}" style="margin-left:20px;border:2px #ADADAD solid;width:460px;height:35px;display:inline;">
       <button type="button" id="ym_s" class="btn btn-info" style="margin-top:-3px;background-color:#46A3FF;border:1px solid #46A3FF;display: inline"><span class="glyphicon glyphicon-search"></span>&nbsp;搜索</button>
       <button type="button" id="cjht" class="btn btn-info" style="margin-top:-3px;background-color:#46A3FF;border:1px solid #46A3FF;display: inline"><span class="glyphicon glyphicon-plus-sign"></span>&nbsp;创建圈子</button>
     </center>

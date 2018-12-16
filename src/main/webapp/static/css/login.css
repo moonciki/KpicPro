@@ -1,6 +1,7 @@
 body{
     font-family: "Microsoft Yahei";
     background-image: url("http://7xwibn.com1.z0.glb.clouddn.com/static/login_bg.jpg");
+    background-size: 100%;
 }
 .main{
     margin: 0 auto;
@@ -27,4 +28,15 @@ body{
     color: #cd0f0b;
     font-weight: bold;
     border-radius: 6px;
+}
+
+.yzm{
+    margin: 0 auto;
+    width: 500px;
+    height: 230px;
+    margin-bottom: 20px;
+    background-color: #FFF;
+    padding: 10px;
+    border: 1px solid #d4cacf;
+    border-radius: 4px;
 }

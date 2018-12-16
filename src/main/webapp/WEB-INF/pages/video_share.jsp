@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>如何分享视频到咔哔？</title>
+  <meta name="keywords" content="视频,咔哔,分享,咔哔圈子" />
   <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <script src="${pageContext.request.contextPath}/static/js/jquery-1.10.2.min.js"></script>
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet"/>

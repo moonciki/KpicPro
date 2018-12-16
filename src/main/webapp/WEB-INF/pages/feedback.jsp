@@ -10,6 +10,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>咔哔--信息反馈</title>
+  <meta name="keywords" content="信息反馈,咔哔,咔哔圈子" />
   <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <script src="${pageContext.request.contextPath}/static/js/jquery-1.10.2.min.js"></script>
   <link href="${pageContext.request.contextPath}/static/css/pbar.css" rel="stylesheet">

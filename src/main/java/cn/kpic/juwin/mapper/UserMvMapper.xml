@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.UserMvMapper">
+
+    <insert id="save" parameterType="cn.kpic.juwin.domain.UserMv">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into tb_user_mv
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="userId != null">userId,</if>
+            <if test="mvId != null">mvId,</if>
+            <if test="createTime != null">createTime,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="mvId != null">#{mvId},</if>
+            <if test="createTime != null">#{createTime},</if>
+        </trim>
+    </insert>
+
+    <select id="isFav" resultType="java.lang.Integer">
+        SELECT COUNT(id)
+        FROM tb_user_mv
+        WHERE userId = #{userId} AND mvId = #{mvId}
+    </select>
+
+    <delete id="del">
+        DELETE
+        FROM tb_user_mv
+        WHERE userId = #{userId} AND mvId = #{mvId}
+    </delete>
+
+</mapper>

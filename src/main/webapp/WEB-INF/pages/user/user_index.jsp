@@ -12,6 +12,7 @@
 <html>
 <head>
   <title>${user2.name}的个人首页</title>
+  <meta name="keywords" content="${user2.name},个人首页,咔哔,咔哔社区" />
   <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
   <script src="${pageContext.request.contextPath}/static/js/jquery-1.10.2.min.js"></script>

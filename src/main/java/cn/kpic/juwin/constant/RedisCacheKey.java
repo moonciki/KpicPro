@@ -23,6 +23,10 @@ public class RedisCacheKey {
     /** 首页缓存开始，首页各部分缓存失效时间均为1天*/
     /** 用于缓存首页圈子类型*/
     public final static String PBAR_TYPE_INDEX = "home:type_index";
+    /** 首页最新放送表*/
+    public final static String SEND_LIST_INDEX = "home:send_list";
+    /** 首页最新音乐分享*/
+    public final static String SEND_MUSIC_INDEX = "home:send_music";
     /** 用于缓存首页精彩图集*/
     public final static String ALBUM_INDEX = "home:albums";
     /** 用于缓存首页精彩圈子*/
@@ -35,5 +39,26 @@ public class RedisCacheKey {
     public final static String USER_INDEX_HOME = "home:users";
     /** 警告榜*/
     public final static String USER_WARN_HOME = "home:warns";
+
+    /** 弹幕集合对象缓存*/
+    public final static String DAMAKU_LIST = "damaku:%s";
+
+    /** mv对象缓存*/
+    public final static String MVBYID = "mv:%s";
+
+    /** 相关mv列表缓存*/
+    public final static String MVSBYSLID = "mv:mvs%s%s";
+
+    /** 是否收藏mv*/
+    public final static String ISFAVMV = "mv:isfav%s%s";
+
+    /** 播放数累加*/
+    public final static String PLAY = "mv:play%s";
+
+    /** 收藏量累加*/
+    public final static String FAV = "mv:fav%s";
+
+    /** 弹幕量累加*/
+    public final static String DANMU = "mv:danmu:%s";
 
 }

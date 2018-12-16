@@ -54,38 +54,38 @@ public class RegisterController {
 
     @RequestMapping(value = "/rg/save")
     @ResponseBody
-    public Boolean save(HttpSession httpSession, User user, String code){
+    public int save(User user, String challenge, String validate, String seccode){
         try{
-            String real_code = (String)httpSession.getAttribute(CodeController.CAPTCHA_SESSION_ATTR_NAME);
-            if(!real_code.equalsIgnoreCase(code)){
-                return false;
+            Long id = this.userMapper.checkName(user.getName());
+            if(id != null){
+                return 5;
             }
-            httpSession.invalidate();
-            user.setName(StringDeal.getText(user.getName()));
-            user.setBirth(StringDeal.getText(user.getBirth()));
-            user.setAddress(StringDeal.getText(user.getAddress()));
-            user.setTag(StringDeal.getText(user.getTag()));
-            if(user == null){
-                return false;
+            Long id2 = this.userMapper.checkNum(user.getNum());
+            if(id2 != null){
+                return 2;
             }
-            user.setCreateTime(new Date());
-            user.setIsdel(0);
-            user.setIsjm(0);
-            user.setIsIndex(0);
-            this.userService.save(user);
+            if(this.userService.geetestVerify(challenge, validate, seccode)){
+                user.setName(StringDeal.getText(user.getName()));
+                user.setBirth(StringDeal.getText(user.getBirth()));
+                user.setAddress(StringDeal.getText(user.getAddress()));
+                user.setTag(StringDeal.getText(user.getTag()));
+                user.setCreateTime(new Date());
+                user.setIsdel(0);
+                user.setIsjm(0);
+                user.setIsIndex(0);
+                this.userService.save(user);
 
-
-            UsernamePasswordToken token = new UsernamePasswordToken(user.getNum()+"", user.getPassword());
-            token.setRememberMe(true);
-            Subject subject = SecurityUtils.getSubject();
-            subject.login(token);
-
-
-            return true;
-
+                UsernamePasswordToken token = new UsernamePasswordToken(user.getNum()+"", user.getPassword());
+                token.setRememberMe(true);
+                Subject subject = SecurityUtils.getSubject();
+                subject.login(token);
+                return 1;
+            }else{
+                return 3;
+            }
         }catch (Exception e){
             e.printStackTrace();
-            return false;
+            return 4;
         }
     }
 

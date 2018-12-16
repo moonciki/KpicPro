@@ -286,7 +286,7 @@ public class PbarController {
     }
 
     /** 关键词搜索*/
-    @RequestMapping(value = "/kabi/search/kw_{kw}")
+    @RequestMapping(value = "/kabi/search/q_kw_{kw}")
     public String Search(@PathVariable("kw") String kw, Model model){
         model.addAttribute("user", CurrentUser.getUser());
         model.addAttribute("kw", kw);

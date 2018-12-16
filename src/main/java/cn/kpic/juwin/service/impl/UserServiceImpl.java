@@ -4,8 +4,10 @@ import cn.kpic.juwin.constant.RedisCacheKey;
 import cn.kpic.juwin.domain.*;
 import cn.kpic.juwin.domain.vo.TopicManager;
 import cn.kpic.juwin.domain.vo.UserVo;
+import cn.kpic.juwin.geetest.GeetestLib;
 import cn.kpic.juwin.mapper.*;
 import cn.kpic.juwin.service.UserService;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -164,5 +166,24 @@ public class UserServiceImpl implements UserService {
         userPower.setUserId(id);
         userPower.setPowerId(1L);
         this.userPowerMapper.save(userPower);
+    }
+
+    //这里根据传来的极验验证所需的三个参数，对其进行二次验证
+    @Override
+    public boolean geetestVerify(String challenge, String validate, String seccode){
+        if(StringUtils.isEmpty(challenge) || StringUtils.isEmpty(validate) || StringUtils.isEmpty(seccode)){
+            return false;
+        }
+        //初始化极验验证器
+        GeetestLib gtSdk = GeetestLib.getGeetestLib();
+        //从session中获取gt-server状态
+        int gtServerStatusCode = Integer.parseInt(redisTemplate.boundValueOps(gtSdk.gtServerStatusSessionKey).get()+"");
+        int result = 0;
+        if(gtServerStatusCode == 1){//表示极验服务器正常
+            result = gtSdk.enhencedValidateRequest(challenge, validate, seccode);
+        }else{//极验服务器异常
+            result = gtSdk.failbackValidateRequest(challenge, validate, seccode);
+        }
+        return result == GeetestLib.success_code ? true : false;
     }
 }

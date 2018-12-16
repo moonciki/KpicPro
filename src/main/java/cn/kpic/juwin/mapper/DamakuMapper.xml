@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.kpic.juwin.mapper.DamakuMapper">
+
+    <insert id="save" parameterType="cn.kpic.juwin.domain.Damaku">
+        <selectKey resultType="java.lang.Integer" order="AFTER" keyProperty="id">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into tb_damaku
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="text != null">text,</if>
+            <if test="color != null">color,</if>
+            <if test="size != null">size,</if>
+            <if test="position != null">position,</if>
+            <if test="time != null">time,</if>
+            <if test="userId != null">userId,</if>
+            <if test="mvId != null">mvId,</if>
+            <if test="createTime != null">createTime,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="text != null">#{text},</if>
+            <if test="color != null">#{color},</if>
+            <if test="size != null">#{size},</if>
+            <if test="position != null">#{position},</if>
+            <if test="time != null">#{time},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="mvId != null">#{mvId},</if>
+            <if test="createTime != null">#{createTime},</if>
+        </trim>
+    </insert>
+
+    <select id="getAllDamakuByMvId" parameterType="java.lang.Integer" resultType="cn.kpic.juwin.domain.vo.DamakuVo">
+        SELECT text,color,size,position,time FROM tb_damaku
+        WHERE mvId=#{mvId} ORDER BY createTime DESC LIMIT #{size}
+    </select>
+
+</mapper>

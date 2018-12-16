@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>咔哔-表情池</title>
+    <meta name="keywords" content="咔哔,咔哔圈子,表情,表情池" />
     <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
     <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
     <script src="${pageContext.request.contextPath}/static/js/bootstrap.min.js"></script>

@@ -5,6 +5,7 @@
 <head>
   <title>用户登录</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="keywords" content="咔哔,登录,咔哔圈子" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <script src="${pageContext.request.contextPath}/static/js/jquery-1.10.2.min.js"></script>
@@ -13,6 +14,8 @@
   <link href="${pageContext.request.contextPath}/static/css/login.css" rel="stylesheet"/>
 </head>
 <body>
+<!-- 引入封装了failback的接口--initGeetest -->
+<script src="http://static.geetest.com/static/tools/gt.js"></script>
 <div class="main">
   <center><span style="font-size: 30px;">登&nbsp;&nbsp;&nbsp;&nbsp;录</span>
     <br/>
@@ -30,16 +33,13 @@
           </div>
         </span>
     <br/>
-    <input type="text" class="form-control" style="display:inline;height:45px;width: 290px" id="code" placeholder="请输入验证码">
-   <span disabled="disabled" style="display:inline;">
-        <img src="${pageContext.request.contextPath}/images/captcha.jpeg" width="200px" height="40px" style="border-radius: 6px" alt=""/>
-    </span>
-      <span id="code_load" style="display: none">
-          <div class="alert alert-warning" style="width: 500px">
-            <strong>警告！</strong>验证码不能为空！
-          </div>
-        </span>
-    <br/><br/>
+
+      <div class="yzm">
+          <div id="embed-captcha"></div>
+          <p id="wait" class="show" style="color:red">* 正在加载验证码......</p>
+          <p id="notice" class="hide" style="color:red">* 请先拖动验证码到相应位置</p>
+      </div>
+
     <button type="button" id="login" class="btn btn-info btn-lg btn-block" style="margin-left:-5px;width: 505px">
       登 录
     </button>
@@ -58,7 +58,6 @@
     </center>
   </center>
 </div>
-<%@include file="./common/foot.jsp" %>
 <script type="text/javascript" src="${pageContext.request.contextPath}/static/js/login.js"></script>
 </body>
 </html>

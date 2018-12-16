@@ -29,6 +29,76 @@
     border-radius: 8px;
     float: left;
 }
+
+.music_con{
+    margin: 30px;
+    width: 1035px;
+    background-color: #f4ffc0;
+    height: auto;
+    min-height: 245px;
+    border: 1px solid #ff3e68;
+    box-shadow:0px 0px 16px #ff3e68;
+    border-radius: 150px;
+    float: left;
+}
+
+.music_con_01{
+    width: 243px;
+    height: 243px;
+    padding: 45px;
+    border-radius: 150px;
+    background-image: url("cp.jpg");
+    float: left;
+}
+
+.music_con_02{
+    width: 680px;
+    height: auto;
+    min-height: 243px;
+    padding-top: 60px;
+    padding-left: 35px;
+    border-radius: 150px;
+    float: left;
+}
+
+.down_tb_01_s{
+    font-size: 12px;
+    color: #4ba7ff;
+}
+
+.down_tb_02_s{
+    font-size: 12px;
+    color: #ff64a0;
+}
+
+.down_tb_03_s{
+    font-size: 12px;
+    color: #ff345c;
+}
+
+.down_tb_04_s{
+    font-size: 12px;
+    color: #ff7f31;
+}
+
+.down_tb_05_s{
+    font-size: 12px;
+    color: #72c6ff;
+}
+
+.waizhan{
+    width: auto;
+    min-width: 100px;
+    height: 100px;
+}
+
+.music_cover{
+    border: 2px solid #141414;
+    border-radius: 150px;
+    width: 150px;
+    height: 150px;
+}
+
 .pbar_con_1{
     width: 484px;
     height: 145px;

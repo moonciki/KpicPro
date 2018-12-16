@@ -21,5 +21,6 @@ public interface UserService {
     List<UserVo> getAllPbarUsers(Long pbarId, Integer page);
     void delSmallManager(Long id,Long userId, Long pbarId);
 
+    boolean geetestVerify(String challenge, String validate, String seccode);
     void save(User user);
 }

@@ -308,6 +308,29 @@
     </bean>
     <!-- END -->
 
+    <!-- 持久化弹幕任务 -->
+    <bean id="damakuQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="damaku-save-queue" />
+    </bean>
+    <bean id="saveDamakuContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="damakuQueue" />
+        <property name="messageListener" ref="damakuSaveListener" />
+    </bean>
+
+    <!-- 持久化mv数据任务 -->
+    <bean id="mvcountQueue" class="org.apache.activemq.command.ActiveMQQueue">
+        <constructor-arg index="0" value="mv-count-queue" />
+    </bean>
+    <bean id="saveMvCountContainer"
+          class="org.springframework.jms.listener.DefaultMessageListenerContainer">
+        <property name="connectionFactory" ref="connectionFactory" />
+        <property name="destination" ref="mvcountQueue" />
+        <property name="messageListener" ref="mvCountListener" />
+    </bean>
+    <!-- END -->
+
 
 
 

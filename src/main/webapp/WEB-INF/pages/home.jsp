@@ -10,7 +10,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>咔哔圈子-每个人的兴趣乡</title>
+    <title>咔哔音乐分享社区-站如其名，卡的一逼_(:3 」∠)_</title>
+  <meta name="keywords" content="咔哔,咔哔社区,音乐,圈子,音乐分享" />
   <link rel="shortcut icon" href="${pageContext.request.contextPath}/static/images/top_logo.ico" type="image/x-icon" />
   <link href="${pageContext.request.contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
   <link href="${pageContext.request.contextPath}/static/css/home.css" rel="stylesheet"/>
@@ -70,8 +71,43 @@
 
   <div class="hot_type">
     <span class="font_tag">
+      <span class="glyphicon glyphicon-list-alt" style="color:#ff789a"></span>
+      &nbsp;最新放送单
+    </span>
+    <span class="font_tag_small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;最新的放送单，欢迎进去追加同类型音乐，或者自己创建放送单</span>
+    <div style="float: right;">
+      <button type="button" class="btn btn-default btn-sm" style="border: 1px solid #ff809e;color:#ff809e" onclick="cj()">
+        <span class="glyphicon glyphicon-plus"></span>
+        &nbsp;创建新的放送单
+      </button>
+    </div>
+    <div>
+
+      <span id="sendlist">
+      </span>
+    </div>
+
+  </div>
+
+  <div class="hot_type">
+    <span class="font_tag">
+      <span class="glyphicon glyphicon-music" style="color:#ff789a"></span>
+      &nbsp;最新音乐分享
+    </span>
+    <span class="font_tag_small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;闲暇时光，何不冲杯咖啡，加点音乐？</span>
+    <div>
+
+      <span id="mv">
+
+      </span>
+    </div>
+
+  </div>
+
+  <div class="hot_type">
+    <span class="font_tag">
       <span class="glyphicon glyphicon-tags" style="color:#ff789a"></span>
-      &nbsp;精彩分类
+      &nbsp;圈子分类
     </span>
     <span class="font_tag_small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;据说这些分类下的圈子很精彩哦(｡•̀◡-)✧</span>
     <div>
@@ -88,7 +124,7 @@
       <span class="glyphicon glyphicon-th-list" style="color:#ff789a"></span>
       &nbsp;热门圈子
     </span>
-    <span class="font_tag_small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-fire" style="color:#ff615f"></span>&nbsp;&nbsp;我不会告诉你现在这些圈子最热(╯3╰)</span>
+    <span class="font_tag_small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-fire" style="color:#ff615f"></span>&nbsp;&nbsp;热门圈子，不定时刷新</span>
     <div>
       <div style="width:1100px;height: 35px;border-bottom:solid 1px #d2d2d2; ">
       <div class="hot_pbar_top" id="rm" onclick="all_pbars()">
@@ -125,9 +161,9 @@
   <div class="hot_type">
     <span class="font_tag">
       <span class="glyphicon glyphicon-picture" style="color:#ff789a"></span>
-      &nbsp;优秀图集
+      &nbsp;精彩图集
     </span>
-    <span class="font_tag_small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;下面是站内选出的优秀图集，会不定时更新，欢迎关注哦(๑´ㅂ`๑)</span>
+    <span class="font_tag_small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;精彩图集，不定时刷新</span>
     <div>
 
       <span id="albums"></span>
@@ -139,7 +175,7 @@
   <div class="hot_type">
     <span class="font_tag">
       <span class="glyphicon glyphicon-indent-left" style="color:#ff789a"></span>
-      &nbsp;精彩内容
+      &nbsp;精彩讨论
     </span>
     <span class="font_tag_small">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;下面是站内选出的精彩文章和帖子，会不定时更新，欢迎关注哦(๑´ㅂ`๑)</span>
 

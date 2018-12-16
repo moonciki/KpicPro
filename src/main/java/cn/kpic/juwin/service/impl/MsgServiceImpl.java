@@ -42,7 +42,7 @@ public class MsgServiceImpl implements MsgService{
         User user = CurrentUser.getUser();
         if(user != null){
             String key = RedisCacheKey.USER_NEWS+user.getId();
-            this.redisTemplate.delete(key);//ÇåÀí»º´æ
+            this.redisTemplate.delete(key);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             this.msgMapper.update(msg);
         }
 
@@ -53,7 +53,7 @@ public class MsgServiceImpl implements MsgService{
         User user = CurrentUser.getUser();
         if(user != null){
             String key = RedisCacheKey.USER_NEWS+user.getId();
-            this.redisTemplate.delete(key);//ÇåÀí»º´æ
+            this.redisTemplate.delete(key);
             this.msgMapper.clear(msg);
         }
     }

@@ -10,7 +10,7 @@
     </select>
 
     <select id="getAllAlbums" resultType="cn.kpic.juwin.domain.vo.AlbumVo">
-        SELECT ta.id, ta.title, ta.imageUrl, ta.picNum,
+        SELECT ta.id, ta.title, ta.imageUrl, ta.picNum,ta.userId,
         tu.avater, tu.userPic, tu.name AS userName
         FROM tb_album ta
         JOIN tb_user tu ON ta.userId = tu.id

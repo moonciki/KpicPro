@@ -20,18 +20,18 @@
   <link href="${pageContext.request.contextPath}/static/css/pbar.css" rel="stylesheet">
 </head>
 <body>
-<ol class="breadcrumb" style="padding-top:10px; width: 100%; font-size: 16px; font-family: 微软雅黑; border-bottom: 1px solid #F0F0F0; box-shadow:0px 0px 8px #FFD9EC; height: 70px; background-color: #FFF">
+<div style="padding-top:10px; width: 100%; font-size: 16px; font-family: 微软雅黑; border-bottom: 1px solid #F0F0F0; box-shadow:0px 0px 8px #FFD9EC; height: 70px; background-color: #FFF">
   <div class="top_main">
 
     <div class="logo" onclick="window.location.href='/'" title="咔哔圈子"></div>
 
-
     <input type="text" class="form-control" id="top_kw"
-           placeholder="输入你感兴趣的圈子" style="margin-left:30px;margin-top:8px;border:2px #ffaad5 solid;width:430px;display:inline;">
+           placeholder="闲暇时光，你想听点什么呢？" style="margin-left:30px;margin-top:8px;border:2px #ffaad5 solid;width:430px;display:inline;">
     <button type="button" id="top_s" class="btn top_btn top_btn_1" style="color:#FFF;"><span class="glyphicon glyphicon-search"></span>&nbsp;搜索</button>
-    <button type="button" onclick="window.open('/feedback')" class="btn top_btn top_btn_2" style="color:#FFF;"><span class="glyphicon glyphicon-send"></span>&nbsp;反馈</button>
-    <button type="button" onclick="window.open('/about_us')" class="btn top_btn top_btn_3" style="color:#FFF;"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;关于咔哔</button>
-
+    &nbsp;&nbsp;
+    <input type="radio" name="s_type" id="s_music" value="1" checked>&nbsp;搜音乐
+    &nbsp;&nbsp;
+    <input type="radio" name="s_type" id="s_quan" value="2">&nbsp;搜圈子
     <div class="top_content">
       <c:choose>
         <c:when test="${user != null}">
@@ -58,6 +58,10 @@
                       <button type="button" style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="btn btn-default btn-sm" onclick="window.open('${pageContext.request.contextPath}/user/u6514${user.id}/index.html')">
                         <span class="glyphicon glyphicon-home"></span> 我的主页
                       </button>
+                        <br/>
+                        <button type="button" style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="btn btn-default btn-sm" onclick="window.open('${pageContext.request.contextPath}/send/list_my')">
+                          <span class="glyphicon glyphicon-random"></span> 我的放送单
+                        </button>
                         <br/>
                         <button type="button" style="color: #ff698b;border: solid 1px #ff698b;width: 100px;margin-top: 10px;margin-left: 5px;" class="btn btn-default btn-sm" onclick="window.open('${pageContext.request.contextPath}/user/management/center/topics')">
                           <span class="glyphicon glyphicon-list"></span> 我的帖子
@@ -126,27 +130,8 @@
         </c:otherwise>
       </c:choose>
     </div>
-<script type="text/javascript">
-  $("#top_s").click(function(){
-    var kw = $("#top_kw").val().trim();
-    if(kw == ""){
-      alert("要输入内容哦~");
-      return;
-    }
-    window.open("/kabi/search/kw_"+kw);
-  });
-  function logout(){
-    $.post("/logout",function(data){
-      if(data){
-        location.reload();
-      }else{
-        alert("退出过程中出现迷之错误，请刷新重试~");
-      }
-    });
-  }
-</script>
   </div>
-<%--</ol>--%>
+</div>
 
 
 </body>

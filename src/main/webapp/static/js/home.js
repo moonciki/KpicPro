@@ -1,4 +1,50 @@
 $().ready(function(){
+
+    $("#sendlist").append("<span class='loading'><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
+    $.get("/new/send_list",function(data){
+        $("#sendlist").empty();
+        if(data == "" || data == null){
+            $("#sendlist").append("<span class='loading'>╮(╯_╰)╭ 暂无数据</span>");
+        }else{
+            for(key in data){
+                var addHtml = "<div class=\"send_list\" onclick=\"window.open('/send/list"+data[key].id+"')\"><div class=\"hei\">"+data[key].title+"</div>";
+                if(data[key].cover == null){
+                    addHtml+="<img src=\"http://7xwibn.com1.z0.glb.clouddn.com/FiOHUq7om2pGuO2ymIEiDNOWel-9\" style=\"border-radius: 8px\"/></div>"
+                }else{
+                    addHtml+="<img src=\""+data[key].cover+"?imageView2/2/w/200/h/200/q/95\" style=\"border-radius: 8px\"/></div>"
+                }
+                $("#sendlist").append(addHtml);
+            }
+        }
+    });
+
+    $("#mv").append("<span class='loading'><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
+    $.get("/new/mv", function(data){
+        $("#mv").empty();
+        if(data == "" || data == null){
+            $("#mv").append("<span class='loading'>╮(╯_╰)╭ 暂无数据</span>");
+        }else{
+            for(key in data){
+                var addHtml = "<div class=\"zj_div_02_01\"><a href=\"/media/mv"+data[key].id+"\" target=\"_blank\">";
+            if(data[key].cover == null) {
+               addHtml += "<img src=\"http://7xwibn.com1.z0.glb.clouddn.com/Fo-o_lSgGdcE26EoJmEZuj4DRQAa?imageView2/2/w/190/q/95\" style=\"border-radius: 6px\"/>"
+            } else{
+                addHtml += "<img src=\""+data[key].cover+"?imageView2/2/w/190/q/95\" style=\"border-radius: 6px\"/>"
+            }
+
+              addHtml+="</a><br/><span style=\"line-height: 1.8\"><a href=\"/media/mv"+data[key].id+"\">"+data[key].title
+                  +"</a><br/><span class=\"down_tb_02_s glyphicon glyphicon-align-center\" title=\"弹幕量\" style=\"margin-left:10px; font-size: 12px\"></span>"+
+                    data[key].damaku+
+                    "<span class=\"down_tb_03_s glyphicon glyphicon-heart-empty\" title=\"收藏量\" style=\"margin-left:10px; font-size: 12px\"></span>"+
+                    data[key].fav+
+                    "<span class=\"down_tb_05_s glyphicon glyphicon-ban-circle\" title=\"弹幕池容量\" style=\"margin-left:10px; font-size: 12px\"></span>"+
+                    data[key].damakuPool+
+                    "</span></div>"
+                $("#mv").append(addHtml);
+            }
+        }
+    });
+
     $("#types").append("<span class='loading'><img src=\"http://7xwibn.com1.z0.glb.clouddn.com/static/loading.jpg\" height='15px'>加载中...</span>");
     $.post("/home/type",function(data){
         $("#types").empty();
@@ -252,6 +298,15 @@ function sq(){
         return;
     }
     window.open("/user/subject/apply");
+}
+
+function cj(){
+    var userId = $("#userId").val();
+    if(userId == "" || userId == null){
+        alert("要先登录哦(๑´ㅂ`๑)");
+        return;
+    }
+    window.open("/send/list_add");
 }
 
 function all_new_pbars(){

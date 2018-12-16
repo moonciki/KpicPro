@@ -422,3 +422,64 @@
     background-color: #e2d6ff;
     border: 1px solid #4a6dff;
 }
+
+.send_list{
+    width: 202px;
+    height: 202px;
+    margin-left: 17px;
+    border: solid 1px #ff3e68;
+    box-shadow: 0px 0px 12px #ff3e68;
+    border-radius: 8px;
+    float: left;
+    cursor: pointer;
+}
+
+.hei{
+    margin-top: 129px;
+    padding: 10px;
+    line-height: 1.8;
+    width: 200px;
+    border-radius: 4px;
+    color: #E0E0E0;
+    height: 70px;
+    position: absolute;
+    background-image: url("http://7xwibn.com1.z0.glb.clouddn.com/static/numbg.png");
+    float: left;
+}
+
+.zj_div_02_01{
+    border: 1px solid #cbcbcb;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 210px;
+    height: 180px;
+    font-size: 14px;
+    float: left;
+}
+
+.down_tb_01_s{
+    font-size: 12px;
+    color: #4ba7ff;
+}
+
+.down_tb_02_s{
+    font-size: 12px;
+    color: #ff64a0;
+}
+
+.down_tb_03_s{
+    font-size: 12px;
+    color: #ff345c;
+}
+
+.down_tb_04_s{
+    font-size: 12px;
+    color: #ff7f31;
+}
+
+.down_tb_05_s{
+    font-size: 12px;
+    color: #72c6ff;
+}

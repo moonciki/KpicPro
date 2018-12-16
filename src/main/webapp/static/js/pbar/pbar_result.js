@@ -1,7 +1,7 @@
 $().ready(function(){
     $("#ym_s").click(function(){
        var kw = $("#ym_kw").val().trim();
-       window.location.href="/kabi/search/kw_"+kw;
+       window.location.href="/kabi/search/q_kw_"+kw;
     });
 
     $("#cjht").click(function(){
